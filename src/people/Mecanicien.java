@@ -13,6 +13,7 @@ public class Mecanicien extends Personne {
     protected String specialisation;
 
     public Mecanicien() {
+        super();
     }
 
     public Mecanicien(String nom, String prenom, String adresse, String numTelephone) {
@@ -21,8 +22,11 @@ public class Mecanicien extends Personne {
 
     public Mecanicien(String specialisation, String nom, String prenom, String adresse, String numTelephone) {
         super(nom, prenom, adresse, numTelephone);
-        this.specialisation = specialisation;
     }
+    public Mecanicien(String specialisation) {
+        super();
+        this.specialisation = specialisation;
+    }  
 
     public String getSpecialisation() {
         return specialisation;
