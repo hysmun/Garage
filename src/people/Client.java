@@ -13,6 +13,10 @@ public class Client extends Personne{
     public Client() {
     }
 
+    public Client(String nom, String prenom, String adresse, String numTelephone) {
+        super(nom, prenom, adresse, numTelephone);
+    }
+
     @Override
     public String toString() {
         return "Client{" + '}';

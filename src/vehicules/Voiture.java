@@ -16,14 +16,14 @@ import people.Client;
  */
 public class Voiture extends Vehicule{
     protected TypeVoiture typeVoiture;
-    protected Client cli;
 
-    public Voiture(){
+    public Voiture(String id, Client client) {
+        super(id, client);
     }
 
-    public Voiture(TypeVoiture typeVoiture, Client pclient) {
+    public Voiture(TypeVoiture typeVoiture, String id, Client client) {
+        super(id, client);
         this.typeVoiture = typeVoiture;
-        this.cli = pclient;
     }
 
     public TypeVoiture getTypeVoiture() {

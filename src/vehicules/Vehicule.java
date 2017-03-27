@@ -18,14 +18,19 @@ import people.Client;
  */
 public abstract class Vehicule implements Identifiable{
     String id;
-    Client client;
+    Client cli;
+
+    public Vehicule(String id, Client client) {
+        this.id = id;
+        this.cli =  client;
+    }
     
     public Client getClient() {
-        return client;
+        return cli;
     }
 
     public void setClient(Client client) {
-        this.client = client;
+        this.cli = client;
     } 
 
     @Override

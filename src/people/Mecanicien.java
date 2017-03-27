@@ -9,13 +9,18 @@ package people;
  *
  * @author ante
  */
-public class Mecanicien {
+public class Mecanicien extends Personne {
     protected String specialisation;
 
     public Mecanicien() {
     }
 
-    public Mecanicien(String specialisation) {
+    public Mecanicien(String nom, String prenom, String adresse, String numTelephone) {
+        super(nom, prenom, adresse, numTelephone);
+    }
+
+    public Mecanicien(String specialisation, String nom, String prenom, String adresse, String numTelephone) {
+        super(nom, prenom, adresse, numTelephone);
         this.specialisation = specialisation;
     }
 

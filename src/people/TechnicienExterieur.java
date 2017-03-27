@@ -9,6 +9,13 @@ package people;
  *
  * @author ante
  */
-public class TechnicienExterieur {
+public class TechnicienExterieur extends Personne {
+
+    public TechnicienExterieur() {
+    }
+
+    public TechnicienExterieur(String nom, String prenom, String adresse, String numTelephone) {
+        super(nom, prenom, adresse, numTelephone);
+    }
     
 }
