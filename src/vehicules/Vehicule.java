@@ -16,13 +16,13 @@ import People.*;
  * @author ante
  */
 public abstract class Vehicule {
-
+    Client client;
+    
     @Override
     public String toString() {
         return "Vehicule{ " + '}';
     }
-    Client client;
-
+    
     public Client getClient() {
         return client;
     }
