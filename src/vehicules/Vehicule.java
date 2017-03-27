@@ -9,19 +9,16 @@ marque;
 package vehicules;
 
 
+import authenticate.Identifiable;
 import people.Client;
 
 /**
  *
  * @author ante
  */
-public abstract class Vehicule {
+public abstract class Vehicule implements Identifiable{
+    String id;
     Client client;
-    
-    @Override
-    public String toString() {
-        return "Vehicule{ " + '}';
-    }
     
     public Client getClient() {
         return client;
@@ -29,6 +26,20 @@ public abstract class Vehicule {
 
     public void setClient(Client client) {
         this.client = client;
+    } 
+
+    @Override
+    public String getId() {
+        return id;
     }
 
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    @Override
+        public String toString() {
+            return "Vehicule{ " + '}';
+        }
 }
