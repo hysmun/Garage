@@ -5,10 +5,12 @@
  */
 package people;
 
+import authenticate.Identifiable;
+
 /**
  *
  * @author ante
  */
-public class TechnicienExterieur {
+public class TechnicienExterieur extends Personne implements Identifiable {
     
 }
