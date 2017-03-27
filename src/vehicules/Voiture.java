@@ -8,7 +8,7 @@ marque;
  */
 package vehicules;
 
-//import People.*;
+import People.*;
 
 /**
  *
@@ -16,20 +16,27 @@ package vehicules;
  */
 public class Voiture extends Vehicule{
     protected TypeVoiture typeVoiture;
+    protected Client client;
 
-    public Voiture() {
+    public Voiture(){
     }
 
-    public Voiture(TypeVoiture typeVoiture/*, Client client*/) {
+    public Voiture(TypeVoiture typeVoiture, Client pclient) {
         this.typeVoiture = typeVoiture;
-        //this.client = client;
+        this.client = pclient;
     }
-    
+
     public TypeVoiture getTypeVoiture() {
         return typeVoiture;
     }
 
-    public void setTypeVoiture(TypeVoiture typeVoiture) {
-        this.typeVoiture = typeVoiture;
+    public void setTypeVoiture(TypeVoiture ptypeVoiture) {
+        this.typeVoiture = ptypeVoiture;
     }
+    
+    @Override
+    public String toString() {
+        return "Voiture{" + "typeVoiture=" + typeVoiture.toString() + '}';
+    }
+    
 }

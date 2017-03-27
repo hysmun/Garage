@@ -10,5 +10,6 @@ package People;
  * @author ante
  */
 public interface AValider {
-    
+   boolean isValid();
+   boolean validate(); 
 }

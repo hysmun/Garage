@@ -10,5 +10,6 @@ package People;
  * @author ante
  */
 public interface Identifiable {
-    
+    String getId();
+    void setId(String i);
 }

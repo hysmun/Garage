@@ -7,7 +7,7 @@ TypeVoiture lance l'exception MissingTradeMarkException si on lui passe null pou
 marque;
  */
 package vehicules;
-
+import ExceptionGarage.*;
 /**
  *
  * @author ante
@@ -21,33 +21,48 @@ public class TypeVoiture {
     public TypeVoiture() {
     }
     
-    public TypeVoiture(String marque, String type, int nbPortes) {
-        this.marque = marque;
-        this.type = type;
-        this.nbPortes = nbPortes;
+    public TypeVoiture(String pmarque, String ptype, int pnbPortes) throws MissingTradeMarkException {
+        if(pmarque == null)
+        {
+            throw new MissingTradeMarkException("Marque null dans constructeur TypeVoiture");
+        }
+        this.marque = pmarque;
+        this.type = ptype;
+        this.nbPortes = pnbPortes;
     }
     
     public String getMarque() {
         return marque;
     }
 
-    public void setMarque(String marque) {
-        this.marque = marque;
+    public void setMarque(String pmarque) throws MissingTradeMarkException {
+        if(pmarque == null)
+        {
+            throw new MissingTradeMarkException("Marque null dans constructeur TypeVoiture");
+        }
+        this.marque = pmarque;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(String ptype) {
+        
+        this.type = ptype;
     }
 
     public int getNbPortes() {
         return nbPortes;
     }
 
-    public void setNbPortes(int nbPortes) {
-        this.nbPortes = nbPortes;
+    public void setNbPortes(int pnbPortes) {
+        this.nbPortes = pnbPortes;
     }
+
+    @Override
+    public String toString() {
+        return "TypeVoiture{" + "marque=" + marque + ", type=" + type + ", nbPortes=" + nbPortes + "}";
+    }
+    
 }

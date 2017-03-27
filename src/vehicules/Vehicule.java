@@ -9,14 +9,19 @@ marque;
 package vehicules;
 
 
-//import People.*;
+import People.*;
 
 /**
  *
  * @author ante
  */
 public abstract class Vehicule {
-    /*Client client;
+
+    @Override
+    public String toString() {
+        return "Vehicule{ " + '}';
+    }
+    Client client;
 
     public Client getClient() {
         return client;
@@ -24,6 +29,6 @@ public abstract class Vehicule {
 
     public void setClient(Client client) {
         this.client = client;
-    }*/
+    }
 
 }
