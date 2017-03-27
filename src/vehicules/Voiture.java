@@ -16,14 +16,14 @@ import people.Client;
  */
 public class Voiture extends Vehicule{
     protected TypeVoiture typeVoiture;
-    protected Client client;
+    protected Client cli;
 
     public Voiture(){
     }
 
     public Voiture(TypeVoiture typeVoiture, Client pclient) {
         this.typeVoiture = typeVoiture;
-        this.client = pclient;
+        this.cli = pclient;
     }
 
     public TypeVoiture getTypeVoiture() {
@@ -33,7 +33,7 @@ public class Voiture extends Vehicule{
     public void setTypeVoiture(TypeVoiture ptypeVoiture) {
         this.typeVoiture = ptypeVoiture;
     }
-    
+
     @Override
     public String toString() {
         return "Voiture{" + "typeVoiture=" + typeVoiture.toString() + '}';
