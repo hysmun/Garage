@@ -9,15 +9,17 @@ package people;
  *
  * @author ante
  */
-public class Mecanicien {
+public class Mecanicien extends PersonnelGarage {
     protected String specialisation;
 
     public Mecanicien() {
+        super();
     }
 
     public Mecanicien(String specialisation) {
+        super();
         this.specialisation = specialisation;
-    }
+    }  
 
     public String getSpecialisation() {
         return specialisation;
