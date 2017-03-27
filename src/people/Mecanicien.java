@@ -10,5 +10,21 @@ package people;
  * @author ante
  */
 public class Mecanicien {
+    protected String specialisation;
+
+    public Mecanicien() {
+    }
+
+    public Mecanicien(String specialisation) {
+        this.specialisation = specialisation;
+    }
+
+    public String getSpecialisation() {
+        return specialisation;
+    }
+
+    public void setSpecialisation(String specialisation) {
+        this.specialisation = specialisation;
+    }
     
 }
