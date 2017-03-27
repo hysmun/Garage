@@ -7,7 +7,7 @@ TypeVoiture lance l'exception MissingTradeMarkException si on lui passe null pou
 marque;
  */
 package vehicules;
-import ExceptionGarage.*;
+import exception.MissingTradeMarkException;
 /**
  *
  * @author ante

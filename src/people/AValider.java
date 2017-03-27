@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package People;
+package people;
 
 /**
  *
  * @author ante
  */
-public class Employe {
-    
+public interface AValider {
+   boolean isValid();
+   boolean validate(); 
 }

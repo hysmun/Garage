@@ -1,7 +1,7 @@
 /*
  * classiquement pour les nom, prénom, adresse et numéro de téléphone;
  */
-package People;
+package people;
 
 /**
  *

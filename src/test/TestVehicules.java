@@ -4,12 +4,11 @@
  * and open the template in the editor.
  */
 package test;
+import exception.MissingTradeMarkException;
+import people.Client;
 import static java.lang.Integer.valueOf;
 import java.util.Vector;
 import vehicules.*;
-import People.*;
-import Activite.*;
-import ExceptionGarage.*;
 /**
  *
  * @author ante

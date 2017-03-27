@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Activite;
-
+package exception;
 /**
  *
  * @author ante
  */
-public class Entretien {
-    
+public class MissingTradeMarkException extends Exception {
+
+    public MissingTradeMarkException() {
+    }
+
+    public MissingTradeMarkException(String message) {
+        super(message);
+    }
+
 }

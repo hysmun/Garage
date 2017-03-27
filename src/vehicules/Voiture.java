@@ -8,7 +8,7 @@ marque;
  */
 package vehicules;
 
-import People.*;
+import people.Client;
 
 /**
  *
