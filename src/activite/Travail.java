@@ -5,10 +5,27 @@
  */
 package activite;
 
+import authenticate.Identifiable;
+import people.Mecanicien;
+import vehicules.Vehicule;
+
 /**
  *
  * @author ante
  */
-public abstract class Travail {
+public abstract class Travail implements Identifiable{
+    protected String id;
+    protected Mecanicien meca;
+    protected Vehicule vehi;
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
     
 }
