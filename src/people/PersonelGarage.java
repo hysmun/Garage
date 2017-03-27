@@ -31,11 +31,8 @@ public abstract class PersonelGarage extends Personne implements Identifiable,AV
     @Override
     public boolean validate()
     {
-        
-        
-        
-        
-        
+        // A modifier
+        throw new UnsupportedOperationException("Pas implementee");
     }
     
     
