@@ -5,10 +5,20 @@
  */
 package activite;
 
+import people.Mecanicien;
+import vehicules.Vehicule;
+
 /**
  *
  * @author ante
  */
-public class Entretien {
+public class Entretien extends Travail{
+
+    public Entretien() {
+    }
+
+    public Entretien(String id, Mecanicien meca, Vehicule vehi) {
+        super(id, meca, vehi);
+    }
     
 }
