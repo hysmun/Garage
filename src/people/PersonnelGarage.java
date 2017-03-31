@@ -10,7 +10,7 @@ import authenticate.*;
  *
  * @author Rémy
  */
-public abstract class PersonelGarage extends Personne implements Identifiable,AValider {
+public abstract class PersonnelGarage extends Personne implements Identifiable,AValider {
     
     private String matricule;
 

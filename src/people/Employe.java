@@ -9,6 +9,6 @@ package people;
  *
  * @author ante
  */
-public class Employe {
+public class Employe extends PersonnelGarage {
     
 }
