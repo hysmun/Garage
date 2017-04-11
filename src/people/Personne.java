@@ -8,6 +8,7 @@ package people;
  * @author ante
  */
 public class Personne {
+    protected String id;
     protected String nom;
     protected String prenom;
     protected String adresse;
@@ -58,6 +59,16 @@ public class Personne {
     @Override
     public String toString() {
         return "Personne{" + "nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", numTelephone=" + numTelephone + '}';
+    }
+    
+    public String getId()
+    {
+        return this.id;
+    }
+    
+    public void setId(String id)
+    {
+        this.id = id;
     }
     
 }
