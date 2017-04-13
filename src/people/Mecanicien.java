@@ -14,19 +14,7 @@ public class Mecanicien extends Personne {
 
     public Mecanicien() {
         super();
-    }
-
-    public Mecanicien(String nom, String prenom, String adresse, String numTelephone) {
-        super(nom, prenom, adresse, numTelephone);
-    }
-
-    public Mecanicien(String specialisation, String nom, String prenom, String adresse, String numTelephone) {
-        super(nom, prenom, adresse, numTelephone);
-    }
-    public Mecanicien(String specialisation) {
-        super();
-        this.specialisation = specialisation;
-    }  
+    } 
 
     public String getSpecialisation() {
         return specialisation;
