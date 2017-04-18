@@ -49,8 +49,6 @@ public class loginForm extends javax.swing.JFrame {
 
         MdpLabelLoginForm.setText("Mot de passe :");
         getContentPane().add(MdpLabelLoginForm);
-
-        jPasswordField1.setText("jPasswordField1");
         getContentPane().add(jPasswordField1);
 
         MembreRadioLoginForm.setSelected(true);
