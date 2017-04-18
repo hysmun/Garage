@@ -30,7 +30,7 @@ public class loginForm extends javax.swing.JFrame {
         UtilisateurLabelLoginForm = new javax.swing.JLabel();
         UtilisateurTextFieldLoginForm = new javax.swing.JTextField();
         MdpLabelLoginForm = new javax.swing.JLabel();
-        MdpTextFieldLoginForm = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
         MembreRadioLoginForm = new javax.swing.JRadioButton();
         ExterieurRadioLoginForm = new javax.swing.JRadioButton();
         OkButtonLoginForm = new javax.swing.JButton();
@@ -49,7 +49,9 @@ public class loginForm extends javax.swing.JFrame {
 
         MdpLabelLoginForm.setText("Mot de passe :");
         getContentPane().add(MdpLabelLoginForm);
-        getContentPane().add(MdpTextFieldLoginForm);
+
+        jPasswordField1.setText("jPasswordField1");
+        getContentPane().add(jPasswordField1);
 
         MembreRadioLoginForm.setSelected(true);
         MembreRadioLoginForm.setText("Membre du personnel");
@@ -100,7 +102,7 @@ public class loginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_MembreRadioLoginFormMouseClicked
 
     private void AnnulerButtonLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnnulerButtonLoginFormMouseClicked
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_AnnulerButtonLoginFormMouseClicked
 
     private void OkButtonLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OkButtonLoginFormMouseClicked
@@ -146,10 +148,10 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JButton AnnulerButtonLoginForm;
     private javax.swing.JRadioButton ExterieurRadioLoginForm;
     private javax.swing.JLabel MdpLabelLoginForm;
-    private javax.swing.JTextField MdpTextFieldLoginForm;
     private javax.swing.JRadioButton MembreRadioLoginForm;
     private javax.swing.JButton OkButtonLoginForm;
     private javax.swing.JLabel UtilisateurLabelLoginForm;
     private javax.swing.JTextField UtilisateurTextFieldLoginForm;
+    private javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
 }
