@@ -15,10 +15,6 @@ public class TechnicienExterieur extends Personne implements Identifiable {
      public TechnicienExterieur() {
     }
 
-    public TechnicienExterieur(String nom, String prenom, String adresse, String numTelephone) {
-        super(nom, prenom, adresse, numTelephone);
-    }
-
     @Override
     public String getId() {
         return this.id;
