@@ -43,7 +43,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         priseEnChargeOkButton = new javax.swing.JButton();
         priseEnChargeAnnulerButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         priseEnChargeTravauxLabel.setText("Travaux en attente :");
 
@@ -137,6 +137,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void priseEnChargeOkButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeOkButtonMouseClicked
