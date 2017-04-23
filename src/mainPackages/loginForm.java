@@ -111,7 +111,7 @@ public class loginForm extends javax.swing.JFrame {
     private void OkButtonLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OkButtonLoginFormMouseClicked
         if(MembreRadioLoginForm.isSelected() == true)
         {
-            if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()) == PasswordField.getText())
+            if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
             {
                 System.out.println("Acces a la suite");
                 // Login applic membre
