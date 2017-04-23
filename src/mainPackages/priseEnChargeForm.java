@@ -164,6 +164,8 @@ public class priseEnChargeForm extends javax.swing.JFrame {
     private void priseEnChargeOkButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeOkButtonMouseClicked
 
         Vector<String> tmp = new Vector<String>();
+        DefaultTableModel model = (DefaultTableModel) priseEnChargeTable.getModel();
+       
         
         if(priseEnChargeTable.getSelectedRowCount() == 1)
         {
@@ -186,7 +188,20 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             
                             mainGarage.listeEnCours.add(tmp);
                             
-                            mainGarage.linkedListVector.remove(priseEnChargeTable.getSelectedRow());
+                            for(int i = 0;i < mainGarage.linkedListVector.size();i++)
+                            {
+                                for(int j = 0;j < model.getRowCount();j++)
+                                {
+                                    if(mainGarage.linkedListVector.get(i).get(0).equals(model.getValueAt(j,0)))
+                                    {
+                                        mainGarage.linkedListVector.remove(i);
+                                        invalidate();
+                                        j = model.getRowCount();
+                                        i = mainGarage.linkedListVector.size();
+                                    }
+                                }  
+                            }
+                            
                         }
                         else
                         {
@@ -206,7 +221,19 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             
                             mainGarage.listeEnCours.add(tmp);
                             
-                            mainGarage.linkedListVector.remove(priseEnChargeTable.getSelectedRow());
+                            for(int i = 0;i < mainGarage.linkedListVector.size();i++)
+                            {
+                                for(int j = 0;j < model.getRowCount();j++)
+                                {
+                                    if(mainGarage.linkedListVector.get(i).get(0).equals(model.getValueAt(j,0)))
+                                    {
+                                        mainGarage.linkedListVector.remove(i);
+                                        invalidate();
+                                        j = model.getRowCount();
+                                        i = mainGarage.linkedListVector.size();
+                                    }
+                                }  
+                            }
                         }
                         else
                         {
@@ -226,7 +253,20 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             
                             mainGarage.listeEnCours.add(tmp);
                             
-                            mainGarage.linkedListVector.remove(priseEnChargeTable.getSelectedRow());
+                            for(int i = 0;i < mainGarage.linkedListVector.size();i++)
+                            {
+                                for(int j = 0;j < model.getRowCount();j++)
+                                {
+                                    if(mainGarage.linkedListVector.get(i).get(0).equals(model.getValueAt(j,0)))
+                                    {
+                                        mainGarage.linkedListVector.remove(i);
+                                        invalidate();
+                                        j = model.getRowCount();
+                                        i = mainGarage.linkedListVector.size();
+                                    }
+                                }  
+                            }
+                            
                         }
                         else
                         {
@@ -252,7 +292,6 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             
                     mainGarage.listeEnCours.add(tmp);
                             
-                    mainGarage.linkedListVector.remove(priseEnChargeTable.getSelectedRow());
                 }
                 else
                 {
