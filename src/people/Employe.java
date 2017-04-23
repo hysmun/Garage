@@ -9,13 +9,10 @@ package people;
  *
  * @author ante
  */
-public class Employe extends Personne {
+public class Employe extends PersonnelGarage {
 
-    public Employe() {
-    }
-
-    public Employe(String id, String nom, String prenom, String adresse, String numTelephone) {
-        super(id, nom, prenom, adresse, numTelephone);
+    public Employe(String id, String nom, String prenom, String adresse, String numTelephone, String matricule) {
+        super(id, nom, prenom, adresse, numTelephone, matricule);
     }
     
 }
