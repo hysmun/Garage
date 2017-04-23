@@ -25,6 +25,7 @@ public class mainGarage {
     public static String[] listeTravailEntretien = {"Vidange","Pression des pneus","Pneu Hiver -> Ete","Pneu Ete -> Hiver"};
     public static String[] listeTravailReparation = {"Courroie","Transmission","Freins"};
     public static String libreString = "-- libre --";
+    public static Vector[] listeEnCours = new Vector[20];
     
     
     public static void main(String[] args) {
