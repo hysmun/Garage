@@ -92,6 +92,7 @@ public class loginForm extends javax.swing.JFrame {
         getContentPane().add(AnnulerButtonLoginForm);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExterieurRadioLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExterieurRadioLoginFormMouseClicked
