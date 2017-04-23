@@ -19,12 +19,12 @@ import vehicules.*;
 public class mainGarage {
 
     public static Client cliTest1;
-        public static Client cliTest2;
-        public static Client cliTest3;
-    
-        public static Voiture voiTest1 ;
-        public static Voiture voiTest2 ;
-        public static Voiture voiTest3;
+    public static Client cliTest2;
+    public static Client cliTest3;
+
+    public static Voiture voiTest1 ;
+    public static Voiture voiTest2 ;
+    public static Voiture voiTest3;
     
     
     public static void main(String[] args) {
