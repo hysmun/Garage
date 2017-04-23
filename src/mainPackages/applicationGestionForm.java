@@ -150,34 +150,19 @@ public class applicationGestionForm extends javax.swing.JFrame {
 
         appGestionAPrevoirItem.setText("A prévoir");
         appGestionAPrevoirItem.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                appGestionAPrevoirItemMouseClicked(evt);
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                appGestionAPrevoirItemMousePressed(evt);
             }
         });
         appGestionAtelierMenu.add(appGestionAPrevoirItem);
 
         appGestionPriseItem.setText("Prise en charge");
-        appGestionPriseItem.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                appGestionPriseItemMouseClicked(evt);
-            }
-        });
         appGestionAtelierMenu.add(appGestionPriseItem);
 
         appGestionTerminerItem.setText("Terminé");
-        appGestionTerminerItem.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                appGestionTerminerItemMouseClicked(evt);
-            }
-        });
         appGestionAtelierMenu.add(appGestionTerminerItem);
 
         appGestionListesItem.setText("Listes");
-        appGestionListesItem.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                appGestionListesItemMouseClicked(evt);
-            }
-        });
         appGestionAtelierMenu.add(appGestionListesItem);
 
         appGestionMenuBar.add(appGestionAtelierMenu);
@@ -316,28 +301,11 @@ public class applicationGestionForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_appGestionPauseCheckBoxMouseClicked
 
-    private void appGestionAPrevoirItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionAPrevoirItemMouseClicked
+    private void appGestionAPrevoirItemMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionAPrevoirItemMousePressed
         // TODO add your handling code here:
-        System.out.println("RDV form!");
-        /*RDVForm aprevoirForm = new RDVForm();
-        aprevoirForm.setLocation(500, 400);
-        aprevoirForm.setVisible(true);*/
-    }//GEN-LAST:event_appGestionAPrevoirItemMouseClicked
-
-    private void appGestionPriseItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionPriseItemMouseClicked
-        // TODO add your handling code here:
-        System.out.println("Prise");
-    }//GEN-LAST:event_appGestionPriseItemMouseClicked
-
-    private void appGestionTerminerItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionTerminerItemMouseClicked
-        // TODO add your handling code here:
-        System.out.println("Terminer");
-    }//GEN-LAST:event_appGestionTerminerItemMouseClicked
-
-    private void appGestionListesItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionListesItemMouseClicked
-        // TODO add your handling code here:
-        System.out.println("Listes");
-    }//GEN-LAST:event_appGestionListesItemMouseClicked
+        RDVForm aprevoirForm = new RDVForm();
+        aprevoirForm.setVisible(true);
+    }//GEN-LAST:event_appGestionAPrevoirItemMousePressed
 
     /**
      * @param args the command line arguments
