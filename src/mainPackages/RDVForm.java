@@ -61,6 +61,11 @@ public class RDVForm extends javax.swing.JFrame {
 
         EntretienRB.setSelected(true);
         EntretienRB.setText("Entretien");
+        EntretienRB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                EntretienRBMousePressed(evt);
+            }
+        });
 
         ReparationRB.setText("Reparation");
 
@@ -161,6 +166,13 @@ public class RDVForm extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void EntretienRBMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntretienRBMousePressed
+        if(ReparationRB.isSelected() == true)
+            ReparationRB.setSelected(false);
+        EntretienRB.setSelected(true);
+        
+    }//GEN-LAST:event_EntretienRBMousePressed
 
     /**
      * @param args the command line arguments
