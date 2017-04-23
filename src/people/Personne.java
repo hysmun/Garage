@@ -3,11 +3,13 @@
  */
 package people;
 
+import authenticate.Identifiable;
+
 /**
  *
  * @author ante
  */
-public class Personne {
+public class Personne implements Identifiable{
     protected String id;
     protected String nom;
     protected String prenom;
@@ -17,7 +19,8 @@ public class Personne {
     public Personne() {
     }
 
-    public Personne(String nom, String prenom, String adresse, String numTelephone) {
+    public Personne(String id, String nom, String prenom, String adresse, String numTelephone) {
+        this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -61,11 +64,13 @@ public class Personne {
         return "Personne{" + "nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", numTelephone=" + numTelephone + '}';
     }
     
+    @Override
     public String getId()
     {
         return this.id;
     }
     
+    @Override
     public void setId(String id)
     {
         this.id = id;

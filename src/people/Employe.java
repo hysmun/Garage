@@ -14,8 +14,8 @@ public class Employe extends Personne {
     public Employe() {
     }
 
-    public Employe(String nom, String prenom, String adresse, String numTelephone) {
-        super(nom, prenom, adresse, numTelephone);
+    public Employe(String id, String nom, String prenom, String adresse, String numTelephone) {
+        super(id, nom, prenom, adresse, numTelephone);
     }
     
 }
