@@ -203,15 +203,8 @@
         </Property>
       </Properties>
       <AuxValues>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(mainGarage.listeTravailEntretien);         "/>
-=======
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(mainGarage.listeTravailEntretien);"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="RDVForm_TypeTravailCB"/>
->>>>>>> origin/master
-=======
-        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="RDVForm_TypeTravailCB"/>
->>>>>>> origin/master
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
     </Component>
