@@ -37,7 +37,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
 
         priseEnChargeTravauxLabel = new javax.swing.JLabel();
         priseEnChargePontRadBut = new javax.swing.JRadioButton();
-        ScrollPanel = new javax.swing.JScrollPane();
+        priseEnChargeScrollPanel = new javax.swing.JScrollPane();
         priseEnChargeTable = new javax.swing.JTable();
         priseEnChargePontComboBox = new javax.swing.JComboBox<>();
         priseEnChargeSolRadBut = new javax.swing.JRadioButton();
@@ -82,7 +82,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         });
         priseEnChargeTable.setToolTipText("");
         priseEnChargeTable.setAutoscrolls(false);
-        ScrollPanel.setViewportView(priseEnChargeTable);
+        priseEnChargeScrollPanel.setViewportView(priseEnChargeTable);
 
         priseEnChargePontComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
 
@@ -116,7 +116,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                 .addComponent(priseEnChargeTravauxLabel)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ScrollPanel)
+                    .addComponent(priseEnChargeScrollPanel)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(priseEnChargeOkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,7 +140,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                         .addComponent(priseEnChargeTravauxLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(ScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(priseEnChargeScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(priseEnChargePontRadBut)
@@ -274,11 +274,11 @@ public class priseEnChargeForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane ScrollPanel;
     private javax.swing.JButton priseEnChargeAnnulerButton;
     private javax.swing.JButton priseEnChargeOkButton;
     private javax.swing.JComboBox<String> priseEnChargePontComboBox;
     private javax.swing.JRadioButton priseEnChargePontRadBut;
+    private javax.swing.JScrollPane priseEnChargeScrollPanel;
     private javax.swing.JRadioButton priseEnChargeSolRadBut;
     private javax.swing.JTable priseEnChargeTable;
     private javax.swing.JLabel priseEnChargeTravauxLabel;
