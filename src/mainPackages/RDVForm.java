@@ -171,6 +171,7 @@ public class RDVForm extends javax.swing.JFrame {
         if(ReparationRB.isSelected() == true)
             ReparationRB.setSelected(false);
         EntretienRB.setSelected(true);
+        ProprioCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);
         
     }//GEN-LAST:event_EntretienRBMousePressed
 
