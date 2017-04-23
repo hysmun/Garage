@@ -18,6 +18,8 @@ public class mainGarage {
     /**
      */
     public static Client cliTest1 = new Client("1", "Paul", "Icier", "rue du cimetière 42", "0496100811");
+    public static Client cliTest2 = new Client("2", "Toma", "Te", "rue du cimetière 42", "0496100811");
+    public static Client cliTest3 = new Client("3", "truc", "Icier", "rue du cimetière 42", "0496100811");
     
     public static void main(String[] args) {
         // TODO code application logic here

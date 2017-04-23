@@ -17,8 +17,8 @@ import people.Client;
  * @author ante
  */
 public abstract class Vehicule implements Identifiable{
-    String id;
-    Client cli;
+    protected String id;
+    protected Client cli;
 
     public Vehicule(String id, Client client) {
         this.id = id;

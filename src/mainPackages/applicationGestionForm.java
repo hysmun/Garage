@@ -37,9 +37,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionBureauClientLabel = new javax.swing.JLabel();
         appGestionBureauComptaLabel = new javax.swing.JLabel();
         appGestionComptaPresenceLabel = new javax.swing.JLabel();
-        appGestionPatronRadBut = new javax.swing.JRadioButton();
         appGestionToutPresentRadBut = new javax.swing.JRadioButton();
-        appGestionPauseRadBut = new javax.swing.JRadioButton();
         appGestionCertAbsRadBut = new javax.swing.JRadioButton();
         appGestionImagePanel = new javax.swing.JPanel();
         appGestionPresencePont1Label = new javax.swing.JLabel();
@@ -49,6 +47,8 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionPresenceDiversLabel = new javax.swing.JLabel();
         appGestionPresenceBureauLabel = new javax.swing.JLabel();
         appGestionDateLabel = new javax.swing.JLabel();
+        appGestionPatronCheckBox = new javax.swing.JCheckBox();
+        appGestionPauseCheckBox = new javax.swing.JCheckBox();
         appGestionMenuBar = new javax.swing.JMenuBar();
         appGestionAtelierMenu = new javax.swing.JMenu();
         appGestionAPrevoirItem = new javax.swing.JMenuItem();
@@ -86,24 +86,10 @@ public class applicationGestionForm extends javax.swing.JFrame {
 
         appGestionComptaPresenceLabel.setText("Mr Boulier est là");
 
-        appGestionPatronRadBut.setText("Patron disponible");
-        appGestionPatronRadBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                appGestionPatronRadButMouseClicked(evt);
-            }
-        });
-
         appGestionToutPresentRadBut.setText("Tout le monde présent");
         appGestionToutPresentRadBut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 appGestionToutPresentRadButMouseClicked(evt);
-            }
-        });
-
-        appGestionPauseRadBut.setText("Pause-Midi");
-        appGestionPauseRadBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                appGestionPauseRadButMouseClicked(evt);
             }
         });
 
@@ -122,7 +108,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
         );
         appGestionImagePanelLayout.setVerticalGroup(
             appGestionImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 413, Short.MAX_VALUE)
+            .addGap(0, 414, Short.MAX_VALUE)
         );
 
         appGestionPresencePont1Label.setBackground(new java.awt.Color(255, 255, 0));
@@ -145,6 +131,20 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionPresenceBureauLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         appGestionDateLabel.setText("23/03/2017    13:19h");
+
+        appGestionPatronCheckBox.setText("Patron disponible");
+        appGestionPatronCheckBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                appGestionPatronCheckBoxMouseClicked(evt);
+            }
+        });
+
+        appGestionPauseCheckBox.setText("Pause-Midi");
+        appGestionPauseCheckBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                appGestionPauseCheckBoxMouseClicked(evt);
+            }
+        });
 
         appGestionAtelierMenu.setText("Atelier");
 
@@ -216,14 +216,14 @@ public class applicationGestionForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(appGestionPatronRadBut)
-                            .addComponent(appGestionPauseRadBut))
-                        .addGap(84, 84, 84)
+                            .addComponent(appGestionPatronCheckBox)
+                            .addComponent(appGestionPauseCheckBox))
+                        .addGap(118, 118, 118)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(appGestionCertAbsRadBut)
                             .addComponent(appGestionToutPresentRadBut)))
                     .addComponent(appGestionImagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(appGestionDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,15 +265,15 @@ public class applicationGestionForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(appGestionBureauClientLabel)
-                    .addComponent(appGestionPatronRadBut)
                     .addComponent(appGestionToutPresentRadBut)
-                    .addComponent(appGestionPresenceBureauLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                    .addComponent(appGestionPresenceBureauLabel)
+                    .addComponent(appGestionPatronCheckBox))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(appGestionBureauComptaLabel)
                     .addComponent(appGestionComptaPresenceLabel)
-                    .addComponent(appGestionPauseRadBut)
-                    .addComponent(appGestionCertAbsRadBut))
+                    .addComponent(appGestionCertAbsRadBut)
+                    .addComponent(appGestionPauseCheckBox))
                 .addGap(26, 26, 26))
         );
 
@@ -288,13 +288,13 @@ public class applicationGestionForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_appGestionCertAbsRadButMouseClicked
 
-    private void appGestionPatronRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionPatronRadButMouseClicked
+    private void appGestionPatronCheckBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionPatronCheckBoxMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_appGestionPatronRadButMouseClicked
+    }//GEN-LAST:event_appGestionPatronCheckBoxMouseClicked
 
-    private void appGestionPauseRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionPauseRadButMouseClicked
+    private void appGestionPauseCheckBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionPauseCheckBoxMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_appGestionPauseRadButMouseClicked
+    }//GEN-LAST:event_appGestionPauseCheckBoxMouseClicked
 
     /**
      * @param args the command line arguments
@@ -350,8 +350,8 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private javax.swing.JMenu appGestionMaterielMenu;
     private javax.swing.JMenuBar appGestionMenuBar;
     private javax.swing.JMenu appGestionParamMenu;
-    private javax.swing.JRadioButton appGestionPatronRadBut;
-    private javax.swing.JRadioButton appGestionPauseRadBut;
+    private javax.swing.JCheckBox appGestionPatronCheckBox;
+    private javax.swing.JCheckBox appGestionPauseCheckBox;
     private javax.swing.JLabel appGestionPont1Label;
     private javax.swing.JLabel appGestionPont2label;
     private javax.swing.JLabel appGestionPont3label;

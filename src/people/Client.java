@@ -13,8 +13,8 @@ public class Client extends Personne{
     public Client() {
     }
 
-    public Client(String nom, String prenom, String adresse, String numTelephone) {
-        super(nom, prenom, adresse, numTelephone);
+    public Client(String id, String nom, String prenom, String adresse, String numTelephone) {
+        super(id, nom, prenom, adresse, numTelephone);
     }
 
     @Override
