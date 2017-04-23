@@ -149,6 +149,11 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionAtelierMenu.setText("Atelier");
 
         appGestionAPrevoirItem.setText("A prévoir");
+        appGestionAPrevoirItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                appGestionAPrevoirItemMouseClicked(evt);
+            }
+        });
         appGestionAtelierMenu.add(appGestionAPrevoirItem);
 
         appGestionPriseItem.setText("Prise en charge");
@@ -211,7 +216,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
                         .addGap(57, 57, 57)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(appGestionPresenceBureauLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(appGestionComptaPresenceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))))
+                            .addComponent(appGestionComptaPresenceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE))))
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -295,6 +300,12 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private void appGestionPauseCheckBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionPauseCheckBoxMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_appGestionPauseCheckBoxMouseClicked
+
+    private void appGestionAPrevoirItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionAPrevoirItemMouseClicked
+        RDVForm APrevoir = new RDVForm();
+        APrevoir.setLocation(500, 400);
+        APrevoir.setVisible(true);
+    }//GEN-LAST:event_appGestionAPrevoirItemMouseClicked
 
     /**
      * @param args the command line arguments

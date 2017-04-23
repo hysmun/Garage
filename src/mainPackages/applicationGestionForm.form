@@ -13,6 +13,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="A pr&#xe9;voir"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="appGestionAPrevoirItemMouseClicked"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="appGestionPriseItem">
               <Properties>
@@ -116,7 +119,7 @@
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="appGestionPresenceBureauLabel" max="32767" attributes="0"/>
-                          <Component id="appGestionComptaPresenceLabel" pref="240" max="32767" attributes="0"/>
+                          <Component id="appGestionComptaPresenceLabel" pref="253" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
