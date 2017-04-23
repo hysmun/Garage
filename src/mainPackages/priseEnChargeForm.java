@@ -175,7 +175,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                         if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
                         {
                             //libre
-                            applicationGestionForm.appGestionPresencePont1Label.setText((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(0));
+                            //applicationGestionForm.appGestionPresencePont1Label.setText((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(0));
                         }
                         else
                         {
@@ -186,7 +186,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                         if(applicationGestionForm.appGestionPresencePont2Label.getText().equals(mainGarage.libreString))
                         {
                             //libre
-                            applicationGestionForm.appGestionPresencePont2Label.setText();
+                            //applicationGestionForm.appGestionPresencePont2Label.setText();
                         }
                         else
                         {
@@ -197,7 +197,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                         if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
                         {
                             //libre
-                            applicationGestionForm.appGestionPresencePont3Label.setText();
+                            //applicationGestionForm.appGestionPresencePont3Label.setText();
                         }
                         else
                         {
