@@ -98,13 +98,11 @@ public class loginForm extends javax.swing.JFrame {
     private void ExterieurRadioLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExterieurRadioLoginFormMouseClicked
         // TODO add your handling code here:
         MembreRadioLoginForm.setSelected(false);
-        ExterieurRadioLoginForm.setSelected(true);
     }//GEN-LAST:event_ExterieurRadioLoginFormMouseClicked
 
     private void MembreRadioLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MembreRadioLoginFormMouseClicked
 
         ExterieurRadioLoginForm.setSelected(false);
-        MembreRadioLoginForm.setSelected(true);
     }//GEN-LAST:event_MembreRadioLoginFormMouseClicked
 
     private void AnnulerButtonLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnnulerButtonLoginFormMouseClicked
