@@ -55,4 +55,9 @@ public class mainGarage {
             System.out.println("Error main garage !!!");
         }
     }
+    
+    public String toString(int vectornum)
+    {
+        return linkedListVector.get(vectornum).get(0) + " " + linkedListVector.get(vectornum).get(1) + " " + linkedListVector.get(vectornum).get(2) + " " + linkedListVector.get(vectornum).get(3);
+    }
 }
