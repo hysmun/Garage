@@ -22,6 +22,9 @@ public class mainGarage {
     
     public static Vector[] vecteurData = new Vector[20];
     public static LinkedList linkedListVector = new LinkedList();
+    public static String[] listeProprio = {"Mr Paul Ice","Mme Marc Assin","Mr Tom Ate","Melle Sandy Kilo"};
+    public static String[] listeTravailEntretien = {"Vidange","Pression des pneus","Pneu Hiver -> Ete","Pneu Ete -> Hiver"};
+    public static String[] listeTravailReparation = {"Courroie","Transmission","Freins"};
     
     
     
