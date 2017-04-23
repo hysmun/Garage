@@ -31,7 +31,7 @@ public class mainGarage {
         try
         {
             // TODO code application logic here
-            System.out.print("TEST\n");
+            System.out.println("TEST");
             loginForm loginWindows = new loginForm();
             loginWindows.setVisible(true);
             while(loginWindows.loginValue < 1)
@@ -44,7 +44,7 @@ public class mainGarage {
                     Logger.getLogger(mainGarage.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            System.out.print("Login reussi !");
+            System.out.println("Login reussi !");
             loginWindows.setVisible(false);
 
             applicationGestionForm formPrincipale = new applicationGestionForm();
