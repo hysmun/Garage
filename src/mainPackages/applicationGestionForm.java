@@ -5,6 +5,8 @@
  */
 package mainPackages;
 
+import javax.swing.Box;
+
 /**
  *
  * @author ante
@@ -108,7 +110,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
         );
         appGestionImagePanelLayout.setVerticalGroup(
             appGestionImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 414, Short.MAX_VALUE)
+            .addGap(0, 415, Short.MAX_VALUE)
         );
 
         appGestionPresencePont1Label.setBackground(new java.awt.Color(255, 255, 0));
@@ -183,6 +185,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
 
         appGestionParamMenu.setText("Paramètres");
         appGestionParamMenu.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        appGestionMenuBar.add(Box.createHorizontalGlue());
         appGestionMenuBar.add(appGestionParamMenu);
 
         appGestionAideMenu.setText("Aide");
@@ -278,7 +281,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
                     .addComponent(appGestionToutPresentRadBut)
                     .addComponent(appGestionPresenceBureauLabel)
                     .addComponent(appGestionPatronCheckBox))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(appGestionBureauComptaLabel)
                     .addComponent(appGestionComptaPresenceLabel)
