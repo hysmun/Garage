@@ -24,7 +24,7 @@ public class mainGarage {
     public static String[] listeProprio = {"Mr Paul Ice","Mme Marc Assin","Mr Tom Ate","Melle Sandy Kilo"};
     public static String[] listeTravailEntretien = {"Vidange","Pression des pneus","Pneu Hiver -> Ete","Pneu Ete -> Hiver"};
     public static String[] listeTravailReparation = {"Courroie","Transmission","Freins"};
-    
+    public static String libreString = "-- libre --";
     
     
     public static void main(String[] args) {
