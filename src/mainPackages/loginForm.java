@@ -5,6 +5,7 @@
  */
 package mainPackages;
 
+import javax.swing.JOptionPane;
 import login.hashtableLogin;
 
 public class loginForm extends javax.swing.JFrame {
@@ -28,7 +29,7 @@ public class loginForm extends javax.swing.JFrame {
         UtilisateurLabelLoginForm = new javax.swing.JLabel();
         UtilisateurTextFieldLoginForm = new javax.swing.JTextField();
         MdpLabelLoginForm = new javax.swing.JLabel();
-        PasswordFiel = new javax.swing.JPasswordField();
+        PasswordField = new javax.swing.JPasswordField();
         MembreRadioLoginForm = new javax.swing.JRadioButton();
         ExterieurRadioLoginForm = new javax.swing.JRadioButton();
         OkButtonLoginForm = new javax.swing.JButton();
@@ -47,7 +48,13 @@ public class loginForm extends javax.swing.JFrame {
 
         MdpLabelLoginForm.setText("Mot de passe :");
         getContentPane().add(MdpLabelLoginForm);
-        getContentPane().add(PasswordFiel);
+
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(PasswordField);
 
         MembreRadioLoginForm.setSelected(true);
         MembreRadioLoginForm.setText("Membre du personnel");
@@ -104,9 +111,10 @@ public class loginForm extends javax.swing.JFrame {
     private void OkButtonLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OkButtonLoginFormMouseClicked
         if(MembreRadioLoginForm.isSelected() == true)
         {
-            if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()) != null)
+            if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()) == PasswordField.getText())
             {
                 System.out.println("Acces a la suite");
+                // Login applic membre
             }
             else
             {
@@ -114,12 +122,23 @@ public class loginForm extends javax.swing.JFrame {
                 if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()) != null)
                 {
                     System.out.println("Mauvais choix de login, redirection");
+                    JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
+                    // Login applic exterieur
                     
+                }
+                if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()) == null)
+                {
+                    System.out.println("Inconnu, fermeture applic");
+                    System.exit(0);
                 }
             }
             
         }
     }//GEN-LAST:event_OkButtonLoginFormMouseClicked
+
+    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,7 +181,7 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JLabel MdpLabelLoginForm;
     private javax.swing.JRadioButton MembreRadioLoginForm;
     private javax.swing.JButton OkButtonLoginForm;
-    private javax.swing.JPasswordField PasswordFiel;
+    private javax.swing.JPasswordField PasswordField;
     private javax.swing.JLabel UtilisateurLabelLoginForm;
     private javax.swing.JTextField UtilisateurTextFieldLoginForm;
     // End of variables declaration//GEN-END:variables
