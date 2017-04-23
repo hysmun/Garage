@@ -61,7 +61,10 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionClientsMenu = new javax.swing.JMenu();
         appGestionFacturesMenu = new javax.swing.JMenu();
         appGestionParamMenu = new javax.swing.JMenu();
+        appGestionInfoSysItem = new javax.swing.JMenuItem();
         appGestionAideMenu = new javax.swing.JMenu();
+        appGestionDebuterItem = new javax.swing.JMenuItem();
+        appGestionProposDeItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Garage HEPL - la polyclinique de vos voitures");
@@ -190,10 +193,21 @@ public class applicationGestionForm extends javax.swing.JFrame {
 
         appGestionParamMenu.setText("Paramètres");
         appGestionParamMenu.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+
+        appGestionInfoSysItem.setText("Infos système");
+        appGestionParamMenu.add(appGestionInfoSysItem);
+
         appGestionMenuBar.add(Box.createHorizontalGlue());
         appGestionMenuBar.add(appGestionParamMenu);
 
         appGestionAideMenu.setText("Aide");
+
+        appGestionDebuterItem.setText("Pour débuter");
+        appGestionAideMenu.add(appGestionDebuterItem);
+
+        appGestionProposDeItem.setText("A propos de ...");
+        appGestionAideMenu.add(appGestionProposDeItem);
+
         appGestionMenuBar.add(appGestionAideMenu);
 
         setJMenuBar(appGestionMenuBar);
@@ -384,9 +398,11 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private javax.swing.JMenu appGestionClientsMenu;
     private javax.swing.JLabel appGestionComptaPresenceLabel;
     private javax.swing.JLabel appGestionDateLabel;
+    private javax.swing.JMenuItem appGestionDebuterItem;
     private javax.swing.JLabel appGestionDiversLabel;
     private javax.swing.JMenu appGestionFacturesMenu;
     private javax.swing.JPanel appGestionImagePanel;
+    private javax.swing.JMenuItem appGestionInfoSysItem;
     private javax.swing.JMenuItem appGestionListesItem;
     private javax.swing.JMenu appGestionMaterielMenu;
     private javax.swing.JMenuBar appGestionMenuBar;
@@ -403,6 +419,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
     public static javax.swing.JLabel appGestionPresencePont3Label;
     public static javax.swing.JLabel appGestionPresenceSolLabel;
     private javax.swing.JMenuItem appGestionPriseItem;
+    private javax.swing.JMenuItem appGestionProposDeItem;
     private javax.swing.JLabel appGestionSolLabel;
     private javax.swing.JMenuItem appGestionTerminerItem;
     private javax.swing.JRadioButton appGestionToutPresentRadBut;
