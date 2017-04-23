@@ -149,11 +149,6 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionAtelierMenu.setText("Atelier");
 
         appGestionAPrevoirItem.setText("A prévoir");
-        appGestionAPrevoirItem.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                appGestionAPrevoirItemMouseClicked(evt);
-            }
-        });
         appGestionAtelierMenu.add(appGestionAPrevoirItem);
 
         appGestionPriseItem.setText("Prise en charge");
@@ -300,12 +295,6 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private void appGestionPauseCheckBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionPauseCheckBoxMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_appGestionPauseCheckBoxMouseClicked
-
-    private void appGestionAPrevoirItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionAPrevoirItemMouseClicked
-        RDVForm APrevoir = new RDVForm();
-        APrevoir.setLocation(500, 400);
-        APrevoir.setVisible(true);
-    }//GEN-LAST:event_appGestionAPrevoirItemMouseClicked
 
     /**
      * @param args the command line arguments
