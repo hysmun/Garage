@@ -5,6 +5,8 @@
  */
 package mainPackages;
 
+import java.util.LinkedList;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import people.Client;
@@ -18,11 +20,8 @@ import vehicules.*;
  */
 public class mainGarage {
     
-    public static String[] listeTypeVoiture = new String[20];
-    public static String[] listeImmat = new String[20];
-    public static String[] listeProprio = new String[20];
-    public static String[] listeTravail = new String[20];
-    public static String[] listeBonus = new String[20];
+    public static Vector[] vecteurData;
+    public static LinkedList linkedListVector = new LinkedList();
     
     
     
