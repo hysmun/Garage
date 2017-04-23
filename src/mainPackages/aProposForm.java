@@ -132,18 +132,21 @@ public class aProposForm extends javax.swing.JFrame {
 
     private void aProposJAimeRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aProposJAimeRadButMouseClicked
         // TODO add your handling code here:
+        aProposJAimeRadBut.setSelected(true);
         aProposBofRadBut.setSelected(false);
         aProposDetesteRadBut.setSelected(false);
     }//GEN-LAST:event_aProposJAimeRadButMouseClicked
 
     private void aProposBofRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aProposBofRadButMouseClicked
         // TODO add your handling code here:
+        aProposBofRadBut.setSelected(true);
         aProposDetesteRadBut.setSelected(false);
         aProposJAimeRadBut.setSelected(false);
     }//GEN-LAST:event_aProposBofRadButMouseClicked
 
     private void aProposDetesteRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aProposDetesteRadButMouseClicked
         // TODO add your handling code here:
+        aProposDetesteRadBut.setSelected(true);
         aProposBofRadBut.setSelected(false);
         aProposJAimeRadBut.setSelected(false);
     }//GEN-LAST:event_aProposDetesteRadButMouseClicked
