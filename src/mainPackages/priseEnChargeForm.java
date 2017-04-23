@@ -151,6 +151,9 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        getAccessibleContext().setAccessibleDescription("");
+        getAccessibleContext().setAccessibleParent(this);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -165,7 +168,18 @@ public class priseEnChargeForm extends javax.swing.JFrame {
             if(priseEnChargePontRadBut.isSelected())
             {
                 //on va le mettre sur un des ponts 
-                
+                switch((int)(priseEnChargePontComboBox.getSelectedItem()))
+                {
+                    case 1:
+                        if(applicationGestionForm.appGestionPresencePont1Label.getText() == mainGarage.libreString)
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        System.out.println("Error prise en charge!");
+                }
             }
             else if(priseEnChargeSolRadBut.isSelected())
             {
