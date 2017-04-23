@@ -188,19 +188,6 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             
                             mainGarage.listeEnCours.add(tmp);
                             
-                            for(int i = 0;i < mainGarage.linkedListVector.size();i++)
-                            {
-                                for(int j = 0;j < model.getRowCount();j++)
-                                {
-                                    if(mainGarage.linkedListVector.get(i).get(0).equals(model.getValueAt(j,0)))
-                                    {
-                                        mainGarage.linkedListVector.remove(i);
-                                        invalidate();
-                                        j = model.getRowCount();
-                                        i = mainGarage.linkedListVector.size();
-                                    }
-                                }  
-                            }
                             
                         }
                         else
@@ -220,20 +207,6 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(4));
                             
                             mainGarage.listeEnCours.add(tmp);
-                            
-                            for(int i = 0;i < mainGarage.linkedListVector.size();i++)
-                            {
-                                for(int j = 0;j < model.getRowCount();j++)
-                                {
-                                    if(mainGarage.linkedListVector.get(i).get(0).equals(model.getValueAt(j,0)))
-                                    {
-                                        mainGarage.linkedListVector.remove(i);
-                                        invalidate();
-                                        j = model.getRowCount();
-                                        i = mainGarage.linkedListVector.size();
-                                    }
-                                }  
-                            }
                         }
                         else
                         {
@@ -253,19 +226,6 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             
                             mainGarage.listeEnCours.add(tmp);
                             
-                            for(int i = 0;i < mainGarage.linkedListVector.size();i++)
-                            {
-                                for(int j = 0;j < model.getRowCount();j++)
-                                {
-                                    if(mainGarage.linkedListVector.get(i).get(0).equals(model.getValueAt(j,0)))
-                                    {
-                                        mainGarage.linkedListVector.remove(i);
-                                        invalidate();
-                                        j = model.getRowCount();
-                                        i = mainGarage.linkedListVector.size();
-                                    }
-                                }  
-                            }
                             
                         }
                         else
@@ -291,6 +251,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                     tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(4));
                             
                     mainGarage.listeEnCours.add(tmp);
+                    
                             
                 }
                 else
