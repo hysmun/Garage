@@ -25,7 +25,6 @@ public class mainGarage {
         while(loginWindows.loginValue < 1)
         {
             //attente
-            System.out.print("t\n");
         }
         System.out.print("Login reussi !");
         loginWindows.setVisible(false);
