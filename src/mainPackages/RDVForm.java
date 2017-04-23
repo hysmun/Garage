@@ -34,7 +34,13 @@ public class RDVForm extends javax.swing.JFrame {
         VoitTF = new javax.swing.JTextField();
         ImmatTF = new javax.swing.JTextField();
         BonusTF = new javax.swing.JTextField();
-        ProprioCB = new javax.swing.JComboBox(mainGarage.listeProprio);
+        try {
+            ProprioCB =(javax.swing.JComboBox)java.beans.Beans.instantiate(getClass().getClassLoader(), "mainPackages.RDVForm_ProprioCB");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
         newCheck = new javax.swing.JCheckBox();
         EntretienRB = new javax.swing.JRadioButton();
         ReparationRB = new javax.swing.JRadioButton();
