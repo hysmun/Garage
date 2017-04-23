@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Menu class="javax.swing.JMenuBar" name="appGestionMenuBar">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="appGestionAtelierMenu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Atelier"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="appGestionAPrevoirItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A pr&#xe9;voir"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="appGestionPriseItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Prise en charge"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="appGestionTerminerItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Termin&#xe9;"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="appGestionListesItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listes"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="appGestionMaterielMenu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mat&#xe9;riel"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="appGestionClientsMenu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Clients"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="appGestionFacturesMenu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Factures"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="appGestionParamMenu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Param&#xe8;tres"/>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="appGestionAideMenu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Aide"/>
+          </Properties>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="appGestionMenuBar"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="appGestionBureauClientLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="appGestionBureauComptaLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="appGestionPont2label" min="-2" max="-2" attributes="0"/>
+                      <Component id="appGestionPont1Label" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                          <Component id="appGestionSolLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="appGestionPont3label" min="-2" max="-2" attributes="0"/>
+                          <Component id="appGestionDiversLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="appGestionBureauLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="appGestionAtelierLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="265" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="appGestionPatronRadBut" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="appGestionPauseRadBut" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="appGestionCertAbsRadBut" min="-2" max="-2" attributes="0"/>
+                          <Component id="appGestionToutPresentRadBut" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="appGestionImagePanel" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="appGestionAtelierLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="appGestionPont1Label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="appGestionPont2label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="appGestionPont3label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="appGestionSolLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="appGestionDiversLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="appGestionBureauLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="appGestionImagePanel" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="appGestionBureauClientLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="appGestionPatronRadBut" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="appGestionToutPresentRadBut" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="appGestionBureauComptaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="appGestionPauseRadBut" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="appGestionCertAbsRadBut" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="appGestionAtelierLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Atelier"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="appGestionPont1Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pont n&#xb0;1 :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="appGestionPont2label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pont n&#xb0;2 :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="appGestionPont3label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pont n&#xb0;3 :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="appGestionSolLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sol :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="appGestionDiversLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Divers :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="appGestionBureauLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Bureau"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="appGestionBureauClientLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bureau Client :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="appGestionBureauComptaLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bureau comptabilit&#xe9; :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel9"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="appGestionPatronRadBut">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Patron disponible"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="appGestionToutPresentRadBut">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tout le monde pr&#xe9;sent"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="appGestionPauseRadBut">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pause-Midi"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="appGestionCertAbsRadBut">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Certains absents"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="appGestionImagePanel">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+  </SubComponents>
+</Form>
