@@ -42,6 +42,13 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionPauseRadBut = new javax.swing.JRadioButton();
         appGestionCertAbsRadBut = new javax.swing.JRadioButton();
         appGestionImagePanel = new javax.swing.JPanel();
+        appGestionPresencePont1Label = new javax.swing.JLabel();
+        appGestionPresencePont2Label = new javax.swing.JLabel();
+        appGestionPresencePont3Label = new javax.swing.JLabel();
+        appGestionPresenceSolLabel = new javax.swing.JLabel();
+        appGestionPresenceDiversLabel = new javax.swing.JLabel();
+        appGestionPresenceBureauLabel = new javax.swing.JLabel();
+        appGestionDateLabel = new javax.swing.JLabel();
         appGestionMenuBar = new javax.swing.JMenuBar();
         appGestionAtelierMenu = new javax.swing.JMenu();
         appGestionAPrevoirItem = new javax.swing.JMenuItem();
@@ -95,8 +102,29 @@ public class applicationGestionForm extends javax.swing.JFrame {
         );
         appGestionImagePanelLayout.setVerticalGroup(
             appGestionImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 413, Short.MAX_VALUE)
         );
+
+        appGestionPresencePont1Label.setBackground(new java.awt.Color(255, 255, 0));
+        appGestionPresencePont1Label.setText("-- libre --");
+        appGestionPresencePont1Label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        appGestionPresencePont2Label.setText("--libre --");
+        appGestionPresencePont2Label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        appGestionPresencePont3Label.setText("-- libre --");
+        appGestionPresencePont3Label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        appGestionPresenceSolLabel.setText("-- libre --");
+        appGestionPresenceSolLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        appGestionPresenceDiversLabel.setText("-- libre --");
+        appGestionPresenceDiversLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        appGestionPresenceBureauLabel.setText("-- libre --");
+        appGestionPresenceBureauLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        appGestionDateLabel.setText("23/03/2017    13:19h");
 
         appGestionAtelierMenu.setText("Atelier");
 
@@ -137,23 +165,34 @@ public class applicationGestionForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(appGestionBureauClientLabel)
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(appGestionBureauComptaLabel)
-                        .addGap(57, 57, 57)
-                        .addComponent(appGestionComptaPresenceLabel))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(appGestionPont2label)
-                        .addComponent(appGestionPont1Label)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(appGestionPont2label)
+                            .addComponent(appGestionPont1Label)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(appGestionPont3label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(appGestionSolLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(appGestionDiversLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(appGestionBureauLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(appGestionAtelierLabel, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(121, 121, 121)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(appGestionPont3label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(appGestionSolLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(appGestionDiversLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(appGestionBureauLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(appGestionAtelierLabel, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
+                            .addComponent(appGestionPresenceDiversLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(appGestionPresenceSolLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(appGestionPresencePont3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(appGestionPresencePont2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(appGestionPresencePont1Label, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(appGestionBureauComptaLabel)
+                            .addComponent(appGestionBureauClientLabel))
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(appGestionPresenceBureauLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(appGestionComptaPresenceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,40 +203,58 @@ public class applicationGestionForm extends javax.swing.JFrame {
                             .addComponent(appGestionCertAbsRadBut)
                             .addComponent(appGestionToutPresentRadBut)))
                     .addComponent(appGestionImagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(87, 87, 87))
+                .addContainerGap(90, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(appGestionDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(appGestionAtelierLabel)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(appGestionPont1Label)
+                        .addGap(36, 36, 36)
+                        .addComponent(appGestionAtelierLabel)
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(appGestionPont1Label)
+                            .addComponent(appGestionPresencePont1Label))
                         .addGap(50, 50, 50)
-                        .addComponent(appGestionPont2label)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(appGestionPont2label)
+                            .addComponent(appGestionPresencePont2Label))
                         .addGap(50, 50, 50)
-                        .addComponent(appGestionPont3label)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(appGestionPont3label)
+                            .addComponent(appGestionPresencePont3Label))
                         .addGap(49, 49, 49)
-                        .addComponent(appGestionSolLabel)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(appGestionSolLabel)
+                            .addComponent(appGestionPresenceSolLabel))
                         .addGap(55, 55, 55)
-                        .addComponent(appGestionDiversLabel)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(appGestionDiversLabel)
+                            .addComponent(appGestionPresenceDiversLabel))
                         .addGap(36, 36, 36)
                         .addComponent(appGestionBureauLabel))
-                    .addComponent(appGestionImagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(appGestionDateLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(appGestionImagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(appGestionBureauClientLabel)
                     .addComponent(appGestionPatronRadBut)
-                    .addComponent(appGestionToutPresentRadBut))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                    .addComponent(appGestionToutPresentRadBut)
+                    .addComponent(appGestionPresenceBureauLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(appGestionBureauComptaLabel)
                     .addComponent(appGestionComptaPresenceLabel)
                     .addComponent(appGestionPauseRadBut)
                     .addComponent(appGestionCertAbsRadBut))
-                .addGap(49, 49, 49))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -249,6 +306,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton appGestionCertAbsRadBut;
     private javax.swing.JMenu appGestionClientsMenu;
     private javax.swing.JLabel appGestionComptaPresenceLabel;
+    private javax.swing.JLabel appGestionDateLabel;
     private javax.swing.JLabel appGestionDiversLabel;
     private javax.swing.JMenu appGestionFacturesMenu;
     private javax.swing.JPanel appGestionImagePanel;
@@ -261,6 +319,12 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private javax.swing.JLabel appGestionPont1Label;
     private javax.swing.JLabel appGestionPont2label;
     private javax.swing.JLabel appGestionPont3label;
+    private javax.swing.JLabel appGestionPresenceBureauLabel;
+    private javax.swing.JLabel appGestionPresenceDiversLabel;
+    private javax.swing.JLabel appGestionPresencePont1Label;
+    private javax.swing.JLabel appGestionPresencePont2Label;
+    private javax.swing.JLabel appGestionPresencePont3Label;
+    private javax.swing.JLabel appGestionPresenceSolLabel;
     private javax.swing.JMenuItem appGestionPriseItem;
     private javax.swing.JLabel appGestionSolLabel;
     private javax.swing.JMenuItem appGestionTerminerItem;
