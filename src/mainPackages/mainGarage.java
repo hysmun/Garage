@@ -20,6 +20,19 @@ public class mainGarage {
         loginForm loginWindows = new loginForm();
         loginWindows.setLocation(500, 400);
         loginWindows.setVisible(true);
+        
+        
+        while(loginWindows.loginValue < 1)
+        {
+            //attente
+            System.out.print("t\n");
+        }
+        System.out.print("Login reussi !");
+        loginWindows.setVisible(false);
+        
+        applicationGestionForm formPrincipale = new applicationGestionForm();
+        formPrincipale.setLocation(500, 400);
+        formPrincipale.setVisible(true);
     }
     
 }
