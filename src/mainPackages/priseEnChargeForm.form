@@ -35,7 +35,7 @@
               <Component id="priseEnChargeTravauxLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ScrollPanel" max="32767" attributes="0"/>
+                  <Component id="priseEnChargeScrollPanel" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="priseEnChargeOkButton" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
@@ -67,7 +67,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ScrollPanel" min="-2" pref="120" max="-2" attributes="0"/>
+                      <Component id="priseEnChargeScrollPanel" min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
@@ -101,7 +101,7 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="priseEnChargePontRadButMouseClicked"/>
       </Events>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="ScrollPanel">
+    <Container class="javax.swing.JScrollPane" name="priseEnChargeScrollPanel">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
