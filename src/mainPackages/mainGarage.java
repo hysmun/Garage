@@ -5,6 +5,8 @@
  */
 package mainPackages;
 
+import people.Client;
+
 /**
  *
  * @author ante
@@ -12,8 +14,9 @@ package mainPackages;
 public class mainGarage {
 
     /**
-     * @param args the command line arguments
      */
+    public static Client cliTest1 = new Client("1", "Paul", "Icier", "rue du cimetière 42", "0496100811");
+    
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.print("TEST\n");
