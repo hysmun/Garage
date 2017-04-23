@@ -56,7 +56,7 @@ public class mainGarage {
         }
     }
     
-    public String toString(int vectornum)
+    static public String toString(int vectornum)
     {
         return linkedListVector.get(vectornum).get(0) + " " + linkedListVector.get(vectornum).get(1) + " " + linkedListVector.get(vectornum).get(2) + " " + linkedListVector.get(vectornum).get(3);
     }
