@@ -63,11 +63,33 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_AddingCodePre" type="java.lang.String" value="appGestionMenuBar.add(Box.createHorizontalGlue());"/>
           </AuxValues>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="appGestionInfoSysItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Infos syst&#xe8;me"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="appGestionAideMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Aide"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="appGestionDebuterItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Pour d&#xe9;buter"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="appGestionProposDeItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A propos de ..."/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="appGestionProposDeItemMousePressed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
