@@ -34,18 +34,12 @@ public class RDVForm extends javax.swing.JFrame {
         VoitTF = new javax.swing.JTextField();
         ImmatTF = new javax.swing.JTextField();
         BonusTF = new javax.swing.JTextField();
-        try {
-            ProprioCB =(javax.swing.JComboBox)java.beans.Beans.instantiate(getClass().getClassLoader(), "mainPackages.RDVForm_ProprioCB");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (java.io.IOException e) {
-            e.printStackTrace();
-        }
+        ProprioCB = new javax.swing.JComboBox();
         newCheck = new javax.swing.JCheckBox();
         EntretienRB = new javax.swing.JRadioButton();
         ReparationRB = new javax.swing.JRadioButton();
         PlaqueBelgeCheck = new javax.swing.JCheckBox();
-        TypeTravailCB = new javax.swing.JComboBox<>();
+        TypeTravailCB = new javax.swing.JComboBox();
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
 
@@ -77,7 +71,7 @@ public class RDVForm extends javax.swing.JFrame {
 
         PlaqueBelgeCheck.setText("Plaque belge");
 
-        TypeTravailCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        TypeTravailCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         OKButton.setText("OK");
 
@@ -229,7 +223,7 @@ public class RDVForm extends javax.swing.JFrame {
     private javax.swing.JComboBox ProprioCB;
     private javax.swing.JRadioButton ReparationRB;
     private javax.swing.JLabel TypeTravail;
-    private javax.swing.JComboBox<String> TypeTravailCB;
+    private javax.swing.JComboBox TypeTravailCB;
     private javax.swing.JLabel TypeVoiture;
     private javax.swing.JTextField VoitTF;
     private javax.swing.JCheckBox newCheck;
