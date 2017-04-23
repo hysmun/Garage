@@ -5,6 +5,7 @@
  */
 package mainPackages;
 
+import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -213,30 +214,20 @@ public class RDVForm extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelButtonMouseClicked
 
     private void OKButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKButtonMouseClicked
-        int i = 0;
-        for(i = 0;i < mainGarage.vecteurData.length;i++)
-        {
-            if(mainGarage.vecteurData[i].isEmpty())
-            {
-                mainGarage.vecteurData[i].add(0,TypeVoiture.getText());
-                mainGarage.vecteurData[i].add(1,Immatriculation.getText());
-                mainGarage.vecteurData[i].add(2,(String)ProprioCB.getSelectedItem());
-                if(EntretienRB.isSelected())
-                    mainGarage.vecteurData[i].add(3,"Entretien");
-                else
-                    mainGarage.vecteurData[i].add(3,"Reparation");
-                mainGarage.vecteurData[i].add(4,(String)TypeTravailCB.getSelectedItem());
-                mainGarage.vecteurData[i].add(5, BonusTF.getText());
-                
-                mainGarage.linkedListVector.add(mainGarage.vecteurData[i]);
-                JOptionPane.showMessageDialog(null,"Ajout effectue","Information",JOptionPane.INFORMATION_MESSAGE);
-                break;
-            }
-        }
-        if(i == mainGarage.vecteurData.length)
-        {
-            JOptionPane.showMessageDialog(null,"Plus de places disponibles","Erreur",JOptionPane.ERROR_MESSAGE);
-        }
+        
+        Vector tmp = new Vector();
+        
+        tmp.add(0,TypeVoiture.getText());
+        tmp.add(1,Immatriculation.getText());
+        tmp.add(2,(String)ProprioCB.getSelectedItem());
+        if(EntretienRB.isSelected())
+            tmp.add(3,"Entretien");
+        else
+            tmp.add(3,"Reparation");
+        tmp.add(4,(String)TypeTravailCB.getSelectedItem());
+        tmp.add(5, BonusTF.getText());
+        JOptionPane.showMessageDialog(null,"Ajout effectue","Information",JOptionPane.INFORMATION_MESSAGE);
+       
         this.dispose();
     }//GEN-LAST:event_OKButtonMouseClicked
 
