@@ -34,12 +34,12 @@ public class RDVForm extends javax.swing.JFrame {
         VoitTF = new javax.swing.JTextField();
         ImmatTF = new javax.swing.JTextField();
         BonusTF = new javax.swing.JTextField();
-        ProprioCB = new javax.swing.JComboBox(mainGarage.listeProprio);
+        ProprioCB = new javax.swing.JComboBox();
         newCheck = new javax.swing.JCheckBox();
         EntretienRB = new javax.swing.JRadioButton();
         ReparationRB = new javax.swing.JRadioButton();
         PlaqueBelgeCheck = new javax.swing.JCheckBox();
-        TypeTravailCB = new javax.swing.JComboBox<>();
+        TypeTravailCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);         ;
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
 
@@ -65,16 +65,16 @@ public class RDVForm extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 EntretienRBMouseClicked(evt);
             }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                EntretienRBMousePressed(evt);
-            }
         });
 
         ReparationRB.setText("Reparation");
+        ReparationRB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ReparationRBMouseClicked(evt);
+            }
+        });
 
         PlaqueBelgeCheck.setText("Plaque belge");
-
-        TypeTravailCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         OKButton.setText("OK");
 
@@ -170,14 +170,6 @@ public class RDVForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EntretienRBMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntretienRBMousePressed
-        if(ReparationRB.isSelected() == true)
-            ReparationRB.setSelected(false);
-        EntretienRB.setSelected(true);
-        ProprioCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);
-        
-    }//GEN-LAST:event_EntretienRBMousePressed
-
     private void EntretienRBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntretienRBMouseClicked
         if(ReparationRB.isSelected() == true)
             ReparationRB.setSelected(false);
@@ -185,6 +177,14 @@ public class RDVForm extends javax.swing.JFrame {
         ProprioCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);
         
     }//GEN-LAST:event_EntretienRBMouseClicked
+
+    private void ReparationRBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReparationRBMouseClicked
+        if(EntretienRB.isSelected() == true)
+            EntretienRB.setSelected(false);
+        ReparationRB.setSelected(true);
+        ProprioCB = new javax.swing.JComboBox(mainGarage.listeTravailReparation);
+        
+    }//GEN-LAST:event_ReparationRBMouseClicked
 
     /**
      * @param args the command line arguments
@@ -234,7 +234,7 @@ public class RDVForm extends javax.swing.JFrame {
     private javax.swing.JComboBox ProprioCB;
     private javax.swing.JRadioButton ReparationRB;
     private javax.swing.JLabel TypeTravail;
-    private javax.swing.JComboBox<String> TypeTravailCB;
+    private javax.swing.JComboBox TypeTravailCB;
     private javax.swing.JLabel TypeVoiture;
     private javax.swing.JTextField VoitTF;
     private javax.swing.JCheckBox newCheck;
