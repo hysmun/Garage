@@ -167,7 +167,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
             if(priseEnChargePontRadBut.isSelected())
             {
                 //on va le mettre sur un des ponts 
-                switch((int)(priseEnChargePontComboBox.getSelectedItem()))
+                switch((Integer)(priseEnChargePontComboBox.getSelectedItem()))
                 {
                     case 1:
                         if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
