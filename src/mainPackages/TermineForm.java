@@ -21,6 +21,7 @@ public class TermineForm extends javax.swing.JFrame {
         if(mainGarage.listeEnCours.isEmpty() == true)
         {
             JOptionPane.showMessageDialog(null,"Pas de travaux en cours","Information",JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
         }
         else
         {
@@ -92,6 +93,7 @@ public class TermineForm extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CancelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelButtonMouseClicked
