@@ -163,7 +163,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
 
     private void priseEnChargeOkButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeOkButtonMouseClicked
 
-        Vector<String> tmp = new Vector<String>();
+        Vector tmp = new Vector();
         DefaultTableModel model = (DefaultTableModel) priseEnChargeTable.getModel();
        
         
@@ -187,6 +187,13 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(4));
 
                             mainGarage.listeEnCours.add(tmp);
+                            
+                            mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).clear();
+                            mainGarage.linkedListVector.remove(priseEnChargeTable.getSelectedRow());
+                            
+                            model.removeRow(priseEnChargeTable.getSelectedRow());
+                            this.invalidate();
+                            
   
                         }
                         else
@@ -207,6 +214,12 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             
                             mainGarage.listeEnCours.add(tmp);
                             
+                            mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).clear();
+                            mainGarage.linkedListVector.remove(priseEnChargeTable.getSelectedRow());
+                            
+                            model.removeRow(priseEnChargeTable.getSelectedRow());
+                            this.invalidate();
+                            
                         }
                         else
                         {
@@ -225,6 +238,12 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(4));
                             
                             mainGarage.listeEnCours.add(tmp);
+                            
+                            mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).clear();
+                            mainGarage.linkedListVector.remove(priseEnChargeTable.getSelectedRow());
+                            
+                            model.removeRow(priseEnChargeTable.getSelectedRow());
+                            this.invalidate();
                             
                         }
                         else
@@ -249,7 +268,13 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                     tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(3));
                     tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(4));
                             
-                    mainGarage.listeEnCours.add(tmp);      
+                    mainGarage.listeEnCours.add(tmp);    
+                                                
+                    mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).clear();
+                    mainGarage.linkedListVector.remove(priseEnChargeTable.getSelectedRow());
+                            
+                    model.removeRow(priseEnChargeTable.getSelectedRow());
+                    this.invalidate();
                 }
                 else
                 {

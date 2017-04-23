@@ -227,6 +227,8 @@ public class RDVForm extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null,"Ajout effectue","Information",JOptionPane.INFORMATION_MESSAGE);
         
+        tmp = null;
+        
         this.dispose();
     }//GEN-LAST:event_OKButtonMouseClicked
 

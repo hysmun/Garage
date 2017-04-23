@@ -53,6 +53,11 @@ public class TermineForm extends javax.swing.JFrame {
         TravailLabel.setText("Travail :");
 
         OKButton.setText("OK");
+        OKButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OKButtonMouseClicked(evt);
+            }
+        });
 
         CancelButton.setText("Annuler");
         CancelButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -99,6 +104,24 @@ public class TermineForm extends javax.swing.JFrame {
     private void CancelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelButtonMouseClicked
         this.dispose();
     }//GEN-LAST:event_CancelButtonMouseClicked
+
+    private void OKButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKButtonMouseClicked
+       
+        if(applicationGestionForm.appGestionPresencePont1Label.getText().contains((String)mainGarage.listeEnCours.get(TravailCB.getSelectedIndex()).get(1)))
+            applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.libreString);
+        else if(applicationGestionForm.appGestionPresencePont2Label.getText().contains((String)mainGarage.listeEnCours.get(TravailCB.getSelectedIndex()).get(1)))
+            applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.libreString);
+        else if(applicationGestionForm.appGestionPresencePont3Label.getText().contains((String)mainGarage.listeEnCours.get(TravailCB.getSelectedIndex()).get(1)))
+            applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.libreString);
+        else
+            applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.libreString);
+        
+        mainGarage.listeEnCours.remove(TravailCB.getSelectedIndex());
+        TravailCB.removeItem(TravailCB.getSelectedItem());
+
+        
+        this.invalidate();
+    }//GEN-LAST:event_OKButtonMouseClicked
 
     /**
      * @param args the command line arguments
