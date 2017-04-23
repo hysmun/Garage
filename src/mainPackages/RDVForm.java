@@ -62,6 +62,9 @@ public class RDVForm extends javax.swing.JFrame {
         EntretienRB.setSelected(true);
         EntretienRB.setText("Entretien");
         EntretienRB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EntretienRBMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 EntretienRBMousePressed(evt);
             }
@@ -171,8 +174,17 @@ public class RDVForm extends javax.swing.JFrame {
         if(ReparationRB.isSelected() == true)
             ReparationRB.setSelected(false);
         EntretienRB.setSelected(true);
+        ProprioCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);
         
     }//GEN-LAST:event_EntretienRBMousePressed
+
+    private void EntretienRBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntretienRBMouseClicked
+        if(ReparationRB.isSelected() == true)
+            ReparationRB.setSelected(false);
+        EntretienRB.setSelected(true);
+        ProprioCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);
+        
+    }//GEN-LAST:event_EntretienRBMouseClicked
 
     /**
      * @param args the command line arguments

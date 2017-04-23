@@ -181,6 +181,7 @@
         <Property name="text" type="java.lang.String" value="Entretien"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="EntretienRBMouseClicked"/>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="EntretienRBMousePressed"/>
       </Events>
     </Component>
