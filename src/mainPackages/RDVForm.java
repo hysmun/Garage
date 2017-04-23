@@ -11,7 +11,6 @@ package mainPackages;
  */
 public class RDVForm extends javax.swing.JFrame {
 
-    public static String[] listeProprio = {"Mr Paul Ice","Mme Marc Assin","Mr Tom Ate","Melle Sandy Kilo"};
     
     
     public RDVForm() {
@@ -35,7 +34,7 @@ public class RDVForm extends javax.swing.JFrame {
         VoitTF = new javax.swing.JTextField();
         ImmatTF = new javax.swing.JTextField();
         BonusTF = new javax.swing.JTextField();
-        ProprioCB = new javax.swing.JComboBox<>();
+        ProprioCB = new javax.swing.JComboBox(mainGarage.listeProprio);
         newCheck = new javax.swing.JCheckBox();
         EntretienRB = new javax.swing.JRadioButton();
         ReparationRB = new javax.swing.JRadioButton();
@@ -57,8 +56,6 @@ public class RDVForm extends javax.swing.JFrame {
         TypeTravail.setText("Type de travail :");
 
         Bonus.setText("Instructions particulieres :");
-
-        ProprioCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         newCheck.setText("Nouveau");
 
@@ -209,7 +206,7 @@ public class RDVForm extends javax.swing.JFrame {
     private javax.swing.JButton OKButton;
     private javax.swing.JCheckBox PlaqueBelgeCheck;
     private javax.swing.JLabel Proprio;
-    private javax.swing.JComboBox<String> ProprioCB;
+    private javax.swing.JComboBox ProprioCB;
     private javax.swing.JRadioButton ReparationRB;
     private javax.swing.JLabel TypeTravail;
     private javax.swing.JComboBox<String> TypeTravailCB;
