@@ -86,6 +86,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="appGestionBureauClientLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="appGestionBureauComptaLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -102,9 +103,23 @@
                       </Group>
                       <Component id="appGestionAtelierLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="appGestionBureauClientLabel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="722" max="32767" attributes="0"/>
+              <EmptySpace pref="265" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="appGestionPatronRadBut" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="appGestionPauseRadBut" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="appGestionCertAbsRadBut" min="-2" max="-2" attributes="0"/>
+                          <Component id="appGestionToutPresentRadBut" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="appGestionImagePanel" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -114,25 +129,36 @@
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="appGestionAtelierLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="appGestionPont1Label" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-              <Component id="appGestionPont2label" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-              <Component id="appGestionPont3label" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Component id="appGestionSolLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-              <Component id="appGestionDiversLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Component id="appGestionBureauLabel" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="appGestionPont1Label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="appGestionPont2label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="appGestionPont3label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="appGestionSolLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="appGestionDiversLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="appGestionBureauLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="appGestionImagePanel" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="appGestionBureauClientLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="appGestionBureauClientLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="appGestionPatronRadBut" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="appGestionToutPresentRadBut" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="appGestionBureauComptaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="appGestionPauseRadBut" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="appGestionCertAbsRadBut" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -194,5 +220,40 @@
         <Property name="text" type="java.lang.String" value="jLabel9"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JRadioButton" name="appGestionPatronRadBut">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Patron disponible"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="appGestionToutPresentRadBut">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tout le monde pr&#xe9;sent"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="appGestionPauseRadBut">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pause-Midi"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="appGestionCertAbsRadBut">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Certains absents"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="appGestionImagePanel">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
   </SubComponents>
 </Form>
