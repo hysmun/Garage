@@ -206,6 +206,11 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionAideMenu.add(appGestionDebuterItem);
 
         appGestionProposDeItem.setText("A propos de ...");
+        appGestionProposDeItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                appGestionProposDeItemMousePressed(evt);
+            }
+        });
         appGestionAideMenu.add(appGestionProposDeItem);
 
         appGestionMenuBar.add(appGestionAideMenu);
@@ -350,6 +355,12 @@ public class applicationGestionForm extends javax.swing.JFrame {
         TermineForm termineForm = new TermineForm();
         termineForm.setVisible(true);
     }//GEN-LAST:event_appGestionTerminerItemMousePressed
+
+    private void appGestionProposDeItemMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionProposDeItemMousePressed
+        // TODO add your handling code here:
+        aProposForm apropos = new aProposForm();
+        apropos.setVisible(true);
+    }//GEN-LAST:event_appGestionProposDeItemMousePressed
 
     /**
      * @param args the command line arguments
