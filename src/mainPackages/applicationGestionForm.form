@@ -13,21 +13,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="A pr&#xe9;voir"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="appGestionAPrevoirItemMouseClicked"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="appGestionPriseItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Prise en charge"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="appGestionPriseItemMouseClicked"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="appGestionTerminerItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Termin&#xe9;"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="appGestionTerminerItemMouseClicked"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="appGestionListesItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Listes"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="appGestionListesItemMouseClicked"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
