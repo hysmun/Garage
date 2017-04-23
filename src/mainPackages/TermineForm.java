@@ -5,6 +5,8 @@
  */
 package mainPackages;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Morghen
@@ -16,6 +18,19 @@ public class TermineForm extends javax.swing.JFrame {
      */
     public TermineForm() {
         initComponents();
+        if(mainGarage.listeEnCours.length == 0)
+        {
+            JOptionPane.showMessageDialog(null,"Pas de travaux en cours","Information",JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
+        }
+        else
+        {
+            for(int i = 0;i < mainGarage.listeEnCours.length; i++)
+            {
+                
+            }
+        }
+        
     }
 
     /**
@@ -46,8 +61,6 @@ public class TermineForm extends javax.swing.JFrame {
                 CancelButtonMouseClicked(evt);
             }
         });
-
-        TravailCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
