@@ -185,7 +185,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                         if(applicationGestionForm.appGestionPresencePont2Label.getText().equals(mainGarage.libreString))
                         {
                             //libre
-                            //applicationGestionForm.appGestionPresencePont2Label.setText();
+                            applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.toString(priseEnChargeTable.getSelectedRow()));
                         }
                         else
                         {
@@ -193,10 +193,10 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                         }
                         break;
                     case "3":
-                        if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
+                        if(applicationGestionForm.appGestionPresencePont3Label.getText().equals(mainGarage.libreString))
                         {
                             //libre
-                            //applicationGestionForm.appGestionPresencePont3Label.setText();
+                            applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.toString(priseEnChargeTable.getSelectedRow()));
                         }
                         else
                         {
@@ -210,6 +210,15 @@ public class priseEnChargeForm extends javax.swing.JFrame {
             else if(priseEnChargeSolRadBut.isSelected())
             {
                 //on va le pose sur le sol 
+                if(applicationGestionForm.appGestionPresenceSolLabel.getText().equals(mainGarage.libreString))
+                {
+                    //libre
+                    applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.toString(priseEnChargeTable.getSelectedRow()));
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null,"Le Sol est occuper veuillez finir avec d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
+                }
             }
         }
     }//GEN-LAST:event_priseEnChargeOkButtonMouseClicked
