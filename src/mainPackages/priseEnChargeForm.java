@@ -82,6 +82,11 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         priseEnChargeSolRadBut.setText("Sol");
 
         priseEnChargeOkButton.setText("Ok");
+        priseEnChargeOkButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                priseEnChargeOkButtonMouseClicked(evt);
+            }
+        });
 
         priseEnChargeAnnulerButton.setText("Annuler");
 
@@ -133,6 +138,13 @@ public class priseEnChargeForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void priseEnChargeOkButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeOkButtonMouseClicked
+        if(priseEnChargeTable.getSelectedRowCount() == 0)
+        {
+            
+        }
+    }//GEN-LAST:event_priseEnChargeOkButtonMouseClicked
 
     /**
      * @param args the command line arguments
