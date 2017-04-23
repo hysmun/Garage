@@ -14,6 +14,11 @@ public abstract class PersonnelGarage extends Personne implements Identifiable,A
     
     private String matricule;
 
+    public PersonnelGarage(String matricule, String id, String nom, String prenom, String adresse, String numTelephone) {
+        super(id, nom, prenom, adresse, numTelephone);
+        this.matricule = matricule;
+    }
+
     public String getMatricule() {
         return matricule;
     }
