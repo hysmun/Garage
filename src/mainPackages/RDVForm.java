@@ -59,6 +59,7 @@ public class RDVForm extends javax.swing.JFrame {
 
         newCheck.setText("Nouveau");
 
+        EntretienRB.setSelected(true);
         EntretienRB.setText("Entretien");
 
         ReparationRB.setText("Reparation");
