@@ -48,12 +48,6 @@ public class loginForm extends javax.swing.JFrame {
 
         MdpLabelLoginForm.setText("Mot de passe :");
         getContentPane().add(MdpLabelLoginForm);
-
-        PasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordFieldActionPerformed(evt);
-            }
-        });
         getContentPane().add(PasswordField);
 
         MembreRadioLoginForm.setSelected(true);
@@ -111,34 +105,77 @@ public class loginForm extends javax.swing.JFrame {
     private void OkButtonLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OkButtonLoginFormMouseClicked
         if(MembreRadioLoginForm.isSelected() == true)
         {
-            if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
+            if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()) == null)
             {
-                System.out.println("Acces a la suite");
-                // Login applic membre
-            }
-            else
-            {
-                System.out.println("Erreur login");
-                if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()) != null)
-                {
-                    System.out.println("Mauvais choix de login, redirection");
-                    JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
-                    // Login applic exterieur
-                    
-                }
+                System.out.println("Membre inexistant");
                 if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()) == null)
                 {
                     System.out.println("Inconnu, fermeture applic");
                     System.exit(0);
                 }
+                else if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
+                {
+                    System.out.println("Mauvais choix de login, redirection");
+                    JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
+                    // Login applic exterieur
+                }
+                else
+                {
+                    // Mauvaise mdp encode
+                }
             }
-            
+            else
+            {
+                System.out.println("Membre existant, verification");
+                if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
+                {
+                    System.out.println("Acces a l'applic");
+                    // Login applic
+                }
+                else
+                {
+                    System.out.println("Mot de passe errone, autre tentative");
+                    // Affichage dialogue & reset des champs
+                }
+            }
+        }
+        else if(ExterieurRadioLoginForm.isSelected() == true)
+        {
+            if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()) == null)
+            {
+                System.out.println("Membre inexistant");
+                if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()) == null)
+                {
+                    System.out.println("Inconnu, fermeture applic");
+                    System.exit(0);
+                }
+                else if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
+                {
+                    System.out.println("Mauvais choix de login, redirection");
+                    JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
+                    // Login applic exterieur
+                }
+                else
+                {
+                    // Mauvaise mdp encode
+                }
+            }
+            else
+            {
+                System.out.println("Membre existant, verification");
+                if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
+                {
+                    System.out.println("Acces a l'applic");
+                    // Login applic
+                }
+                else
+                {
+                    System.out.println("Mot de passe errone, autre tentative");
+                    // Affichage dialogue & reset des champs
+                }
+            }
         }
     }//GEN-LAST:event_OkButtonLoginFormMouseClicked
-
-    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PasswordFieldActionPerformed
 
     /**
      * @param args the command line arguments
