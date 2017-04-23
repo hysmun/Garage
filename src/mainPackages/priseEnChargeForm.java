@@ -185,10 +185,9 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(2));
                             tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(3));
                             tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(4));
-                            
+
                             mainGarage.listeEnCours.add(tmp);
-                            
-                            
+  
                         }
                         else
                         {
@@ -207,6 +206,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(4));
                             
                             mainGarage.listeEnCours.add(tmp);
+                            
                         }
                         else
                         {
@@ -225,7 +225,6 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(4));
                             
                             mainGarage.listeEnCours.add(tmp);
-                            
                             
                         }
                         else
@@ -250,9 +249,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                     tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(3));
                     tmp.add((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(4));
                             
-                    mainGarage.listeEnCours.add(tmp);
-                    
-                            
+                    mainGarage.listeEnCours.add(tmp);      
                 }
                 else
                 {
