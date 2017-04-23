@@ -20,7 +20,7 @@ import vehicules.*;
  */
 public class mainGarage {
     
-    public static Vector[] vecteurData;
+    public static Vector[] vecteurData = new Vector[20];
     public static LinkedList linkedListVector = new LinkedList();
     
     
