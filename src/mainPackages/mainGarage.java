@@ -5,6 +5,10 @@
  */
 package mainPackages;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import people.Client;
+
 /**
  *
  * @author ante
@@ -12,8 +16,9 @@ package mainPackages;
 public class mainGarage {
 
     /**
-     * @param args the command line arguments
      */
+    public static Client cliTest1 = new Client("1", "Paul", "Icier", "rue du cimetière 42", "0496100811");
+    
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.print("TEST\n");
@@ -24,7 +29,13 @@ public class mainGarage {
         
         while(loginWindows.loginValue < 1)
         {
-            //attente
+            try {
+                //attente
+                //System.out.print("t\n");
+                Thread.sleep(10);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(mainGarage.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         System.out.print("Login reussi !");
         loginWindows.setVisible(false);

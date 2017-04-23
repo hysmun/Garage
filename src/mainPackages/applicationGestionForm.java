@@ -87,12 +87,32 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionComptaPresenceLabel.setText("Mr Boulier est là");
 
         appGestionPatronRadBut.setText("Patron disponible");
+        appGestionPatronRadBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                appGestionPatronRadButMouseClicked(evt);
+            }
+        });
 
         appGestionToutPresentRadBut.setText("Tout le monde présent");
+        appGestionToutPresentRadBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                appGestionToutPresentRadButMouseClicked(evt);
+            }
+        });
 
         appGestionPauseRadBut.setText("Pause-Midi");
+        appGestionPauseRadBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                appGestionPauseRadButMouseClicked(evt);
+            }
+        });
 
         appGestionCertAbsRadBut.setText("Certains absents");
+        appGestionCertAbsRadBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                appGestionCertAbsRadButMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout appGestionImagePanelLayout = new javax.swing.GroupLayout(appGestionImagePanel);
         appGestionImagePanel.setLayout(appGestionImagePanelLayout);
@@ -259,6 +279,22 @@ public class applicationGestionForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void appGestionToutPresentRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionToutPresentRadButMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_appGestionToutPresentRadButMouseClicked
+
+    private void appGestionCertAbsRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionCertAbsRadButMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_appGestionCertAbsRadButMouseClicked
+
+    private void appGestionPatronRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionPatronRadButMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_appGestionPatronRadButMouseClicked
+
+    private void appGestionPauseRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionPauseRadButMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_appGestionPauseRadButMouseClicked
 
     /**
      * @param args the command line arguments
