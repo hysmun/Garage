@@ -165,6 +165,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
             if(priseEnChargePontRadBut.isSelected())
             {
                 //on va le mettre sur un des ponts 
+                
             }
             else if(priseEnChargeSolRadBut.isSelected())
             {
