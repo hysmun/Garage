@@ -168,9 +168,9 @@ public class priseEnChargeForm extends javax.swing.JFrame {
             {
                 //on va le mettre sur un des ponts 
                 System.out.println("Prise en charge pont");
-                switch((priseEnChargePontComboBox.getSelectedItem()))
+                switch((String)(priseEnChargePontComboBox.getSelectedItem()))
                 {
-                    case 1:
+                    case "1":
                         if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
                         {
                             //libre
@@ -181,7 +181,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null,"Pont 1 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
                         }
                         break;
-                    case 2:
+                    case "2":
                         if(applicationGestionForm.appGestionPresencePont2Label.getText().equals(mainGarage.libreString))
                         {
                             //libre
@@ -192,7 +192,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null,"Pont 2 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
                         }
                         break;
-                    case 3:
+                    case "3":
                         if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
                         {
                             //libre
