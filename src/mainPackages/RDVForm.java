@@ -11,9 +11,9 @@ package mainPackages;
  */
 public class RDVForm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form RDVForm
-     */
+    public static String[] listeProprio = {"Mr Paul Ice","Mme Marc Assin","Mr Tom Ate","Melle Sandy Kilo"};
+    
+    
     public RDVForm() {
         initComponents();
     }
@@ -40,7 +40,7 @@ public class RDVForm extends javax.swing.JFrame {
         EntretienRB = new javax.swing.JRadioButton();
         ReparationRB = new javax.swing.JRadioButton();
         PlaqueBelgeCheck = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        TypeTravailCB = new javax.swing.JComboBox<>();
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
 
@@ -68,7 +68,7 @@ public class RDVForm extends javax.swing.JFrame {
 
         PlaqueBelgeCheck.setText("Plaque belge");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        TypeTravailCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         OKButton.setText("OK");
 
@@ -101,7 +101,7 @@ public class RDVForm extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(TypeTravail)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(TypeTravailCB, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(TypeVoiture)
@@ -148,7 +148,7 @@ public class RDVForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(TypeTravail)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TypeTravailCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(Bonus)
                 .addGap(5, 5, 5)
@@ -212,9 +212,9 @@ public class RDVForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ProprioCB;
     private javax.swing.JRadioButton ReparationRB;
     private javax.swing.JLabel TypeTravail;
+    private javax.swing.JComboBox<String> TypeTravailCB;
     private javax.swing.JLabel TypeVoiture;
     private javax.swing.JTextField VoitTF;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JCheckBox newCheck;
     // End of variables declaration//GEN-END:variables
 }
