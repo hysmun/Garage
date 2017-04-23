@@ -12,6 +12,14 @@ public class loginForm extends javax.swing.JFrame {
 
     private hashtableLogin hashtables;
     
+    /*
+    -1 erreur mdp
+    0 pas login
+    1 login correct Membre
+    2 login correct Exterieur
+    */
+    public int loginValue=0;
+    
     public loginForm() {
         initComponents();
         this.hashtables = new hashtableLogin();
@@ -118,6 +126,7 @@ public class loginForm extends javax.swing.JFrame {
                     System.out.println("Mauvais choix de login, redirection");
                     JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
                     // Login applic exterieur
+                    loginValue = 2;
                 }
                 else
                 {
@@ -131,6 +140,7 @@ public class loginForm extends javax.swing.JFrame {
                 {
                     System.out.println("Acces a l'applic");
                     // Login applic
+                    loginValue = 1;
                 }
                 else
                 {
@@ -154,6 +164,7 @@ public class loginForm extends javax.swing.JFrame {
                     System.out.println("Mauvais choix de login, redirection");
                     JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
                     // Login applic exterieur
+                    loginValue = 2;
                 }
                 else
                 {
@@ -167,6 +178,7 @@ public class loginForm extends javax.swing.JFrame {
                 {
                     System.out.println("Acces a l'applic");
                     // Login applic
+                    loginValue = 1;
                 }
                 else
                 {
