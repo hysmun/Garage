@@ -90,6 +90,9 @@
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Pont"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="priseEnChargePontRadButMouseClicked"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>
@@ -139,6 +142,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Sol"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="priseEnChargeSolRadButMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="priseEnChargeOkButton">
       <Properties>
@@ -152,6 +158,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Annuler"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="priseEnChargeAnnulerButtonMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
