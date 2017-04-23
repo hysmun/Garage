@@ -5,6 +5,8 @@
  */
 package mainPackages;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import people.Client;
 
 /**
@@ -27,7 +29,13 @@ public class mainGarage {
         
         while(loginWindows.loginValue < 1)
         {
-            //attente
+            try {
+                //attente
+                //System.out.print("t\n");
+                Thread.sleep(10);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(mainGarage.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         System.out.print("Login reussi !");
         loginWindows.setVisible(false);
