@@ -36,7 +36,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionBureauLabel = new javax.swing.JLabel();
         appGestionBureauClientLabel = new javax.swing.JLabel();
         appGestionBureauComptaLabel = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        appGestionComptaPresenceLabel = new javax.swing.JLabel();
         appGestionPatronRadBut = new javax.swing.JRadioButton();
         appGestionToutPresentRadBut = new javax.swing.JRadioButton();
         appGestionPauseRadBut = new javax.swing.JRadioButton();
@@ -77,7 +77,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
 
         appGestionBureauComptaLabel.setText("Bureau comptabilité :");
 
-        jLabel9.setText("jLabel9");
+        appGestionComptaPresenceLabel.setText("Mr Boulier est là");
 
         appGestionPatronRadBut.setText("Patron disponible");
 
@@ -143,17 +143,17 @@ public class applicationGestionForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(appGestionBureauComptaLabel)
                         .addGap(57, 57, 57)
-                        .addComponent(jLabel9))
+                        .addComponent(appGestionComptaPresenceLabel))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(appGestionPont2label)
                         .addComponent(appGestionPont1Label)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(appGestionSolLabel)
-                            .addComponent(appGestionPont3label)
-                            .addComponent(appGestionDiversLabel)
-                            .addComponent(appGestionBureauLabel))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(appGestionPont3label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(appGestionSolLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(appGestionDiversLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(appGestionBureauLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addComponent(appGestionAtelierLabel, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,7 +194,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(appGestionBureauComptaLabel)
-                    .addComponent(jLabel9)
+                    .addComponent(appGestionComptaPresenceLabel)
                     .addComponent(appGestionPauseRadBut)
                     .addComponent(appGestionCertAbsRadBut))
                 .addGap(49, 49, 49))
@@ -248,6 +248,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private javax.swing.JLabel appGestionBureauLabel;
     private javax.swing.JRadioButton appGestionCertAbsRadBut;
     private javax.swing.JMenu appGestionClientsMenu;
+    private javax.swing.JLabel appGestionComptaPresenceLabel;
     private javax.swing.JLabel appGestionDiversLabel;
     private javax.swing.JMenu appGestionFacturesMenu;
     private javax.swing.JPanel appGestionImagePanel;
@@ -264,6 +265,5 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private javax.swing.JLabel appGestionSolLabel;
     private javax.swing.JMenuItem appGestionTerminerItem;
     private javax.swing.JRadioButton appGestionToutPresentRadBut;
-    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

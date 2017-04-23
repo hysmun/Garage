@@ -91,21 +91,21 @@
                   <Group type="102" attributes="0">
                       <Component id="appGestionBureauComptaLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <Component id="appGestionComptaPresenceLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Component id="appGestionPont2label" min="-2" max="-2" attributes="0"/>
                       <Component id="appGestionPont1Label" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="appGestionSolLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="appGestionPont3label" min="-2" max="-2" attributes="0"/>
-                          <Component id="appGestionDiversLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="appGestionBureauLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="appGestionPont3label" max="32767" attributes="0"/>
+                          <Component id="appGestionSolLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="appGestionDiversLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="appGestionBureauLabel" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <Component id="appGestionAtelierLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="249" max="32767" attributes="0"/>
+              <EmptySpace pref="197" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -155,7 +155,7 @@
               <EmptySpace pref="31" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="appGestionBureauComptaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="appGestionComptaPresenceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="appGestionPauseRadBut" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="appGestionCertAbsRadBut" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -216,9 +216,9 @@
         <Property name="text" type="java.lang.String" value="Bureau comptabilit&#xe9; :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="appGestionComptaPresenceLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel9"/>
+        <Property name="text" type="java.lang.String" value="Mr Boulier est l&#xe0;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="appGestionPatronRadBut">
