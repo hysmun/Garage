@@ -117,7 +117,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionPresencePont1Label.setText("-- libre --");
         appGestionPresencePont1Label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        appGestionPresencePont2Label.setText("--libre --");
+        appGestionPresencePont2Label.setText("-- libre --");
         appGestionPresencePont2Label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         appGestionPresencePont3Label.setText("-- libre --");
