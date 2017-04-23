@@ -216,16 +216,12 @@ public class RDVForm extends javax.swing.JFrame {
     private void OKButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKButtonMouseClicked
         
         Vector tmp = new Vector();
-        
+   
         tmp.add(0,TypeVoiture.getText());
         tmp.add(1,Immatriculation.getText());
         tmp.add(2,(String)ProprioCB.getSelectedItem());
-        if(EntretienRB.isSelected())
-            tmp.add(3,"Entretien");
-        else
-            tmp.add(3,"Reparation");
-        tmp.add(4,(String)TypeTravailCB.getSelectedItem());
-        tmp.add(5, BonusTF.getText());
+        tmp.add(3,(String)TypeTravailCB.getSelectedItem());
+        tmp.add(4, BonusTF.getText());
         JOptionPane.showMessageDialog(null,"Ajout effectue","Information",JOptionPane.INFORMATION_MESSAGE);
        
         this.dispose();

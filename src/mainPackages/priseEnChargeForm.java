@@ -5,6 +5,9 @@
  */
 package mainPackages;
 
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ante
@@ -16,6 +19,12 @@ public class priseEnChargeForm extends javax.swing.JFrame {
      */
     public priseEnChargeForm() {
         initComponents();
+        DefaultTableModel model = (DefaultTableModel) priseEnChargeTable.getModel();
+        for(int i = 0;i < mainGarage.linkedListVector.size();i++)
+        {
+            model.addRow(new Object[]{mainGarage.linkedListVector.get(i).get(0),mainGarage.linkedListVector.get(i).get(1),mainGarage.linkedListVector.get(i).get(2),mainGarage.linkedListVector.get(i).get(3),mainGarage.linkedListVector.get(i).get(4)});
+        }
+        invalidate();
     }
 
     /**
@@ -66,6 +75,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        priseEnChargeTable.setToolTipText("");
         jScrollPane2.setViewportView(priseEnChargeTable);
 
         priseEnChargePontComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));

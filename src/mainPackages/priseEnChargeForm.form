@@ -109,6 +109,7 @@
                 <Column editable="false" title="Remarques" type="java.lang.String"/>
               </Table>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0"/>
             </Property>

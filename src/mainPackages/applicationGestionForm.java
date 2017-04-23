@@ -157,6 +157,11 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionAtelierMenu.add(appGestionAPrevoirItem);
 
         appGestionPriseItem.setText("Prise en charge");
+        appGestionPriseItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                appGestionPriseItemMousePressed(evt);
+            }
+        });
         appGestionAtelierMenu.add(appGestionPriseItem);
 
         appGestionTerminerItem.setText("Terminé");
@@ -307,6 +312,11 @@ public class applicationGestionForm extends javax.swing.JFrame {
         RDVForm aprevoirForm = new RDVForm();
         aprevoirForm.setVisible(true);
     }//GEN-LAST:event_appGestionAPrevoirItemMousePressed
+
+    private void appGestionPriseItemMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionPriseItemMousePressed
+        priseEnChargeForm enChargeForm = new priseEnChargeForm();
+        enChargeForm.setVisible(true);
+    }//GEN-LAST:event_appGestionPriseItemMousePressed
 
     /**
      * @param args the command line arguments
