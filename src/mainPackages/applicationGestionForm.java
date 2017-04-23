@@ -55,6 +55,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionAideMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Garage HEPL - la polyclinique de vos voitures");
 
         appGestionAtelierLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         appGestionAtelierLabel.setText("Atelier");
@@ -141,7 +142,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
                     .addComponent(appGestionBureauClientLabel)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(appGestionBureauComptaLabel)
-                        .addGap(41, 41, 41)
+                        .addGap(57, 57, 57)
                         .addComponent(jLabel9))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(appGestionPont2label)
@@ -152,7 +153,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
                             .addComponent(appGestionDiversLabel)
                             .addComponent(appGestionBureauLabel))
                         .addComponent(appGestionAtelierLabel, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +171,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(appGestionAtelierLabel)
-                .addGap(48, 48, 48)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(appGestionPont1Label)
@@ -185,12 +186,12 @@ public class applicationGestionForm extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addComponent(appGestionBureauLabel))
                     .addComponent(appGestionImagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(appGestionBureauClientLabel)
                     .addComponent(appGestionPatronRadBut)
                     .addComponent(appGestionToutPresentRadBut))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(appGestionBureauComptaLabel)
                     .addComponent(jLabel9)
