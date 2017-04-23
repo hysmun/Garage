@@ -175,7 +175,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                         if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
                         {
                             //libre
-                            //applicationGestionForm.appGestionPresencePont1Label.setText((String)mainGarage.linkedListVector.get(priseEnChargeTable.getSelectedRow()).get(0));
+                            applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.toString(priseEnChargeTable.getSelectedRow()));
                         }
                         else
                         {
