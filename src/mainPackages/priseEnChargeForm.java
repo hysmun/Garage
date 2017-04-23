@@ -5,7 +5,6 @@
  */
 package mainPackages;
 
-import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,12 +18,16 @@ public class priseEnChargeForm extends javax.swing.JFrame {
      */
     public priseEnChargeForm() {
         initComponents();
+        System.out.println(mainGarage.linkedListVector.get(0).get(0));
+        System.out.println(mainGarage.linkedListVector.get(0).get(1));
+        System.out.println(mainGarage.linkedListVector.get(0).get(2));
+        System.out.println(mainGarage.linkedListVector.get(0).get(3));
+        System.out.println(mainGarage.linkedListVector.get(0).get(4));
         DefaultTableModel model = (DefaultTableModel) priseEnChargeTable.getModel();
         for(int i = 0;i < mainGarage.linkedListVector.size();i++)
         {
-            model.addRow(new Object[]{mainGarage.linkedListVector.get(i).get(0),mainGarage.linkedListVector.get(i).get(1),mainGarage.linkedListVector.get(i).get(2),mainGarage.linkedListVector.get(i).get(3),mainGarage.linkedListVector.get(i).get(4)});
+            model.addRow(mainGarage.linkedListVector.get(i));
         }
-        invalidate();
     }
 
     /**

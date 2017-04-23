@@ -217,12 +217,20 @@ public class RDVForm extends javax.swing.JFrame {
         
         Vector tmp = new Vector();
    
-        tmp.add(0,TypeVoiture.getText());
-        tmp.add(1,Immatriculation.getText());
+        tmp.add(0,VoitTF.getText());
+        tmp.add(1,ImmatTF.getText());
         tmp.add(2,(String)ProprioCB.getSelectedItem());
         tmp.add(3,(String)TypeTravailCB.getSelectedItem());
         tmp.add(4, BonusTF.getText());
+        
+        mainGarage.linkedListVector.add(tmp);
+        
         JOptionPane.showMessageDialog(null,"Ajout effectue","Information",JOptionPane.INFORMATION_MESSAGE);
+        System.out.println((String)tmp.get(0));
+        System.out.println((String)tmp.get(1));
+        System.out.println((String)tmp.get(2));
+        System.out.println((String)tmp.get(3));
+        System.out.println((String)tmp.get(4));
        
         this.dispose();
     }//GEN-LAST:event_OKButtonMouseClicked
