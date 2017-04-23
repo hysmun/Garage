@@ -5,6 +5,7 @@
  */
 package mainPackages;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -171,11 +172,37 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                 switch((int)(priseEnChargePontComboBox.getSelectedItem()))
                 {
                     case 1:
-                        if(applicationGestionForm.appGestionPresencePont1Label.getText() == mainGarage.libreString)
+                        if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
+                        {
+                            //libre
+                            applicationGestionForm.appGestionPresencePont1Label.setText();
+                        }
+                        else
+                        {
+                            JOptionPane.showMessageDialog(null,"Pont 1 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
+                        }
                         break;
                     case 2:
+                        if(applicationGestionForm.appGestionPresencePont2Label.getText().equals(mainGarage.libreString))
+                        {
+                            //libre
+                            applicationGestionForm.appGestionPresencePont2Label.setText();
+                        }
+                        else
+                        {
+                            JOptionPane.showMessageDialog(null,"Pont 2 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
+                        }
                         break;
                     case 3:
+                        if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
+                        {
+                            //libre
+                            applicationGestionForm.appGestionPresencePont3Label.setText();
+                        }
+                        else
+                        {
+                            JOptionPane.showMessageDialog(null,"Pont 3 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
+                        }
                         break;
                     default:
                         System.out.println("Error prise en charge!");
