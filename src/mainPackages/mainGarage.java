@@ -17,6 +17,15 @@ import vehicules.*;
  * @author ante
  */
 public class mainGarage {
+    
+    public static String[] listeTypeVoiture = new String[20];
+    public static String[] listeImmat = new String[20];
+    public static String[] listeProprio = new String[20];
+    public static String[] listeTravail = new String[20];
+    public static String[] listeBonus = new String[20];
+    
+    
+    
     public static void main(String[] args) {
         try
         {
