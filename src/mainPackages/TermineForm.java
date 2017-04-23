@@ -18,19 +18,17 @@ public class TermineForm extends javax.swing.JFrame {
      */
     public TermineForm() {
         initComponents();
-        if(mainGarage.listeEnCours.length == 0)
+        if(mainGarage.listeEnCours.isEmpty() == true)
         {
             JOptionPane.showMessageDialog(null,"Pas de travaux en cours","Information",JOptionPane.INFORMATION_MESSAGE);
-            this.dispose();
         }
         else
         {
-            for(int i = 0;i < mainGarage.listeEnCours.length; i++)
+            for(int i = 0;i < mainGarage.listeEnCours.size(); i++)
             {
-                
+                TravailCB.addItem("" + mainGarage.listeEnCours.get(i).get(0) + " " + mainGarage.listeEnCours.get(i).get(1) + " " + mainGarage.listeEnCours.get(i).get(3));      
             }
-        }
-        
+        } 
     }
 
     /**

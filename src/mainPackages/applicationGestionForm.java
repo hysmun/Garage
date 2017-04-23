@@ -167,6 +167,11 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionAtelierMenu.add(appGestionPriseItem);
 
         appGestionTerminerItem.setText("Terminé");
+        appGestionTerminerItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                appGestionTerminerItemMousePressed(evt);
+            }
+        });
         appGestionAtelierMenu.add(appGestionTerminerItem);
 
         appGestionListesItem.setText("Listes");
@@ -326,6 +331,11 @@ public class applicationGestionForm extends javax.swing.JFrame {
         priseEnChargeForm enChargeForm = new priseEnChargeForm();
         enChargeForm.setVisible(true);
     }//GEN-LAST:event_appGestionPriseItemMousePressed
+
+    private void appGestionTerminerItemMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appGestionTerminerItemMousePressed
+        TermineForm termineForm = new TermineForm();
+        termineForm.setVisible(true);
+    }//GEN-LAST:event_appGestionTerminerItemMousePressed
 
     /**
      * @param args the command line arguments
