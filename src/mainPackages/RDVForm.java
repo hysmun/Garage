@@ -6,6 +6,7 @@
 package mainPackages;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -79,8 +80,18 @@ public class RDVForm extends javax.swing.JFrame {
         PlaqueBelgeCheck.setText("Plaque belge");
 
         OKButton.setText("OK");
+        OKButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OKButtonMouseClicked(evt);
+            }
+        });
 
         CancelButton.setText("Annuler");
+        CancelButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CancelButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -196,6 +207,38 @@ public class RDVForm extends javax.swing.JFrame {
         }
         this.invalidate();
     }//GEN-LAST:event_ReparationRBMouseClicked
+
+    private void CancelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelButtonMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_CancelButtonMouseClicked
+
+    private void OKButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKButtonMouseClicked
+        int i = 0;
+        for(i = 0;i < mainGarage.vecteurData.length;i++)
+        {
+            if(mainGarage.vecteurData[i].isEmpty())
+            {
+                mainGarage.vecteurData[i].add(0,TypeVoiture.getText());
+                mainGarage.vecteurData[i].add(1,Immatriculation.getText());
+                mainGarage.vecteurData[i].add(2,(String)ProprioCB.getSelectedItem());
+                if(EntretienRB.isSelected())
+                    mainGarage.vecteurData[i].add(3,"Entretien");
+                else
+                    mainGarage.vecteurData[i].add(3,"Reparation");
+                mainGarage.vecteurData[i].add(4,(String)TypeTravailCB.getSelectedItem());
+                mainGarage.vecteurData[i].add(5, BonusTF.getText());
+                
+                mainGarage.linkedListVector.add(mainGarage.vecteurData[i]);
+                JOptionPane.showMessageDialog(null,"Ajout effectue","Information",JOptionPane.INFORMATION_MESSAGE);
+                break;
+            }
+        }
+        if(i == mainGarage.vecteurData.length)
+        {
+            JOptionPane.showMessageDialog(null,"Plus de places disponibles","Erreur",JOptionPane.ERROR_MESSAGE);
+        }
+        this.dispose();
+    }//GEN-LAST:event_OKButtonMouseClicked
 
     /**
      * @param args the command line arguments
