@@ -226,12 +226,7 @@ public class RDVForm extends javax.swing.JFrame {
         mainGarage.linkedListVector.add(tmp);
         
         JOptionPane.showMessageDialog(null,"Ajout effectue","Information",JOptionPane.INFORMATION_MESSAGE);
-        System.out.println((String)tmp.get(0));
-        System.out.println((String)tmp.get(1));
-        System.out.println((String)tmp.get(2));
-        System.out.println((String)tmp.get(3));
-        System.out.println((String)tmp.get(4));
-       
+        
         this.dispose();
     }//GEN-LAST:event_OKButtonMouseClicked
 

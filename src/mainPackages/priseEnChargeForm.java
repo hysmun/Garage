@@ -18,11 +18,6 @@ public class priseEnChargeForm extends javax.swing.JFrame {
      */
     public priseEnChargeForm() {
         initComponents();
-        System.out.println(mainGarage.linkedListVector.get(0).get(0));
-        System.out.println(mainGarage.linkedListVector.get(0).get(1));
-        System.out.println(mainGarage.linkedListVector.get(0).get(2));
-        System.out.println(mainGarage.linkedListVector.get(0).get(3));
-        System.out.println(mainGarage.linkedListVector.get(0).get(4));
         DefaultTableModel model = (DefaultTableModel) priseEnChargeTable.getModel();
         for(int i = 0;i < mainGarage.linkedListVector.size();i++)
         {
@@ -79,6 +74,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
             }
         });
         priseEnChargeTable.setToolTipText("");
+        priseEnChargeTable.setAutoscrolls(false);
         jScrollPane2.setViewportView(priseEnChargeTable);
 
         priseEnChargePontComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
