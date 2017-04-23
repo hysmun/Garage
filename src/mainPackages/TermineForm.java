@@ -30,7 +30,7 @@ public class TermineForm extends javax.swing.JFrame {
         TravailLabel = new javax.swing.JLabel();
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
-        TravailCB = new javax.swing.JComboBox(mainGarage.listeProprio);
+        TravailCB = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Garage HEPL - Terminer un travail");
