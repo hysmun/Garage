@@ -133,6 +133,7 @@ public class TermineForm extends javax.swing.JFrame {
                 new TermineForm().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
