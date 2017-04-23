@@ -5,6 +5,8 @@
  */
 package mainPackages;
 
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author Morghen
@@ -34,12 +36,12 @@ public class RDVForm extends javax.swing.JFrame {
         VoitTF = new javax.swing.JTextField();
         ImmatTF = new javax.swing.JTextField();
         BonusTF = new javax.swing.JTextField();
-        ProprioCB = new javax.swing.JComboBox();
+        ProprioCB = new javax.swing.JComboBox(mainGarage.listeProprio);    ;
         newCheck = new javax.swing.JCheckBox();
         EntretienRB = new javax.swing.JRadioButton();
         ReparationRB = new javax.swing.JRadioButton();
         PlaqueBelgeCheck = new javax.swing.JCheckBox();
-        TypeTravailCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);         ;
+        TypeTravailCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
 
@@ -174,6 +176,12 @@ public class RDVForm extends javax.swing.JFrame {
         if(ReparationRB.isSelected() == true)
             ReparationRB.setSelected(false);
         EntretienRB.setSelected(true);
+        TypeTravailCB.removeAllItems();
+        for(int i = 0;i < mainGarage.listeTravailEntretien.length;i++)
+        {
+            TypeTravailCB.addItem(mainGarage.listeTravailEntretien[i]);
+        }
+        this.invalidate();
         
     }//GEN-LAST:event_EntretienRBMouseClicked
 
@@ -181,7 +189,12 @@ public class RDVForm extends javax.swing.JFrame {
         if(EntretienRB.isSelected() == true)
             EntretienRB.setSelected(false);
         ReparationRB.setSelected(true);
-        
+        TypeTravailCB.removeAllItems();
+        for(int i = 0;i < mainGarage.listeTravailReparation.length;i++)
+        {
+            TypeTravailCB.addItem(mainGarage.listeTravailReparation[i]);
+        }
+        this.invalidate();
     }//GEN-LAST:event_ReparationRBMouseClicked
 
     /**
