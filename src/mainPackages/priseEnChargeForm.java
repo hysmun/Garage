@@ -45,6 +45,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         priseEnChargeAnnulerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Garage HEPL - prise en charge d'un travail");
 
         priseEnChargeTravauxLabel.setText("Travaux en attente :");
 
@@ -160,15 +161,13 @@ public class priseEnChargeForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void priseEnChargeOkButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeOkButtonMouseClicked
-        if(priseEnChargeTable.getSelectedRowCount() == 0)
-        {
-            
-        }
-        else if(priseEnChargeTable.getSelectedRowCount() > 1)
+
+        if(priseEnChargeTable.getSelectedRowCount() == 1)
         {
             if(priseEnChargePontRadBut.isSelected())
             {
                 //on va le mettre sur un des ponts 
+                System.out.println("Prise en charge pont");
                 switch((int)(priseEnChargePontComboBox.getSelectedItem()))
                 {
                     case 1:
