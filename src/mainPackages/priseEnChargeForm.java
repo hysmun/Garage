@@ -49,6 +49,11 @@ public class priseEnChargeForm extends javax.swing.JFrame {
 
         priseEnChargePontRadBut.setSelected(true);
         priseEnChargePontRadBut.setText("Pont");
+        priseEnChargePontRadBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                priseEnChargePontRadButMouseClicked(evt);
+            }
+        });
 
         priseEnChargeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,6 +85,11 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         priseEnChargePontComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
 
         priseEnChargeSolRadBut.setText("Sol");
+        priseEnChargeSolRadBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                priseEnChargeSolRadButMouseClicked(evt);
+            }
+        });
 
         priseEnChargeOkButton.setText("Ok");
         priseEnChargeOkButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -89,6 +99,11 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         });
 
         priseEnChargeAnnulerButton.setText("Annuler");
+        priseEnChargeAnnulerButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                priseEnChargeAnnulerButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,6 +151,9 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        getAccessibleContext().setAccessibleDescription("");
+        getAccessibleContext().setAccessibleParent(this);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -147,9 +165,43 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         }
         else if(priseEnChargeTable.getSelectedRowCount() > 1)
         {
-            
+            if(priseEnChargePontRadBut.isSelected())
+            {
+                //on va le mettre sur un des ponts 
+                switch((int)(priseEnChargePontComboBox.getSelectedItem()))
+                {
+                    case 1:
+                        if(applicationGestionForm.appGestionPresencePont1Label.getText() == mainGarage.libreString)
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        System.out.println("Error prise en charge!");
+                }
+            }
+            else if(priseEnChargeSolRadBut.isSelected())
+            {
+                //on va le pose sur le sol 
+            }
         }
     }//GEN-LAST:event_priseEnChargeOkButtonMouseClicked
+
+    private void priseEnChargeAnnulerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeAnnulerButtonMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_priseEnChargeAnnulerButtonMouseClicked
+
+    private void priseEnChargePontRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargePontRadButMouseClicked
+        // TODO add your handling code here:
+        priseEnChargeSolRadBut.setSelected(false);
+    }//GEN-LAST:event_priseEnChargePontRadButMouseClicked
+
+    private void priseEnChargeSolRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeSolRadButMouseClicked
+        // TODO add your handling code here:
+        priseEnChargePontRadBut.setSelected(false);
+    }//GEN-LAST:event_priseEnChargeSolRadButMouseClicked
 
     /**
      * @param args the command line arguments

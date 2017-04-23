@@ -4,6 +4,12 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
+  <AccessibilityProperties>
+    <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+    <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
+      <ComponentRef name="Form"/>
+    </Property>
+  </AccessibilityProperties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
@@ -90,6 +96,9 @@
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Pont"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="priseEnChargePontRadButMouseClicked"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="ScrollPanel">
       <AuxValues>
@@ -139,6 +148,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Sol"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="priseEnChargeSolRadButMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="priseEnChargeOkButton">
       <Properties>
@@ -152,6 +164,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Annuler"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="priseEnChargeAnnulerButtonMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

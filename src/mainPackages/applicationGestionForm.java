@@ -380,12 +380,12 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private javax.swing.JLabel appGestionPont1Label;
     private javax.swing.JLabel appGestionPont2label;
     private javax.swing.JLabel appGestionPont3label;
-    private javax.swing.JLabel appGestionPresenceBureauLabel;
-    private javax.swing.JLabel appGestionPresenceDiversLabel;
-    private javax.swing.JLabel appGestionPresencePont1Label;
-    private javax.swing.JLabel appGestionPresencePont2Label;
-    private javax.swing.JLabel appGestionPresencePont3Label;
-    private javax.swing.JLabel appGestionPresenceSolLabel;
+    public static javax.swing.JLabel appGestionPresenceBureauLabel;
+    public static javax.swing.JLabel appGestionPresenceDiversLabel;
+    public static javax.swing.JLabel appGestionPresencePont1Label;
+    public static javax.swing.JLabel appGestionPresencePont2Label;
+    public static javax.swing.JLabel appGestionPresencePont3Label;
+    public static javax.swing.JLabel appGestionPresenceSolLabel;
     private javax.swing.JMenuItem appGestionPriseItem;
     private javax.swing.JLabel appGestionSolLabel;
     private javax.swing.JMenuItem appGestionTerminerItem;
