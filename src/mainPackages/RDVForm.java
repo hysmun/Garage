@@ -44,7 +44,7 @@ public class RDVForm extends javax.swing.JFrame {
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Garage HEPL - Nouveau travail pour l'atelier");
         setName("RDVForm"); // NOI18N
 
