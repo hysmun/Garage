@@ -269,11 +269,13 @@ public class priseEnChargeForm extends javax.swing.JFrame {
 
     private void priseEnChargePontRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargePontRadButMouseClicked
         // TODO add your handling code here:
+        priseEnChargePontRadBut.setSelected(true);
         priseEnChargeSolRadBut.setSelected(false);
     }//GEN-LAST:event_priseEnChargePontRadButMouseClicked
 
     private void priseEnChargeSolRadButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeSolRadButMouseClicked
         // TODO add your handling code here:
+        priseEnChargeSolRadBut.setSelected(true);
         priseEnChargePontRadBut.setSelected(false);
     }//GEN-LAST:event_priseEnChargeSolRadButMouseClicked
 
