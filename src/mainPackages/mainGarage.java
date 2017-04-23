@@ -23,7 +23,6 @@ public class mainGarage {
             // TODO code application logic here
             System.out.print("TEST\n");
             loginForm loginWindows = new loginForm();
-            loginWindows.setLocation(500, 400);
             loginWindows.setVisible(true);
             while(loginWindows.loginValue < 1)
             {
@@ -39,7 +38,6 @@ public class mainGarage {
             loginWindows.setVisible(false);
 
             applicationGestionForm formPrincipale = new applicationGestionForm();
-            formPrincipale.setLocation(500, 400);
             formPrincipale.setVisible(true);
         }
         catch(Throwable e)
