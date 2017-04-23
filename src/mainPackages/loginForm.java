@@ -130,7 +130,11 @@ public class loginForm extends javax.swing.JFrame {
                 }
                 else
                 {
-                    // Mauvaise mdp encode
+                    System.out.println("Mot de passe errone, autre tentative");
+                    JOptionPane.showMessageDialog(null,"Erreur mot de passe","Avertissement",JOptionPane.WARNING_MESSAGE);
+                    // Clean
+                    UtilisateurTextFieldLoginForm.setText("");
+                    PasswordField.setText("");
                 }
             }
             else
@@ -145,7 +149,11 @@ public class loginForm extends javax.swing.JFrame {
                 else
                 {
                     System.out.println("Mot de passe errone, autre tentative");
-                    // Affichage dialogue & reset des champs
+                    JOptionPane.showMessageDialog(null,"Erreur mot de passe","Avertissement",JOptionPane.WARNING_MESSAGE);
+                    // Clean
+                    UtilisateurTextFieldLoginForm.setText("");
+                    PasswordField.setText("");
+                    
                 }
             }
         }
@@ -168,7 +176,11 @@ public class loginForm extends javax.swing.JFrame {
                 }
                 else
                 {
-                    // Mauvaise mdp encode
+                    System.out.println("Mot de passe errone, autre tentative");
+                    JOptionPane.showMessageDialog(null,"Erreur mot de passe","Avertissement",JOptionPane.WARNING_MESSAGE);
+                    // Clean
+                    UtilisateurTextFieldLoginForm.setText("");
+                    PasswordField.setText("");
                 }
             }
             else
@@ -183,7 +195,10 @@ public class loginForm extends javax.swing.JFrame {
                 else
                 {
                     System.out.println("Mot de passe errone, autre tentative");
-                    // Affichage dialogue & reset des champs
+                    JOptionPane.showMessageDialog(null,"Erreur mot de passe","Avertissement",JOptionPane.WARNING_MESSAGE);
+                    // Clean
+                    UtilisateurTextFieldLoginForm.setText("");
+                    PasswordField.setText("");
                 }
             }
         }
