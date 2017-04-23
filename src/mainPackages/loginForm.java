@@ -5,17 +5,15 @@
  */
 package mainPackages;
 
-/**
- *
- * @author ante
- */
+import login.hashtableLogin;
+
 public class loginForm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form loginForm
-     */
+    private hashtableLogin hashtables;
+    
     public loginForm() {
         initComponents();
+        this.hashtables = new hashtableLogin();
     }
 
     /**
@@ -30,7 +28,7 @@ public class loginForm extends javax.swing.JFrame {
         UtilisateurLabelLoginForm = new javax.swing.JLabel();
         UtilisateurTextFieldLoginForm = new javax.swing.JTextField();
         MdpLabelLoginForm = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        PasswordFiel = new javax.swing.JPasswordField();
         MembreRadioLoginForm = new javax.swing.JRadioButton();
         ExterieurRadioLoginForm = new javax.swing.JRadioButton();
         OkButtonLoginForm = new javax.swing.JButton();
@@ -49,7 +47,7 @@ public class loginForm extends javax.swing.JFrame {
 
         MdpLabelLoginForm.setText("Mot de passe :");
         getContentPane().add(MdpLabelLoginForm);
-        getContentPane().add(jPasswordField1);
+        getContentPane().add(PasswordFiel);
 
         MembreRadioLoginForm.setSelected(true);
         MembreRadioLoginForm.setText("Membre du personnel");
@@ -94,9 +92,9 @@ public class loginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_ExterieurRadioLoginFormMouseClicked
 
     private void MembreRadioLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MembreRadioLoginFormMouseClicked
-        // TODO add your handling code here:
-        MembreRadioLoginForm.setSelected(true);
+
         ExterieurRadioLoginForm.setSelected(false);
+        MembreRadioLoginForm.setSelected(true);
     }//GEN-LAST:event_MembreRadioLoginFormMouseClicked
 
     private void AnnulerButtonLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnnulerButtonLoginFormMouseClicked
@@ -104,7 +102,23 @@ public class loginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_AnnulerButtonLoginFormMouseClicked
 
     private void OkButtonLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OkButtonLoginFormMouseClicked
-        // TODO add your handling code here:
+        if(MembreRadioLoginForm.isSelected() == true)
+        {
+            if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()) != null)
+            {
+                System.out.println("Acces a la suite");
+            }
+            else
+            {
+                System.out.println("Erreur login");
+                if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()) != null)
+                {
+                    System.out.println("Mauvais choix de login, redirection");
+                    
+                }
+            }
+            
+        }
     }//GEN-LAST:event_OkButtonLoginFormMouseClicked
 
     /**
@@ -148,8 +162,8 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JLabel MdpLabelLoginForm;
     private javax.swing.JRadioButton MembreRadioLoginForm;
     private javax.swing.JButton OkButtonLoginForm;
+    private javax.swing.JPasswordField PasswordFiel;
     private javax.swing.JLabel UtilisateurLabelLoginForm;
     private javax.swing.JTextField UtilisateurTextFieldLoginForm;
-    private javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
 }
