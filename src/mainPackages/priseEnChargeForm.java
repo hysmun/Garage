@@ -210,6 +210,15 @@ public class priseEnChargeForm extends javax.swing.JFrame {
             else if(priseEnChargeSolRadBut.isSelected())
             {
                 //on va le pose sur le sol 
+                if(applicationGestionForm.appGestionPresenceSolLabel.getText().equals(mainGarage.libreString))
+                {
+                    //libre
+                    applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.toString(priseEnChargeTable.getSelectedRow()));
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null,"Le Sol est occuper veuillez finir avec d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
+                }
             }
         }
     }//GEN-LAST:event_priseEnChargeOkButtonMouseClicked
