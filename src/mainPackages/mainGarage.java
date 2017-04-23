@@ -17,16 +17,6 @@ import vehicules.*;
  * @author ante
  */
 public class mainGarage {
-
-    public static Client cliTest1;
-    public static Client cliTest2;
-    public static Client cliTest3;
-
-    public static Voiture voiTest1 ;
-    public static Voiture voiTest2 ;
-    public static Voiture voiTest3;
-    
-    
     public static void main(String[] args) {
         try
         {
@@ -35,14 +25,6 @@ public class mainGarage {
             loginForm loginWindows = new loginForm();
             loginWindows.setLocation(500, 400);
             loginWindows.setVisible(true);
-            cliTest1 = new Client("1", "Paul", "Icier", "rue du cimetière 42", "0496100811");
-            cliTest2 = new Client("2", "Toma", "Te", "rue des 100 dre", "0496100811");
-            cliTest3 = new Client("3", "truc", "Bidule", "rue lle", "0496100811");
-
-            voiTest1 = new Voiture("1", new TypeVoiture("Peugeot", "berline", 5), "1-NLU-134", cliTest1);
-            voiTest2 = new Voiture("2", new TypeVoiture("Peugeot", "berline", 5), "1-NLU-134", cliTest1);
-            voiTest3 = new Voiture("3", new TypeVoiture("Peugeot", "berline", 5), "1-NLU-134", cliTest1);
-
             while(loginWindows.loginValue < 1)
             {
                 try {
