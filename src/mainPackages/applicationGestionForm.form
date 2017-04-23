@@ -265,21 +265,33 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Patron disponible"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="appGestionPatronRadButMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="appGestionToutPresentRadBut">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tout le monde pr&#xe9;sent"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="appGestionToutPresentRadButMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="appGestionPauseRadBut">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pause-Midi"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="appGestionPauseRadButMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="appGestionCertAbsRadBut">
       <Properties>
         <Property name="text" type="java.lang.String" value="Certains absents"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="appGestionCertAbsRadButMouseClicked"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="appGestionImagePanel">
 
