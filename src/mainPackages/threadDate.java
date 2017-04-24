@@ -7,6 +7,7 @@ package mainPackages;
 
 import java.text.DateFormat;
 import java.util.Locale;
+import static mainPackages.applicationGestionForm.appGestionDateLabel;
 
 /**
  *
