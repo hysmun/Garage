@@ -5,10 +5,18 @@
  */
 package activite;
 
+import people.Mecanicien;
+import vehicules.Vehicule;
+
 /**
  *
  * @author ante
  */
-public class Reparation {
+public class Reparation extends Travail{
+
+    public Reparation(String id, Mecanicien meca, Vehicule vehi, double prix, String description) {
+        super(id, meca, vehi, prix, description);
+    }
+
     
 }
