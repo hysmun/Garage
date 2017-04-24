@@ -11,9 +11,12 @@ import authenticate.Identifiable;
  *
  * @author ante
  */
-public class TechnicienExterieur extends Personne implements Identifiable {
-     public TechnicienExterieur() {
+public class TechnicienExterieur extends PersonnelGarage implements Identifiable {
+
+    public TechnicienExterieur(String matricule, String id, String nom, String prenom, String adresse, String numTelephone) {
+        super(matricule, id, nom, prenom, adresse, numTelephone);
     }
+
 
     @Override
     public String getId() {
