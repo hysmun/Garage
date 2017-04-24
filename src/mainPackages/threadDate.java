@@ -17,7 +17,7 @@ import static mainPackages.applicationGestionForm.appGestionDateLabel;
 public class threadDate extends Thread{
     public DateFormat formatDate;
     threadDate() {
-        formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     }
 
     @Override
