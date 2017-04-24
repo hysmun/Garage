@@ -395,6 +395,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
                 new applicationGestionForm().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -408,7 +409,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton appGestionCertAbsRadBut;
     private javax.swing.JMenu appGestionClientsMenu;
     private javax.swing.JLabel appGestionComptaPresenceLabel;
-    private javax.swing.JLabel appGestionDateLabel;
+    public static javax.swing.JLabel appGestionDateLabel;
     private javax.swing.JMenuItem appGestionDebuterItem;
     private javax.swing.JLabel appGestionDiversLabel;
     private javax.swing.JMenu appGestionFacturesMenu;

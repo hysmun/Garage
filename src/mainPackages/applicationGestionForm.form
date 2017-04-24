@@ -422,6 +422,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="23/03/2017    13:19h"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JCheckBox" name="appGestionPatronCheckBox">
       <Properties>
