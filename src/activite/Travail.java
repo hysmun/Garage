@@ -17,16 +17,18 @@ public abstract class Travail implements Identifiable{
     protected String id;
     protected Mecanicien meca;
     protected Vehicule vehi;
+    protected double prix;
+    protected String description;
 
-    public Travail() {
-    }
-
-    public Travail(String id, Mecanicien meca, Vehicule vehi) {
+    public Travail(String id, Mecanicien meca, Vehicule vehi, double prix, String description) {
         this.id = id;
         this.meca = meca;
         this.vehi = vehi;
+        this.prix = prix;
+        this.description = description;
     }
 
+    
     @Override
     public String getId() {
         return id;
