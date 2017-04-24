@@ -282,6 +282,10 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                 }
             }
         }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Veuillez selectionner un travail svp !","Avertissement",JOptionPane.WARNING_MESSAGE);   
+        }
     }//GEN-LAST:event_priseEnChargeOkButtonMouseClicked
 
     private void priseEnChargeAnnulerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeAnnulerButtonMouseClicked
