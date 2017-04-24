@@ -27,7 +27,6 @@ public class mainGarage {
     public static String libreString = "-- libre --";
     public static Vector<Vector> listeEnCours = new Vector<Vector>();
     
-    
     public static void main(String[] args) {
         try
         {
