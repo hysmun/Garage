@@ -14,11 +14,8 @@ import vehicules.Vehicule;
  */
 public class Entretien extends Travail{
 
-    public Entretien() {
+    public Entretien(String id, Mecanicien meca, Vehicule vehi, double prix, String description) {
+        super(id, meca, vehi, prix, description);
     }
 
-    public Entretien(String id, Mecanicien meca, Vehicule vehi) {
-        super(id, meca, vehi);
-    }
-    
 }
