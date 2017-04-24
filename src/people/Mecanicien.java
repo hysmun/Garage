@@ -9,12 +9,12 @@ package people;
  *
  * @author ante
  */
-public class Mecanicien extends Personne {
+public class Mecanicien extends PersonnelGarage {
     protected String specialisation;
 
-    public Mecanicien() {
-        super();
-    } 
+    public Mecanicien(String matricule, String id, String nom, String prenom, String adresse, String numTelephone) {
+        super(matricule, id, nom, prenom, adresse, numTelephone);
+    }
 
     public String getSpecialisation() {
         return specialisation;
