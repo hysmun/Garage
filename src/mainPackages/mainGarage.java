@@ -9,9 +9,7 @@ import java.util.LinkedList;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import people.Client;
-import vehicules.TypeVoiture;
-import vehicules.Voiture;
+import people.*;
 import vehicules.*;
 
 /**
