@@ -18,6 +18,8 @@ public class applicationGestionForm extends javax.swing.JFrame {
      */
     public applicationGestionForm() {
         initComponents();
+        threadDate thDate = new threadDate();
+        thDate.start();
     }
 
     /**
