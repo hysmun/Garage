@@ -6,7 +6,8 @@
 package mainPackages;
 
 import java.text.DateFormat;
-import java.util.Locale;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import static mainPackages.applicationGestionForm.appGestionDateLabel;
 
 /**
@@ -16,7 +17,7 @@ import static mainPackages.applicationGestionForm.appGestionDateLabel;
 public class threadDate extends Thread{
     public DateFormat formatDate;
     threadDate() {
-        formatDate = DateFormat.getDateInstance(DateFormat.LONG, Locale.FRANCE);
+        formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     }
 
     @Override
@@ -26,7 +27,7 @@ public class threadDate extends Thread{
         {
             while(true)
             {
-                appGestionDateLabel.setText("A");
+                appGestionDateLabel.setText(formatDate.format(new Date()));
                 Thread.sleep(100);
             }
         }
