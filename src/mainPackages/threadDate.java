@@ -25,7 +25,7 @@ public class threadDate extends Thread{
         {
             while(true)
             {
-                appGestionDateLabel.setText();
+                appGestionDateLabel.setText("A");
                 Thread.sleep(100);
             }
         }
