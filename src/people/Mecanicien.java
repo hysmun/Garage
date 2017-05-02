@@ -12,8 +12,9 @@ package people;
 public class Mecanicien extends PersonnelGarage {
     protected String specialisation;
 
-    public Mecanicien(String matricule, String id, String nom, String prenom, String adresse, String numTelephone) {
+    public Mecanicien(String matricule, String id, String nom, String prenom, String adresse, String numTelephone,String specialisation) {
         super(matricule, id, nom, prenom, adresse, numTelephone);
+        this.specialisation = specialisation;
     }
 
     public String getSpecialisation() {
