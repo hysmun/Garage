@@ -1,8 +1,9 @@
 package login;
 
+import java.io.Serializable;
 import java.util.Hashtable;
 
-public class hashtableLogin {
+public class hashtableLogin implements Serializable{
     
     private final Hashtable<String, String> loginMembreTable;
     private final Hashtable<String, String> loginExternTable;
