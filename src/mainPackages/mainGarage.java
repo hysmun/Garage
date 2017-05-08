@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.LinkedList;
+import java.util.Properties;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,11 +35,19 @@ public class mainGarage {
     
     
     public static String fileListe = "fileListe.save";
+    public static String filePropertiesGeneral = "general.properties";
+    
+    public static Properties generalProperties = new Properties();
     
     public static void main(String[] args) {
         try
         {
             // TODO code application logic here
+            
+            FileInputStream input = new FileInputStream(filePropertiesGeneral);
+            generalProperties.load(input);
+
+            
             try {
                FileInputStream fileIn = new FileInputStream(fileListe);
                ObjectInputStream in = new ObjectInputStream(fileIn);
