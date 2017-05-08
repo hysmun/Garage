@@ -6,6 +6,9 @@
 package mainPackages;
 
 import activite.Travail;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.LinkedList;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -24,14 +27,33 @@ public class mainGarage {
     public static String libreString = "-- libre --";
     public static Vector<Vector> listeEnCours = new Vector<Vector>();
     
+    public static LinkedList<Vector<Travail>> linkedListTravailTot = new LinkedList<Vector<Travail>>();
     public static Vector<Travail> listeRdv = new Vector<Travail>();
     public static Vector<Travail> listeEnCour = new Vector<Travail>();
     public static Vector<Travail> listeFini = new Vector<Travail>();
+    
+    
+    public static String fileListe = "fileListe.save";
     
     public static void main(String[] args) {
         try
         {
             // TODO code application logic here
+            try {
+               FileInputStream fileIn = new FileInputStream(fileListe);
+               ObjectInputStream in = new ObjectInputStream(fileIn);
+               linkedListTravailTot = (LinkedList<Vector<Travail>>) in.readObject();
+               in.close();
+               fileIn.close();
+            }catch(IOException i) {
+               i.printStackTrace();
+               return;
+            }catch(ClassNotFoundException c) {
+               System.out.println("Employee class not found");
+               c.printStackTrace();
+               return;
+            }
+            
             System.out.println("TEST");
             loginForm loginWindows = new loginForm();
             loginWindows.setVisible(true);
@@ -47,7 +69,8 @@ public class mainGarage {
             }
             System.out.println("Login reussi !");
             loginWindows.setVisible(false);
-
+            
+            
             applicationGestionForm formPrincipale = new applicationGestionForm();
             formPrincipale.setVisible(true);
         }
