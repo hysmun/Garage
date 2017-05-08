@@ -5,6 +5,7 @@
  */
 package mainPackages;
 
+import activite.Travail;
 import java.util.LinkedList;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -22,6 +23,10 @@ public class mainGarage {
     public static String[] listeTravailReparation = {"Courroie","Transmission","Freins"};
     public static String libreString = "-- libre --";
     public static Vector<Vector> listeEnCours = new Vector<Vector>();
+    
+    public static Vector<Travail> listeRdv = new Vector<Travail>();
+    public static Vector<Travail> listeEnCour = new Vector<Travail>();
+    public static Vector<Travail> listeFini = new Vector<Travail>();
     
     public static void main(String[] args) {
         try

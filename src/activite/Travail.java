@@ -6,6 +6,7 @@
 package activite;
 
 import authenticate.Identifiable;
+import java.io.Serializable;
 import people.Mecanicien;
 import vehicules.Vehicule;
 
@@ -13,19 +14,22 @@ import vehicules.Vehicule;
  *
  * @author ante
  */
-public abstract class Travail implements Identifiable{
+public abstract class Travail implements Identifiable, Serializable{
     protected String id;
     protected Mecanicien meca;
     protected Vehicule vehi;
     protected double prix;
     protected String description;
+    protected int etat;
 
-    public Travail(String id, Mecanicien meca, Vehicule vehi, double prix, String description) {
+
+    public Travail(String id, Mecanicien meca, Vehicule vehi, double prix, String description, int etat) {
         this.id = id;
         this.meca = meca;
         this.vehi = vehi;
         this.prix = prix;
         this.description = description;
+        this.etat = etat;
     }
 
     
@@ -55,4 +59,11 @@ public abstract class Travail implements Identifiable{
         this.vehi = vehi;
     }
     
+    public int getEtat() {
+        return etat;
+    }
+
+    public void setEtat(int etat) {
+        this.etat = etat;
+    }
 }
