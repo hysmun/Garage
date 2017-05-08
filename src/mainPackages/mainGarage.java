@@ -47,11 +47,9 @@ public class mainGarage {
                fileIn.close();
             }catch(IOException i) {
                i.printStackTrace();
-               return;
             }catch(ClassNotFoundException c) {
                System.out.println("Employee class not found");
                c.printStackTrace();
-               return;
             }
             
             System.out.println("TEST");
