@@ -5,7 +5,9 @@
  */
 package propertiescreation;
 
-import java.io.InputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Properties;
 
 /**
@@ -16,10 +18,32 @@ public class PropertiesCreation extends javax.swing.JPanel {
 
     
     Properties prop = new Properties();
-    InputStream input = null;
+    OutputStream output = null;
     
-    public PropertiesCreation() {
+    public PropertiesCreation(){
         initComponents();
+        try
+        {
+            output = new FileOutputStream("users.properties");
+        }
+        catch(IOException io)
+        {
+            io.printStackTrace();
+        }
+        finally
+        {
+            if(output != null)
+            {
+                try
+                {
+                    output.close();
+                }
+                catch(IOException io)
+                {
+                    io.printStackTrace();
+                }
+            }
+        }
     }
 
     /**
@@ -115,7 +139,15 @@ public class PropertiesCreation extends javax.swing.JPanel {
     }//GEN-LAST:event_LoginTFActionPerformed
 
     private void OKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKButtonActionPerformed
-        // TODO add your handling code here:
+        prop.setProperty(LoginTF.getText(), PassTF.getText());
+        try
+        {
+            prop.store(output, null);
+        }
+        catch(IOException io)
+        {
+            io.printStackTrace();
+        }
     }//GEN-LAST:event_OKButtonActionPerformed
 
 
