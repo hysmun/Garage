@@ -103,7 +103,7 @@ public class testReferenceSerialization extends javax.swing.JFrame {
          fileOut.close();
          System.out.printf("Serialized data is saved in /tmp/employee.ser");
       }catch(IOException i) {
-         i.printStackTrace();
+          System.out.println("Error test serialization");
       }
 
         /* Create and display the form */
