@@ -5,6 +5,7 @@
  */
 package propertiescreation;
 
+import java.awt.event.WindowEvent;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -24,9 +25,12 @@ public class PropertiesCreations extends javax.swing.JFrame {
     
     public PropertiesCreations() {
         initComponents();
+        String sep = System.getProperty("file.separator");
+        String current = System.getProperty("user.dir");
+        File fi = new File();
         try
         {
-            output = new FileOutputStream("users.properties");
+            output = new FileOutputStream(current + sep + "Accounts" + sep + "login.properties");
         }
         catch(IOException io)
         {
@@ -135,6 +139,18 @@ public class PropertiesCreations extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_OKButtonActionPerformed
 
+    public void windowClosing(WindowEvent e)
+    {
+        try
+        {
+            output.close();
+        }
+        catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
+        System.exit(0);
+    }
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
         try 
         {
@@ -144,7 +160,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
         }
         this.dispose();
     }//GEN-LAST:event_CancelButtonActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
