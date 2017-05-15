@@ -5,6 +5,7 @@
  */
 package mainPackages;
 
+import java.io.File;
 import javax.swing.JOptionPane;
 import login.hashtableLogin;
 
@@ -22,6 +23,12 @@ public class loginForm extends javax.swing.JFrame {
     
     public loginForm() {
         initComponents();
+        File fi = new File("Accounts");
+        if(!fi.exists())
+        {
+            JOptionPane.showMessageDialog(null,"Aucuns comptes trouvés","Erreur",JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
         this.hashtables = new hashtableLogin();
     }
 
