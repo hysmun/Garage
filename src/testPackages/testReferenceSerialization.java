@@ -108,7 +108,7 @@ public class testReferenceSerialization extends javax.swing.JFrame {
     LinkedList<Travail> llTravailFini = new LinkedList<Travail>();
     LinkedList<Vehicule> llVehicules = new LinkedList<Vehicule>();
     
-    dataEncapsulate dE = new dataEncapsulate();
+    DataEncapsulate dE = new DataEncapsulate();
     
     try {
     vClient.add(new Client("1", "Marc", "Assin","Rue du veto", "0494100811"));

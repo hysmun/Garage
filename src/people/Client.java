@@ -4,11 +4,13 @@ Identifiable); elle n'a évidemment aucun droit d'utilisation pour ApplicationGe
  */
 package people;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ante
  */
-public class Client extends Personne{
+public class Client extends Personne implements Serializable{
 
     public Client() {
     }
