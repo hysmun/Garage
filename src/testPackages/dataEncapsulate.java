@@ -22,4 +22,13 @@ public class dataEncapsulate {
     public ArrayList<Travail> llTravailEnCours;
     public LinkedList<Travail> llTravailFini;
     public LinkedList<Vehicule> llVehicules;
+
+    public dataEncapsulate() {
+        vClient = new Vector<Client>();
+        llTravailPrevu = new LinkedList<Travail>();
+        llTravailEnCours = new ArrayList<Travail>();
+        llTravailFini = new LinkedList<Travail>();
+        llVehicules = new LinkedList<Vehicule>();
+    }
+    
 }
