@@ -22,4 +22,9 @@ public class DatatEncapsulate {
     public ArrayList<Travail> llTravailEnCours;
     public LinkedList<Travail> llTravailFini;
     public Vector<Vehicule> vVehicule;
+
+    public DatatEncapsulate() {
+    }
+    
+    
 }
