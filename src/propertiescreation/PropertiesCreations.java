@@ -6,6 +6,7 @@
 package propertiescreation;
 
 import java.awt.event.WindowEvent;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -27,7 +28,18 @@ public class PropertiesCreations extends javax.swing.JFrame {
         initComponents();
         String sep = System.getProperty("file.separator");
         String current = System.getProperty("user.dir");
-        File fi = new File();
+        File dir = new File("Accounts");
+        if(!dir.exists())
+        {
+            try
+            {
+                dir.mkdir();
+            }
+            catch(SecurityException se)
+            {
+                System.out.println(se.getMessage());
+            }
+        }
         try
         {
             output = new FileOutputStream(current + sep + "Accounts" + sep + "login.properties");
