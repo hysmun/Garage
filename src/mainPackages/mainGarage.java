@@ -30,6 +30,7 @@ public class mainGarage {
     public static String filePropertiesGeneral = "general.properties";
     
     public static Properties generalProperties = new Properties();
+    public static Properties clientProperties = new Properties();
     
     public static void main(String[] args) {
         try
@@ -52,6 +53,24 @@ public class mainGarage {
                 InputStream it = new FileInputStream(filePropertiesGeneral);
                 generalProperties.load(it);
             }
+            
+            File ClientfileProperties = new File(generalProperties.getProperty("fichier-client-properties"));
+            if(!ClientfileProperties.exists())
+            {
+                OutputStream ot = new FileOutputStream(filePropertiesGeneral);
+                generalProperties.setProperty("dossier-properties", "Properties");
+                generalProperties.setProperty("fichier-client-properties", "client.properties");
+                generalProperties.setProperty("fichier-pneu-properties", "pneu.properties");
+                generalProperties.setProperty("fichier-piece-properties", "piece.properties");
+                generalProperties.setProperty("fichier-lubifiant-properties", "lubrifiant.properties");
+            }
+            else
+            {
+                InputStream it = new FileInputStream(filePropertiesGeneral);
+                generalProperties.load(it);
+            }
+            
+            
 
             loginForm loginWindows = new loginForm();
             loginWindows.setVisible(true);
