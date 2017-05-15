@@ -6,6 +6,8 @@
 package mainPackages;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 import login.hashtableLogin;
 
@@ -23,11 +25,24 @@ public class loginForm extends javax.swing.JFrame {
     
     public loginForm() {
         initComponents();
+        String sep = System.getProperty("file.separator");
+        String current = System.getProperty("user.dir");
         File fi = new File("Accounts");
         if(!fi.exists())
         {
             JOptionPane.showMessageDialog(null,"Aucuns comptes trouvés","Erreur",JOptionPane.ERROR_MESSAGE);
             System.exit(0);
+        }
+        else
+        {
+            try
+            {
+                FileInputStream input = new FileInputStream(current + sep + "Accounts" + sep + "login.properties");
+            }
+            catch(IOException io)
+            {
+                io.printStackTrace();
+            }
         }
         this.hashtables = new hashtableLogin();
     }
