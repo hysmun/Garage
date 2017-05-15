@@ -18,18 +18,7 @@ public class TermineForm extends javax.swing.JFrame {
      */
     public TermineForm() {
         initComponents();
-        if(mainGarage.listeEnCours.isEmpty() == true)
-        {
-            JOptionPane.showMessageDialog(null,"Pas de travaux en cours","Information",JOptionPane.INFORMATION_MESSAGE);
-            this.dispose();
-        }
-        else
-        {
-            for(int i = 0;i < mainGarage.listeEnCours.size(); i++)
-            {
-                TravailCB.addItem("" + mainGarage.listeEnCours.get(i).get(0) + " " + mainGarage.listeEnCours.get(i).get(1) + " " + mainGarage.listeEnCours.get(i).get(3));      
-            }
-        } 
+         
     }
 
     /**
@@ -107,19 +96,6 @@ public class TermineForm extends javax.swing.JFrame {
 
     private void OKButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKButtonMouseClicked
        
-        if(applicationGestionForm.appGestionPresencePont1Label.getText().contains((String)mainGarage.listeEnCours.get(TravailCB.getSelectedIndex()).get(1)))
-            applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.libreString);
-        else if(applicationGestionForm.appGestionPresencePont2Label.getText().contains((String)mainGarage.listeEnCours.get(TravailCB.getSelectedIndex()).get(1)))
-            applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.libreString);
-        else if(applicationGestionForm.appGestionPresencePont3Label.getText().contains((String)mainGarage.listeEnCours.get(TravailCB.getSelectedIndex()).get(1)))
-            applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.libreString);
-        else
-            applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.libreString);
-        
-        mainGarage.listeEnCours.remove(TravailCB.getSelectedIndex());
-        TravailCB.removeItem(TravailCB.getSelectedItem());
-
-        
         this.invalidate();
     }//GEN-LAST:event_OKButtonMouseClicked
 

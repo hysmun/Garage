@@ -165,7 +165,7 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="ProprioCB">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(mainGarage.listeProprio);    "/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="ProprioCB = new javax.swing.JComboBox(mainGarage.listeProprio);"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="RDVForm_ProprioCB"/>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
@@ -204,7 +204,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(mainGarage.listeTravailEntretien);"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="TypeTravailCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="RDVForm_TypeTravailCB"/>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>

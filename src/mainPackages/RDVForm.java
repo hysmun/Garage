@@ -38,12 +38,12 @@ public class RDVForm extends javax.swing.JFrame {
         VoitTF = new javax.swing.JTextField();
         ImmatTF = new javax.swing.JTextField();
         BonusTF = new javax.swing.JTextField();
-        ProprioCB = new javax.swing.JComboBox(mainGarage.listeProprio);    ;
+        ProprioCB = ProprioCB = new javax.swing.JComboBox(mainGarage.listeProprio);
         newCheck = new javax.swing.JCheckBox();
         EntretienRB = new javax.swing.JRadioButton();
         ReparationRB = new javax.swing.JRadioButton();
         PlaqueBelgeCheck = new javax.swing.JCheckBox();
-        TypeTravailCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);
+        TypeTravailCB = TypeTravailCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
 
@@ -185,27 +185,13 @@ public class RDVForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EntretienRBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntretienRBMouseClicked
-        if(ReparationRB.isSelected() == true)
-            ReparationRB.setSelected(false);
-        EntretienRB.setSelected(true);
-        TypeTravailCB.removeAllItems();
-        for(int i = 0;i < mainGarage.listeTravailEntretien.length;i++)
-        {
-            TypeTravailCB.addItem(mainGarage.listeTravailEntretien[i]);
-        }
+        
         this.invalidate();
         
     }//GEN-LAST:event_EntretienRBMouseClicked
 
     private void ReparationRBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReparationRBMouseClicked
-        if(EntretienRB.isSelected() == true)
-            EntretienRB.setSelected(false);
-        ReparationRB.setSelected(true);
-        TypeTravailCB.removeAllItems();
-        for(int i = 0;i < mainGarage.listeTravailReparation.length;i++)
-        {
-            TypeTravailCB.addItem(mainGarage.listeTravailReparation[i]);
-        }
+        
         this.invalidate();
     }//GEN-LAST:event_ReparationRBMouseClicked
 
@@ -214,20 +200,6 @@ public class RDVForm extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelButtonMouseClicked
 
     private void OKButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKButtonMouseClicked
-        
-        Vector tmp = new Vector();
-   
-        tmp.add(0,VoitTF.getText());
-        tmp.add(1,ImmatTF.getText());
-        tmp.add(2,(String)ProprioCB.getSelectedItem());
-        tmp.add(3,(String)TypeTravailCB.getSelectedItem());
-        tmp.add(4, BonusTF.getText());
-        
-        mainGarage.linkedListVector.add(tmp);
-        
-        JOptionPane.showMessageDialog(null,"Ajout effectue","Information",JOptionPane.INFORMATION_MESSAGE);
-        
-        tmp = null;
         
         this.dispose();
     }//GEN-LAST:event_OKButtonMouseClicked
