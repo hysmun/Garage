@@ -25,6 +25,11 @@ public class DataEncapsulate implements Serializable{
     public Vector<Vehicule> vVehicule;
 
     public DataEncapsulate() {
+        /*vClient = new Vector<Client>();
+        llTravailPrevu = new LinkedList<Travail>();
+        llTravailEnCours = new ArrayList<Travail>();
+        llTravailFini = new LinkedList<Travail>();
+        vVehicule = new Vector<Vehicule>();*/
     }
     
     

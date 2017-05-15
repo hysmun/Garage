@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -34,15 +35,23 @@ public class mainGarage {
         try
         {
             // TODO code application logic here
+            //gestion properties
             String current = System.getProperty("user.dir");
             File fileProperties = new File(filePropertiesGeneral);
             if(!fileProperties.exists())
             {
                 OutputStream ot = new FileOutputStream(filePropertiesGeneral);
+                generalProperties.setProperty("dossier-properties", "Properties");
+                generalProperties.setProperty("fichier-client-properties", "client.properties");
+                generalProperties.setProperty("fichier-pneu-properties", "pneu.properties");
+                generalProperties.setProperty("fichier-piece-properties", "piece.properties");
+                generalProperties.setProperty("fichier-lubifiant-properties", "lubrifiant.properties");
             }
-            FileInputStream filePropertiesInput = new FileInputStream(fileProperties);
-            generalProperties.load(filePropertiesInput);
-            
+            else
+            {
+                InputStream it = new FileInputStream(filePropertiesGeneral);
+                generalProperties.load(it);
+            }
 
             loginForm loginWindows = new loginForm();
             loginWindows.setVisible(true);
@@ -50,7 +59,6 @@ public class mainGarage {
             {
                 try {
                     //attente
-                    //System.out.print("t\n");
                     Thread.sleep(10);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(mainGarage.class.getName()).log(Level.SEVERE, null, ex);
