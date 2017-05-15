@@ -6,6 +6,7 @@
 package testPackages;
 
 import activite.Travail;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
@@ -16,14 +17,14 @@ import vehicules.Vehicule;
  *
  * @author ante
  */
-public class DatatEncapsulate {
+public class DataEncapsulate implements Serializable{
     public Vector<Client> vClient;
     public LinkedList<Travail> llTravailPrevu;
     public ArrayList<Travail> llTravailEnCours;
     public LinkedList<Travail> llTravailFini;
     public Vector<Vehicule> vVehicule;
 
-    public DatatEncapsulate() {
+    public DataEncapsulate() {
     }
     
     
