@@ -5,11 +5,13 @@
  */
 package people;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ante
  */
-public class Mecanicien extends PersonnelGarage {
+public class Mecanicien extends PersonnelGarage implements Serializable{
     protected String specialisation;
 
     public Mecanicien(String matricule, String id, String nom, String prenom, String adresse, String numTelephone,String specialisation) {

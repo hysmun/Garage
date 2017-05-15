@@ -5,12 +5,13 @@
  */
 package people;
 import authenticate.*;
+import java.io.Serializable;
 
 /**
  *
  * @author Rémy
  */
-public abstract class PersonnelGarage extends Personne implements Identifiable,AValider {
+public abstract class PersonnelGarage extends Personne implements Identifiable,AValider, Serializable {
     
     private String matricule;
 

@@ -5,21 +5,20 @@
  */
 package mainPackages;
 
-import activite.Travail;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.LinkedList;
 import java.util.Properties;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import testPackages.DataEncapsulate;
 
 /**
  *
  * @author ante
  */
 public class mainGarage {
+    
+    public static DataEncapsulate dE;
     
     public static String libreString = "-- libre --";
     

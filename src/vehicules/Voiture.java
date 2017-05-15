@@ -8,13 +8,14 @@ marque;
  */
 package vehicules;
 
+import java.io.Serializable;
 import people.Client;
 
 /**
  *
  * @author ante
  */
-public class Voiture extends Vehicule{
+public class Voiture extends Vehicule implements Serializable{
     protected TypeVoiture typeVoiture;
     protected String immatriculation;
 

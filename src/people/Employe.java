@@ -5,11 +5,13 @@
  */
 package people;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ante
  */
-public class Employe extends PersonnelGarage {
+public class Employe extends PersonnelGarage implements Serializable{
 
     public Employe(String id, String nom, String prenom, String adresse, String numTelephone, String matricule) {
         super(id, nom, prenom, adresse, numTelephone, matricule);

@@ -8,11 +8,12 @@ marque;
  */
 package vehicules;
 import exception.MissingTradeMarkException;
+import java.io.Serializable;
 /**
  *
  * @author ante
  */
-public class TypeVoiture {
+public class TypeVoiture implements Serializable{
     
     protected String marque;
     protected String type;

@@ -4,12 +4,13 @@
 package people;
 
 import authenticate.Identifiable;
+import java.io.Serializable;
 
 /**
  *
  * @author ante
  */
-public class Personne implements Identifiable{
+public class Personne implements Identifiable, Serializable{
     protected String id;
     protected String nom;
     protected String prenom;

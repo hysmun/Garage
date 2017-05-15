@@ -10,13 +10,14 @@ package vehicules;
 
 
 import authenticate.Identifiable;
+import java.io.Serializable;
 import people.Client;
 
 /**
  *
  * @author ante
  */
-public abstract class Vehicule implements Identifiable{
+public abstract class Vehicule implements Identifiable, Serializable{
     protected String id;
     protected Client cli;
 
