@@ -38,12 +38,12 @@ public class RDVForm extends javax.swing.JFrame {
         VoitTF = new javax.swing.JTextField();
         ImmatTF = new javax.swing.JTextField();
         BonusTF = new javax.swing.JTextField();
-        ProprioCB = ProprioCB = new javax.swing.JComboBox(mainGarage.listeProprio);
+        ProprioCB = new javax.swing.JComboBox();
         newCheck = new javax.swing.JCheckBox();
         EntretienRB = new javax.swing.JRadioButton();
         ReparationRB = new javax.swing.JRadioButton();
         PlaqueBelgeCheck = new javax.swing.JCheckBox();
-        TypeTravailCB = TypeTravailCB = new javax.swing.JComboBox(mainGarage.listeTravailEntretien);
+        TypeTravailCB = new javax.swing.JComboBox();
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
 
@@ -249,10 +249,10 @@ public class RDVForm extends javax.swing.JFrame {
     private javax.swing.JButton OKButton;
     private javax.swing.JCheckBox PlaqueBelgeCheck;
     private javax.swing.JLabel Proprio;
-    private javax.swing.JComboBox ProprioCB;
+    javax.swing.JComboBox ProprioCB;
     private javax.swing.JRadioButton ReparationRB;
     private javax.swing.JLabel TypeTravail;
-    private javax.swing.JComboBox TypeTravailCB;
+    javax.swing.JComboBox TypeTravailCB;
     private javax.swing.JLabel TypeVoiture;
     private javax.swing.JTextField VoitTF;
     private javax.swing.JCheckBox newCheck;
