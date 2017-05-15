@@ -21,8 +21,10 @@ import javax.swing.JOptionPane;
  */
 public class PropertiesCreations extends javax.swing.JFrame {
 
-    Properties prop = new Properties();
-    OutputStream output = null;
+    Properties prop1 = new Properties();
+    Properties prop2 = new Properties();
+    OutputStream output1 = null;
+    OutputStream output2 = null;
     
     public PropertiesCreations() {
         initComponents();
@@ -42,7 +44,8 @@ public class PropertiesCreations extends javax.swing.JFrame {
         }
         try
         {
-            output = new FileOutputStream(current + sep + "Accounts" + sep + "login.properties");
+            output1 = new FileOutputStream(current + sep + "Accounts" + sep + "member.properties");
+            output2 = new FileOutputStream(current + sep + "Accounts" + sep + "extern.properties");
         }
         catch(IOException io)
         {
@@ -65,9 +68,13 @@ public class PropertiesCreations extends javax.swing.JFrame {
         CancelButton = new javax.swing.JButton();
         LoginLabel = new javax.swing.JLabel();
         PassLabel = new javax.swing.JLabel();
+        PersonnelRB = new javax.swing.JRadioButton();
+        ExternRB = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Createur de compte");
+        setLocation(new java.awt.Point(0, 0));
+        setName("accounts"); // NOI18N
 
         PassTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,24 +100,42 @@ public class PropertiesCreations extends javax.swing.JFrame {
 
         PassLabel.setText("Mot de passe :");
 
+        PersonnelRB.setSelected(true);
+        PersonnelRB.setText("Personnel");
+        PersonnelRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PersonnelRBActionPerformed(evt);
+            }
+        });
+
+        ExternRB.setText("Exterieur");
+        ExternRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExternRBActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PersonnelRB)
                     .addComponent(OKButton)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(LoginLabel)
                         .addComponent(PassLabel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LoginTF, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                    .addComponent(PassTF)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(CancelButton)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(LoginTF, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                        .addComponent(PassTF)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(32, 32, 32)
+                            .addComponent(CancelButton)))
+                    .addComponent(ExternRB, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(67, 67, 67))
         );
         layout.setVerticalGroup(
@@ -124,7 +149,11 @@ public class PropertiesCreations extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PassTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PassLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PersonnelRB)
+                    .addComponent(ExternRB))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(OKButton)
                     .addComponent(CancelButton))
@@ -132,6 +161,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void PassTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassTFActionPerformed
@@ -139,15 +169,31 @@ public class PropertiesCreations extends javax.swing.JFrame {
     }//GEN-LAST:event_PassTFActionPerformed
 
     private void OKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKButtonActionPerformed
-        prop.setProperty(LoginTF.getText(), PassTF.getText());
-        try
+        if(PersonnelRB.isSelected())
         {
-            prop.store(output, null);
-            JOptionPane.showMessageDialog(null, "Compte ajoute", "Avertissement",JOptionPane.INFORMATION_MESSAGE);
+            prop1.setProperty(LoginTF.getText(), PassTF.getText());
+            try
+            {
+                prop1.store(output1, null);
+                JOptionPane.showMessageDialog(null, "Compte ajoute", "Avertissement",JOptionPane.INFORMATION_MESSAGE);
+            }
+            catch(IOException io)
+            {
+                io.printStackTrace();
+            }
         }
-        catch(IOException io)
+        else
         {
-            io.printStackTrace();
+            prop2.setProperty(LoginTF.getText(), PassTF.getText());
+            try
+            {
+                prop2.store(output2, null);
+                JOptionPane.showMessageDialog(null, "Compte ajoute", "Avertissement",JOptionPane.INFORMATION_MESSAGE);
+            }
+            catch(IOException io)
+            {
+                io.printStackTrace();
+            }
         }
     }//GEN-LAST:event_OKButtonActionPerformed
 
@@ -155,7 +201,8 @@ public class PropertiesCreations extends javax.swing.JFrame {
     {
         try
         {
-            output.close();
+            output1.close();
+            output2.close();
         }
         catch (IOException ex)
         {
@@ -166,12 +213,23 @@ public class PropertiesCreations extends javax.swing.JFrame {
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
         try 
         {
-            output.close();
+            output1.close();
+            output2.close();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
         this.dispose();
     }//GEN-LAST:event_CancelButtonActionPerformed
+
+    private void ExternRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExternRBActionPerformed
+        if(PersonnelRB.isSelected())
+            PersonnelRB.setSelected(false);
+    }//GEN-LAST:event_ExternRBActionPerformed
+
+    private void PersonnelRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PersonnelRBActionPerformed
+        if(ExternRB.isSelected())
+            ExternRB.setSelected(false);
+    }//GEN-LAST:event_PersonnelRBActionPerformed
     
     /**
      * @param args the command line arguments
@@ -210,10 +268,12 @@ public class PropertiesCreations extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelButton;
+    private javax.swing.JRadioButton ExternRB;
     private javax.swing.JLabel LoginLabel;
     private javax.swing.JTextField LoginTF;
     private javax.swing.JButton OKButton;
     private javax.swing.JLabel PassLabel;
     private javax.swing.JTextField PassTF;
+    private javax.swing.JRadioButton PersonnelRB;
     // End of variables declaration//GEN-END:variables
 }
