@@ -11,6 +11,7 @@ import java.io.OutputStream;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,20 +31,6 @@ public class PropertiesCreations extends javax.swing.JFrame {
         catch(IOException io)
         {
             io.printStackTrace();
-        }
-        finally
-        {
-            if(output != null)
-            {
-                try
-                {
-                    output.close();
-                }
-                catch(IOException io)
-                {
-                    io.printStackTrace();
-                }
-            }
         }
     }
 
@@ -140,6 +127,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
         try
         {
             prop.store(output, null);
+            JOptionPane.showMessageDialog(null, "Compte ajoute", "Avertissement",JOptionPane.INFORMATION_MESSAGE);
         }
         catch(IOException io)
         {
