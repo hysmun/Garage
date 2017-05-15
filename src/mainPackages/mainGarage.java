@@ -81,7 +81,7 @@ public class mainGarage {
             applicationGestionForm formPrincipale = new applicationGestionForm();
             formPrincipale.setVisible(true);
         }
-        catch(Throwable e)
+        catch(IOException e)
         {
             System.out.println("Error main garage !!!");
         }
