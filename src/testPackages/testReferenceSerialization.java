@@ -5,10 +5,18 @@
  */
 package testPackages;
 
+import activite.*;
+import exception.MissingTradeMarkException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import people.Client;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import people.*;
+import vehicules.*;
 
 /**
  *
@@ -93,9 +101,25 @@ public class testReferenceSerialization extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
        
-      Client testCli = new Client();
-      
-      try {
+    Client testCli = new Client();
+    Vector<Client> vClient = new Vector<Client>();
+    LinkedList<Travail> llTravailPrevu = new LinkedList<Travail>();
+    ArrayList<Travail> llTravailEnCours = new ArrayList<Travail>();
+    LinkedList<Travail> llTravailFini = new LinkedList<Travail>();
+    LinkedList<Vehicule> llVehicules = new LinkedList<Vehicule>();
+    
+    dataEncapsulate dE = new dataEncapsulate();
+    
+    try {
+    vClient.add(new Client("1", "Marc", "Assin","Rue du veto", "0494100811"));
+    vClient.add(new Client("2", "jean", "cive","Rue du veto2", "1494100811"));
+    dE.vClient.add(new Client("1", "Marc", "Assin","Rue du veto", "0494100811"));
+    dE.vClient.add(new Client("2", "jean", "cive","Rue du veto2", "1494100811"));
+    
+    llVehicules.add(new Voiture(new TypeVoiture("Renault","test", 4), "11AAA", "2", vClient.get(0)));
+    llVehicules.add(new Voiture(new TypeVoiture("Twingo","test2", 3), "222BBB", "3", vClient.get(1)));
+    
+    
          FileOutputStream fileOut = new FileOutputStream("/tmp/employee.ser");
          ObjectOutputStream out = new ObjectOutputStream(fileOut);
          out.writeObject(testCli);
@@ -103,8 +127,10 @@ public class testReferenceSerialization extends javax.swing.JFrame {
          fileOut.close();
          System.out.printf("Serialized data is saved in /tmp/employee.ser");
       }catch(IOException i) {
-         i.printStackTrace();
-      }
+          System.out.println("Error test serialization");
+      } catch (MissingTradeMarkException ex) {
+            Logger.getLogger(testReferenceSerialization.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
