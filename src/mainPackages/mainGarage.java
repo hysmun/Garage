@@ -72,11 +72,11 @@ public class mainGarage {
             {
                 OutputStream ot = new FileOutputStream(propertiesDir+generalProperties.getProperty("fichier-client-properties"));
                 clientProperties.setProperty("ip-client", "127.0.0.1");
+                clientProperties.setProperty("port-client", "4000");
                 clientProperties.setProperty("ip-server", "127.0.0.1");
                 clientProperties.setProperty("port-pneu", "4001");
                 clientProperties.setProperty("port-piece", "4002");
                 clientProperties.setProperty("port-lubrifiant", "4003");
-                clientProperties.setProperty("port-client", "4000");
                 clientProperties.store(ot, null);
             }
             else
