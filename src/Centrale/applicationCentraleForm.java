@@ -5,7 +5,8 @@
  */
 package Centrale;
 
-import java.awt.image.BufferedImage;
+import java.awt.BorderLayout;
+import java.awt.LayoutManager;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,7 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -133,9 +133,9 @@ public class applicationCentraleForm extends javax.swing.JFrame {
                     break;
                 default:
             }
-            BufferedImage imageApp = ImageIO.read(new File(serveurProperties.getProperty("image")));
-            JLabel picLabel = new JLabel(new ImageIcon(imageApp));
-            imagePanel.add(picLabel);
+            JLabel image = new JLabel( new ImageIcon(serveurProperties.getProperty("image")));
+            imagePanel.setLayout(new BorderLayout());
+            imagePanel.add(image, BorderLayout.CENTER);
             
             
             
@@ -170,7 +170,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         reponseButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Centrale achat - ");
+        setTitle("Centrale achat -");
 
         messageEntrantCheckBox.setText("Message Entrant");
 
@@ -178,8 +178,6 @@ public class applicationCentraleForm extends javax.swing.JFrame {
 
         lireButton.setBorder(null);
         lireButton.setLabel("Lire");
-
-        commandComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         messageLabel.setText(">>");
         messageLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -203,6 +201,8 @@ public class applicationCentraleForm extends javax.swing.JFrame {
             }
         });
         commandPanel.setViewportView(commandTable);
+
+        imagePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         javax.swing.GroupLayout imagePanelLayout = new javax.swing.GroupLayout(imagePanel);
         imagePanel.setLayout(imagePanelLayout);
@@ -284,12 +284,12 @@ public class applicationCentraleForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(detailCommandLabel)
                     .addComponent(commandPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(verifButton)
                     .addComponent(disponibiliteButton)
                     .addComponent(notDispoButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(reponseButton)
                 .addGap(34, 34, 34))
         );
@@ -344,7 +344,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> commandComboBox;
     private javax.swing.JScrollPane commandPanel;
-    public static javax.swing.JTable commandTable;
+    public javax.swing.JTable commandTable;
     private javax.swing.JLabel currentCommandLabel;
     private javax.swing.JLabel detailCommandLabel;
     private javax.swing.JRadioButton disponibiliteButton;
