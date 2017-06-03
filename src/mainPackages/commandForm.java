@@ -37,7 +37,7 @@ public class commandForm extends javax.swing.JFrame {
         quantiteLabel = new javax.swing.JLabel();
         envoyerButton = new javax.swing.JButton();
         annulerButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        commandPanel = new javax.swing.JScrollPane();
         commandList = new javax.swing.JList<>();
         libelleTB = new javax.swing.JTextField();
         typeTB = new javax.swing.JTextField();
@@ -93,7 +93,7 @@ public class commandForm extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane1.setViewportView(commandList);
+        commandPanel.setViewportView(commandList);
 
         dateLabel.setText("Date");
 
@@ -135,7 +135,7 @@ public class commandForm extends javax.swing.JFrame {
                                     .addGap(101, 101, 101)
                                     .addComponent(annulerButton)))
                             .addGap(45, 45, 45)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(commandPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -143,7 +143,7 @@ public class commandForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(commandPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(commandeLabel)
@@ -235,11 +235,11 @@ public class commandForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton annulerButton;
     private javax.swing.JList<String> commandList;
+    private javax.swing.JScrollPane commandPanel;
     private javax.swing.JLabel commandeLabel;
     private javax.swing.JLabel commandeListLabel;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JButton envoyerButton;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel libelleLabel;
     private javax.swing.JTextField libelleTB;
     private javax.swing.JRadioButton nonPrioRB;
