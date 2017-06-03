@@ -218,7 +218,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_CancelButtonActionPerformed
 
     private void ExternRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExternRBActionPerformed
