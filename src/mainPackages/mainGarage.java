@@ -71,11 +71,12 @@ public class mainGarage {
             if(!ClientfileProperties.exists())
             {
                 OutputStream ot = new FileOutputStream(propertiesDir+generalProperties.getProperty("fichier-client-properties"));
-                clientProperties.setProperty("dossier-properties", "Properties");
-                clientProperties.setProperty("fichier-client-properties", "client.properties");
-                clientProperties.setProperty("fichier-pneu-properties", "pneu.properties");
-                clientProperties.setProperty("fichier-piece-properties", "piece.properties");
-                clientProperties.setProperty("fichier-lubifiant-properties", "lubrifiant.properties");
+                clientProperties.setProperty("ip-client", "127.0.0.1");
+                clientProperties.setProperty("ip-server", "127.0.0.1");
+                clientProperties.setProperty("port-pneu", "4001");
+                clientProperties.setProperty("port-piece", "4002");
+                clientProperties.setProperty("port-lubrifiant", "4003");
+                clientProperties.setProperty("port-client", "4000");
                 clientProperties.store(ot, null);
             }
             else
