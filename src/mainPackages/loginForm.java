@@ -166,6 +166,7 @@ public class loginForm extends javax.swing.JFrame {
                     System.out.println("Mauvais choix de login, redirection");
                     JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
                     // Login applic exterieur
+                    JOptionPane.showMessageDialog(null,"Bienvenue "+UtilisateurTextFieldLoginForm.getText()+" !","Message de bienvenue",JOptionPane.INFORMATION_MESSAGE);
                     loginValue = 2;
                 }
                 else
@@ -184,6 +185,7 @@ public class loginForm extends javax.swing.JFrame {
                 {
                     System.out.println("Acces a l'applic");
                     // Login applic
+                    JOptionPane.showMessageDialog(null,"Bienvenue "+UtilisateurTextFieldLoginForm.getText()+" !","Message de bienvenue",JOptionPane.INFORMATION_MESSAGE);
                     loginValue = 1;
                 }
                 else
@@ -212,6 +214,7 @@ public class loginForm extends javax.swing.JFrame {
                     System.out.println("Mauvais choix de login, redirection");
                     JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
                     // Login applic exterieur
+                    JOptionPane.showMessageDialog(null,"Bienvenue "+UtilisateurTextFieldLoginForm.getText()+" !","Message de bienvenue",JOptionPane.INFORMATION_MESSAGE);
                     loginValue = 2;
                 }
                 else
@@ -230,6 +233,7 @@ public class loginForm extends javax.swing.JFrame {
                 {
                     System.out.println("Acces a l'applic");
                     // Login applic
+                    JOptionPane.showMessageDialog(null,"Bienvenue "+UtilisateurTextFieldLoginForm.getText()+" !","Message de bienvenue",JOptionPane.INFORMATION_MESSAGE);
                     loginValue = 1;
                 }
                 else
