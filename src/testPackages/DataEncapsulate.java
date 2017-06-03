@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
 import people.Client;
+import people.PersonnelGarage;
 import vehicules.Vehicule;
 
 /**
@@ -19,17 +20,19 @@ import vehicules.Vehicule;
  */
 public class DataEncapsulate implements Serializable{
     public Vector<Client> vClient;
+    public Vector<PersonnelGarage> vPersonnel;
     public LinkedList<Travail> llTravailPrevu;
     public ArrayList<Travail> llTravailEnCours;
     public LinkedList<Travail> llTravailFini;
     public Vector<Vehicule> vVehicule;
 
     public DataEncapsulate() {
-        /*vClient = new Vector<Client>();
+        vClient = new Vector<Client>();
+        vPersonnel = new Vector<PersonnelGarage>();
         llTravailPrevu = new LinkedList<Travail>();
         llTravailEnCours = new ArrayList<Travail>();
         llTravailFini = new LinkedList<Travail>();
-        vVehicule = new Vector<Vehicule>();*/
+        vVehicule = new Vector<Vehicule>();
     }
     
     
