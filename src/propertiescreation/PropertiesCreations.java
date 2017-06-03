@@ -11,9 +11,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Properties;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static mainPackages.mainGarage.dE;
+import people.Employe;
 
 /**
  *
@@ -70,6 +73,14 @@ public class PropertiesCreations extends javax.swing.JFrame {
         PersonnelRB = new javax.swing.JRadioButton();
         ExternRB = new javax.swing.JRadioButton();
         PassTF = new javax.swing.JPasswordField();
+        TelephoneTF = new javax.swing.JLabel();
+        NomLabel = new javax.swing.JLabel();
+        PrenomLabel = new javax.swing.JLabel();
+        AdresseLabel = new javax.swing.JLabel();
+        MatriculeTF = new javax.swing.JTextField();
+        NomTF = new javax.swing.JTextField();
+        PrenomTF = new javax.swing.JTextField();
+        AdresseTF = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Createur de compte");
@@ -109,40 +120,80 @@ public class PropertiesCreations extends javax.swing.JFrame {
             }
         });
 
+        TelephoneTF.setText("Téléphone :");
+
+        NomLabel.setText("Nom :");
+
+        PrenomLabel.setText("Prénom :");
+
+        AdresseLabel.setText("Adresse :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PersonnelRB)
-                    .addComponent(OKButton)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(LoginLabel)
-                        .addComponent(PassLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(LoginTF, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(32, 32, 32)
-                            .addComponent(CancelButton))
-                        .addComponent(PassTF))
-                    .addComponent(ExternRB, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(67, 67, 67))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PersonnelRB)
+                            .addComponent(PassLabel))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(OKButton)
+                                .addGap(103, 103, 103)
+                                .addComponent(CancelButton)
+                                .addGap(407, 407, 407))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(LoginTF, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PassTF, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ExternRB))
+                                .addGap(74, 74, 74)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TelephoneTF)
+                                    .addComponent(NomLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(MatriculeTF, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                                    .addComponent(NomTF))
+                                .addGap(59, 59, 59)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(AdresseLabel)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(AdresseTF))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(PrenomLabel)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(PrenomTF, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(99, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LoginLabel)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LoginLabel)
                     .addComponent(LoginTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LoginLabel))
-                .addGap(39, 39, 39)
+                    .addComponent(TelephoneTF)
+                    .addComponent(PrenomLabel)
+                    .addComponent(MatriculeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PrenomTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PassLabel)
-                    .addComponent(PassTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PassTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NomLabel)
+                    .addComponent(AdresseLabel)
+                    .addComponent(NomTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AdresseTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PersonnelRB)
@@ -161,7 +212,22 @@ public class PropertiesCreations extends javax.swing.JFrame {
     private void OKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKButtonActionPerformed
         if(PersonnelRB.isSelected())
         {
-            prop1.setProperty(LoginTF.getText(), PassTF.getText());
+            if(LoginTF.getText().equals("") || PassTF.getText().equals("") || AdresseTF.getText().equals("") || TelephoneTF.getText().equals("") || NomTF.getText().equals("") || PrenomTF.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"Certains champs ne sont pas remplis","Erreur",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            Employe tmp = new Employe(LoginTF.getText(), NomTF.getText(), PrenomTF.getText(), AdresseTF.getText(), TelephoneTF.getText(), LoginTF.getText() + new Random().nextInt(100));
+            if(dE.vPersonnel.contains(tmp))
+            {
+                JOptionPane.showMessageDialog(null,"Duplicata détecté, échec création","Erreur",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            else
+            {
+                dE.vPersonnel.add(tmp);
+                prop1.setProperty(LoginTF.getText(), PassTF.getText());
+            }
             try
             {
                 prop1.store(output1, null);
@@ -174,6 +240,11 @@ public class PropertiesCreations extends javax.swing.JFrame {
         }
         else
         {
+            if(LoginTF.getText().equals("") || PassTF.getText().equals("") || AdresseTF.getText().equals("") || TelephoneTF.getText().equals("") || NomTF.getText().equals("") || PrenomTF.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null,"Certains champs ne sont pas remplis","Erreur",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             prop2.setProperty(LoginTF.getText(), PassTF.getText());
             try
             {
@@ -257,13 +328,21 @@ public class PropertiesCreations extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AdresseLabel;
+    private javax.swing.JTextField AdresseTF;
     private javax.swing.JButton CancelButton;
     private javax.swing.JRadioButton ExternRB;
     private javax.swing.JLabel LoginLabel;
     private javax.swing.JTextField LoginTF;
+    private javax.swing.JTextField MatriculeTF;
+    private javax.swing.JLabel NomLabel;
+    private javax.swing.JTextField NomTF;
     private javax.swing.JButton OKButton;
     private javax.swing.JLabel PassLabel;
     private javax.swing.JPasswordField PassTF;
     private javax.swing.JRadioButton PersonnelRB;
+    private javax.swing.JLabel PrenomLabel;
+    private javax.swing.JTextField PrenomTF;
+    private javax.swing.JLabel TelephoneTF;
     // End of variables declaration//GEN-END:variables
 }
