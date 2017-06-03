@@ -22,7 +22,7 @@ import testPackages.DataEncapsulate;
  */
 public class mainGarage {
     
-    public static DataEncapsulate dE;
+    public static DataEncapsulate dE = new DataEncapsulate();
     
     public static String libreString = "-- libre --";
     

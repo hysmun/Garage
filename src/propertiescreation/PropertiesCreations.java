@@ -12,8 +12,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Properties;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static mainPackages.mainGarage.dE;
 import people.Employe;
@@ -219,7 +217,13 @@ public class PropertiesCreations extends javax.swing.JFrame {
                 return;
             }
             Employe tmp = new Employe(LoginTF.getText(), NomTF.getText(), PrenomTF.getText(), AdresseTF.getText(), TelephoneTF.getText(), LoginTF.getText() + new Random().nextInt(100));
-            if(dE.vPersonnel.contains(tmp))
+            if(dE.vPersonnel.isEmpty())
+            {
+                dE.vPersonnel.add(tmp);
+                prop1.setProperty(LoginTF.getText(), PassTF.getText());
+                tmp = null;
+            }
+            else if(dE.vPersonnel.contains(tmp))
             {
                 JOptionPane.showMessageDialog(null,"Duplicata détecté, échec création","Erreur",JOptionPane.ERROR_MESSAGE);
                 return;
@@ -228,7 +232,6 @@ public class PropertiesCreations extends javax.swing.JFrame {
             {
                 dE.vPersonnel.add(tmp);
                 prop1.setProperty(LoginTF.getText(), PassTF.getText());
-                tmp = null;
             }
             try
             {
@@ -257,13 +260,13 @@ public class PropertiesCreations extends javax.swing.JFrame {
             {
                 dE.vPersonnel.add(tmp2);
                 prop2.setProperty(LoginTF.getText(), PassTF.getText());
-                tmp2 = null;
             }
             prop2.setProperty(LoginTF.getText(), PassTF.getText());
             try
             {
                 prop2.store(output2, null);
                 JOptionPane.showMessageDialog(null, "Compte ajoute", "Avertissement",JOptionPane.INFORMATION_MESSAGE);
+                tmp2 = null;
             }
             catch(IOException io)
             {
