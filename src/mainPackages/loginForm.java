@@ -8,6 +8,7 @@ package mainPackages;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -17,6 +18,8 @@ import propertiescreation.PropertiesCreations;
 public class loginForm extends javax.swing.JFrame {
 
     private hashtableLogin hashtables;
+    private Properties members = new Properties();
+    private Properties externs = new Properties();
     
     /*
     -1 erreur mdp
@@ -52,8 +55,10 @@ public class loginForm extends javax.swing.JFrame {
         }
         try
         {
-            FileInputStream members = new FileInputStream(current + sep + "accounts" + sep + "member.properties");
-            FileInputStream externs = new FileInputStream(current + sep + "accounts" + sep + "extern.properties");
+            FileInputStream membersp = new FileInputStream(current + sep + "accounts" + sep + "member.properties");
+            FileInputStream externsp = new FileInputStream(current + sep + "accounts" + sep + "extern.properties");
+            members.load(membersp);
+            externs.load(externsp);
         }
         catch(IOException io)
         {
@@ -150,10 +155,10 @@ public class loginForm extends javax.swing.JFrame {
     private void OkButtonLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OkButtonLoginFormMouseClicked
         if(MembreRadioLoginForm.isSelected() == true)
         {
-            if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()) == null)
+            if(members.getProperty(UtilisateurTextFieldLoginForm.getText()) == null)
             {
                 System.out.println("Membre inexistant");
-                if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()) == null)
+                if(externs.getProperty(UtilisateurTextFieldLoginForm.getText()) == null)
                 {
                     System.out.println("Inconnu, fermeture applic");
                     System.exit(0);
