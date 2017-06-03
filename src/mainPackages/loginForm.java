@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import login.hashtableLogin;
+import propertiescreation.PropertiesCreations;
 
 public class loginForm extends javax.swing.JFrame {
 
@@ -23,6 +24,9 @@ public class loginForm extends javax.swing.JFrame {
     */
     public int loginValue=0;
     
+    //0 = on peut se log (car fichiers existants) | 1 = pas de comptes trouvé (les fichiers doivent être créé et rempli)
+    static public int noLogin=0;
+    
     public loginForm() {
         initComponents();
         String sep = System.getProperty("file.separator");
@@ -30,21 +34,24 @@ public class loginForm extends javax.swing.JFrame {
         File fi = new File("accounts");
         if(!fi.exists())
         {
-            JOptionPane.showMessageDialog(null,"Aucuns comptes trouvés","Erreur",JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
+            noLogin = 1;
+            JOptionPane.showMessageDialog(null,"Aucuns comptes trouvés, ouverture de l'outil de création de comptes","Erreur",JOptionPane.ERROR_MESSAGE);
+            PropertiesCreations pc = new PropertiesCreations();
+            pc.setVisible(true);
+            //while(pc.
         }
         else
         {
             try
             {
-                FileInputStream input = new FileInputStream(current + sep + "accounts" + sep + "login.properties");
+                FileInputStream members = new FileInputStream(current + sep + "accounts" + sep + "member.properties");
+                FileInputStream externs = new FileInputStream(current + sep + "accounts" + sep + "extern.properties");
             }
             catch(IOException io)
             {
                 io.printStackTrace();
             }
         }
-        this.hashtables = new hashtableLogin();
     }
 
     /**
@@ -260,6 +267,7 @@ public class loginForm extends javax.swing.JFrame {
             @Override
             public void run() {
                 new loginForm().setVisible(true);
+                                
             }
         });
     }
