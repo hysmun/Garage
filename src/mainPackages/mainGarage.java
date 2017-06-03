@@ -48,7 +48,7 @@ public class mainGarage {
                 generalProperties.setProperty("fichier-client-properties", "client.properties");
                 generalProperties.setProperty("fichier-pneu-properties", "pneu.properties");
                 generalProperties.setProperty("fichier-piece-properties", "piece.properties");
-                generalProperties.setProperty("fichier-lubifiant-properties", "lubrifiant.properties");
+                generalProperties.setProperty("fichier-lubrifiant-properties", "lubrifiant.properties");
                 generalProperties.store(ot, null);
             }
             else

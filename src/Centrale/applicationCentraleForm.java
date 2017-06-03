@@ -5,7 +5,17 @@
  */
 package Centrale;
 
+import java.awt.BorderLayout;
+import java.awt.LayoutManager;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Properties;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -19,21 +29,120 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     public static int PNEU = 0;
     public static int PIECE = 1;
     public static int LUBRIFIANT = 2;
+    public static String filePropertiesGeneral = "general.properties";
     
     public int typeApp;
     public static Properties generalProperties = new Properties();
-    public static Properties serveurProperties = new Properties();
-    
+    public String serveurPropFile;
+    public Properties serveurProperties = new Properties();
+    public static String currentDir;
+    public static String propertiesDir;
     public applicationCentraleForm() {
         initComponents();
         typeApp = -1;
     }
     public applicationCentraleForm(int type) {
-        initComponents();
-        typeApp = type;
-        
-        //properties du type de app
-        
+        try
+        {
+           initComponents();
+            typeApp = type;
+
+             // <editor-fold defaultstate="uncollapsed" desc="properties serveur">
+            currentDir = System.getProperty("user.dir");
+            File fileProperties = new File(filePropertiesGeneral);
+            if(!fileProperties.exists())
+            {
+                OutputStream ot = new FileOutputStream(filePropertiesGeneral);
+                generalProperties.setProperty("dossier-properties", "properties");
+                generalProperties.setProperty("fichier-client-properties", "client.properties");
+                generalProperties.setProperty("fichier-pneu-properties", "pneu.properties");
+                generalProperties.setProperty("fichier-piece-properties", "piece.properties");
+                generalProperties.setProperty("fichier-lubrifiant-properties", "lubrifiant.properties");
+                generalProperties.store(ot, null);
+            }
+            else
+            {
+                InputStream it = new FileInputStream(filePropertiesGeneral);
+                generalProperties.load(it);
+            }
+            System.out.println("filePropertiesGeneral charger");
+            
+            
+            File userdir = new File(currentDir);
+            propertiesDir = generalProperties.getProperty("dossier-properties") + System.getProperty("file.separator");
+            File dossierProperties = new File(generalProperties.getProperty("dossier-properties"));
+            if(!dossierProperties.exists())
+            {
+                //dossier inexistant
+                dossierProperties.mkdir();
+            }
+            
+            
+            switch(typeApp)
+            {
+                case 0://PNEU
+                    serveurPropFile = generalProperties.getProperty("fichier-pneu-properties");
+                    break;
+                case 1://PIECE
+                    serveurPropFile = generalProperties.getProperty("fichier-piece-properties");
+                    break;
+                case 2://LUBRIFIANT
+                    serveurPropFile = generalProperties.getProperty("fichier-lubrifiant-properties");
+                    break;
+                default:
+            }
+            File serveurfileProperties = new File(propertiesDir+serveurPropFile);
+            if(!serveurfileProperties.exists())
+            {
+                OutputStream ot = new FileOutputStream(propertiesDir+serveurPropFile);
+                serveurProperties.setProperty("ip-server", "127.0.0.1");
+                serveurProperties.setProperty("port", ""+(4001+typeApp));
+                switch(typeApp)
+                {
+                    case 0://PNEU
+                        serveurProperties.setProperty("image","Pneus.png");
+                        break;
+                    case 1://PIECE
+                        serveurProperties.setProperty("image","Pieces.png");
+                        break;
+                    case 2://LUBRIFIANT
+                        serveurProperties.setProperty("image","Lubrifiants.png");
+                        break;
+                    default:
+                }
+                serveurProperties.store(ot, null);
+            }
+            else
+            {
+                InputStream it = new FileInputStream(propertiesDir+serveurPropFile);
+                serveurProperties.load(it);
+            }
+            System.out.println(serveurPropFile+" charger");
+            // </editor-fold> 
+            
+            switch(typeApp)
+            {
+                case 0://PNEU
+                    this.setTitle(this.getTitle()+ " PNEUS");
+                    break;
+                case 1://PIECE
+                    this.setTitle(this.getTitle()+ " PIECES");
+                    break;
+                case 2://LUBRIFIANT
+                    this.setTitle(this.getTitle()+ " LUBRIFIANT");
+                    break;
+                default:
+            }
+            //chargement image
+            JLabel image = new JLabel( new ImageIcon(serveurProperties.getProperty("image")));
+            imagePanel.setLayout(new BorderLayout());
+            imagePanel.add(image, BorderLayout.CENTER);
+            
+        }
+        catch(IOException e)
+        {
+            System.out.println("Error serveur init "+e.getMessage());
+        }
     }
 
     /**
@@ -60,7 +169,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         reponseButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Centrale achat - ");
+        setTitle("Centrale achat -");
 
         messageEntrantCheckBox.setText("Message Entrant");
 
@@ -68,8 +177,11 @@ public class applicationCentraleForm extends javax.swing.JFrame {
 
         lireButton.setBorder(null);
         lireButton.setLabel("Lire");
-
-        commandComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        lireButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lireButtonActionPerformed(evt);
+            }
+        });
 
         messageLabel.setText(">>");
         messageLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -94,6 +206,8 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         });
         commandPanel.setViewportView(commandTable);
 
+        imagePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
         javax.swing.GroupLayout imagePanelLayout = new javax.swing.GroupLayout(imagePanel);
         imagePanel.setLayout(imagePanelLayout);
         imagePanelLayout.setHorizontalGroup(
@@ -106,12 +220,33 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         );
 
         verifButton.setText("vérification de la commande");
+        verifButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verifButtonActionPerformed(evt);
+            }
+        });
 
         disponibiliteButton.setText("dispinible");
+        disponibiliteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                disponibiliteButtonActionPerformed(evt);
+            }
+        });
 
+        notDispoButton.setSelected(true);
         notDispoButton.setText("non disponible");
+        notDispoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                notDispoButtonActionPerformed(evt);
+            }
+        });
 
         reponseButton.setText("Envoyer réponse");
+        reponseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reponseButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -174,12 +309,12 @@ public class applicationCentraleForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(detailCommandLabel)
                     .addComponent(commandPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(verifButton)
                     .addComponent(disponibiliteButton)
                     .addComponent(notDispoButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(reponseButton)
                 .addGap(34, 34, 34))
         );
@@ -195,6 +330,28 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void disponibiliteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disponibiliteButtonActionPerformed
+        // TODO add your handling code here:
+        notDispoButton.setSelected(false);
+    }//GEN-LAST:event_disponibiliteButtonActionPerformed
+
+    private void notDispoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notDispoButtonActionPerformed
+        // TODO add your handling code here:
+        disponibiliteButton.setSelected(false);
+    }//GEN-LAST:event_notDispoButtonActionPerformed
+
+    private void reponseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reponseButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reponseButtonActionPerformed
+
+    private void verifButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verifButtonActionPerformed
+
+    private void lireButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lireButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lireButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,7 +391,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> commandComboBox;
     private javax.swing.JScrollPane commandPanel;
-    public static javax.swing.JTable commandTable;
+    public javax.swing.JTable commandTable;
     private javax.swing.JLabel currentCommandLabel;
     private javax.swing.JLabel detailCommandLabel;
     private javax.swing.JRadioButton disponibiliteButton;
