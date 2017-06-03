@@ -39,7 +39,7 @@ public class loginForm extends javax.swing.JFrame {
             PropertiesCreations pc = new PropertiesCreations();
             pc.setVisible(true);
             this.setVisible(false);
-            while(pc.is)
+            
         }
         else
         {
