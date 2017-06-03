@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static mainPackages.mainGarage.dE;
 import people.Employe;
+import people.TechnicienExterieur;
 
 /**
  *
@@ -227,6 +228,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
             {
                 dE.vPersonnel.add(tmp);
                 prop1.setProperty(LoginTF.getText(), PassTF.getText());
+                tmp = null;
             }
             try
             {
@@ -244,6 +246,18 @@ public class PropertiesCreations extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(null,"Certains champs ne sont pas remplis","Erreur",JOptionPane.ERROR_MESSAGE);
                 return;
+            }
+            TechnicienExterieur tmp2 = new TechnicienExterieur(LoginTF.getText() + new Random().nextInt(100), LoginTF.getText(), NomTF.getText(), PrenomTF.getText(), AdresseTF.getText(), TelephoneTF.getText());
+            if(dE.vPersonnel.contains(tmp2))
+            {
+                JOptionPane.showMessageDialog(null,"Duplicata détecté, échec création","Erreur",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            else
+            {
+                dE.vPersonnel.add(tmp2);
+                prop2.setProperty(LoginTF.getText(), PassTF.getText());
+                tmp2 = null;
             }
             prop2.setProperty(LoginTF.getText(), PassTF.getText());
             try
