@@ -83,7 +83,7 @@ public class mainGarage {
                 InputStream it = new FileInputStream(propertiesDir+generalProperties.getProperty("fichier-client-properties"));
                 clientProperties.load(it);
             }
-            System.out.println("fichier-client-properties");
+            System.out.println("fichier-client-properties charger");
             
             
 
