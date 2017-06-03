@@ -8,6 +8,8 @@ package mainPackages;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import login.hashtableLogin;
 import propertiescreation.PropertiesCreations;
@@ -38,20 +40,24 @@ public class loginForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Aucuns comptes trouvés, ouverture de l'outil de création de comptes","Erreur",JOptionPane.ERROR_MESSAGE);
             PropertiesCreations pc = new PropertiesCreations();
             pc.setVisible(true);
-            this.setVisible(false);
-            
+            while(pc.isVisible())
+            {
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(loginForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            noLogin = 0;
         }
-        else
+        try
         {
-            try
-            {
-                FileInputStream members = new FileInputStream(current + sep + "accounts" + sep + "member.properties");
-                FileInputStream externs = new FileInputStream(current + sep + "accounts" + sep + "extern.properties");
-            }
-            catch(IOException io)
-            {
-                io.printStackTrace();
-            }
+            FileInputStream members = new FileInputStream(current + sep + "accounts" + sep + "member.properties");
+            FileInputStream externs = new FileInputStream(current + sep + "accounts" + sep + "extern.properties");
+        }
+        catch(IOException io)
+        {
+            io.printStackTrace();
         }
     }
 

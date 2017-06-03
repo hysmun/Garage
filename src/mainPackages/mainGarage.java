@@ -89,7 +89,25 @@ public class mainGarage {
             
 
             loginForm loginWindows = new loginForm();
-            loginWindows.setVisible(true);
+            if(loginWindows.noLogin == 1)
+            {
+                loginWindows.setVisible(false);
+                while(loginWindows.noLogin != 0)
+                {
+                    try
+                    {
+                        Thread.sleep(10);
+                    }
+                    catch (InterruptedException ex) 
+                    {
+                        Logger.getLogger(mainGarage.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                }
+                loginWindows.setVisible(true);
+            }
+            else
+                loginWindows.setVisible(true);
             while(loginWindows.loginValue < 1)
             {
                 try {
