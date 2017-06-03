@@ -133,11 +133,10 @@ public class applicationCentraleForm extends javax.swing.JFrame {
                     break;
                 default:
             }
+            //chargement image
             JLabel image = new JLabel( new ImageIcon(serveurProperties.getProperty("image")));
             imagePanel.setLayout(new BorderLayout());
             imagePanel.add(image, BorderLayout.CENTER);
-            
-            
             
         }
         catch(IOException e)
