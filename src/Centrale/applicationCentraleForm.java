@@ -27,18 +27,152 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        messageEntrantCheckBox = new javax.swing.JCheckBox();
+        currentCommandLabel = new javax.swing.JLabel();
+        lireButton = new javax.swing.JButton();
+        commandComboBox = new javax.swing.JComboBox<>();
+        messageLabel = new javax.swing.JLabel();
+        detailCommandLabel = new javax.swing.JLabel();
+        commandPanel = new javax.swing.JScrollPane();
+        commandTable = new javax.swing.JTable();
+        imagePanel = new javax.swing.JPanel();
+        verifButton = new javax.swing.JButton();
+        disponibiliteButton = new javax.swing.JRadioButton();
+        notDispoButton = new javax.swing.JRadioButton();
+        reponseButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Centrale achat - ");
+
+        messageEntrantCheckBox.setText("Message Entrant");
+
+        currentCommandLabel.setText("Commande en cours");
+
+        lireButton.setBorder(null);
+        lireButton.setLabel("Lire");
+
+        commandComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        messageLabel.setText(">>");
+        messageLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        detailCommandLabel.setText("Détails de la commande");
+
+        commandTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null}
+            },
+            new String [] {
+                "Caracteristique", "Valeur"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        commandPanel.setViewportView(commandTable);
+
+        javax.swing.GroupLayout imagePanelLayout = new javax.swing.GroupLayout(imagePanel);
+        imagePanel.setLayout(imagePanelLayout);
+        imagePanelLayout.setHorizontalGroup(
+            imagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        imagePanelLayout.setVerticalGroup(
+            imagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        verifButton.setText("vérification de la commande");
+
+        disponibiliteButton.setText("dispinible");
+
+        notDispoButton.setText("non disponible");
+
+        reponseButton.setText("Envoyer réponse");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(detailCommandLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                        .addComponent(commandPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(messageEntrantCheckBox)
+                            .addComponent(lireButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(currentCommandLabel)
+                            .addComponent(commandComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(verifButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(reponseButton)
+                                .addGap(345, 345, 345))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(disponibiliteButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(notDispoButton)
+                                .addGap(108, 108, 108))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(currentCommandLabel)
+                            .addComponent(messageEntrantCheckBox))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(commandComboBox)
+                            .addComponent(lireButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20)
+                .addComponent(messageLabel)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(detailCommandLabel)
+                    .addComponent(commandPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(verifButton)
+                    .addComponent(disponibiliteButton)
+                    .addComponent(notDispoButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addComponent(reponseButton)
+                .addGap(34, 34, 34))
         );
+
+        messageEntrantCheckBox.getAccessibleContext().setAccessibleName("msgEntrantButton");
+        currentCommandLabel.getAccessibleContext().setAccessibleName("currentCommandLabel");
+        lireButton.getAccessibleContext().setAccessibleName("lireButton");
+        commandComboBox.getAccessibleContext().setAccessibleName("commandeComboBox");
+        messageLabel.getAccessibleContext().setAccessibleName("messageEntrantLabel");
+        detailCommandLabel.getAccessibleContext().setAccessibleName("detailCommandLabel");
+        imagePanel.getAccessibleContext().setAccessibleName("imagePanel");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +213,18 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> commandComboBox;
+    private javax.swing.JScrollPane commandPanel;
+    public static javax.swing.JTable commandTable;
+    private javax.swing.JLabel currentCommandLabel;
+    private javax.swing.JLabel detailCommandLabel;
+    private javax.swing.JRadioButton disponibiliteButton;
+    private javax.swing.JPanel imagePanel;
+    private javax.swing.JButton lireButton;
+    private javax.swing.JCheckBox messageEntrantCheckBox;
+    private javax.swing.JLabel messageLabel;
+    private javax.swing.JRadioButton notDispoButton;
+    private javax.swing.JButton reponseButton;
+    private javax.swing.JButton verifButton;
     // End of variables declaration//GEN-END:variables
 }
