@@ -16,6 +16,7 @@ import java.io.OutputStream;
 import java.util.Properties;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import network.NetworkBasicServer;
 
 /**
  *
@@ -37,6 +38,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     public Properties serveurProperties = new Properties();
     public static String currentDir;
     public static String propertiesDir;
+    public NetworkBasicServer netServer;
     public applicationCentraleForm() {
         initComponents();
         typeApp = -1;
@@ -137,6 +139,9 @@ public class applicationCentraleForm extends javax.swing.JFrame {
             JLabel image = new JLabel( new ImageIcon(serveurProperties.getProperty("image")));
             imagePanel.setLayout(new BorderLayout());
             imagePanel.add(image, BorderLayout.CENTER);
+            
+            //network
+            netServer = new NetworkBasicServer(Integer.parseInt(serveurProperties.getProperty("port")),messageEntrantCheckBox);
             
         }
         catch(IOException e)
