@@ -5,6 +5,7 @@
  */
 package Centrale;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,6 +13,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -92,7 +96,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
             {
                 OutputStream ot = new FileOutputStream(propertiesDir+serveurPropFile);
                 serveurProperties.setProperty("ip-server", "127.0.0.1");
-                serveurProperties.setProperty("port", ""+(4000+typeApp));
+                serveurProperties.setProperty("port", ""+(4001+typeApp));
                 switch(typeApp)
                 {
                     case 0://PNEU
@@ -129,7 +133,9 @@ public class applicationCentraleForm extends javax.swing.JFrame {
                     break;
                 default:
             }
-            
+            BufferedImage imageApp = ImageIO.read(new File(serveurProperties.getProperty("image")));
+            JLabel picLabel = new JLabel(new ImageIcon(imageApp));
+            imagePanel.add(picLabel);
             
             
             
