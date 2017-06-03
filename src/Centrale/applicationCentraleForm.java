@@ -5,6 +5,12 @@
  */
 package Centrale;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Properties;
 
 /**
@@ -19,21 +25,119 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     public static int PNEU = 0;
     public static int PIECE = 1;
     public static int LUBRIFIANT = 2;
+    public static String filePropertiesGeneral = "general.properties";
     
     public int typeApp;
     public static Properties generalProperties = new Properties();
-    public static Properties serveurProperties = new Properties();
-    
+    public String serveurPropFile;
+    public Properties serveurProperties = new Properties();
+    public static String currentDir;
+    public static String propertiesDir;
     public applicationCentraleForm() {
         initComponents();
         typeApp = -1;
     }
     public applicationCentraleForm(int type) {
-        initComponents();
-        typeApp = type;
-        
-        //properties du type de app
-        
+        try
+        {
+           initComponents();
+            typeApp = type;
+
+             // <editor-fold defaultstate="uncollapsed" desc="properties serveur">
+            currentDir = System.getProperty("user.dir");
+            File fileProperties = new File(filePropertiesGeneral);
+            if(!fileProperties.exists())
+            {
+                OutputStream ot = new FileOutputStream(filePropertiesGeneral);
+                generalProperties.setProperty("dossier-properties", "properties");
+                generalProperties.setProperty("fichier-client-properties", "client.properties");
+                generalProperties.setProperty("fichier-pneu-properties", "pneu.properties");
+                generalProperties.setProperty("fichier-piece-properties", "piece.properties");
+                generalProperties.setProperty("fichier-lubrifiant-properties", "lubrifiant.properties");
+                generalProperties.store(ot, null);
+            }
+            else
+            {
+                InputStream it = new FileInputStream(filePropertiesGeneral);
+                generalProperties.load(it);
+            }
+            System.out.println("filePropertiesGeneral charger");
+            
+            
+            File userdir = new File(currentDir);
+            propertiesDir = generalProperties.getProperty("dossier-properties") + System.getProperty("file.separator");
+            File dossierProperties = new File(generalProperties.getProperty("dossier-properties"));
+            if(!dossierProperties.exists())
+            {
+                //dossier inexistant
+                dossierProperties.mkdir();
+            }
+            
+            
+            switch(typeApp)
+            {
+                case 0://PNEU
+                    serveurPropFile = generalProperties.getProperty("fichier-pneu-properties");
+                    break;
+                case 1://PIECE
+                    serveurPropFile = generalProperties.getProperty("fichier-piece-properties");
+                    break;
+                case 2://LUBRIFIANT
+                    serveurPropFile = generalProperties.getProperty("fichier-lubrifiant-properties");
+                    break;
+                default:
+            }
+            File serveurfileProperties = new File(propertiesDir+serveurPropFile);
+            if(!serveurfileProperties.exists())
+            {
+                OutputStream ot = new FileOutputStream(propertiesDir+serveurPropFile);
+                serveurProperties.setProperty("ip-server", "127.0.0.1");
+                serveurProperties.setProperty("port", ""+(4000+typeApp));
+                switch(typeApp)
+                {
+                    case 0://PNEU
+                        serveurProperties.setProperty("image","Pneus.png");
+                        break;
+                    case 1://PIECE
+                        serveurProperties.setProperty("image","Pieces.png");
+                        break;
+                    case 2://LUBRIFIANT
+                        serveurProperties.setProperty("image","Lubrifiants.png");
+                        break;
+                    default:
+                }
+                serveurProperties.store(ot, null);
+            }
+            else
+            {
+                InputStream it = new FileInputStream(propertiesDir+serveurPropFile);
+                serveurProperties.load(it);
+            }
+            System.out.println(serveurPropFile+" charger");
+            // </editor-fold> 
+            
+            switch(typeApp)
+            {
+                case 0://PNEU
+                    this.setTitle(this.getTitle()+ " PNEUS");
+                    break;
+                case 1://PIECE
+                    this.setTitle(this.getTitle()+ " PIECES");
+                    break;
+                case 2://LUBRIFIANT
+                    this.setTitle(this.getTitle()+ " LUBRIFIANT");
+                    break;
+                default:
+            }
+            
+            
+            
+            
+        }
+        catch(IOException e)
+        {
+            System.out.println("Error serveur init "+e.getMessage());
+        }
     }
 
     /**
