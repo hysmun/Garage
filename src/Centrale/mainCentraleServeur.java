@@ -17,6 +17,9 @@ public class mainCentraleServeur {
     public static void main(String[] args) {
         // TODO code application logic here
         applicationCentraleForm appPneu = new applicationCentraleForm(applicationCentraleForm.PNEU);
+        appPneu.setVisible(true);
+        applicationCentraleForm appPiece = new applicationCentraleForm(applicationCentraleForm.PIECE);
+        appPiece.setVisible(true);
         
     }
     

@@ -27,6 +27,9 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     public applicationCentraleForm(int type) {
         initComponents();
         typeApp = type;
+        
+        
+        System.out.println("type = "+typeApp);
     }
 
     /**
@@ -52,7 +55,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         notDispoButton = new javax.swing.JRadioButton();
         reponseButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Centrale achat - ");
 
         messageEntrantCheckBox.setText("Message Entrant");
@@ -186,6 +189,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         imagePanel.getAccessibleContext().setAccessibleName("imagePanel");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
