@@ -226,7 +226,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
             }
         });
 
-        disponibiliteButton.setText("dispinible");
+        disponibiliteButton.setText("disponible");
         disponibiliteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 disponibiliteButtonActionPerformed(evt);
