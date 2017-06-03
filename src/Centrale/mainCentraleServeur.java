@@ -20,6 +20,8 @@ public class mainCentraleServeur {
         appPneu.setVisible(true);
         applicationCentraleForm appPiece = new applicationCentraleForm(applicationCentraleForm.PIECE);
         appPiece.setVisible(true);
+        applicationCentraleForm appLubrifiant = new applicationCentraleForm(applicationCentraleForm.LUBRIFIANT);
+        appLubrifiant.setVisible(true);
         
     }
     
