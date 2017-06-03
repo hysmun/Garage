@@ -63,24 +63,18 @@ public class PropertiesCreations extends javax.swing.JFrame {
     private void initComponents() {
 
         LoginTF = new javax.swing.JTextField();
-        PassTF = new javax.swing.JTextField();
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
         LoginLabel = new javax.swing.JLabel();
         PassLabel = new javax.swing.JLabel();
         PersonnelRB = new javax.swing.JRadioButton();
         ExternRB = new javax.swing.JRadioButton();
+        PassTF = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Createur de compte");
         setLocation(new java.awt.Point(0, 0));
         setName("accounts"); // NOI18N
-
-        PassTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PassTFActionPerformed(evt);
-            }
-        });
 
         OKButton.setText("OK");
         OKButton.addActionListener(new java.awt.event.ActionListener() {
@@ -131,10 +125,10 @@ public class PropertiesCreations extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(LoginTF, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                        .addComponent(PassTF)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(32, 32, 32)
-                            .addComponent(CancelButton)))
+                            .addComponent(CancelButton))
+                        .addComponent(PassTF))
                     .addComponent(ExternRB, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(67, 67, 67))
         );
@@ -147,8 +141,8 @@ public class PropertiesCreations extends javax.swing.JFrame {
                     .addComponent(LoginLabel))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PassTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PassLabel))
+                    .addComponent(PassLabel)
+                    .addComponent(PassTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PersonnelRB)
@@ -163,10 +157,6 @@ public class PropertiesCreations extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void PassTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PassTFActionPerformed
 
     private void OKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKButtonActionPerformed
         if(PersonnelRB.isSelected())
@@ -273,7 +263,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
     private javax.swing.JTextField LoginTF;
     private javax.swing.JButton OKButton;
     private javax.swing.JLabel PassLabel;
-    private javax.swing.JTextField PassTF;
+    private javax.swing.JPasswordField PassTF;
     private javax.swing.JRadioButton PersonnelRB;
     // End of variables declaration//GEN-END:variables
 }

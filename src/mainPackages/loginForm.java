@@ -163,7 +163,7 @@ public class loginForm extends javax.swing.JFrame {
                     System.out.println("Inconnu, fermeture applic");
                     System.exit(0);
                 }
-                else if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
+                else if(externs.getProperty(UtilisateurTextFieldLoginForm.getText(),PasswordField.getText()) != null)
                 {
                     System.out.println("Mauvais choix de login, redirection");
                     JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
@@ -182,7 +182,7 @@ public class loginForm extends javax.swing.JFrame {
             else
             {
                 System.out.println("Membre existant, verification");
-                if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
+                if(members.getProperty(UtilisateurTextFieldLoginForm.getText(),PasswordField.getText()) != null)
                 {
                     System.out.println("Acces a l'applic");
                     // Login applic
@@ -201,15 +201,15 @@ public class loginForm extends javax.swing.JFrame {
         }
         else if(ExterieurRadioLoginForm.isSelected() == true)
         {
-            if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()) == null)
+            if(externs.getProperty(UtilisateurTextFieldLoginForm.getText()) == null)
             {
                 System.out.println("Membre inexistant");
-                if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()) == null)
+                if(members.getProperty(UtilisateurTextFieldLoginForm.getText()) == null)
                 {
                     System.out.println("Inconnu, fermeture applic");
                     System.exit(0);
                 }
-                else if(hashtables.getLoginMembreTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
+                else if(members.getProperty(UtilisateurTextFieldLoginForm.getText(),PasswordField.getText()) != null)
                 {
                     System.out.println("Mauvais choix de login, redirection");
                     JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
@@ -228,7 +228,7 @@ public class loginForm extends javax.swing.JFrame {
             else
             {
                 System.out.println("Membre existant, verification");
-                if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
+                if(externs.getProperty(UtilisateurTextFieldLoginForm.getText(),PasswordField.getText()) != null)
                 {
                     System.out.println("Acces a l'applic");
                     // Login applic
