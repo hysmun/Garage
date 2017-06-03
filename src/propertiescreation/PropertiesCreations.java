@@ -72,11 +72,11 @@ public class PropertiesCreations extends javax.swing.JFrame {
         PersonnelRB = new javax.swing.JRadioButton();
         ExternRB = new javax.swing.JRadioButton();
         PassTF = new javax.swing.JPasswordField();
-        TelephoneTF = new javax.swing.JLabel();
+        TelephoneLabel = new javax.swing.JLabel();
         NomLabel = new javax.swing.JLabel();
         PrenomLabel = new javax.swing.JLabel();
         AdresseLabel = new javax.swing.JLabel();
-        MatriculeTF = new javax.swing.JTextField();
+        TelephoneTF = new javax.swing.JTextField();
         NomTF = new javax.swing.JTextField();
         PrenomTF = new javax.swing.JTextField();
         AdresseTF = new javax.swing.JTextField();
@@ -119,7 +119,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
             }
         });
 
-        TelephoneTF.setText("Téléphone :");
+        TelephoneLabel.setText("Téléphone :");
 
         NomLabel.setText("Nom :");
 
@@ -153,11 +153,11 @@ public class PropertiesCreations extends javax.swing.JFrame {
                                     .addComponent(ExternRB))
                                 .addGap(74, 74, 74)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TelephoneTF)
+                                    .addComponent(TelephoneLabel)
                                     .addComponent(NomLabel))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(MatriculeTF, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                                    .addComponent(TelephoneTF, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
                                     .addComponent(NomTF))
                                 .addGap(59, 59, 59)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -181,9 +181,9 @@ public class PropertiesCreations extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LoginLabel)
                     .addComponent(LoginTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TelephoneTF)
+                    .addComponent(TelephoneLabel)
                     .addComponent(PrenomLabel)
-                    .addComponent(MatriculeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TelephoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PrenomTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -217,6 +217,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
                 return;
             }
             Employe tmp = new Employe(LoginTF.getText(), NomTF.getText(), PrenomTF.getText(), AdresseTF.getText(), TelephoneTF.getText(), LoginTF.getText() + new Random().nextInt(100));
+            System.out.println("Contenu tmp : "+tmp.getId()+" "+tmp.getNom()+" "+tmp.getPrenom()+" "+tmp.getAdresse()+" "+tmp.getNumTelephone()+" "+tmp.getMatricule());
             if(!dE.vPersonnel.isEmpty())
             {
                 for(int i = 0;i<dE.vPersonnel.size();i++)
@@ -227,12 +228,12 @@ public class PropertiesCreations extends javax.swing.JFrame {
                         return;
                     }
                 }
+                dE.vPersonnel.add(tmp);
             }
             else
             {
                 dE.vPersonnel.add(tmp);
                 prop1.setProperty(LoginTF.getText(), PassTF.getText());
-                tmp = null;
             }
             try
             {
@@ -251,7 +252,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Certains champs ne sont pas remplis","Erreur",JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            TechnicienExterieur tmp2 = new TechnicienExterieur(LoginTF.getText() + new Random().nextInt(100), LoginTF.getText(), NomTF.getText(), PrenomTF.getText(), AdresseTF.getText(), TelephoneTF.getText());
+            TechnicienExterieur tmp2 = new TechnicienExterieur(LoginTF.getText(), NomTF.getText(), PrenomTF.getText(), AdresseTF.getText(), TelephoneTF.getText(),LoginTF.getText() + new Random().nextInt(100));
             if(!dE.vPersonnel.isEmpty())
             {
                 for(int i = 0;i<dE.vPersonnel.size();i++)
@@ -262,18 +263,17 @@ public class PropertiesCreations extends javax.swing.JFrame {
                         return;
                     }
                 }
+                dE.vPersonnel.add(tmp2);
             }
             else
             {
                 dE.vPersonnel.add(tmp2);
                 prop2.setProperty(LoginTF.getText(), PassTF.getText());
-                tmp2 = null;
             }
             try
             {
                 prop2.store(output2, null);
                 JOptionPane.showMessageDialog(null, "Compte ajoute", "Avertissement",JOptionPane.INFORMATION_MESSAGE);
-                tmp2 = null;
             }
             catch(IOException io)
             {
@@ -358,7 +358,6 @@ public class PropertiesCreations extends javax.swing.JFrame {
     private javax.swing.JRadioButton ExternRB;
     private javax.swing.JLabel LoginLabel;
     private javax.swing.JTextField LoginTF;
-    private javax.swing.JTextField MatriculeTF;
     private javax.swing.JLabel NomLabel;
     private javax.swing.JTextField NomTF;
     private javax.swing.JButton OKButton;
@@ -367,6 +366,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
     private javax.swing.JRadioButton PersonnelRB;
     private javax.swing.JLabel PrenomLabel;
     private javax.swing.JTextField PrenomTF;
-    private javax.swing.JLabel TelephoneTF;
+    private javax.swing.JLabel TelephoneLabel;
+    private javax.swing.JTextField TelephoneTF;
     // End of variables declaration//GEN-END:variables
 }

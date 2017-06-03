@@ -14,8 +14,8 @@ import java.io.Serializable;
  */
 public class TechnicienExterieur extends PersonnelGarage implements Identifiable, Serializable{
 
-    public TechnicienExterieur(String matricule, String id, String nom, String prenom, String adresse, String numTelephone) {
-        super(matricule, id, nom, prenom, adresse, numTelephone);
+    public TechnicienExterieur(String id, String nom, String prenom, String adresse, String numTelephone, String matricule) {
+        super(id, nom, prenom, adresse, numTelephone, matricule);
     }
 
 

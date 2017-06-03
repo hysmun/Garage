@@ -53,12 +53,12 @@
                               </Group>
                               <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TelephoneTF" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TelephoneLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="NomLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="MatriculeTF" pref="167" max="32767" attributes="0"/>
+                                  <Component id="TelephoneTF" pref="167" max="32767" attributes="0"/>
                                   <Component id="NomTF" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
@@ -93,9 +93,9 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="LoginLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="LoginTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="TelephoneTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TelephoneLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="PrenomLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="MatriculeTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TelephoneTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="PrenomTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
@@ -170,7 +170,7 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="PassTF">
     </Component>
-    <Component class="javax.swing.JLabel" name="TelephoneTF">
+    <Component class="javax.swing.JLabel" name="TelephoneLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="T&#xe9;l&#xe9;phone :"/>
       </Properties>
@@ -190,7 +190,7 @@
         <Property name="text" type="java.lang.String" value="Adresse :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="MatriculeTF">
+    <Component class="javax.swing.JTextField" name="TelephoneTF">
     </Component>
     <Component class="javax.swing.JTextField" name="NomTF">
     </Component>

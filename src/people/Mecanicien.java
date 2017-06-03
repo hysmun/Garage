@@ -14,8 +14,8 @@ import java.io.Serializable;
 public class Mecanicien extends PersonnelGarage implements Serializable{
     protected String specialisation;
 
-    public Mecanicien(String matricule, String id, String nom, String prenom, String adresse, String numTelephone,String specialisation) {
-        super(matricule, id, nom, prenom, adresse, numTelephone);
+    public Mecanicien(String id, String nom, String prenom, String adresse, String numTelephone, String matricule,String specialisation) {
+        super(id, nom, prenom, adresse, numTelephone, matricule);
         this.specialisation = specialisation;
     }
 
