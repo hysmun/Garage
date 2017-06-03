@@ -27,7 +27,7 @@ public class loginForm extends javax.swing.JFrame {
         initComponents();
         String sep = System.getProperty("file.separator");
         String current = System.getProperty("user.dir");
-        File fi = new File("Accounts");
+        File fi = new File("accounts");
         if(!fi.exists())
         {
             JOptionPane.showMessageDialog(null,"Aucuns comptes trouvés","Erreur",JOptionPane.ERROR_MESSAGE);
@@ -37,11 +37,11 @@ public class loginForm extends javax.swing.JFrame {
         {
             try
             {
-                FileInputStream input = new FileInputStream(current + sep + "Accounts" + sep + "login.properties");
+                FileInputStream input = new FileInputStream(current + sep + "accounts" + sep + "login.properties");
             }
             catch(IOException io)
             {
-                //io.printStackTrace();
+                io.printStackTrace();
             }
         }
         this.hashtables = new hashtableLogin();

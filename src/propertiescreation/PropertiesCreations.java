@@ -30,7 +30,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
         initComponents();
         String sep = System.getProperty("file.separator");
         String current = System.getProperty("user.dir");
-        File dir = new File("Accounts");
+        File dir = new File("accounts");
         if(!dir.exists())
         {
             try
@@ -44,8 +44,8 @@ public class PropertiesCreations extends javax.swing.JFrame {
         }
         try
         {
-            output1 = new FileOutputStream(current + sep + "Accounts" + sep + "member.properties");
-            output2 = new FileOutputStream(current + sep + "Accounts" + sep + "extern.properties");
+            output1 = new FileOutputStream(current + sep + "accounts" + sep + "member.properties");
+            output2 = new FileOutputStream(current + sep + "accounts" + sep + "extern.properties");
         }
         catch(IOException io)
         {
