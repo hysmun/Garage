@@ -11,11 +11,21 @@ package mainPackages;
  */
 public class commandForm extends javax.swing.JFrame {
 
+    public static int ERROR = -1;
+    public static int PNEU = 0;
+    public static int PIECE = 1;
+    public static int LUBRIFIANT = 2;
     /**
      * Creates new form commandForm
      */
+    public int typeApp;
     public commandForm() {
         initComponents();
+    }
+    
+    public commandForm(int type) {
+        initComponents();
+        typeApp = type;
     }
 
     /**
