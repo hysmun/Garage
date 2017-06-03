@@ -12,12 +12,10 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import login.hashtableLogin;
 import propertiescreation.PropertiesCreations;
 
 public class loginForm extends javax.swing.JFrame {
 
-    private hashtableLogin hashtables;
     private Properties members = new Properties();
     private Properties externs = new Properties();
     
