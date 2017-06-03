@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import javax.swing.Box;
+import mainPackages.mainGarage;
+import network.NetworkBasicClient;
 
 /**
  *
@@ -17,6 +19,9 @@ import javax.swing.Box;
  */
 public class applicationGestionForm extends javax.swing.JFrame {
 
+    public static NetworkBasicClient serverPneu = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-pneu")));
+    public static NetworkBasicClient serverPiece = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-piece")));
+    public static NetworkBasicClient serverLubrifiant = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-lubrifiant")));
     /**
      * Creates new form applicationGestionForm
      */
@@ -24,6 +29,7 @@ public class applicationGestionForm extends javax.swing.JFrame {
         initComponents();
         threadDate thDate = new threadDate();
         thDate.start();
+        
     }
 
     /**
@@ -64,6 +70,12 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionTerminerItem = new javax.swing.JMenuItem();
         appGestionListesItem = new javax.swing.JMenuItem();
         appGestionMaterielMenu = new javax.swing.JMenu();
+        commanderMenu = new javax.swing.JMenu();
+        pieceCommand = new javax.swing.JMenuItem();
+        pneuCommand = new javax.swing.JMenuItem();
+        lubrifiantCommand = new javax.swing.JMenuItem();
+        receptionItem = new javax.swing.JMenuItem();
+        listeCommandeItem = new javax.swing.JMenuItem();
         appGestionClientsMenu = new javax.swing.JMenu();
         appGestionFacturesMenu = new javax.swing.JMenu();
         appGestionParamMenu = new javax.swing.JMenu();
@@ -189,6 +201,51 @@ public class applicationGestionForm extends javax.swing.JFrame {
         appGestionMenuBar.add(appGestionAtelierMenu);
 
         appGestionMaterielMenu.setText("Matériel");
+
+        commanderMenu.setText("Commander ");
+
+        pieceCommand.setText("Commander une pièce");
+        pieceCommand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pieceCommandActionPerformed(evt);
+            }
+        });
+        commanderMenu.add(pieceCommand);
+
+        pneuCommand.setText("Commander des pneus");
+        pneuCommand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pneuCommandActionPerformed(evt);
+            }
+        });
+        commanderMenu.add(pneuCommand);
+
+        lubrifiantCommand.setText("Commander un lubrifiant");
+        lubrifiantCommand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lubrifiantCommandActionPerformed(evt);
+            }
+        });
+        commanderMenu.add(lubrifiantCommand);
+
+        appGestionMaterielMenu.add(commanderMenu);
+
+        receptionItem.setText("Réceptionner");
+        receptionItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                receptionItemActionPerformed(evt);
+            }
+        });
+        appGestionMaterielMenu.add(receptionItem);
+
+        listeCommandeItem.setText("Liste commandes");
+        listeCommandeItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listeCommandeItemActionPerformed(evt);
+            }
+        });
+        appGestionMaterielMenu.add(listeCommandeItem);
+
         appGestionMenuBar.add(appGestionMaterielMenu);
 
         appGestionClientsMenu.setText("Clients");
@@ -368,6 +425,26 @@ public class applicationGestionForm extends javax.swing.JFrame {
         apropos.setVisible(true);
     }//GEN-LAST:event_appGestionProposDeItemMousePressed
 
+    private void pneuCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pneuCommandActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pneuCommandActionPerformed
+
+    private void lubrifiantCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lubrifiantCommandActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lubrifiantCommandActionPerformed
+
+    private void pieceCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pieceCommandActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pieceCommandActionPerformed
+
+    private void receptionItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receptionItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_receptionItemActionPerformed
+
+    private void listeCommandeItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listeCommandeItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listeCommandeItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -442,5 +519,11 @@ public class applicationGestionForm extends javax.swing.JFrame {
     private javax.swing.JLabel appGestionSolLabel;
     private javax.swing.JMenuItem appGestionTerminerItem;
     private javax.swing.JRadioButton appGestionToutPresentRadBut;
+    private javax.swing.JMenu commanderMenu;
+    private javax.swing.JMenuItem listeCommandeItem;
+    private javax.swing.JMenuItem lubrifiantCommand;
+    private javax.swing.JMenuItem pieceCommand;
+    private javax.swing.JMenuItem pneuCommand;
+    private javax.swing.JMenuItem receptionItem;
     // End of variables declaration//GEN-END:variables
 }

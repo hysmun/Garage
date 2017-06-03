@@ -44,6 +44,55 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Mat&#xe9;riel"/>
           </Properties>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="commanderMenu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Commander "/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="pieceCommand">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Commander une pi&#xe8;ce"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pieceCommandActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="pneuCommand">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Commander des pneus"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pneuCommandActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="lubrifiantCommand">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Commander un lubrifiant"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lubrifiantCommandActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <MenuItem class="javax.swing.JMenuItem" name="receptionItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="R&#xe9;ceptionner"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="receptionItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="listeCommandeItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Liste commandes"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listeCommandeItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="appGestionClientsMenu">
           <Properties>

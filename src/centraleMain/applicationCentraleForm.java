@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Centrale;
+package centraleMain;
 
 import java.awt.BorderLayout;
 import java.awt.LayoutManager;
@@ -348,6 +348,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
 
     private void reponseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reponseButtonActionPerformed
         // TODO add your handling code here:
+        netServer.sendMessage("server answer : " + messageLabel.getText());
     }//GEN-LAST:event_reponseButtonActionPerformed
 
     private void verifButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifButtonActionPerformed
@@ -356,6 +357,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
 
     private void lireButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lireButtonActionPerformed
         // TODO add your handling code here:
+        messageLabel.setText(netServer.getMessage());
     }//GEN-LAST:event_lireButtonActionPerformed
 
     /**
