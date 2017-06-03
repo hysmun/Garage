@@ -16,6 +16,8 @@ public class mainCentraleServeur {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        applicationCentraleForm appPneu = new applicationCentraleForm(applicationCentraleForm.PNEU);
+        
     }
     
 }
