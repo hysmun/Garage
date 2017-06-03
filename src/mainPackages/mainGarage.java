@@ -44,7 +44,7 @@ public class mainGarage {
             if(!fileProperties.exists())
             {
                 OutputStream ot = new FileOutputStream(filePropertiesGeneral);
-                generalProperties.setProperty("dossier-properties", "Properties");
+                generalProperties.setProperty("dossier-properties", "properties");
                 generalProperties.setProperty("fichier-client-properties", "client.properties");
                 generalProperties.setProperty("fichier-pneu-properties", "pneu.properties");
                 generalProperties.setProperty("fichier-piece-properties", "piece.properties");
