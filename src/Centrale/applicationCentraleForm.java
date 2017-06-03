@@ -5,6 +5,8 @@
  */
 package Centrale;
 
+import java.util.Properties;
+
 /**
  *
  * @author ante
@@ -19,6 +21,8 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     public static int LUBRIFIANT = 2;
     
     public int typeApp;
+    public static Properties generalProperties = new Properties();
+    public static Properties serveurProperties = new Properties();
     
     public applicationCentraleForm() {
         initComponents();
@@ -28,8 +32,8 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         initComponents();
         typeApp = type;
         
+        //properties du type de app
         
-        System.out.println("type = "+typeApp);
     }
 
     /**
