@@ -14,8 +14,19 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     /**
      * Creates new form applicationCentraleForm
      */
+    public static int PNEU = 0;
+    public static int PIECE = 1;
+    public static int LUBRIFIANT = 2;
+    
+    public int typeApp;
+    
     public applicationCentraleForm() {
         initComponents();
+        typeApp = -1;
+    }
+    public applicationCentraleForm(int type) {
+        initComponents();
+        typeApp = type;
     }
 
     /**
