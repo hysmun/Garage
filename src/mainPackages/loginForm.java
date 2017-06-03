@@ -163,7 +163,7 @@ public class loginForm extends javax.swing.JFrame {
                     System.out.println("Inconnu, fermeture applic");
                     System.exit(0);
                 }
-                else if(hashtables.getLoginExternTable().get(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
+                else if(externs.getProperty(UtilisateurTextFieldLoginForm.getText(),PasswordField.getText()) != null)
                 {
                     System.out.println("Mauvais choix de login, redirection");
                     JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
