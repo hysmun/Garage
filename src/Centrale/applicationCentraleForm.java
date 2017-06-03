@@ -177,6 +177,11 @@ public class applicationCentraleForm extends javax.swing.JFrame {
 
         lireButton.setBorder(null);
         lireButton.setLabel("Lire");
+        lireButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lireButtonActionPerformed(evt);
+            }
+        });
 
         messageLabel.setText(">>");
         messageLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -215,12 +220,33 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         );
 
         verifButton.setText("vérification de la commande");
+        verifButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verifButtonActionPerformed(evt);
+            }
+        });
 
         disponibiliteButton.setText("dispinible");
+        disponibiliteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                disponibiliteButtonActionPerformed(evt);
+            }
+        });
 
+        notDispoButton.setSelected(true);
         notDispoButton.setText("non disponible");
+        notDispoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                notDispoButtonActionPerformed(evt);
+            }
+        });
 
         reponseButton.setText("Envoyer réponse");
+        reponseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reponseButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -304,6 +330,28 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void disponibiliteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disponibiliteButtonActionPerformed
+        // TODO add your handling code here:
+        notDispoButton.setSelected(false);
+    }//GEN-LAST:event_disponibiliteButtonActionPerformed
+
+    private void notDispoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notDispoButtonActionPerformed
+        // TODO add your handling code here:
+        disponibiliteButton.setSelected(false);
+    }//GEN-LAST:event_notDispoButtonActionPerformed
+
+    private void reponseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reponseButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reponseButtonActionPerformed
+
+    private void verifButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verifButtonActionPerformed
+
+    private void lireButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lireButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lireButtonActionPerformed
 
     /**
      * @param args the command line arguments
