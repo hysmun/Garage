@@ -217,21 +217,22 @@ public class PropertiesCreations extends javax.swing.JFrame {
                 return;
             }
             Employe tmp = new Employe(LoginTF.getText(), NomTF.getText(), PrenomTF.getText(), AdresseTF.getText(), TelephoneTF.getText(), LoginTF.getText() + new Random().nextInt(100));
-            if(dE.vPersonnel.isEmpty())
+            if(!dE.vPersonnel.isEmpty())
             {
-                dE.vPersonnel.add(tmp);
-                prop1.setProperty(LoginTF.getText(), PassTF.getText());
-                tmp = null;
-            }
-            else if(dE.vPersonnel.contains(tmp))
-            {
-                JOptionPane.showMessageDialog(null,"Duplicata détecté, échec création","Erreur",JOptionPane.ERROR_MESSAGE);
-                return;
+                for(int i = 0;i<dE.vPersonnel.size();i++)
+                {
+                    if(dE.vPersonnel.get(i).getId().equals(LoginTF.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null,"Duplicata détecté, échec création","Erreur",JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                }
             }
             else
             {
                 dE.vPersonnel.add(tmp);
                 prop1.setProperty(LoginTF.getText(), PassTF.getText());
+                tmp = null;
             }
             try
             {
@@ -251,17 +252,23 @@ public class PropertiesCreations extends javax.swing.JFrame {
                 return;
             }
             TechnicienExterieur tmp2 = new TechnicienExterieur(LoginTF.getText() + new Random().nextInt(100), LoginTF.getText(), NomTF.getText(), PrenomTF.getText(), AdresseTF.getText(), TelephoneTF.getText());
-            if(dE.vPersonnel.contains(tmp2))
+            if(!dE.vPersonnel.isEmpty())
             {
-                JOptionPane.showMessageDialog(null,"Duplicata détecté, échec création","Erreur",JOptionPane.ERROR_MESSAGE);
-                return;
+                for(int i = 0;i<dE.vPersonnel.size();i++)
+                {
+                    if(dE.vPersonnel.get(i).getId().equals(LoginTF.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null,"Duplicata détecté, échec création","Erreur",JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                }
             }
             else
             {
                 dE.vPersonnel.add(tmp2);
                 prop2.setProperty(LoginTF.getText(), PassTF.getText());
+                tmp2 = null;
             }
-            prop2.setProperty(LoginTF.getText(), PassTF.getText());
             try
             {
                 prop2.store(output2, null);
