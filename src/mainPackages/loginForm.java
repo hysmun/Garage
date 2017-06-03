@@ -38,7 +38,8 @@ public class loginForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Aucuns comptes trouvés, ouverture de l'outil de création de comptes","Erreur",JOptionPane.ERROR_MESSAGE);
             PropertiesCreations pc = new PropertiesCreations();
             pc.setVisible(true);
-            //while(pc.
+            this.setVisible(false);
+            while(pc.is)
         }
         else
         {
