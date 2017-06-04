@@ -13,25 +13,26 @@ import java.util.Random;
  *
  * @author ante
  */
-public class commandForm extends javax.swing.JFrame {
-
+public class commandeForm extends javax.swing.JDialog {
     public static final int PNEU = 0;
     public static final int PIECE = 1;
     public static final int LUBRIFIANT = 2;
-    /**
-     * Creates new form commandForm
-     */
+    
+    
     public int typeApp;
-    public int state;
     public int priorite;
-    public commandForm() {
+    /**
+     * Creates new form commandeForm
+     */
+    public commandeForm(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
-    
-    public commandForm(int type) {
+    public commandeForm(java.awt.Frame parent, boolean modal, int type) {
+        super(parent, modal);
         initComponents();
         typeApp = type;
-        /*switch(typeApp)
+        switch(typeApp)
         {
             case PNEU:
                 this.setTitle(this.getTitle()+" PNEU");
@@ -42,7 +43,7 @@ public class commandForm extends javax.swing.JFrame {
             case LUBRIFIANT:
                 this.setTitle(this.getTitle()+" LUBRIFIANT");
                 break;
-        }*/
+        }
     }
 
     /**
@@ -59,26 +60,20 @@ public class commandForm extends javax.swing.JFrame {
         urgentRB = new javax.swing.JRadioButton();
         normalRB = new javax.swing.JRadioButton();
         nonPrioRB = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        commandeList = new javax.swing.JList<>();
         commandeListLabel = new javax.swing.JLabel();
+        envoyerButton = new javax.swing.JButton();
+        annulerButton = new javax.swing.JButton();
         libelleLabel = new javax.swing.JLabel();
         typeLabel = new javax.swing.JLabel();
         quantiteLabel = new javax.swing.JLabel();
-        envoyerButton = new javax.swing.JButton();
-        annulerButton = new javax.swing.JButton();
-        commandPanel = new javax.swing.JScrollPane();
-        commandList = new javax.swing.JList<>();
         libelleTF = new javax.swing.JTextField();
         typeTF = new javax.swing.JTextField();
         quantiteTF = new javax.swing.JTextField();
         dateLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Garage HEPL :");
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
 
         commandeLabel.setText("Commande :");
 
@@ -107,13 +102,9 @@ public class commandForm extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane1.setViewportView(commandeList);
+
         commandeListLabel.setText("Commandes :");
-
-        libelleLabel.setText("Libellé :");
-
-        typeLabel.setText("Type");
-
-        quantiteLabel.setText("Quantité :");
 
         envoyerButton.setText("Envoyer");
         envoyerButton.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +120,11 @@ public class commandForm extends javax.swing.JFrame {
             }
         });
 
-        commandPanel.setViewportView(commandList);
+        libelleLabel.setText("Libellé :");
+
+        typeLabel.setText("Type :");
+
+        quantiteLabel.setText("Quantité :");
 
         dateLabel.setText("<Date>");
 
@@ -138,120 +133,128 @@ public class commandForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(urgentRB)
-                        .addGap(18, 18, 18)
+                        .addGap(55, 55, 55)
                         .addComponent(normalRB)
-                        .addGap(18, 18, 18)
+                        .addGap(66, 66, 66)
                         .addComponent(nonPrioRB)
-                        .addGap(85, 85, 85)
-                        .addComponent(commandeListLabel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(commandeLabel)
-                            .addGap(365, 365, 365)
-                            .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(libelleLabel)
-                                        .addComponent(typeLabel)
-                                        .addComponent(quantiteLabel))
-                                    .addGap(44, 44, 44)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(quantiteTF, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                        .addComponent(typeTF)
-                                        .addComponent(libelleTF)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(28, 28, 28)
-                                    .addComponent(envoyerButton)
-                                    .addGap(101, 101, 101)
-                                    .addComponent(annulerButton)))
-                            .addGap(45, 45, 45)
-                            .addComponent(commandPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addGap(65, 65, 65)
+                        .addComponent(commandeListLabel)
+                        .addGap(0, 113, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(typeLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(libelleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(quantiteLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(quantiteTF, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(typeTF)
+                            .addComponent(libelleTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(commandeLabel)
+                        .addGap(392, 392, 392)
+                        .addComponent(dateLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(envoyerButton)
+                        .addGap(153, 153, 153)
+                        .addComponent(annulerButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(commandPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(commandeLabel)
-                            .addComponent(dateLabel))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(urgentRB)
-                            .addComponent(normalRB)
-                            .addComponent(nonPrioRB)
-                            .addComponent(commandeListLabel))
-                        .addGap(35, 35, 35)
+                        .addGap(30, 30, 30)
+                        .addComponent(commandeLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(dateLabel)))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(urgentRB)
+                    .addComponent(normalRB)
+                    .addComponent(nonPrioRB)
+                    .addComponent(commandeListLabel))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(libelleLabel)
                             .addComponent(libelleTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(typeLabel)
                             .addComponent(typeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(quantiteLabel)
-                            .addComponent(quantiteTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(envoyerButton)
-                            .addComponent(annulerButton))))
-                .addContainerGap(39, Short.MAX_VALUE))
+                            .addComponent(quantiteTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(envoyerButton)
+                    .addComponent(annulerButton))
+                .addGap(30, 30, 30))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void urgentRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_urgentRBActionPerformed
+    private void annulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_urgentRBActionPerformed
-
-    private void normalRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_normalRBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_normalRBActionPerformed
-
-    private void nonPrioRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nonPrioRBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nonPrioRBActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_annulerButtonActionPerformed
 
     private void envoyerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_envoyerButtonActionPerformed
         // TODO add your handling code here:
+        String tmpReceive= "";
         CentraleCommand commande = new CentraleCommand("C"+new Random().nextInt(100000000), libelleTF.getText(),typeTF.getText() ,Integer.parseInt(quantiteTF.getText()), priorite, Calendar.getInstance());
         switch(typeApp)
         {
             case PNEU:
-                applicationGestionForm.serverPneu.sendString(commande.toStringForSend());
+                tmpReceive =applicationGestionForm.serverPneu.sendString(commande.toStringForSend());
+                
                 break;
             case PIECE:
-                applicationGestionForm.serverPiece.sendString(commande.toStringForSend());
+                tmpReceive = applicationGestionForm.serverPiece.sendString(commande.toStringForSend());
                 break;
             case LUBRIFIANT:
-                applicationGestionForm.serverLubrifiant.sendString(commande.toStringForSend());
+                tmpReceive = applicationGestionForm.serverLubrifiant.sendString(commande.toStringForSend());
                 break;
         }
+        CentraleCommand tmpCommand = new CentraleCommand(tmpReceive);
+        mainGarage.dE.vCommand.add(tmpCommand);
+        this.dispose();
     }//GEN-LAST:event_envoyerButtonActionPerformed
 
-    private void annulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerButtonActionPerformed
+    private void nonPrioRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nonPrioRBActionPerformed
         // TODO add your handling code here:
-        this.state = 0;
-        this.dispose();
-    }//GEN-LAST:event_annulerButtonActionPerformed
+        priorite = CentraleCommand.NONPRIORITAIRE;
+    }//GEN-LAST:event_nonPrioRBActionPerformed
 
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+    private void urgentRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_urgentRBActionPerformed
         // TODO add your handling code here:
-        this.state = 0;
-    }//GEN-LAST:event_formWindowClosing
+        priorite = CentraleCommand.URGENT;
+    }//GEN-LAST:event_urgentRBActionPerformed
+
+    private void normalRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_normalRBActionPerformed
+        // TODO add your handling code here:
+        priorite = CentraleCommand.PRIORITAIRE;
+    }//GEN-LAST:event_normalRBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,32 +273,39 @@ public class commandForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(commandForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(commandeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(commandForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(commandeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(commandForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(commandeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(commandForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(commandeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new commandForm().setVisible(true);
+                commandeForm dialog = new commandeForm(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton annulerButton;
-    private javax.swing.JList<String> commandList;
-    private javax.swing.JScrollPane commandPanel;
     private javax.swing.JLabel commandeLabel;
+    private javax.swing.JList<String> commandeList;
     private javax.swing.JLabel commandeListLabel;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JButton envoyerButton;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel libelleLabel;
     private javax.swing.JTextField libelleTF;
     private javax.swing.JRadioButton nonPrioRB;

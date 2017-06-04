@@ -5,6 +5,7 @@
  */
 package centraleMain;
 
+import centraleObj.CentraleCommand;
 import java.awt.BorderLayout;
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,6 +39,9 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     public static String currentDir;
     public static String propertiesDir;
     public NetworkBasicServer netServer;
+    
+    public CentraleCommand commandeEnCours;
+    
     public applicationCentraleForm() {
         initComponents();
         typeApp = -1;
@@ -338,16 +342,19 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     private void disponibiliteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disponibiliteButtonActionPerformed
         // TODO add your handling code here:
         notDispoButton.setSelected(false);
+        commandeEnCours.setDisponibilite(true);
     }//GEN-LAST:event_disponibiliteButtonActionPerformed
 
     private void notDispoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notDispoButtonActionPerformed
         // TODO add your handling code here:
         disponibiliteButton.setSelected(false);
+        commandeEnCours.setDisponibilite(false);
     }//GEN-LAST:event_notDispoButtonActionPerformed
 
     private void reponseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reponseButtonActionPerformed
         // TODO add your handling code here:
-        netServer.sendMessage("server answer : " + messageLabel.getText());
+        netServer.sendMessage(commandeEnCours.toStringForSend());
+        commandeEnCours = null;
     }//GEN-LAST:event_reponseButtonActionPerformed
 
     private void verifButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifButtonActionPerformed
@@ -356,7 +363,8 @@ public class applicationCentraleForm extends javax.swing.JFrame {
 
     private void lireButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lireButtonActionPerformed
         // TODO add your handling code here:
-        messageLabel.setText(netServer.getMessage());
+        commandeEnCours = new CentraleCommand(netServer.getMessage());
+        messageLabel.setText(commandeEnCours.toString());
     }//GEN-LAST:event_lireButtonActionPerformed
 
     /**
