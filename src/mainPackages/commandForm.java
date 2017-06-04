@@ -19,6 +19,7 @@ public class commandForm extends javax.swing.JFrame {
      * Creates new form commandForm
      */
     public int typeApp;
+    public int state;
     public commandForm() {
         initComponents();
     }
@@ -56,6 +57,7 @@ public class commandForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Garage HEPL :");
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.TOOLKIT_EXCLUDE);
 
         commandeLabel.setText("Commande :");
 
@@ -182,6 +184,8 @@ public class commandForm extends javax.swing.JFrame {
                             .addComponent(annulerButton))))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
+
+        getAccessibleContext().setAccessibleParent(this);
 
         pack();
         setLocationRelativeTo(null);

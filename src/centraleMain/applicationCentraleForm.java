@@ -67,7 +67,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
                 InputStream it = new FileInputStream(filePropertiesGeneral);
                 generalProperties.load(it);
             }
-            System.out.println("filePropertiesGeneral charger");
+            System.out.println("S: filePropertiesGeneral charger");
             
             
             File userdir = new File(currentDir);
@@ -119,7 +119,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
                 InputStream it = new FileInputStream(propertiesDir+serveurPropFile);
                 serveurProperties.load(it);
             }
-            System.out.println(serveurPropFile+" charger");
+            System.out.println("S: "+ serveurPropFile+" charger");
             // </editor-fold> 
             
             switch(typeApp)
@@ -146,7 +146,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
         }
         catch(IOException e)
         {
-            System.out.println("Error serveur init "+e.getMessage());
+            System.out.println("S: Error serveur init "+e.getMessage());
         }
     }
 

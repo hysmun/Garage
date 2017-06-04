@@ -5,10 +5,14 @@
  */
 package mainPackages;
 
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Box;
 import mainPackages.mainGarage;
 import network.NetworkBasicClient;
@@ -17,11 +21,11 @@ import network.NetworkBasicClient;
  *
  * @author ante
  */
-public class applicationGestionForm extends javax.swing.JFrame {
+public class applicationGestionForm extends javax.swing.JFrame{
 
-    public static NetworkBasicClient serverPneu = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-pneu")));
-    public static NetworkBasicClient serverPiece = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-piece")));
-    public static NetworkBasicClient serverLubrifiant = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-lubrifiant")));
+    public static NetworkBasicClient serverPneu;
+    public static NetworkBasicClient serverPiece;
+    public static NetworkBasicClient serverLubrifiant; 
     /**
      * Creates new form applicationGestionForm
      */
@@ -29,7 +33,10 @@ public class applicationGestionForm extends javax.swing.JFrame {
         initComponents();
         threadDate thDate = new threadDate();
         thDate.start();
-        
+        serverPneu = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-pneu")));
+        serverPiece = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-piece")));
+        serverLubrifiant = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-lubrifiant")));
+    
     }
 
     /**
@@ -427,14 +434,34 @@ public class applicationGestionForm extends javax.swing.JFrame {
 
     private void pneuCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pneuCommandActionPerformed
         // TODO add your handling code here:
+        commandForm cf = new commandForm(commandForm.PNEU);
+        cf.setVisible(true);
+        cf.state = 1;
+        while(cf.state == 1)
+        {
+            try {
+                //attente
+                Thread.sleep(10);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(mainGarage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        System.out.println("C: fin commande");
+        cf.setVisible(false);
     }//GEN-LAST:event_pneuCommandActionPerformed
 
     private void lubrifiantCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lubrifiantCommandActionPerformed
         // TODO add your handling code here:
+        commandForm cf = new commandForm(commandForm.LUBRIFIANT);
+        cf.setVisible(true);
+        //this.enable(false);
     }//GEN-LAST:event_lubrifiantCommandActionPerformed
 
     private void pieceCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pieceCommandActionPerformed
         // TODO add your handling code here:
+        commandForm cf = new commandForm(commandForm.PIECE);
+        cf.setVisible(true);
+        //this.enable(false);
     }//GEN-LAST:event_pieceCommandActionPerformed
 
     private void receptionItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receptionItemActionPerformed
