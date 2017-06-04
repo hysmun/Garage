@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -91,7 +92,18 @@ public class mainGarage {
             }
             System.out.println("C:\tfichier-client-properties charger");
             
-            FileInputStream fis = new FileInputStream(clientProperties.getProperty("dossier-save"));
+            try {
+                FileInputStream fis = new FileInputStream(clientProperties.getProperty("dossier-save"));
+                ObjectInputStream in = new ObjectInputStream(fis);
+                dE = (DataEncapsulate)in.readObject();
+                in.close();
+                fis.close();
+            }
+            catch(IOException | ClassNotFoundException i) {
+                i.printStackTrace();
+                return;
+            }
+            System.out.println("C: Chargement serialisation reussi");
             
             
             
