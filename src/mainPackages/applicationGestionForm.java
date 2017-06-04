@@ -218,6 +218,11 @@ public class applicationGestionForm extends javax.swing.JFrame{
         appGestionAtelierMenu.add(appGestionTerminerItem);
 
         appGestionListesItem.setText("Listes");
+        appGestionListesItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                appGestionListesItemActionPerformed(evt);
+            }
+        });
         appGestionAtelierMenu.add(appGestionListesItem);
 
         appGestionMenuBar.add(appGestionAtelierMenu);
@@ -513,6 +518,12 @@ public class applicationGestionForm extends javax.swing.JFrame{
             i.printStackTrace();
         }
     }//GEN-LAST:event_formWindowClosing
+
+    private void appGestionListesItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appGestionListesItemActionPerformed
+        // TODO add your handling code here:
+        ListTravailForm ltf = new ListTravailForm(this, true);
+        ltf.setVisible(true);
+    }//GEN-LAST:event_appGestionListesItemActionPerformed
 
     /**
      * @param args the command line arguments
