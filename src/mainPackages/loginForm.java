@@ -141,10 +141,12 @@ public class loginForm extends javax.swing.JFrame {
                 System.out.println("Membre inexistant");
                 if(externs.getProperty(UtilisateurTextFieldLoginForm.getText()) == null)
                 {
-                    System.out.println("Inconnu, fermeture applic");
-                    System.exit(0);
+                    System.out.println("Inconnu");
+                    JOptionPane.showMessageDialog(null,"Login incorrect","Erreur",JOptionPane.ERROR_MESSAGE);
+                    UtilisateurTextFieldLoginForm.setText("");
+                    PasswordField.setText("");
                 }
-                else if(externs.getProperty(UtilisateurTextFieldLoginForm.getText(),PasswordField.getText()) != null)
+                else if(externs.getProperty(UtilisateurTextFieldLoginForm.getText())!= null && externs.getProperty(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
                 {
                     System.out.println("Mauvais choix de login, redirection");
                     JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
@@ -164,7 +166,7 @@ public class loginForm extends javax.swing.JFrame {
             else
             {
                 System.out.println("Membre existant, verification");
-                if(members.getProperty(UtilisateurTextFieldLoginForm.getText(),PasswordField.getText()) != null)
+                if(members.getProperty(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
                 {
                     System.out.println("Acces a l'applic");
                     // Login applic
@@ -189,10 +191,11 @@ public class loginForm extends javax.swing.JFrame {
                 System.out.println("Membre inexistant");
                 if(members.getProperty(UtilisateurTextFieldLoginForm.getText()) == null)
                 {
-                    System.out.println("Inconnu, fermeture applic");
-                    System.exit(0);
+                    JOptionPane.showMessageDialog(null,"Login incorrect","Erreur",JOptionPane.ERROR_MESSAGE);
+                    UtilisateurTextFieldLoginForm.setText("");
+                    PasswordField.setText("");
                 }
-                else if(members.getProperty(UtilisateurTextFieldLoginForm.getText(),PasswordField.getText()) != null)
+                else if(members.getProperty(UtilisateurTextFieldLoginForm.getText(),PasswordField.getText())!= null && members.getProperty(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
                 {
                     System.out.println("Mauvais choix de login, redirection");
                     JOptionPane.showMessageDialog(null,"Choix incorrect, vous allez etre redirige vers votre section","Avertissement",JOptionPane.WARNING_MESSAGE);
@@ -212,7 +215,7 @@ public class loginForm extends javax.swing.JFrame {
             else
             {
                 System.out.println("Membre existant, verification");
-                if(externs.getProperty(UtilisateurTextFieldLoginForm.getText(),PasswordField.getText()) != null)
+                if(externs.getProperty(UtilisateurTextFieldLoginForm.getText()).equals(PasswordField.getText()))
                 {
                     System.out.println("Acces a l'applic");
                     // Login applic
