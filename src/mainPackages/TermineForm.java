@@ -5,7 +5,11 @@
  */
 package mainPackages;
 
-import javax.swing.JOptionPane;
+import activite.Travail;
+import centraleObj.CentraleCommand;
+import java.util.ArrayList;
+import javax.swing.ComboBoxModel;
+import javax.swing.event.ListDataListener;
 
 /**
  *
@@ -18,7 +22,7 @@ public class TermineForm extends javax.swing.JFrame {
      */
     public TermineForm() {
         initComponents();
-         
+        TravailCB.setModel(new MyComboBoxModel(mainGarage.dE.llTravailEnCours));
     }
 
     /**
@@ -95,7 +99,23 @@ public class TermineForm extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelButtonMouseClicked
 
     private void OKButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKButtonMouseClicked
-       
+        switch(TravailCB.getSelectedIndex())
+        {
+            case 0:
+                applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.libreString);
+                break;
+            case 1:
+                applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.libreString);
+                break;
+            case 2:
+                applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.libreString);
+                break;
+            case 3:
+                applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.libreString);
+                break;
+        }
+        mainGarage.dE.llTravailFini.add(mainGarage.dE.llTravailEnCours.get(TravailCB.getSelectedIndex()));
+        mainGarage.dE.llTravailEnCours.remove(TravailCB.getSelectedIndex());
         this.invalidate();
     }//GEN-LAST:event_OKButtonMouseClicked
 
@@ -141,4 +161,44 @@ public class TermineForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> TravailCB;
     private javax.swing.JLabel TravailLabel;
     // End of variables declaration//GEN-END:variables
+class MyComboBoxModel implements ComboBoxModel {
+
+        private final ArrayList<Travail> contents;
+        
+        public MyComboBoxModel(ArrayList<Travail> contents)
+        {
+            this.contents = contents;
+        }
+        
+        @Override
+        public CentraleCommand getSelectedItem()
+        {
+            return new CentraleCommand();
+        }
+
+        @Override
+        public void setSelectedItem(Object anItem) {
+            contents.add((Travail) anItem);
+        }
+
+        @Override
+        public int getSize() {
+            return contents.size();
+        }
+
+        @Override
+        public Object getElementAt(int index) {
+            return contents.get(index);
+        }
+
+        @Override
+        public void addListDataListener(ListDataListener l) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public void removeListDataListener(ListDataListener l) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
 }
