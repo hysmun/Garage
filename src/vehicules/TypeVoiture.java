@@ -63,7 +63,7 @@ public class TypeVoiture implements Serializable{
 
     @Override
     public String toString() {
-        return "TypeVoiture{" + "marque=" + marque + ", type=" + type + ", nbPortes=" + nbPortes + "}";
+        return "marque=" + marque + ", type=" + type + ", nbPortes=" + nbPortes;
     }
     
 }

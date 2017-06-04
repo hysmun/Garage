@@ -5,13 +5,14 @@
  */
 package mainPackages;
 
-import activite.Travail;
+
+import activite.*;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
-import vehicules.Voiture;
+import vehicules.*;
 
 /**
  *
@@ -23,8 +24,15 @@ public class priseEnChargeForm extends javax.swing.JFrame {
      * Creates new form priseEnChargeForm
      */
     public priseEnChargeForm() {
-        initComponents();
-        DefaultTableModel model = (DefaultTableModel) priseEnChargeTable.getModel();
+        try
+        {
+            initComponents();
+            priseEnChargeTable.setModel(new MyTableModel(mainGarage.dE.llTravailPrevu));  
+        }
+        catch(Exception e)
+        {
+            System.out.println("C:\t erreur constructor"+e.getMessage());
+        }
     }
 
     /**
@@ -162,82 +170,94 @@ public class priseEnChargeForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void priseEnChargeOkButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeOkButtonMouseClicked
+        try
+        {
+            Vector tmp = new Vector();
+            DefaultTableModel model = (DefaultTableModel) priseEnChargeTable.getModel();
 
-        Vector tmp = new Vector();
-        DefaultTableModel model = (DefaultTableModel) priseEnChargeTable.getModel();
-       
-        
-        if(priseEnChargeTable.getSelectedRowCount() == 1)
-        {
-            if(priseEnChargePontRadBut.isSelected())
+
+            if(priseEnChargeTable.getSelectedRowCount() == 1)
             {
-                //on va le mettre sur un des ponts 
-                System.out.println("Prise en charge pont");
-                switch((String)(priseEnChargePontComboBox.getSelectedItem()))
+                if(priseEnChargePontRadBut.isSelected())
                 {
-                    case "1":
-                        if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
-                        {
-                            //libre
-                            
-                            this.invalidate();
-                        }
-                        else
-                        {
-                            JOptionPane.showMessageDialog(null,"Pont 1 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
-                        }
-                        break;
-                    case "2":
-                        if(applicationGestionForm.appGestionPresencePont2Label.getText().equals(mainGarage.libreString))
-                        {
-                            //libre
-                            
-                            model.removeRow(priseEnChargeTable.getSelectedRow());
-                            this.invalidate();
-                            
-                        }
-                        else
-                        {
-                            JOptionPane.showMessageDialog(null,"Pont 2 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
-                        }
-                        break;
-                    case "3":
-                        if(applicationGestionForm.appGestionPresencePont3Label.getText().equals(mainGarage.libreString))
-                        {
-                            //libre
-                            
-                            model.removeRow(priseEnChargeTable.getSelectedRow());
-                            this.invalidate();
-                        }
-                        else
-                        {
-                            JOptionPane.showMessageDialog(null,"Pont 3 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
-                        }
-                        break;
-                    default:
-                        System.out.println("Error prise en charge!");
+                    //on va le mettre sur un des ponts 
+                    System.out.println("Prise en charge pont");
+                    switch((String)(priseEnChargePontComboBox.getSelectedItem()))
+                    {
+                        case "1":
+                            if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
+                            {
+                                //libre
+                                mainGarage.dE.llTravailEnCours.set(0, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                                mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
+                                model.removeRow(priseEnChargeTable.getSelectedRow());
+                                this.invalidate();
+                            }
+                            else
+                            {
+                                JOptionPane.showMessageDialog(null,"Pont 1 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
+                            }
+                            break;
+                        case "2":
+                            if(applicationGestionForm.appGestionPresencePont2Label.getText().equals(mainGarage.libreString))
+                            {
+                                //libre
+                                mainGarage.dE.llTravailEnCours.set(1, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                                mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
+                                model.removeRow(priseEnChargeTable.getSelectedRow());
+                                this.invalidate();
+
+                            }
+                            else
+                            {
+                                JOptionPane.showMessageDialog(null,"Pont 2 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
+                            }
+                            break;
+                        case "3":
+                            if(applicationGestionForm.appGestionPresencePont3Label.getText().equals(mainGarage.libreString))
+                            {
+                                //libre
+                                mainGarage.dE.llTravailEnCours.set(2, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                                mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
+                                model.removeRow(priseEnChargeTable.getSelectedRow());
+                                this.invalidate();
+                            }
+                            else
+                            {
+                                JOptionPane.showMessageDialog(null,"Pont 3 occuper veuillez finir avec ce pont d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
+                            }
+                            break;
+                        default:
+                            System.out.println("Error prise en charge!");
+                    }
+                }
+                else if(priseEnChargeSolRadBut.isSelected())
+                {
+                    //on va le pose sur le sol 
+                    if(applicationGestionForm.appGestionPresenceSolLabel.getText().equals(mainGarage.libreString))
+                    {
+                        //libre
+                        mainGarage.dE.llTravailEnCours.set(3, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                        mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
+                        model.removeRow(priseEnChargeTable.getSelectedRow());
+                        this.invalidate();
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null,"Le Sol est occuper veuillez finir avec d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
+                    }
                 }
             }
-            else if(priseEnChargeSolRadBut.isSelected())
+            else
             {
-                //on va le pose sur le sol 
-                if(applicationGestionForm.appGestionPresenceSolLabel.getText().equals(mainGarage.libreString))
-                {
-                    //libre
-                    
-                    model.removeRow(priseEnChargeTable.getSelectedRow());
-                    this.invalidate();
-                }
-                else
-                {
-                    JOptionPane.showMessageDialog(null,"Le Sol est occuper veuillez finir avec d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
-                }
+                JOptionPane.showMessageDialog(null,"Veuillez selectionner un travail svp !","Avertissement",JOptionPane.WARNING_MESSAGE);   
             }
         }
-        else
+        catch(Exception e)
         {
-            JOptionPane.showMessageDialog(null,"Veuillez selectionner un travail svp !","Avertissement",JOptionPane.WARNING_MESSAGE);   
+            System.out.println("C:\tErreur ok button "+e.getMessage());
         }
+        this.dispose();
     }//GEN-LAST:event_priseEnChargeOkButtonMouseClicked
 
     private void priseEnChargeAnnulerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeAnnulerButtonMouseClicked
@@ -342,13 +362,13 @@ class MyTableModel extends AbstractTableModel {
             switch(column)
             {
                 case 0://type travail
-                    return "Travail";
+                    return (myObj instanceof Reparation) ?  "Reparation" : "Entretien";
                 case 1://Type voiture
                     return ( (Voiture) myObj.getVehi()).getTypeVoiture();
                 case 2://imma
                     return ( (Voiture) myObj.getVehi()).getImmatriculation();
                 case 3://proprio
-                    return ""+( (Voiture) myObj.getVehi()).getClient().getNom() + ( (Voiture) myObj.getVehi()).getClient().getPrenom();
+                    return ""+( (Voiture) myObj.getVehi()).getClient().getNom() + " "+( (Voiture) myObj.getVehi()).getClient().getPrenom();
                 case 4://desc
                     return myObj.getDescription();
             }
