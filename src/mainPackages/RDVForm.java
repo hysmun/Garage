@@ -219,7 +219,11 @@ public class RDVForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Certains champs obligatoires sont vides", "Erreur",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if()
+        if(ProprioCB.getSelectedItem() == null && !NouveauCheck.isSelected())
+        {
+            JOptionPane.showMessageDialog(null,"Client invalide/inexistant","Erreur",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         this.dispose();
     }//GEN-LAST:event_OKButtonMouseClicked
 
