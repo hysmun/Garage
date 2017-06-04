@@ -266,11 +266,17 @@ public class RDVForm extends javax.swing.JFrame {
         }
         if(EntretienRB.isSelected())
         {
-            entretien = new Entretien("Entretien#"+ new Random().nextInt(100),null,vehi,new Random().nextDouble()*500,BonusTF.getText(),0);
+            entretien = new Entretien("Entretien#"+ new Random().nextInt(100),persogarage,vehi,new Random().nextDouble()*500,BonusTF.getText(),0);
+            dE.llTravailPrevu.add(entretien);
+            JOptionPane.showMessageDialog(null,"Travail créé","Information",JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
         }
         else
         {
-            reparation = new Reparation("Reparation#"+ new Random().nextInt(100),null,vehi,new Random().nextDouble()*500,BonusTF.getText(),0);
+            reparation = new Reparation("Reparation#"+ new Random().nextInt(100),persogarage,vehi,new Random().nextDouble()*500,BonusTF.getText(),0);
+            dE.llTravailPrevu.add(reparation);
+            JOptionPane.showMessageDialog(null,"Travail créé","Information",JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
         }
     }//GEN-LAST:event_OKButtonMouseClicked
 
