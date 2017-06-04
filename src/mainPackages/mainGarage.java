@@ -81,6 +81,7 @@ public class mainGarage {
                 clientProperties.setProperty("port-pneu", "4001");
                 clientProperties.setProperty("port-piece", "4002");
                 clientProperties.setProperty("port-lubrifiant", "4003");
+                clientProperties.setProperty("dossier-save", "save");
                 clientProperties.store(ot, null);
             }
             else
