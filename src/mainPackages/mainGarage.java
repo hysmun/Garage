@@ -56,7 +56,7 @@ public class mainGarage {
                 InputStream it = new FileInputStream(filePropertiesGeneral);
                 generalProperties.load(it);
             }
-            System.out.println("filePropertiesGeneral charger");
+            System.out.println("C:\tfilePropertiesGeneral charger");
             
             File userdir = new File(currentDir);
             propertiesDir = generalProperties.getProperty("dossier-properties") + System.getProperty("file.separator");
@@ -84,7 +84,7 @@ public class mainGarage {
                 InputStream it = new FileInputStream(propertiesDir+generalProperties.getProperty("fichier-client-properties"));
                 clientProperties.load(it);
             }
-            System.out.println("fichier-client-properties charger");
+            System.out.println("C:\tfichier-client-properties charger");
             
             
 
@@ -117,7 +117,7 @@ public class mainGarage {
                     Logger.getLogger(mainGarage.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            System.out.println("Login reussi !");
+            System.out.println("C:\tLogin reussi !");
             loginWindows.setVisible(false);
             
             
@@ -126,11 +126,11 @@ public class mainGarage {
         }
         catch(NullPointerException e)
         {
-            System.out.println("ERREUR POINTEUR NULL");
+            System.out.println("C:\tERREUR POINTEUR NULL");
         }
         catch(IOException e)
         {
-            System.out.println("Error main garage !!!");
+            System.out.println("C:\tError main garage !!!");
         }
     }
 }
