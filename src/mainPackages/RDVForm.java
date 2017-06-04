@@ -5,7 +5,6 @@
  */
 package mainPackages;
 
-import java.util.Vector;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -16,10 +15,20 @@ import javax.swing.JOptionPane;
  */
 public class RDVForm extends javax.swing.JFrame {
 
-    
+    public DefaultComboBoxModel ReparationCBM = new DefaultComboBoxModel();
+    public DefaultComboBoxModel EntretienCBM = new DefaultComboBoxModel();
     
     public RDVForm() {
         initComponents();
+        ReparationCBM.addElement("Courroie");
+        ReparationCBM.addElement("Transmission");
+        ReparationCBM.addElement("Freins");
+        ReparationCBM.addElement("Pistons");
+        EntretienCBM.addElement("Vidange");
+        EntretienCBM.addElement("Petit entretien");
+        EntretienCBM.addElement("Gros entretien");
+        EntretienCBM.addElement("Gonflage des pneus");
+        TypeTravailCB.setModel(EntretienCBM);
     }
 
     /**
@@ -40,7 +49,7 @@ public class RDVForm extends javax.swing.JFrame {
         ImmatTF = new javax.swing.JTextField();
         BonusTF = new javax.swing.JTextField();
         ProprioCB = new javax.swing.JComboBox();
-        newCheck = new javax.swing.JCheckBox();
+        NouveauCheck = new javax.swing.JCheckBox();
         EntretienRB = new javax.swing.JRadioButton();
         ReparationRB = new javax.swing.JRadioButton();
         PlaqueBelgeCheck = new javax.swing.JCheckBox();
@@ -64,15 +73,25 @@ public class RDVForm extends javax.swing.JFrame {
 
         Bonus.setText("Instructions particulieres :");
 
-        newCheck.setText("Nouveau");
+        NouveauCheck.setText("Nouveau");
 
         EntretienRB.setSelected(true);
         EntretienRB.setText("Entretien");
         ButtonGroup RepaEntre = new ButtonGroup();
         RepaEntre.add(EntretienRB);
         RepaEntre.add(ReparationRB);
+        EntretienRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntretienRBActionPerformed(evt);
+            }
+        });
 
         ReparationRB.setText("Reparation");
+        ReparationRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReparationRBActionPerformed(evt);
+            }
+        });
 
         PlaqueBelgeCheck.setText("Plaque belge");
 
@@ -141,7 +160,7 @@ public class RDVForm extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ModeleTF)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(newCheck)
+                .addComponent(NouveauCheck)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -166,7 +185,7 @@ public class RDVForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Proprio)
                     .addComponent(ProprioCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newCheck))
+                    .addComponent(NouveauCheck))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EntretienRB)
@@ -200,9 +219,23 @@ public class RDVForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Certains champs obligatoires sont vides", "Erreur",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+        if()
         this.dispose();
     }//GEN-LAST:event_OKButtonMouseClicked
+
+    private void EntretienRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntretienRBActionPerformed
+        if(EntretienRB.isSelected())
+        {
+            TypeTravailCB.setModel(EntretienCBM);
+        }
+    }//GEN-LAST:event_EntretienRBActionPerformed
+
+    private void ReparationRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReparationRBActionPerformed
+        if(ReparationRB.isSelected())
+        {
+            TypeTravailCB.setModel(ReparationCBM);
+        }
+    }//GEN-LAST:event_ReparationRBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,6 +283,7 @@ public class RDVForm extends javax.swing.JFrame {
     private javax.swing.JTextField MarqueTF;
     private javax.swing.JLabel ModeleLabel;
     private javax.swing.JTextField ModeleTF;
+    private javax.swing.JCheckBox NouveauCheck;
     private javax.swing.JButton OKButton;
     private javax.swing.JCheckBox PlaqueBelgeCheck;
     private javax.swing.JLabel Proprio;
@@ -257,6 +291,5 @@ public class RDVForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton ReparationRB;
     private javax.swing.JLabel TypeTravail;
     javax.swing.JComboBox TypeTravailCB;
-    private javax.swing.JCheckBox newCheck;
     // End of variables declaration//GEN-END:variables
 }
