@@ -5,9 +5,13 @@
  */
 package mainPackages;
 
+import activite.Travail;
+import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
+import vehicules.Voiture;
 
 /**
  *
@@ -298,4 +302,57 @@ public class priseEnChargeForm extends javax.swing.JFrame {
     private javax.swing.JTable priseEnChargeTable;
     private javax.swing.JLabel priseEnChargeTravauxLabel;
     // End of variables declaration//GEN-END:variables
+class MyTableModel extends AbstractTableModel {
+
+        private List<Travail> contents;
+        private final String[] tableHeaders = {"Type Travail", "Type Voiture", "Immatriculation", "Propriétaire","Remarque"};
+
+        public MyTableModel(List<Travail> contents){
+            this.contents = contents;
+        } 
+
+        @Override
+        public String getColumnName(int columnIndex) {
+            return tableHeaders[columnIndex];
+        }
+ 
+        @Override
+        public int getRowCount(){
+            return this.contents.size();
+        }
+
+        @Override
+        public int getColumnCount(){
+            return 5;
+        }
+
+        @Override
+        public Object getValueAt(int row, int column){
+            Travail myObj = contents.get(row);
+
+            //map column index to property
+            /*
+                protected String id;
+                protected PersonnelGarage persogarage;
+                protected Vehicule vehi;
+                protected double prix;
+                protected String description;
+                protected int etat;
+            */
+            switch(column)
+            {
+                case 0://type travail
+                    return "Travail";
+                case 1://Type voiture
+                    return ( (Voiture) myObj.getVehi()).getTypeVoiture();
+                case 2://imma
+                    return ( (Voiture) myObj.getVehi()).getImmatriculation();
+                case 3://proprio
+                    return ""+( (Voiture) myObj.getVehi()).getClient().getNom() + ( (Voiture) myObj.getVehi()).getClient().getPrenom();
+                case 4://desc
+                    return myObj.getDescription();
+            }
+            return null;
+        }
+    }
 }

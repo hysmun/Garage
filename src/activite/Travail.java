@@ -68,5 +68,29 @@ public abstract class Travail implements Identifiable, Serializable{
         this.etat = etat;
     }
 
+    public PersonnelGarage getPersogarage() {
+        return persogarage;
+    }
+
+    public void setPersogarage(PersonnelGarage persogarage) {
+        this.persogarage = persogarage;
+    }
+
+    public double getPrix() {
+        return prix;
+    }
+
+    public void setPrix(double prix) {
+        this.prix = prix;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     
 }
