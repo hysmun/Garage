@@ -7,9 +7,9 @@ package activite;
 
 import authenticate.Identifiable;
 import java.io.Serializable;
-import people.Client;
-import people.PersonnelGarage;
-import vehicules.Vehicule;
+import java.util.Objects;
+import people.*;
+import vehicules.*;
 
 /**
  *
@@ -90,6 +90,57 @@ public abstract class Travail implements Identifiable, Serializable{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        Voiture vTmp = (Voiture)vehi;
+        return "Immatriculation= " + vTmp.getImmatriculation() + ", Type Voiture= " + vTmp.getTypeVoiture() + ", vehi= " + vehi.getClient().getNom()+" "+vehi.getClient().getPrenom() + ", description=" + description + ", etat=" + etat ;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 11 * hash + Objects.hashCode(this.id);
+        hash = 11 * hash + Objects.hashCode(this.persogarage);
+        hash = 11 * hash + Objects.hashCode(this.vehi);
+        hash = 11 * hash + (int) (Double.doubleToLongBits(this.prix) ^ (Double.doubleToLongBits(this.prix) >>> 32));
+        hash = 11 * hash + Objects.hashCode(this.description);
+        hash = 11 * hash + this.etat;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Travail other = (Travail) obj;
+        if (Double.doubleToLongBits(this.prix) != Double.doubleToLongBits(other.prix)) {
+            return false;
+        }
+        if (this.etat != other.etat) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (!Objects.equals(this.persogarage, other.persogarage)) {
+            return false;
+        }
+        if (!Objects.equals(this.vehi, other.vehi)) {
+            return false;
+        }
+        return true;
     }
 
     

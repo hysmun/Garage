@@ -39,6 +39,7 @@ public class DataEncapsulate implements Serializable{
         vPersonnel = new Vector<PersonnelGarage>();
         llTravailPrevu = new LinkedList<Travail>();
         llTravailEnCours = new ArrayList<Travail>();
+        llTravailEnCours.ensureCapacity(5);
         llTravailFini = new LinkedList<Travail>();
         vVehicule = new LinkedList<Vehicule>();
         vCommand = new LinkedList<CentraleCommand>();

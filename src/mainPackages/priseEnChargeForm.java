@@ -172,10 +172,6 @@ public class priseEnChargeForm extends javax.swing.JFrame {
     private void priseEnChargeOkButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeOkButtonMouseClicked
         try
         {
-            Vector tmp = new Vector();
-            DefaultTableModel model = (DefaultTableModel) priseEnChargeTable.getModel();
-
-
             if(priseEnChargeTable.getSelectedRowCount() == 1)
             {
                 if(priseEnChargePontRadBut.isSelected())
@@ -188,9 +184,10 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
                             {
                                 //libre
-                                mainGarage.dE.llTravailEnCours.set(0, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                                mainGarage.dE.llTravailEnCours.add(0, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
                                 mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
-                                model.removeRow(priseEnChargeTable.getSelectedRow());
+                                applicationGestionForm.appGestionPresencePont1Label.setText((mainGarage.dE.llTravailEnCours.get(0)).toString());
+                                //model.removeRow(priseEnChargeTable.getSelectedRow());
                                 this.invalidate();
                             }
                             else
@@ -202,9 +199,10 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             if(applicationGestionForm.appGestionPresencePont2Label.getText().equals(mainGarage.libreString))
                             {
                                 //libre
-                                mainGarage.dE.llTravailEnCours.set(1, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                                mainGarage.dE.llTravailEnCours.add(1, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
                                 mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
-                                model.removeRow(priseEnChargeTable.getSelectedRow());
+                                applicationGestionForm.appGestionPresencePont2Label.setText((mainGarage.dE.llTravailEnCours.get(1)).toString());
+                                //model.removeRow(priseEnChargeTable.getSelectedRow());
                                 this.invalidate();
 
                             }
@@ -217,9 +215,10 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             if(applicationGestionForm.appGestionPresencePont3Label.getText().equals(mainGarage.libreString))
                             {
                                 //libre
-                                mainGarage.dE.llTravailEnCours.set(2, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                                mainGarage.dE.llTravailEnCours.add(2, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
                                 mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
-                                model.removeRow(priseEnChargeTable.getSelectedRow());
+                                applicationGestionForm.appGestionPresencePont3Label.setText((mainGarage.dE.llTravailEnCours.get(2)).toString());
+                                //model.removeRow(priseEnChargeTable.getSelectedRow());
                                 this.invalidate();
                             }
                             else
@@ -237,9 +236,10 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                     if(applicationGestionForm.appGestionPresenceSolLabel.getText().equals(mainGarage.libreString))
                     {
                         //libre
-                        mainGarage.dE.llTravailEnCours.set(3, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                        mainGarage.dE.llTravailEnCours.add(3, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
                         mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
-                        model.removeRow(priseEnChargeTable.getSelectedRow());
+                        applicationGestionForm.appGestionPresenceSolLabel.setText((mainGarage.dE.llTravailEnCours.get(3)).toString());
+                        //model.removeRow(priseEnChargeTable.getSelectedRow());
                         this.invalidate();
                     }
                     else
@@ -247,6 +247,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null,"Le Sol est occuper veuillez finir avec d'abord","Avertissement",JOptionPane.WARNING_MESSAGE);
                     }
                 }
+                this.dispose();
             }
             else
             {
@@ -255,9 +256,8 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         }
         catch(Exception e)
         {
-            System.out.println("C:\tErreur ok button "+e.getMessage());
+            System.out.println("C:\tErreur ok button "+priseEnChargeTable.getSelectedRow()+ " ---- "+e.getMessage()+", travail :"+mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
         }
-        this.dispose();
     }//GEN-LAST:event_priseEnChargeOkButtonMouseClicked
 
     private void priseEnChargeAnnulerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priseEnChargeAnnulerButtonMouseClicked

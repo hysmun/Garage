@@ -24,13 +24,19 @@ public class applicationGestionForm extends javax.swing.JFrame{
      * Creates new form applicationGestionForm
      */
     public applicationGestionForm() {
-        initComponents();
-        threadDate thDate = new threadDate();
-        thDate.start();
-        serverPneu = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-pneu")));
-        serverPiece = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-piece")));
-        serverLubrifiant = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-lubrifiant")));
-    
+        try
+        {
+           initComponents();
+            threadDate thDate = new threadDate();
+            thDate.start();
+            serverPneu = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-pneu")));
+            serverPiece = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-piece")));
+            serverLubrifiant = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-lubrifiant")));
+        }
+        catch(Exception e)
+        {
+            System.out.println("C:\t Erreur const gestion form :"+e.getMessage());
+        }
     }
 
     /**
