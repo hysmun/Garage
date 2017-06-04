@@ -5,6 +5,7 @@
  */
 package mainPackages;
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -38,6 +39,8 @@ public class mainGarage {
     
     public static String currentUser;
     public static PersonnelGarage currentPersonnel;
+    
+    public static File serialization;
     
     public static void main(String[] args) {
         try
@@ -83,6 +86,7 @@ public class mainGarage {
                 clientProperties.setProperty("port-piece", "4002");
                 clientProperties.setProperty("port-lubrifiant", "4003");
                 clientProperties.setProperty("dossier-save", "save");
+                clientProperties.setProperty("fichier-save","serialization.ser");
                 clientProperties.store(ot, null);
             }
             else
@@ -92,18 +96,36 @@ public class mainGarage {
             }
             System.out.println("C:\tfichier-client-properties charger");
             
-            try {
-                FileInputStream fis = new FileInputStream(clientProperties.getProperty("dossier-save"));
-                ObjectInputStream in = new ObjectInputStream(fis);
-                dE = (DataEncapsulate)in.readObject();
-                in.close();
+            File dossierSave = new File(clientProperties.getProperty("dossier-save"));
+            if(!dossierSave.exists())
+            {
+                dossierSave.mkdir();
+            }
+            File saveSerial = new File(clientProperties.getProperty("dossier-save")+System.getProperty("file.separator")+clientProperties.getProperty("fichier-save"));
+            if(!saveSerial.exists())
+            {
+                FileOutputStream fos = new FileOutputStream(saveSerial);
+                fos.close();
+                System.out.println("C:\tFichier serialisation introuvable, creation d'un fichier vierge");
+            }
+            try 
+            {
+                FileInputStream fis = new FileInputStream(clientProperties.getProperty("dossier-save")+System.getProperty("file.separator")+clientProperties.getProperty("fichier-save"));
+                try {
+                    ObjectInputStream in = new ObjectInputStream(fis);
+                    dE = (DataEncapsulate)in.readObject();
+                    in.close();
+                }
+                catch(EOFException ex) {
+                    System.out.println("C:\tFichier de serialisation vierge");
+                }
                 fis.close();
             }
             catch(IOException | ClassNotFoundException i) {
                 i.printStackTrace();
                 return;
             }
-            System.out.println("C: Chargement serialisation reussi");
+            System.out.println("C:\tChargement serialisation reussi");
             
             
             
