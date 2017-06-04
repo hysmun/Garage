@@ -5,12 +5,6 @@
  */
 package mainPackages;
 
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Box;
@@ -434,56 +428,23 @@ public class applicationGestionForm extends javax.swing.JFrame{
 
     private void pneuCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pneuCommandActionPerformed
         // TODO add your handling code here:
-        commandForm cf = new commandForm(commandForm.PNEU);
+        commandeForm cf = new commandeForm(this, true,commandeForm.PNEU);
         cf.setVisible(true);
-        cf.state = 1;
-        while(cf.state == 1)
-        {
-            try {
-                //attente
-                Thread.sleep(100);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(applicationGestionForm.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
         System.out.println("C: fin commande");
-        cf.setVisible(false);
     }//GEN-LAST:event_pneuCommandActionPerformed
 
     private void lubrifiantCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lubrifiantCommandActionPerformed
         // TODO add your handling code here:
-        commandForm cf = new commandForm(commandForm.LUBRIFIANT);
+        commandeForm cf = new commandeForm(this, true,commandeForm.LUBRIFIANT);
         cf.setVisible(true);
-        cf.state = 1;
-        while(cf.state == 1)
-        {
-            try {
-                //attente
-                Thread.sleep(100);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(applicationGestionForm.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
         System.out.println("C: fin commande");
-        cf.setVisible(false);
     }//GEN-LAST:event_lubrifiantCommandActionPerformed
 
     private void pieceCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pieceCommandActionPerformed
         // TODO add your handling code here:
-        commandForm cf = new commandForm(commandForm.PIECE);
+        commandeForm cf = new commandeForm(this, true,commandeForm.PIECE);
         cf.setVisible(true);
-        cf.state = 1;
-        while(cf.state == 1)
-        {
-            try {
-                //attente
-                Thread.sleep(100);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(applicationGestionForm.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
         System.out.println("C: fin commande");
-        cf.setVisible(false);
     }//GEN-LAST:event_pieceCommandActionPerformed
 
     private void receptionItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receptionItemActionPerformed
@@ -492,6 +453,8 @@ public class applicationGestionForm extends javax.swing.JFrame{
 
     private void listeCommandeItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listeCommandeItemActionPerformed
         // TODO add your handling code here:
+        ListeCommandForm lcf = new ListeCommandForm(this, true);
+        
     }//GEN-LAST:event_listeCommandeItemActionPerformed
 
     /**
