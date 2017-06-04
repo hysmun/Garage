@@ -230,6 +230,7 @@ public class RDVForm extends javax.swing.JFrame {
         else if(ProprioCB.getSelectedItem() == null && NouveauCheck.isSelected())
         {
             addClient nouvClient = new addClient();
+            nouvClient.setVisible(true);
             while(addClient.creationOK != true)
             {
                 try {
@@ -239,7 +240,6 @@ public class RDVForm extends javax.swing.JFrame {
                 }
             }
         }
-        this.dispose();
     }//GEN-LAST:event_OKButtonMouseClicked
 
     private void EntretienRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntretienRBActionPerformed

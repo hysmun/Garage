@@ -6,6 +6,7 @@
 package people;
 
 import javax.swing.JOptionPane;
+import static mainPackages.mainGarage.dE;
 
 /**
  *
@@ -43,7 +44,6 @@ public class addClient extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Garage HEPL - Nouveau client");
-        setAlwaysOnTop(true);
         setName("addClientForm"); // NOI18N
 
         IdLabel.setText("Identifiant :");
@@ -140,7 +140,23 @@ public class addClient extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Champs obligatoires vides", "Erreur", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+        if(!dE.vClient.isEmpty())
+        {
+            for (Client vClient : dE.vClient) 
+            {
+                if(vClient.getNom().equals(NomTF.getText()) && vClient.getPrenom().equals(PrenomTF.getText()))
+                {
+                    JOptionPane.showMessageDialog(null, "Duplicatas détectés","Erreur",JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            }          
+        }
+        tmp = new Client(IdTF.getText(),NomTF.getText(),PrenomTF.getText(),AdresseTF.getText(),TelephoneTF.getText());
+        dE.vClient.add(tmp);
+        tmp = null;
+        JOptionPane.showConfirmDialog(null,"Client créé","Information",JOptionPane.INFORMATION_MESSAGE);
+        creationOK = true;
+        this.dispose();
     }//GEN-LAST:event_OKButtonActionPerformed
 
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
