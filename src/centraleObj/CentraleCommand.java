@@ -141,7 +141,7 @@ public class CentraleCommand implements Identifiable, Serializable{
     @Override
     public String toString() {
         DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-        return "CentraleCommand{" + "id=" + id + ", libelle=" + libelle + ", type=" + type + ", quantite=" + quantite + ", dateEnvois=" + /*df.format(dateEnvois) + */", disponibilie="+disponibilite+'}';
+        return "id=" + id + ", libelle=" + libelle + ", type=" + type + ", quantite=" + quantite + ", dateEnvois=" + /*df.format(dateEnvois) + */", disponibilie="+disponibilite;
     }
     
     public String toStringForSend(){

@@ -149,7 +149,7 @@ public class mainGarage {
         }
         catch(IOException e)
         {
-            System.out.println("C:\tError main garage !!!");
+            System.out.println("C:\tError main garage !!!" + e.getMessage());
         }
     }
 }
