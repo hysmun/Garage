@@ -441,9 +441,9 @@ public class applicationGestionForm extends javax.swing.JFrame{
         {
             try {
                 //attente
-                Thread.sleep(10);
+                Thread.sleep(100);
             } catch (InterruptedException ex) {
-                Logger.getLogger(mainGarage.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(applicationGestionForm.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         System.out.println("C: fin commande");
@@ -454,14 +454,36 @@ public class applicationGestionForm extends javax.swing.JFrame{
         // TODO add your handling code here:
         commandForm cf = new commandForm(commandForm.LUBRIFIANT);
         cf.setVisible(true);
-        //this.enable(false);
+        cf.state = 1;
+        while(cf.state == 1)
+        {
+            try {
+                //attente
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(applicationGestionForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        System.out.println("C: fin commande");
+        cf.setVisible(false);
     }//GEN-LAST:event_lubrifiantCommandActionPerformed
 
     private void pieceCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pieceCommandActionPerformed
         // TODO add your handling code here:
         commandForm cf = new commandForm(commandForm.PIECE);
         cf.setVisible(true);
-        //this.enable(false);
+        cf.state = 1;
+        while(cf.state == 1)
+        {
+            try {
+                //attente
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(applicationGestionForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        System.out.println("C: fin commande");
+        cf.setVisible(false);
     }//GEN-LAST:event_pieceCommandActionPerformed
 
     private void receptionItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receptionItemActionPerformed

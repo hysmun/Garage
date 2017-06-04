@@ -6,7 +6,6 @@
 package centraleMain;
 
 import java.awt.BorderLayout;
-import java.awt.LayoutManager;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -27,9 +26,9 @@ public class applicationCentraleForm extends javax.swing.JFrame {
     /**
      * Creates new form applicationCentraleForm
      */
-    public static int PNEU = 0;
-    public static int PIECE = 1;
-    public static int LUBRIFIANT = 2;
+    public static final int PNEU = 0;
+    public static final int PIECE = 1;
+    public static final int LUBRIFIANT = 2;
     public static String filePropertiesGeneral = "general.properties";
     
     public int typeApp;
@@ -82,13 +81,13 @@ public class applicationCentraleForm extends javax.swing.JFrame {
             
             switch(typeApp)
             {
-                case 0://PNEU
+                case PNEU://PNEU
                     serveurPropFile = generalProperties.getProperty("fichier-pneu-properties");
                     break;
-                case 1://PIECE
+                case PIECE://PIECE
                     serveurPropFile = generalProperties.getProperty("fichier-piece-properties");
                     break;
-                case 2://LUBRIFIANT
+                case LUBRIFIANT://LUBRIFIANT
                     serveurPropFile = generalProperties.getProperty("fichier-lubrifiant-properties");
                     break;
                 default:
@@ -101,13 +100,13 @@ public class applicationCentraleForm extends javax.swing.JFrame {
                 serveurProperties.setProperty("port", ""+(4001+typeApp));
                 switch(typeApp)
                 {
-                    case 0://PNEU
+                    case PNEU://PNEU
                         serveurProperties.setProperty("image","Pneus.png");
                         break;
-                    case 1://PIECE
+                    case PIECE://PIECE
                         serveurProperties.setProperty("image","Pieces.png");
                         break;
-                    case 2://LUBRIFIANT
+                    case LUBRIFIANT://LUBRIFIANT
                         serveurProperties.setProperty("image","Lubrifiants.png");
                         break;
                     default:
@@ -124,13 +123,13 @@ public class applicationCentraleForm extends javax.swing.JFrame {
             
             switch(typeApp)
             {
-                case 0://PNEU
+                case PNEU://PNEU
                     this.setTitle(this.getTitle()+ " PNEUS");
                     break;
-                case 1://PIECE
+                case PIECE://PIECE
                     this.setTitle(this.getTitle()+ " PIECES");
                     break;
-                case 2://LUBRIFIANT
+                case LUBRIFIANT://LUBRIFIANT
                     this.setTitle(this.getTitle()+ " LUBRIFIANT");
                     break;
                 default:

@@ -5,21 +5,25 @@
  */
 package mainPackages;
 
+import centraleObj.CentraleCommand;
+import java.util.Calendar;
+import java.util.Random;
+
 /**
  *
  * @author ante
  */
 public class commandForm extends javax.swing.JFrame {
 
-    public static int ERROR = -1;
-    public static int PNEU = 0;
-    public static int PIECE = 1;
-    public static int LUBRIFIANT = 2;
+    public static final int PNEU = 0;
+    public static final int PIECE = 1;
+    public static final int LUBRIFIANT = 2;
     /**
      * Creates new form commandForm
      */
     public int typeApp;
     public int state;
+    public int priorite;
     public commandForm() {
         initComponents();
     }
@@ -27,6 +31,18 @@ public class commandForm extends javax.swing.JFrame {
     public commandForm(int type) {
         initComponents();
         typeApp = type;
+        /*switch(typeApp)
+        {
+            case PNEU:
+                this.setTitle(this.getTitle()+" PNEU");
+                break;
+            case PIECE:
+                this.setTitle(this.getTitle()+" PIECE");
+                break;
+            case LUBRIFIANT:
+                this.setTitle(this.getTitle()+" LUBRIFIANT");
+                break;
+        }*/
     }
 
     /**
@@ -38,6 +54,7 @@ public class commandForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        prioGroupButton = new javax.swing.ButtonGroup();
         commandeLabel = new javax.swing.JLabel();
         urgentRB = new javax.swing.JRadioButton();
         normalRB = new javax.swing.JRadioButton();
@@ -50,17 +67,22 @@ public class commandForm extends javax.swing.JFrame {
         annulerButton = new javax.swing.JButton();
         commandPanel = new javax.swing.JScrollPane();
         commandList = new javax.swing.JList<>();
-        libelleTB = new javax.swing.JTextField();
-        typeTB = new javax.swing.JTextField();
-        quantiteTB = new javax.swing.JTextField();
+        libelleTF = new javax.swing.JTextField();
+        typeTF = new javax.swing.JTextField();
+        quantiteTF = new javax.swing.JTextField();
         dateLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Garage HEPL :");
-        setModalExclusionType(java.awt.Dialog.ModalExclusionType.TOOLKIT_EXCLUDE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         commandeLabel.setText("Commande :");
 
+        prioGroupButton.add(urgentRB);
         urgentRB.setText("urgent");
         urgentRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +90,7 @@ public class commandForm extends javax.swing.JFrame {
             }
         });
 
+        prioGroupButton.add(normalRB);
         normalRB.setSelected(true);
         normalRB.setText("normal");
         normalRB.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +99,7 @@ public class commandForm extends javax.swing.JFrame {
             }
         });
 
+        prioGroupButton.add(nonPrioRB);
         nonPrioRB.setText("non prioritaire");
         nonPrioRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +131,7 @@ public class commandForm extends javax.swing.JFrame {
 
         commandPanel.setViewportView(commandList);
 
-        dateLabel.setText("Date");
+        dateLabel.setText("<Date>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,9 +162,9 @@ public class commandForm extends javax.swing.JFrame {
                                         .addComponent(quantiteLabel))
                                     .addGap(44, 44, 44)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(quantiteTB, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                        .addComponent(typeTB)
-                                        .addComponent(libelleTB)))
+                                        .addComponent(quantiteTF, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                        .addComponent(typeTF)
+                                        .addComponent(libelleTF)))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(28, 28, 28)
                                     .addComponent(envoyerButton)
@@ -169,23 +193,21 @@ public class commandForm extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(libelleLabel)
-                            .addComponent(libelleTB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(libelleTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(typeLabel)
-                            .addComponent(typeTB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(typeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(quantiteLabel)
-                            .addComponent(quantiteTB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(quantiteTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(56, 56, 56)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(envoyerButton)
                             .addComponent(annulerButton))))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
-
-        getAccessibleContext().setAccessibleParent(this);
 
         pack();
         setLocationRelativeTo(null);
@@ -205,11 +227,31 @@ public class commandForm extends javax.swing.JFrame {
 
     private void envoyerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_envoyerButtonActionPerformed
         // TODO add your handling code here:
+        CentraleCommand commande = new CentraleCommand("C"+new Random().nextInt(100000000), libelleTF.getText(),typeTF.getText() ,Integer.parseInt(quantiteTF.getText()), priorite, Calendar.getInstance());
+        switch(typeApp)
+        {
+            case PNEU:
+                applicationGestionForm.serverPneu.sendString(commande.toStringForSend());
+                break;
+            case PIECE:
+                applicationGestionForm.serverPiece.sendString(commande.toStringForSend());
+                break;
+            case LUBRIFIANT:
+                applicationGestionForm.serverLubrifiant.sendString(commande.toStringForSend());
+                break;
+        }
     }//GEN-LAST:event_envoyerButtonActionPerformed
 
     private void annulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerButtonActionPerformed
         // TODO add your handling code here:
+        this.state = 0;
+        this.dispose();
     }//GEN-LAST:event_annulerButtonActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        this.state = 0;
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -255,13 +297,14 @@ public class commandForm extends javax.swing.JFrame {
     private javax.swing.JLabel dateLabel;
     private javax.swing.JButton envoyerButton;
     private javax.swing.JLabel libelleLabel;
-    private javax.swing.JTextField libelleTB;
+    private javax.swing.JTextField libelleTF;
     private javax.swing.JRadioButton nonPrioRB;
     private javax.swing.JRadioButton normalRB;
+    private javax.swing.ButtonGroup prioGroupButton;
     private javax.swing.JLabel quantiteLabel;
-    private javax.swing.JTextField quantiteTB;
+    private javax.swing.JTextField quantiteTF;
     private javax.swing.JLabel typeLabel;
-    private javax.swing.JTextField typeTB;
+    private javax.swing.JTextField typeTF;
     private javax.swing.JRadioButton urgentRB;
     // End of variables declaration//GEN-END:variables
 }
