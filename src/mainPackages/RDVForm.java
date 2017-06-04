@@ -270,7 +270,7 @@ public class RDVForm extends javax.swing.JFrame {
         }
         else
         {
-            
+            reparation = new Reparation("Reparation#"+ new Random().nextInt(100),null,vehi,new Random().nextDouble()*500,BonusTF.getText(),0);
         }
     }//GEN-LAST:event_OKButtonMouseClicked
 
