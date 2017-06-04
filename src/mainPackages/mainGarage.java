@@ -91,6 +91,9 @@ public class mainGarage {
             }
             System.out.println("C:\tfichier-client-properties charger");
             
+            FileInputStream fis = new FileInputStream(clientProperties.getProperty("dossier-save"));
+            
+            
             
 
             loginForm loginWindows = new loginForm();
