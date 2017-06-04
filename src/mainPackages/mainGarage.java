@@ -14,6 +14,7 @@ import java.io.OutputStream;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import people.PersonnelGarage;
 import testPackages.DataEncapsulate;
 
 /**
@@ -33,6 +34,9 @@ public class mainGarage {
     
     public static Properties generalProperties = new Properties();
     public static Properties clientProperties = new Properties();
+    
+    public static String currentUser;
+    public static PersonnelGarage currentPersonnel;
     
     public static void main(String[] args) {
         try
@@ -119,7 +123,6 @@ public class mainGarage {
             }
             System.out.println("C:\tLogin reussi !");
             loginWindows.setVisible(false);
-            
             
             applicationGestionForm formPrincipale = new applicationGestionForm();
             formPrincipale.setVisible(true);
