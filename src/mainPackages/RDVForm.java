@@ -6,6 +6,7 @@
 package mainPackages;
 
 import java.util.Vector;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -30,12 +31,12 @@ public class RDVForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TypeVoiture = new javax.swing.JLabel();
+        MarqueLabel = new javax.swing.JLabel();
         Immatriculation = new javax.swing.JLabel();
         Proprio = new javax.swing.JLabel();
         TypeTravail = new javax.swing.JLabel();
         Bonus = new javax.swing.JLabel();
-        VoitTF = new javax.swing.JTextField();
+        MarqueTF = new javax.swing.JTextField();
         ImmatTF = new javax.swing.JTextField();
         BonusTF = new javax.swing.JTextField();
         ProprioCB = new javax.swing.JComboBox();
@@ -46,12 +47,14 @@ public class RDVForm extends javax.swing.JFrame {
         TypeTravailCB = new javax.swing.JComboBox();
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
+        ModeleLabel = new javax.swing.JLabel();
+        ModeleTF = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Garage HEPL - Nouveau travail pour l'atelier");
         setName("RDVForm"); // NOI18N
 
-        TypeVoiture.setText("Type voiture :");
+        MarqueLabel.setText("Marque :");
 
         Immatriculation.setText("Immatriculation :");
 
@@ -65,18 +68,11 @@ public class RDVForm extends javax.swing.JFrame {
 
         EntretienRB.setSelected(true);
         EntretienRB.setText("Entretien");
-        EntretienRB.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                EntretienRBMouseClicked(evt);
-            }
-        });
+        ButtonGroup RepaEntre = new ButtonGroup();
+        RepaEntre.add(EntretienRB);
+        RepaEntre.add(ReparationRB);
 
         ReparationRB.setText("Reparation");
-        ReparationRB.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ReparationRBMouseClicked(evt);
-            }
-        });
 
         PlaqueBelgeCheck.setText("Plaque belge");
 
@@ -93,6 +89,8 @@ public class RDVForm extends javax.swing.JFrame {
                 CancelButtonMouseClicked(evt);
             }
         });
+
+        ModeleLabel.setText("Modèle :");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,7 +122,6 @@ public class RDVForm extends javax.swing.JFrame {
                                         .addComponent(TypeTravailCB, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(TypeVoiture)
                                             .addComponent(Immatriculation)
                                             .addComponent(Proprio))
                                         .addGap(35, 35, 35)
@@ -133,9 +130,16 @@ public class RDVForm extends javax.swing.JFrame {
                                                 .addComponent(ImmatTF, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                                                 .addComponent(PlaqueBelgeCheck))
-                                            .addComponent(VoitTF)
                                             .addComponent(ProprioCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addGap(25, 25, 25)))))
+                                .addGap(25, 25, 25))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(MarqueLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(MarqueTF, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(42, 42, 42)
+                                .addComponent(ModeleLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ModeleTF)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(newCheck)
                 .addContainerGap())
@@ -149,8 +153,10 @@ public class RDVForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TypeVoiture)
-                    .addComponent(VoitTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MarqueLabel)
+                    .addComponent(MarqueTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ModeleLabel)
+                    .addComponent(ModeleTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Immatriculation)
@@ -184,22 +190,16 @@ public class RDVForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EntretienRBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntretienRBMouseClicked
-        
-        this.invalidate();
-        
-    }//GEN-LAST:event_EntretienRBMouseClicked
-
-    private void ReparationRBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReparationRBMouseClicked
-        
-        this.invalidate();
-    }//GEN-LAST:event_ReparationRBMouseClicked
-
     private void CancelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelButtonMouseClicked
         this.dispose();
     }//GEN-LAST:event_CancelButtonMouseClicked
 
     private void OKButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKButtonMouseClicked
+        if(MarqueTF.getText().equals("") || ImmatTF.getText().equals("") || ModeleTF.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null,"Certains champs obligatoires sont vides", "Erreur",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
         this.dispose();
     }//GEN-LAST:event_OKButtonMouseClicked
@@ -246,6 +246,10 @@ public class RDVForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton EntretienRB;
     private javax.swing.JTextField ImmatTF;
     private javax.swing.JLabel Immatriculation;
+    private javax.swing.JLabel MarqueLabel;
+    private javax.swing.JTextField MarqueTF;
+    private javax.swing.JLabel ModeleLabel;
+    private javax.swing.JTextField ModeleTF;
     private javax.swing.JButton OKButton;
     private javax.swing.JCheckBox PlaqueBelgeCheck;
     private javax.swing.JLabel Proprio;
@@ -253,8 +257,6 @@ public class RDVForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton ReparationRB;
     private javax.swing.JLabel TypeTravail;
     javax.swing.JComboBox TypeTravailCB;
-    private javax.swing.JLabel TypeVoiture;
-    private javax.swing.JTextField VoitTF;
     private javax.swing.JCheckBox newCheck;
     // End of variables declaration//GEN-END:variables
 }

@@ -53,17 +53,14 @@
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Membre du personnel"/>
       </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MembreRadioLoginFormMouseClicked"/>
-      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="ButtonGroup choixLog = new ButtonGroup();&#xd;&#xa;choixLog.add(MembreRadioLoginForm);&#xd;&#xa;choixLog.add(ExterieurRadioLoginForm);"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JRadioButton" name="ExterieurRadioLoginForm">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exterieur habilit&#xe9;"/>
       </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ExterieurRadioLoginFormMouseClicked"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="OkButtonLoginForm">
       <Properties>

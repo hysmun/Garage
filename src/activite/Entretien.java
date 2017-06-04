@@ -6,7 +6,7 @@
 package activite;
 
 import java.io.Serializable;
-import people.Mecanicien;
+import people.PersonnelGarage;
 import vehicules.Vehicule;
 
 /**
@@ -15,8 +15,8 @@ import vehicules.Vehicule;
  */
 public class Entretien extends Travail implements Serializable{
 
-    public Entretien(String id, Mecanicien meca, Vehicule vehi, double prix, String description, int etat) {
-        super(id, meca, vehi, prix, description, etat);
+    public Entretien(String id, PersonnelGarage persogarage, Vehicule vehi, double prix, String description, int etat) {
+        super(id, persogarage, vehi, prix, description, etat);
     }
 
     

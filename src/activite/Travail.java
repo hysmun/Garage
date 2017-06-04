@@ -7,7 +7,7 @@ package activite;
 
 import authenticate.Identifiable;
 import java.io.Serializable;
-import people.Mecanicien;
+import people.PersonnelGarage;
 import vehicules.Vehicule;
 
 /**
@@ -16,16 +16,16 @@ import vehicules.Vehicule;
  */
 public abstract class Travail implements Identifiable, Serializable{
     protected String id;
-    protected Mecanicien meca;
+    protected PersonnelGarage persogarage;
     protected Vehicule vehi;
     protected double prix;
     protected String description;
     protected int etat;
 
 
-    public Travail(String id, Mecanicien meca, Vehicule vehi, double prix, String description, int etat) {
+    public Travail(String id, PersonnelGarage persogarage, Vehicule vehi, double prix, String description, int etat) {
         this.id = id;
-        this.meca = meca;
+        this.persogarage = persogarage;
         this.vehi = vehi;
         this.prix = prix;
         this.description = description;
@@ -43,12 +43,12 @@ public abstract class Travail implements Identifiable, Serializable{
         this.id = id;
     }
 
-    public Mecanicien getMeca() {
-        return meca;
+    public PersonnelGarage getPersonnelGarage() {
+        return persogarage;
     }
 
-    public void setMeca(Mecanicien meca) {
-        this.meca = meca;
+    public void setPersonnelGarage(PersonnelGarage persogarage) {
+        this.persogarage = persogarage;
     }
 
     public Vehicule getVehi() {

@@ -55,7 +55,6 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="TypeVoiture" min="-2" max="-2" attributes="0"/>
                                           <Component id="Immatriculation" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="Proprio" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -66,12 +65,20 @@
                                               <EmptySpace pref="43" max="32767" attributes="0"/>
                                               <Component id="PlaqueBelgeCheck" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="VoitTF" max="32767" attributes="0"/>
                                           <Component id="ProprioCB" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="MarqueLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="MarqueTF" min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="ModeleLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="ModeleTF" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -92,8 +99,10 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="TypeVoiture" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="VoitTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="MarqueLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="MarqueTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ModeleLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ModeleTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -132,9 +141,9 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="TypeVoiture">
+    <Component class="javax.swing.JLabel" name="MarqueLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Type voiture :"/>
+        <Property name="text" type="java.lang.String" value="Marque :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="Immatriculation">
@@ -157,7 +166,7 @@
         <Property name="text" type="java.lang.String" value="Instructions particulieres :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="VoitTF">
+    <Component class="javax.swing.JTextField" name="MarqueTF">
     </Component>
     <Component class="javax.swing.JTextField" name="ImmatTF">
     </Component>
@@ -180,17 +189,14 @@
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Entretien"/>
       </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="EntretienRBMouseClicked"/>
-      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="ButtonGroup RepaEntre = new ButtonGroup();&#xd;&#xa;RepaEntre.add(EntretienRB);&#xd;&#xa;RepaEntre.add(ReparationRB);"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JRadioButton" name="ReparationRB">
       <Properties>
         <Property name="text" type="java.lang.String" value="Reparation"/>
       </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ReparationRBMouseClicked"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="PlaqueBelgeCheck">
       <Properties>
@@ -224,6 +230,13 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CancelButtonMouseClicked"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ModeleLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mod&#xe8;le :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="ModeleTF">
     </Component>
   </SubComponents>
 </Form>

@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import propertiescreation.PropertiesCreations;
 
@@ -100,19 +101,12 @@ public class loginForm extends javax.swing.JFrame {
 
         MembreRadioLoginForm.setSelected(true);
         MembreRadioLoginForm.setText("Membre du personnel");
-        MembreRadioLoginForm.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MembreRadioLoginFormMouseClicked(evt);
-            }
-        });
+        ButtonGroup choixLog = new ButtonGroup();
+        choixLog.add(MembreRadioLoginForm);
+        choixLog.add(ExterieurRadioLoginForm);
         getContentPane().add(MembreRadioLoginForm);
 
         ExterieurRadioLoginForm.setText("Exterieur habilité");
-        ExterieurRadioLoginForm.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ExterieurRadioLoginFormMouseClicked(evt);
-            }
-        });
         getContentPane().add(ExterieurRadioLoginForm);
 
         OkButtonLoginForm.setText("Ok");
@@ -134,17 +128,6 @@ public class loginForm extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ExterieurRadioLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExterieurRadioLoginFormMouseClicked
-        // TODO add your handling code here:
-        ExterieurRadioLoginForm.setSelected(true);
-        MembreRadioLoginForm.setSelected(false);
-    }//GEN-LAST:event_ExterieurRadioLoginFormMouseClicked
-
-    private void MembreRadioLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MembreRadioLoginFormMouseClicked
-        MembreRadioLoginForm.setSelected(true);
-        ExterieurRadioLoginForm.setSelected(false);
-    }//GEN-LAST:event_MembreRadioLoginFormMouseClicked
 
     private void AnnulerButtonLoginFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnnulerButtonLoginFormMouseClicked
         System.exit(0);
