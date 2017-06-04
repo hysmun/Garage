@@ -221,23 +221,30 @@ public class commandeForm extends javax.swing.JDialog {
 
     private void envoyerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_envoyerButtonActionPerformed
         // TODO add your handling code here:
-        String tmpReceive= "";
-        CentraleCommand commande = new CentraleCommand("C"+new Random().nextInt(100000000), libelleTF.getText(),typeTF.getText() ,Integer.parseInt(quantiteTF.getText()), priorite, Calendar.getInstance());
-        switch(typeApp)
+        try
         {
-            case PNEU:
-                tmpReceive =applicationGestionForm.serverPneu.sendString(commande.toStringForSend());
-                
-                break;
-            case PIECE:
-                tmpReceive = applicationGestionForm.serverPiece.sendString(commande.toStringForSend());
-                break;
-            case LUBRIFIANT:
-                tmpReceive = applicationGestionForm.serverLubrifiant.sendString(commande.toStringForSend());
-                break;
+           String tmpReceive= "";
+            CentraleCommand commande = new CentraleCommand("C"+new Random().nextInt(100000000), libelleTF.getText(),typeTF.getText() ,Integer.parseInt(quantiteTF.getText()), priorite, Calendar.getInstance());
+            switch(typeApp)
+            {
+                case PNEU:
+                    tmpReceive =applicationGestionForm.serverPneu.sendString(commande.toStringForSend());
+
+                    break;
+                case PIECE:
+                    tmpReceive = applicationGestionForm.serverPiece.sendString(commande.toStringForSend());
+                    break;
+                case LUBRIFIANT:
+                    tmpReceive = applicationGestionForm.serverLubrifiant.sendString(commande.toStringForSend());
+                    break;
+            }
+            CentraleCommand tmpCommand = new CentraleCommand(tmpReceive);
+            mainGarage.dE.vCommand.add(tmpCommand); 
         }
-        CentraleCommand tmpCommand = new CentraleCommand(tmpReceive);
-        mainGarage.dE.vCommand.add(tmpCommand);
+        catch(Exception e)
+        {
+            System.out.println("S:\t "+e.getMessage());
+        }
         this.dispose();
     }//GEN-LAST:event_envoyerButtonActionPerformed
 

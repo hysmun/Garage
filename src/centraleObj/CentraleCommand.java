@@ -15,6 +15,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Random;
+import java.util.StringTokenizer;
 
 
 /**
@@ -63,16 +64,15 @@ public class CentraleCommand implements Identifiable, Serializable{
     {
         try 
         {
-            byte b[] = serializedObj.getBytes(); 
-            ByteArrayInputStream bi = new ByteArrayInputStream(b);
-            ObjectInputStream si = new ObjectInputStream(bi);
-            this.id = ((CentraleCommand) si.readObject()).id;
-            this.libelle = ((CentraleCommand) si.readObject()).libelle;
-            this.type = ((CentraleCommand) si.readObject()).type;
-            this.quantite = ((CentraleCommand) si.readObject()).quantite;
-            this.urgence = ((CentraleCommand)si.readObject()).urgence;
-            this.dateEnvois = ((CentraleCommand) si.readObject()).dateEnvois;
-            this.disponibilite = ((CentraleCommand) si.readObject()).disponibilite;
+            SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
+            StringTokenizer st = new StringTokenizer(serializedObj, ",\n");
+            this.id = st.nextToken();
+            this.libelle = st.nextToken();
+            this.type = st.nextToken();
+            this.quantite = Integer.parseInt(st.nextToken());
+            this.urgence = Integer.parseInt(st.nextToken());
+            //this.dateEnvois.setTime(sdf.parse(st.nextToken()));
+            this.disponibilite = Boolean.parseBoolean(st.nextToken());
         } 
         catch (Exception e) 
         {
@@ -141,23 +141,12 @@ public class CentraleCommand implements Identifiable, Serializable{
     @Override
     public String toString() {
         DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-        return "CentraleCommand{" + "id=" + id + ", libelle=" + libelle + ", type=" + type + ", quantite=" + quantite + ", dateEnvois=" + df.format(dateEnvois) + ", disponibilie="+disponibilite+'}';
+        return "CentraleCommand{" + "id=" + id + ", libelle=" + libelle + ", type=" + type + ", quantite=" + quantite + ", dateEnvois=" + /*df.format(dateEnvois) + */", disponibilie="+disponibilite+'}';
     }
     
     public String toStringForSend(){
-        String serializedObj = "";
-        try 
-        {
-            ByteArrayOutputStream bo = new ByteArrayOutputStream();
-            ObjectOutputStream so = new ObjectOutputStream(bo);
-            so.writeObject(this);
-            so.flush();
-            serializedObj = bo.toString();
-        } 
-        catch (Exception e) 
-        {
-            System.out.println(e);
-        }
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
+        String serializedObj = id+ "," +libelle+ "," + type + "," + quantite + "," /*+ sdf.format(dateEnvois) + "," */+disponibilite;
         return serializedObj;
     }
     

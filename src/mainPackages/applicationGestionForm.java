@@ -454,6 +454,7 @@ public class applicationGestionForm extends javax.swing.JFrame{
     private void listeCommandeItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listeCommandeItemActionPerformed
         // TODO add your handling code here:
         ListeCommandForm lcf = new ListeCommandForm(this, true);
+        lcf.setVisible(true);
         
     }//GEN-LAST:event_listeCommandeItemActionPerformed
 

@@ -145,11 +145,17 @@ public class ListeCommandForm extends javax.swing.JDialog {
     class MyTableModel extends AbstractTableModel {
 
         private List<CentraleCommand> contents;
+        private final String[] tableHeaders = {"ID", "Libellé", "Type", "Quantite","Urgence", "Date", "Disponible"};
 
         public MyTableModel(List<CentraleCommand> contents){
             this.contents = contents;
         } 
 
+        @Override
+        public String getColumnName(int columnIndex) {
+            return tableHeaders[columnIndex];
+        }
+ 
         @Override
         public int getRowCount(){
             return this.contents.size();
