@@ -6,6 +6,7 @@
 package activite;
 
 import java.io.Serializable;
+import people.Client;
 import people.PersonnelGarage;
 import vehicules.Vehicule;
 
