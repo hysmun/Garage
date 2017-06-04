@@ -8,6 +8,7 @@ package mainPackages;
 import activite.Travail;
 import centraleObj.CentraleCommand;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import javax.swing.ComboBoxModel;
 import javax.swing.event.ListDataListener;
 
@@ -99,24 +100,30 @@ public class TermineForm extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelButtonMouseClicked
 
     private void OKButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKButtonMouseClicked
-        switch(TravailCB.getSelectedIndex())
+        if(TravailCB.getSelectedIndex() >= 0 && TravailCB.getSelectedIndex() < 4)
         {
-            case 0:
-                applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.libreString);
-                break;
-            case 1:
-                applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.libreString);
-                break;
-            case 2:
-                applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.libreString);
-                break;
-            case 3:
-                applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.libreString);
-                break;
+            
+            switch(TravailCB.getSelectedIndex())
+            {
+                case 0:
+                    applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.libreString);
+                    break;
+                case 1:
+                    applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.libreString);
+                    break;
+                case 2:
+                    applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.libreString);
+                    break;
+                case 3:
+                    applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.libreString);
+                    break;
+            }
+            mainGarage.dE.llTravailFini.add(mainGarage.dE.llTravailEnCours.get(TravailCB.getSelectedIndex()));
+            mainGarage.dE.llTravailEnCours.remove(TravailCB.getSelectedIndex());
+            this.invalidate();
+            this.dispose();
         }
-        mainGarage.dE.llTravailFini.add(mainGarage.dE.llTravailEnCours.get(TravailCB.getSelectedIndex()));
-        mainGarage.dE.llTravailEnCours.remove(TravailCB.getSelectedIndex());
-        this.invalidate();
+        
     }//GEN-LAST:event_OKButtonMouseClicked
 
     /**
@@ -164,10 +171,12 @@ public class TermineForm extends javax.swing.JFrame {
 class MyComboBoxModel implements ComboBoxModel {
 
         private final ArrayList<Travail> contents;
+        private final LinkedList<ListDataListener> ldt;
         
         public MyComboBoxModel(ArrayList<Travail> contents)
         {
             this.contents = contents;
+            ldt = new LinkedList<ListDataListener>();
         }
         
         @Override
@@ -193,12 +202,12 @@ class MyComboBoxModel implements ComboBoxModel {
 
         @Override
         public void addListDataListener(ListDataListener l) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            ldt.add(l);
         }
 
         @Override
         public void removeListDataListener(ListDataListener l) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            ldt.remove(l);
         }
     }
 }
