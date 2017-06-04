@@ -52,7 +52,7 @@ public class applicationCentraleForm extends javax.swing.JFrame {
            initComponents();
             typeApp = type;
 
-             // <editor-fold defaultstate="uncollapsed" desc="properties serveur">
+             // <editor-fold defaultstate="collapsed" desc="properties serveur">
             currentDir = System.getProperty("user.dir");
             File fileProperties = new File(filePropertiesGeneral);
             if(!fileProperties.exists())
