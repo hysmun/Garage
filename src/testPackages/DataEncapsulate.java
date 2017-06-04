@@ -7,10 +7,15 @@ package testPackages;
 
 import activite.Travail;
 import centraleObj.CentraleCommand;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static mainPackages.mainGarage.clientProperties;
 import people.Client;
 import people.PersonnelGarage;
 import vehicules.Vehicule;
@@ -27,6 +32,7 @@ public class DataEncapsulate implements Serializable{
     public LinkedList<Travail> llTravailFini;
     public LinkedList<Vehicule> vVehicule;
     public LinkedList<CentraleCommand> vCommand;
+    public String dirSave; 
 
     public DataEncapsulate() {
         vClient = new Vector<Client>();
@@ -36,15 +42,5 @@ public class DataEncapsulate implements Serializable{
         llTravailFini = new LinkedList<Travail>();
         vVehicule = new LinkedList<Vehicule>();
         vCommand = new LinkedList<CentraleCommand>();
-    }
-    
-    public void load()
-    {
-        
-    }
-    
-    public void save()
-    {
-        
     }
 }
