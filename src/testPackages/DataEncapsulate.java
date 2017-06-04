@@ -10,7 +10,6 @@ import centraleObj.CentraleCommand;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Vector;
 import people.Client;
 import people.PersonnelGarage;
@@ -37,5 +36,15 @@ public class DataEncapsulate implements Serializable{
         llTravailFini = new LinkedList<Travail>();
         vVehicule = new LinkedList<Vehicule>();
         vCommand = new LinkedList<CentraleCommand>();
+    }
+    
+    public void load()
+    {
+        
+    }
+    
+    public void save()
+    {
+        
     }
 }
