@@ -50,11 +50,6 @@ public class ListTravailForm extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        travailPrevuList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         travailPrevuPanel.setViewportView(travailPrevuList);
 
         travailPrevuLabel.setText("Travail Prevu :");
@@ -63,18 +58,8 @@ public class ListTravailForm extends javax.swing.JDialog {
 
         travailFiniLabel.setText("Travail Fini :");
 
-        travailEnCoursList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         travailEnCoursPanel.setViewportView(travailEnCoursList);
 
-        travailFiniList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         travailFiniPanel.setViewportView(travailFiniList);
 
         OKButton.setText("OK");
@@ -99,10 +84,10 @@ public class ListTravailForm extends javax.swing.JDialog {
                     .addComponent(travailEnCoursLabel))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(travailFiniPanel)
+                    .addComponent(travailFiniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(travailFiniLabel)
-                        .addGap(0, 260, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(483, 483, 483)
@@ -119,8 +104,8 @@ public class ListTravailForm extends javax.swing.JDialog {
                     .addComponent(travailFiniLabel))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(travailFiniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                    .addComponent(travailPrevuPanel)
+                    .addComponent(travailFiniPanel)
+                    .addComponent(travailPrevuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                     .addComponent(travailEnCoursPanel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(OKButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)

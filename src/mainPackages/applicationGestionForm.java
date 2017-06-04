@@ -14,6 +14,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import javax.swing.Box;
 import network.NetworkBasicClient;
+import people.addClients;
 import testPackages.DataEncapsulate;
 
 
@@ -94,6 +95,8 @@ public class applicationGestionForm extends javax.swing.JFrame{
         receptionItem = new javax.swing.JMenuItem();
         listeCommandeItem = new javax.swing.JMenuItem();
         appGestionClientsMenu = new javax.swing.JMenu();
+        ajoutClientItem = new javax.swing.JMenuItem();
+        listClientItem = new javax.swing.JMenuItem();
         appGestionFacturesMenu = new javax.swing.JMenu();
         appGestionParamMenu = new javax.swing.JMenu();
         appGestionInfoSysItem = new javax.swing.JMenuItem();
@@ -276,6 +279,23 @@ public class applicationGestionForm extends javax.swing.JFrame{
         appGestionMenuBar.add(appGestionMaterielMenu);
 
         appGestionClientsMenu.setText("Clients");
+
+        ajoutClientItem.setText("Ajouter Client");
+        ajoutClientItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ajoutClientItemActionPerformed(evt);
+            }
+        });
+        appGestionClientsMenu.add(ajoutClientItem);
+
+        listClientItem.setText("Listes Client");
+        listClientItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listClientItemActionPerformed(evt);
+            }
+        });
+        appGestionClientsMenu.add(listClientItem);
+
         appGestionMenuBar.add(appGestionClientsMenu);
 
         appGestionFacturesMenu.setText("Factures");
@@ -525,6 +545,18 @@ public class applicationGestionForm extends javax.swing.JFrame{
         ltf.setVisible(true);
     }//GEN-LAST:event_appGestionListesItemActionPerformed
 
+    private void ajoutClientItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajoutClientItemActionPerformed
+        // TODO add your handling code here:
+        addClients ac = new addClients(this, true);
+        ac.setVisible(true);
+    }//GEN-LAST:event_ajoutClientItemActionPerformed
+
+    private void listClientItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listClientItemActionPerformed
+        // TODO add your handling code here:
+        ListClientForm lcf = new ListClientForm(this, true);
+        lcf.setVisible(true);
+    }//GEN-LAST:event_listClientItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -563,6 +595,7 @@ public class applicationGestionForm extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ajoutClientItem;
     private javax.swing.JMenuItem appGestionAPrevoirItem;
     private javax.swing.JMenu appGestionAideMenu;
     private javax.swing.JLabel appGestionAtelierLabel;
@@ -600,6 +633,7 @@ public class applicationGestionForm extends javax.swing.JFrame{
     private javax.swing.JMenuItem appGestionTerminerItem;
     private javax.swing.JRadioButton appGestionToutPresentRadBut;
     private javax.swing.JMenu commanderMenu;
+    private javax.swing.JMenuItem listClientItem;
     private javax.swing.JMenuItem listeCommandeItem;
     private javax.swing.JMenuItem lubrifiantCommand;
     private javax.swing.JMenuItem pieceCommand;

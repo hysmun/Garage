@@ -101,6 +101,24 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Clients"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="ajoutClientItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ajouter Client"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ajoutClientItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="listClientItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listes Client"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listClientItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="appGestionFacturesMenu">
           <Properties>
