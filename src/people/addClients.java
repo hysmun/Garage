@@ -12,11 +12,13 @@ import static mainPackages.mainGarage.dE;
  *
  * @author Morghen
  */
-public class addClient extends javax.swing.JFrame {
+public class addClients extends javax.swing.JDialog {
 
-    static public boolean creationOK = false;
-    public Client tmp;
-    public addClient() {
+    /**
+     * Creates new form addClients
+     */
+    public addClients(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
@@ -30,21 +32,20 @@ public class addClient extends javax.swing.JFrame {
     private void initComponents() {
 
         IdLabel = new javax.swing.JLabel();
-        NomLabel = new javax.swing.JLabel();
-        PrenomLabel = new javax.swing.JLabel();
-        AdresseLabel = new javax.swing.JLabel();
-        TelephoneLabel = new javax.swing.JLabel();
-        OKButton = new javax.swing.JButton();
-        CancelButton = new javax.swing.JButton();
         IdTF = new javax.swing.JTextField();
         NomTF = new javax.swing.JTextField();
+        NomLabel = new javax.swing.JLabel();
+        PrenomLabel = new javax.swing.JLabel();
         PrenomTF = new javax.swing.JTextField();
+        AdresseLabel = new javax.swing.JLabel();
         AdresseTF = new javax.swing.JTextField();
+        TelephoneLabel = new javax.swing.JLabel();
         TelephoneTF = new javax.swing.JTextField();
+        OKButton = new javax.swing.JButton();
+        CancelButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Garage HEPL - Nouveau client");
-        setName("addClientForm"); // NOI18N
 
         IdLabel.setText("Identifiant :");
 
@@ -75,19 +76,19 @@ public class addClient extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addGap(6, 6, 6)
                         .addComponent(IdLabel)
                         .addGap(37, 37, 37)
                         .addComponent(IdTF, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
+                        .addGap(103, 103, 103)
                         .addComponent(OKButton)
                         .addGap(83, 83, 83)
                         .addComponent(CancelButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AdresseLabel, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(TelephoneLabel, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -99,7 +100,7 @@ public class addClient extends javax.swing.JFrame {
                             .addComponent(PrenomTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AdresseTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TelephoneTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +125,7 @@ public class addClient extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TelephoneLabel)
                     .addComponent(TelephoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(OKButton)
                     .addComponent(CancelButton))
@@ -142,20 +143,20 @@ public class addClient extends javax.swing.JFrame {
         }
         if(!dE.vClient.isEmpty())
         {
-            for (Client vClient : dE.vClient) 
+            for (Client vClient : dE.vClient)
             {
                 if(vClient.getNom().equals(NomTF.getText()) && vClient.getPrenom().equals(PrenomTF.getText()))
                 {
                     JOptionPane.showMessageDialog(null, "Duplicatas détectés","Erreur",JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-            }          
+            }
         }
-        tmp = new Client(IdTF.getText(),NomTF.getText(),PrenomTF.getText(),AdresseTF.getText(),TelephoneTF.getText());
+        Client tmp = new Client(IdTF.getText(),NomTF.getText(),PrenomTF.getText(),AdresseTF.getText(),TelephoneTF.getText());
         dE.vClient.add(tmp);
         tmp = null;
-        JOptionPane.showConfirmDialog(null,"Client créé","Information",JOptionPane.INFORMATION_MESSAGE);
-        creationOK = true;
+        JOptionPane.showConfirmDialog(null,"Client créé","Information",JOptionPane.WARNING_MESSAGE);
+
         this.dispose();
     }//GEN-LAST:event_OKButtonActionPerformed
 
@@ -180,20 +181,27 @@ public class addClient extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addClients.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addClients.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addClients.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addClients.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addClient().setVisible(true);
+                addClients dialog = new addClients(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }

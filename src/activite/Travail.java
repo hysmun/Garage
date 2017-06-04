@@ -7,6 +7,7 @@ package activite;
 
 import authenticate.Identifiable;
 import java.io.Serializable;
+import people.Client;
 import people.PersonnelGarage;
 import vehicules.Vehicule;
 
@@ -66,4 +67,6 @@ public abstract class Travail implements Identifiable, Serializable{
     public void setEtat(int etat) {
         this.etat = etat;
     }
+
+    
 }

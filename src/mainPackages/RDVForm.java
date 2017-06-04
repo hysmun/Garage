@@ -5,12 +5,22 @@
  */
 package mainPackages;
 
+import activite.Entretien;
+import activite.Reparation;
+import exception.MissingTradeMarkException;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import people.addClient;
+import static mainPackages.mainGarage.dE;
+import people.Client;
+import people.PersonnelGarage;
+import people.addClients;
+import vehicules.TypeVoiture;
+import vehicules.Vehicule;
+import vehicules.Voiture;
 
 /**
  *
@@ -20,6 +30,12 @@ public class RDVForm extends javax.swing.JFrame {
 
     public DefaultComboBoxModel ReparationCBM = new DefaultComboBoxModel();
     public DefaultComboBoxModel EntretienCBM = new DefaultComboBoxModel();
+    public Entretien entretien;
+    public Reparation reparation;
+    public Client client;
+    public PersonnelGarage persogarage;
+    public Vehicule vehi;
+    
     
     public RDVForm() {
         initComponents();
@@ -32,6 +48,13 @@ public class RDVForm extends javax.swing.JFrame {
         EntretienCBM.addElement("Gros entretien");
         EntretienCBM.addElement("Gonflage des pneus");
         TypeTravailCB.setModel(EntretienCBM);
+        if(!dE.vClient.isEmpty())
+        {
+            for(Client unClient : dE.vClient)
+            {
+                ProprioCB.addItem(unClient.getPrenom() + " " + unClient.getNom());
+            }
+        }
     }
 
     /**
@@ -227,18 +250,27 @@ public class RDVForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Client invalide/inexistant","Erreur",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        else if(ProprioCB.getSelectedItem() == null && NouveauCheck.isSelected())
+        else if(NouveauCheck.isSelected())
         {
-            addClient nouvClient = new addClient();
+            addClients nouvClient = new addClients(this,true);
             nouvClient.setVisible(true);
-            while(addClient.creationOK != true)
-            {
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(RDVForm.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+            ProprioCB.addItem(dE.vClient.lastElement().getPrenom() + " " + dE.vClient.lastElement().getNom());
+            NouveauCheck.setSelected(false);
+            return;
+        }
+        client = dE.vClient.get(ProprioCB.getSelectedIndex());
+        try {
+            vehi = new Voiture(new TypeVoiture(MarqueTF.getText(),ModeleTF.getText(),4),ImmatTF.getText(),"Voiture#"+ new Random().nextInt(100),client);
+        } catch (MissingTradeMarkException ex) {
+            Logger.getLogger(RDVForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(EntretienRB.isSelected())
+        {
+            entretien = new Entretien("Entretien#"+ new Random().nextInt(100),null,vehi,new Random().nextDouble()*500,BonusTF.getText(),0);
+        }
+        else
+        {
+            
         }
     }//GEN-LAST:event_OKButtonMouseClicked
 
