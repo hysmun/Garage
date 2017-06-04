@@ -5,9 +5,12 @@
  */
 package mainPackages;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import people.addClient;
 
 /**
  *
@@ -223,6 +226,18 @@ public class RDVForm extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null,"Client invalide/inexistant","Erreur",JOptionPane.ERROR_MESSAGE);
             return;
+        }
+        else if(ProprioCB.getSelectedItem() == null && NouveauCheck.isSelected())
+        {
+            addClient nouvClient = new addClient();
+            while(addClient.creationOK != true)
+            {
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(RDVForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
         this.dispose();
     }//GEN-LAST:event_OKButtonMouseClicked
