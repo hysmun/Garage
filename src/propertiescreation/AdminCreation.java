@@ -349,6 +349,7 @@ public class AdminCreation extends javax.swing.JDialog {
                     ObjectOutputStream in = new ObjectOutputStream(fis);
                     in.writeObject(mainGarage.dE);
                     in.close();
+                    System.out.println("C:\tFichier de serialisation mis a jour");
                 }
                 catch(EOFException ex) {
                     System.out.println("C:\tFichier de serialisation vierge");
