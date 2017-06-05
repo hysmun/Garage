@@ -128,24 +128,36 @@ public class TermineForm extends javax.swing.JFrame {
         switch(travailTable.getSelectedRow())
         {
             case 0:
-                applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.libreString);
-                mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont1);
-                mainGarage.dE.travailPont1 = null;
+                if(mainGarage.dE.travailPont1 != null)
+                {
+                    applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.libreString);
+                    mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont1);
+                    mainGarage.dE.travailPont1 = null;
+                }
                 break;
             case 1:
-                applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.libreString);
-                mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont2);
-                mainGarage.dE.travailPont2 = null;
+                if(mainGarage.dE.travailPont2 != null)
+                {
+                    applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.libreString);
+                    mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont2);
+                    mainGarage.dE.travailPont2 = null;
+                }
                 break;
             case 2:
-                applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.libreString);
-                mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont3);
-                mainGarage.dE.travailPont3 = null;
+                if(mainGarage.dE.travailPont3 != null)
+                {
+                    applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.libreString);
+                    mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont3);
+                    mainGarage.dE.travailPont3 = null;
+                }
                 break;
             case 3:
-                applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.libreString);
-                mainGarage.dE.llTravailFini.add(mainGarage.dE.travailSol);
-                mainGarage.dE.travailSol = null;
+                if(mainGarage.dE.travailSol != null)
+                {
+                    applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.libreString);
+                    mainGarage.dE.llTravailFini.add(mainGarage.dE.travailSol);
+                    mainGarage.dE.travailSol = null;
+                }
                 break;
         }
         this.invalidate();
