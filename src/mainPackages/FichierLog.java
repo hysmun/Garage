@@ -34,25 +34,28 @@ public class FichierLog implements Serializable {
 
     public FileWriter getOutput() 
     {
-        try
+        try 
         {
-            FileWriter outputtmp = new FileWriter(path,true);
+            FileWriter tmp = new FileWriter(this.path,true);
+            return tmp;
+        } catch (IOException ex) {
+            Logger.getLogger(FichierLog.class.getName()).log(Level.SEVERE, null, ex);
         }
-        catch(IOException ex)
-        {
-            ex.printStackTrace();
-        }
-        return output;
+        return null;
     }
     public void close()
     {
         if(output != null)
         {
+            this.date = Calendar.getInstance().getTime();
+            String tmp = this.sfd.format(this.date) + " -- Fermeture application\n";
             try 
             {
-                output.write("Fermeture application");
-                output.close();
-            } catch (IOException ex) {
+                this.output.write(tmp);
+                this.output.close();
+            } 
+            catch (IOException ex) 
+            {
                 Logger.getLogger(FichierLog.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -60,36 +63,32 @@ public class FichierLog implements Serializable {
 
     public File getPath() {
         
-        File tmp = new File("logs");
-        if(!tmp.exists())
+        File workingdir = new File("logs");
+        if(!workingdir.exists())
         {
-            tmp.mkdir();
+            workingdir.mkdir();
         }
-        File tmp2 = new File("logs"+sep+"loggedInformation.log");
-        if(!tmp2.exists())
+        File workingfile = new File("logs"+sep+"loggedInfo.log");
+        if(!workingfile.exists())
         {
-            try
-            {
-                FileOutputStream fos = new FileOutputStream(tmp2,true);
-                fos.close();
-            }
-            catch(IOException ex)
-            {
-                ex.printStackTrace();
+            try {
+                workingfile.createNewFile();
+            } catch (IOException ex) {
+                Logger.getLogger(FichierLog.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return tmp2;
+        return workingfile;     
     }    
     
     public void write(String text)
     {
-        if(output != null)
+        if(this.output != null)
         {
-            date = Calendar.getInstance().getTime();
-            String tmp = sfd.format(date) + " -- " + text + "\n";
+            this.date = Calendar.getInstance().getTime();
+            String tmp = this.sfd.format(this.date) + " -- " + text + "\n";
             try 
             {
-                output.write(tmp);
+                this.output.write(tmp);
             } 
             catch (IOException ex) 
             {

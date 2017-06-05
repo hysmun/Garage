@@ -30,10 +30,15 @@ public class applicationGestionForm extends javax.swing.JFrame{
     public static NetworkBasicClient serverPneu;
     public static NetworkBasicClient serverPiece;
     public static NetworkBasicClient serverLubrifiant; 
+    public static FichierLog Log;
     /**
      * Creates new form applicationGestionForm
      */
     public applicationGestionForm() {
+        
+        Log = new FichierLog();
+        Log.init();
+        Log.write("Lancement application");
         try
         {
            initComponents();
@@ -558,6 +563,7 @@ public class applicationGestionForm extends javax.swing.JFrame{
             }
             fis.close();
             System.out.println("C:\tSauvegarde effectuée");
+            Log.close();
         }
         catch(IOException i) {
             i.printStackTrace();
