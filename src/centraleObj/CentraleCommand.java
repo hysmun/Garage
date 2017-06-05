@@ -64,7 +64,7 @@ public class CentraleCommand implements Identifiable, Serializable{
     {
         try 
         {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy MM dd");
             StringTokenizer st = new StringTokenizer(serializedObj, ",\n");
             this.id = st.nextToken();
             this.libelle = st.nextToken();
@@ -77,7 +77,7 @@ public class CentraleCommand implements Identifiable, Serializable{
         } 
         catch (Exception e) 
         {
-            System.out.println(e);
+            System.out.println("from serialization" +e.getMessage());
         }
     }
     
@@ -141,13 +141,21 @@ public class CentraleCommand implements Identifiable, Serializable{
 
     @Override
     public String toString() {
-        DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+        DateFormat df = new SimpleDateFormat("yyyy MM dd");
         return "id=" + id + ", libelle=" + libelle + ", type=" + type + ", quantite=" + quantite + ", dateEnvois=" + df.format(dateEnvois) + ", disponibilie="+disponibilite;
     }
     
     public String toStringForSend(){
-        SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
-        String serializedObj = id+ "," +libelle+ "," + type + "," + quantite + "," + sdf.format(dateEnvois) + "," +disponibilite;
+        String serializedObj="";
+        try
+        {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy MM dd");
+            serializedObj = id+ "," +libelle+ "," + type + "," + quantite + "," + sdf.format(dateEnvois) + "," +disponibilite;
+        }
+        catch(Exception e)
+        {
+            System.out.println("From to string for send "+e.getMessage());
+        }
         return serializedObj;
     }
     
