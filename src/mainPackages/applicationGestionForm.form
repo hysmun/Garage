@@ -125,6 +125,21 @@
             <Property name="text" type="java.lang.String" value="Factures"/>
           </Properties>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="appGestionAdminMenu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Administration"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="ajoutAdminItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ajouter compte utilisateur"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ajoutAdminItemMousePressed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
         <Menu class="javax.swing.JMenu" name="appGestionParamMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Param&#xe8;tres"/>
