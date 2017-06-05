@@ -1,0 +1,36 @@
+
+
+
+dossier racine
+	|
+	|--> accounts
+	|		|
+	|		|-->extern.properties
+	|		|
+	|		\-->member.properties
+	|
+	|-->save
+	|		|
+	|		\--> serialization.ser
+	|
+	|-->properties
+	|		|
+	|		|-->client.properties
+	|		|
+	|		|-->pneu.properties
+	|		|
+	|		|-->piece.properties
+	|		|
+	|		\-->lubrifiant.properties
+	|
+	|-->general.properties
+	|
+	|-->pneu.png
+	|
+	|-->piece.png
+	|
+	\-->lubrifiant.png
+	
+	
+	
+	

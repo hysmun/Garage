@@ -62,7 +62,6 @@ public class ReceivingBean implements InStockListener{
         {
             if((message = nbs.getMessage()) != "RIEN")
             {
-                System.out.println("S:\t run "+message);
                 setCommandeRecue(message);
                 setEnMarche(false);
             }
