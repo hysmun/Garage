@@ -11,6 +11,7 @@ import centraleObj.CentraleCommand;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import javax.swing.ComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.event.ListDataListener;
 import javax.swing.table.AbstractTableModel;
 import testPackages.DataEncapsulate;
@@ -134,6 +135,10 @@ public class TermineForm extends javax.swing.JFrame {
                     mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont1);
                     mainGarage.dE.travailPont1 = null;
                 }
+                else
+                {
+                    JOptionPane.showMessageDialog(null,"Veuillez selection un travail en cours","Erreur",JOptionPane.ERROR_MESSAGE);
+                }
                 break;
             case 1:
                 if(mainGarage.dE.travailPont2 != null)
@@ -141,6 +146,10 @@ public class TermineForm extends javax.swing.JFrame {
                     applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.libreString);
                     mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont2);
                     mainGarage.dE.travailPont2 = null;
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null,"Veuillez selection un travail en cours","Erreur",JOptionPane.ERROR_MESSAGE);
                 }
                 break;
             case 2:
@@ -150,6 +159,10 @@ public class TermineForm extends javax.swing.JFrame {
                     mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont3);
                     mainGarage.dE.travailPont3 = null;
                 }
+                else
+                {
+                    JOptionPane.showMessageDialog(null,"Veuillez selection un travail en cours","Erreur",JOptionPane.ERROR_MESSAGE);
+                }
                 break;
             case 3:
                 if(mainGarage.dE.travailSol != null)
@@ -157,6 +170,10 @@ public class TermineForm extends javax.swing.JFrame {
                     applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.libreString);
                     mainGarage.dE.llTravailFini.add(mainGarage.dE.travailSol);
                     mainGarage.dE.travailSol = null;
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null,"Veuillez selection un travail en cours","Erreur",JOptionPane.ERROR_MESSAGE);
                 }
                 break;
         }
