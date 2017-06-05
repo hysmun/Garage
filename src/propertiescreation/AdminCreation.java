@@ -33,13 +33,15 @@ public class AdminCreation extends javax.swing.JDialog {
     InputStream in2;
     OutputStream out1;
     OutputStream out2;
+    String sep;
+    File dir;
     
     public AdminCreation(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        String sep = System.getProperty("file.separator");
+        sep = System.getProperty("file.separator");
         String current = System.getProperty("user.dir");
-        File dir = new File("accounts");
+        dir = new File("accounts");
         if(!dir.exists())
         {
             try
@@ -271,8 +273,10 @@ public class AdminCreation extends javax.swing.JDialog {
             }
             try
             {
+                out1 = new FileOutputStream(dir+sep+"member.properties");
                 prop1.store(out1, null);
                 JOptionPane.showMessageDialog(null, "Compte ajoute", "Avertissement",JOptionPane.INFORMATION_MESSAGE);
+                out1.close();
             }
             catch(IOException io)
             {
@@ -298,6 +302,7 @@ public class AdminCreation extends javax.swing.JDialog {
                     }
                 }
                 dE.vPersonnel.add(tmp2);
+                prop2.setProperty(LoginTF.getText(),PassTF.getText());
             }
             else
             {
@@ -306,8 +311,10 @@ public class AdminCreation extends javax.swing.JDialog {
             }
             try
             {
+                out2 = new FileOutputStream(dir+sep+"extern.properties");
                 prop2.store(out2, null);
                 JOptionPane.showMessageDialog(null, "Compte ajoute", "Avertissement",JOptionPane.INFORMATION_MESSAGE);
+                out2.close();
             }
             catch(IOException io)
             {
@@ -317,14 +324,7 @@ public class AdminCreation extends javax.swing.JDialog {
     }//GEN-LAST:event_OKButtonActionPerformed
 
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
-        try
-        {
-            out1.close();
-            out2.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_CancelButtonActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
