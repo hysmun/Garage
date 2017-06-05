@@ -5,6 +5,7 @@
  */
 package centraleMain;
 
+import centraleObj.CentraleCommand;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.LinkedList;
@@ -14,10 +15,23 @@ import java.util.LinkedList;
  * @author ante
  */
 public class SearchBean implements PropertyChangeListener{
-    private LinkedList<SearchFoundListener> sfl;
+    private final LinkedList<SearchFoundListener> sfl;
+    public CentraleCommand commande;
 
     public SearchBean() {
         sfl = new LinkedList<SearchFoundListener>();
+    }
+    
+    public void setDisponibilite(boolean dispo)
+    {
+        if(commande != null)
+        {
+            commande.setDisponibilite(dispo);
+            for(int i=0; i<sfl.size(); i++)
+            {
+                sfl.get(i).SearchFound(new SearchFoundEvent(commande.toStringForSend(), dispo));
+            }
+        }
     }
     
     void AddSearchFoundListener(SearchFoundListener s)
@@ -32,7 +46,7 @@ public class SearchBean implements PropertyChangeListener{
     
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        commande = new CentraleCommand((String)evt.getNewValue());
     }
     
 }

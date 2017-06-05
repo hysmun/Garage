@@ -5,15 +5,22 @@
  */
 package centraleMain;
 
+import centraleObj.CentraleCommand;
+
 /**
  *
  * @author ante
  */
 public class InStockEvent {
     
-    public String message;
+    private CentraleCommand commande;
     
-    public InStockEvent() {
+    public InStockEvent(CentraleCommand p) {
+        this.commande = p;
+    }
+
+    public CentraleCommand getCommande() {
+        return commande;
     }
     
 }

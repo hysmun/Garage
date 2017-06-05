@@ -5,7 +5,10 @@
  */
 package centraleMain;
 
+import centraleObj.CentraleCommand;
+import java.util.Calendar;
 import java.util.LinkedList;
+import java.util.Random;
 
 /**
  *
@@ -13,6 +16,7 @@ import java.util.LinkedList;
  */
 public class PrepareOrderBean implements SearchFoundListener{
     private LinkedList<InStockListener> isl;
+    private CentraleCommand commande;
 
     public PrepareOrderBean() {
         isl = new LinkedList<InStockListener>();
@@ -31,9 +35,16 @@ public class PrepareOrderBean implements SearchFoundListener{
     @Override
     public void SearchFound(SearchFoundEvent s) {
         //calcule date expedition (random) previen receiving bean
+        commande = new CentraleCommand(s.getLibelle());
+        if(commande.isDisponibilite() == true)
+        {
+            int tmp = new Random().nextInt(50);
+            commande.setDateEnvois(Calendar.getInstance() );
+            commande.getDateEnvois().add(Calendar.DAY_OF_YEAR, tmp);
+        }
         for(int i=0; i<isl.size(); i++)
         {
-            isl.get(i).InStockFired(new InStockEvent());
+            isl.get(i).InStockFired(new InStockEvent(commande));
         }
     }
 }

@@ -11,9 +11,20 @@ package centraleMain;
  */
 public class SearchFoundEvent {
 
-    public String message;
-    
-    public SearchFoundEvent() {
+    private String libelle;
+    private boolean dispo;
+
+    public SearchFoundEvent(String libelle, boolean dispo) {
+        this.libelle = libelle;
+        this.dispo = dispo;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public boolean isDispo() {
+        return dispo;
     }
     
 }
