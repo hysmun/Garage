@@ -234,15 +234,23 @@ class MyTableModel extends AbstractTableModel {
             switch(rowIndex)
             {
                 case 0:
+                    if(tTravailPont1 == null)
+                        return "Rien en cours sur le Pont 1";
                     myObj = tTravailPont1;
                     break;
                 case 1:
+                    if(tTravailPont2 == null)
+                        return "Rien en cours sur le Pont 2";
                     myObj = tTravailPont2;
                     break;
                 case 2:
+                    if(tTravailPont3 == null)
+                        return "Rien en cours sur le Pont 3";
                     myObj = tTravailPont3;
                     break;
                 case 3:
+                    if(tTravailSol == null)
+                        return "Rien en cours sur le Sol";
                     myObj = tTravailSol;
                     break;
             }

@@ -24,10 +24,17 @@ public class ListTravailForm extends javax.swing.JDialog {
      */
     public ListTravailForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        initComponents();
-        travailPrevuList.setModel(new MyListModel(mainGarage.dE.llTravailPrevu));
-        travailEnCoursList.setModel(new MyComboBoxModel(mainGarage.dE));
-        travailFiniList.setModel(new MyListModel(mainGarage.dE.llTravailFini));
+        try
+        {
+            initComponents();
+            travailPrevuList.setModel(new MyListModel(mainGarage.dE.llTravailPrevu));
+            travailEnCoursList.setModel(new MyComboBoxModel(mainGarage.dE));
+            travailFiniList.setModel(new MyListModel(mainGarage.dE.llTravailFini));
+        }
+        catch(Exception e)
+        {
+            System.out.println("C:\t Erreur creation list travail " + e.getMessage());
+        }
     }
 
     /**
@@ -236,15 +243,23 @@ public class ListTravailForm extends javax.swing.JDialog {
             switch(index)
             {
                 case 0:
-                    return tTravailPont1;
+                    if(tTravailPont1 == null)
+                        return "Rien en cours sur le Pont 1";
+                    return tTravailPont1.toString();
                 case 1:
-                    return tTravailPont2;
+                    if(tTravailPont2 == null)
+                        return "Rien en cours sur le Pont 2";
+                    return tTravailPont2.toString();
                 case 2:
-                    return tTravailPont3;
+                    if(tTravailPont3 == null)
+                        return "Rien en cours sur le Pont 3";
+                    return tTravailPont3.toString();
                 case 3:
-                    return tTravailSol;
+                    if(tTravailSol == null)
+                        return "Rien en cours sur le Sol";
+                    return tTravailSol.toString();
             }
-            return null;
+            return "erreur";
         }
 
         @Override
