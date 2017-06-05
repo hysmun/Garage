@@ -58,7 +58,7 @@ public class applicationGestionForm extends javax.swing.JFrame{
         }
         catch(Exception e)
         {
-            System.out.println("C:\t Erreur const gestion form :"+e.getMessage());
+            Log.write("C:\t Erreur const gestion form :"+e.getMessage());
         }
     }
 
@@ -507,21 +507,21 @@ public class applicationGestionForm extends javax.swing.JFrame{
         // TODO add your handling code here:
         commandeForm cf = new commandeForm(this, true,commandeForm.PNEU);
         cf.setVisible(true);
-        System.out.println("C: fin commande");
+        Log.write("C: fin commande");
     }//GEN-LAST:event_pneuCommandActionPerformed
 
     private void lubrifiantCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lubrifiantCommandActionPerformed
         // TODO add your handling code here:
         commandeForm cf = new commandeForm(this, true,commandeForm.LUBRIFIANT);
         cf.setVisible(true);
-        System.out.println("C: fin commande");
+        Log.write("C: fin commande");
     }//GEN-LAST:event_lubrifiantCommandActionPerformed
 
     private void pieceCommandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pieceCommandActionPerformed
         // TODO add your handling code here:
         commandeForm cf = new commandeForm(this, true,commandeForm.PIECE);
         cf.setVisible(true);
-        System.out.println("C: fin commande");
+        Log.write("C: fin commande");
     }//GEN-LAST:event_pieceCommandActionPerformed
 
     private void receptionItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receptionItemActionPerformed
@@ -549,7 +549,7 @@ public class applicationGestionForm extends javax.swing.JFrame{
             {
                 FileOutputStream fos = new FileOutputStream(saveSerial);
                 fos.close();
-                System.out.println("C:\tFichier serialisation introuvable, creation d'un fichier vierge");
+                Log.write("C:\tFichier serialisation introuvable, creation d'un fichier vierge");
             }
             
             FileOutputStream fis = new FileOutputStream(mainGarage.clientProperties.getProperty("dossier-save")+System.getProperty("file.separator")+mainGarage.clientProperties.getProperty("fichier-save"));
@@ -559,10 +559,10 @@ public class applicationGestionForm extends javax.swing.JFrame{
                 in.close();
             }
             catch(EOFException ex) {
-                System.out.println("C:\tFichier de serialisation vierge");
+                Log.write("C:\tFichier de serialisation vierge");
             }
             fis.close();
-            System.out.println("C:\tSauvegarde effectuée");
+            Log.write("C:\tSauvegarde effectuée");
             Log.close();
         }
         catch(IOException i) {
@@ -604,7 +604,7 @@ public class applicationGestionForm extends javax.swing.JFrame{
             {
                 FileOutputStream fos = new FileOutputStream(saveSerial);
                 fos.close();
-                System.out.println("C:\tFichier serialisation introuvable, creation d'un fichier vierge");
+                Log.write("C:\tFichier serialisation introuvable, creation d'un fichier vierge");
             }
             
             FileOutputStream fis = new FileOutputStream(mainGarage.clientProperties.getProperty("dossier-save")+System.getProperty("file.separator")+mainGarage.clientProperties.getProperty("fichier-save"));
@@ -614,10 +614,10 @@ public class applicationGestionForm extends javax.swing.JFrame{
                 in.close();
             }
             catch(EOFException ex) {
-                System.out.println("C:\tFichier de serialisation vierge");
+                Log.write("C:\tFichier de serialisation vierge");
             }
             fis.close();
-            System.out.println("C:\tSauvegarde effectuée");
+            Log.write("C:\tSauvegarde effectuée");
         }
         catch(IOException i) {
             i.printStackTrace();

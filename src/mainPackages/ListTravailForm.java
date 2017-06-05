@@ -33,7 +33,7 @@ public class ListTravailForm extends javax.swing.JDialog {
         }
         catch(Exception e)
         {
-            System.out.println("C:\t Erreur creation list travail " + e.getMessage());
+            applicationGestionForm.Log.write("C:\t Erreur creation list travail " + e.getMessage());
         }
     }
 

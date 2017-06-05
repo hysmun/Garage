@@ -31,7 +31,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         }
         catch(Exception e)
         {
-            System.out.println("C:\t erreur constructor"+e.getMessage());
+            applicationGestionForm.Log.write("C:\t erreur constructor"+e.getMessage());
         }
     }
 
@@ -177,7 +177,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                 if(priseEnChargePontRadBut.isSelected())
                 {
                     //on va le mettre sur un des ponts 
-                    System.out.println("Prise en charge pont");
+                    applicationGestionForm.Log.write("Prise en charge pont");
                     switch((String)(priseEnChargePontComboBox.getSelectedItem()))
                     {
                         case "1":
@@ -227,7 +227,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             }
                             break;
                         default:
-                            System.out.println("Error prise en charge!");
+                            applicationGestionForm.Log.write("Error prise en charge!");
                     }
                 }
                 else if(priseEnChargeSolRadBut.isSelected())
@@ -256,7 +256,7 @@ public class priseEnChargeForm extends javax.swing.JFrame {
         }
         catch(Exception e)
         {
-            System.out.println("C:\tErreur ok button "+priseEnChargeTable.getSelectedRow()+ " ---- "+e.getMessage()+", travail :"+mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+            applicationGestionForm.Log.write("C:\tErreur ok button "+priseEnChargeTable.getSelectedRow()+ " ---- "+e.getMessage()+", travail :"+mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
         }
     }//GEN-LAST:event_priseEnChargeOkButtonMouseClicked
 

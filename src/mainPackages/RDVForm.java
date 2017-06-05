@@ -269,7 +269,6 @@ public class RDVForm extends javax.swing.JFrame {
             entretien = new Entretien("Entretien#"+ new Random().nextInt(100),persogarage,vehi,new Random().nextDouble()*500,BonusTF.getText(),0);
             dE.llTravailPrevu.add(entretien);
             JOptionPane.showMessageDialog(null,"Travail créé","Information",JOptionPane.INFORMATION_MESSAGE);
-            
             this.dispose();
         }
         else

@@ -16,6 +16,7 @@ import java.io.OutputStream;
 import java.util.Properties;
 import java.util.Random;
 import javax.swing.JOptionPane;
+import mainPackages.applicationGestionForm;
 import mainPackages.mainGarage;
 import static mainPackages.mainGarage.dE;
 import people.Employe;
@@ -50,7 +51,7 @@ public class AdminCreation extends javax.swing.JDialog {
             }
             catch(SecurityException se)
             {
-                System.out.println(se.getMessage());
+                applicationGestionForm.Log.write(se.getMessage());
             }
         }
         try
@@ -253,7 +254,7 @@ public class AdminCreation extends javax.swing.JDialog {
                 return;
             }
             Employe tmp = new Employe(LoginTF.getText(), NomTF.getText(), PrenomTF.getText(), AdresseTF.getText(), TelephoneTF.getText(), LoginTF.getText() + new Random().nextInt(100));
-            System.out.println("Contenu tmp : "+tmp.getId()+" "+tmp.getNom()+" "+tmp.getPrenom()+" "+tmp.getAdresse()+" "+tmp.getNumTelephone()+" "+tmp.getMatricule());
+            
             if(!dE.vPersonnel.isEmpty())
             {
                 for(int i = 0;i<dE.vPersonnel.size();i++)
@@ -342,7 +343,7 @@ public class AdminCreation extends javax.swing.JDialog {
             {
                 FileOutputStream fos = new FileOutputStream(saveSerial);
                 fos.close();
-                System.out.println("C:\tFichier serialisation introuvable, creation d'un fichier vierge");
+                applicationGestionForm.Log.write("C:\tFichier serialisation introuvable, creation d'un fichier vierge");
             }
             
                 FileOutputStream fis = new FileOutputStream(mainGarage.clientProperties.getProperty("dossier-save")+System.getProperty("file.separator")+mainGarage.clientProperties.getProperty("fichier-save"));
@@ -350,14 +351,14 @@ public class AdminCreation extends javax.swing.JDialog {
                     ObjectOutputStream in = new ObjectOutputStream(fis);
                     in.writeObject(mainGarage.dE);
                     in.close();
-                    System.out.println("C:\tFichier de serialisation mis a jour");
+                    applicationGestionForm.Log.write("C:\tFichier de serialisation mis a jour");
                 }
                 catch(EOFException ex) {
-                    System.out.println("C:\tFichier de serialisation vierge");
+                    applicationGestionForm.Log.write("C:\tFichier de serialisation vierge");
                 }
                 fis.close();
             
-            System.out.println("C:\tChargement serialisation reussi");
+            applicationGestionForm.Log.write("C:\tChargement serialisation reussi");
         }
         catch(IOException i) {
             i.printStackTrace();

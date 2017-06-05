@@ -13,6 +13,7 @@ import java.io.OutputStream;
 import java.util.Properties;
 import java.util.Random;
 import javax.swing.JOptionPane;
+import mainPackages.applicationGestionForm;
 import static mainPackages.mainGarage.dE;
 import people.Employe;
 import people.TechnicienExterieur;
@@ -41,7 +42,7 @@ public class PropertiesCreations extends javax.swing.JFrame {
             }
             catch(SecurityException se)
             {
-                System.out.println(se.getMessage());
+                applicationGestionForm.Log.write(se.getMessage());
             }
         }
         try
@@ -217,7 +218,6 @@ public class PropertiesCreations extends javax.swing.JFrame {
                 return;
             }
             Employe tmp = new Employe(LoginTF.getText(), NomTF.getText(), PrenomTF.getText(), AdresseTF.getText(), TelephoneTF.getText(), LoginTF.getText() + new Random().nextInt(100));
-            System.out.println("Contenu tmp : "+tmp.getId()+" "+tmp.getNom()+" "+tmp.getPrenom()+" "+tmp.getAdresse()+" "+tmp.getNumTelephone()+" "+tmp.getMatricule());
             if(!dE.vPersonnel.isEmpty())
             {
                 for(int i = 0;i<dE.vPersonnel.size();i++)
