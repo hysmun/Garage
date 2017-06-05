@@ -15,6 +15,8 @@ import java.io.ObjectOutputStream;
 import javax.swing.Box;
 import network.NetworkBasicClient;
 import people.addClients;
+import propertiescreation.AdminCreation;
+import propertiescreation.PropertiesCreations;
 import testPackages.DataEncapsulate;
 
 
@@ -102,6 +104,8 @@ public class applicationGestionForm extends javax.swing.JFrame{
         ajoutClientItem = new javax.swing.JMenuItem();
         listClientItem = new javax.swing.JMenuItem();
         appGestionFacturesMenu = new javax.swing.JMenu();
+        appGestionAdminMenu = new javax.swing.JMenu();
+        ajoutAdminItem = new javax.swing.JMenuItem();
         appGestionParamMenu = new javax.swing.JMenu();
         appGestionInfoSysItem = new javax.swing.JMenuItem();
         appGestionAideMenu = new javax.swing.JMenu();
@@ -304,6 +308,18 @@ public class applicationGestionForm extends javax.swing.JFrame{
 
         appGestionFacturesMenu.setText("Factures");
         appGestionMenuBar.add(appGestionFacturesMenu);
+
+        appGestionAdminMenu.setText("Administration");
+
+        ajoutAdminItem.setText("Ajouter compte utilisateur");
+        ajoutAdminItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ajoutAdminItemMousePressed(evt);
+            }
+        });
+        appGestionAdminMenu.add(ajoutAdminItem);
+
+        appGestionMenuBar.add(appGestionAdminMenu);
 
         appGestionParamMenu.setText("Paramètres");
         appGestionParamMenu.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -561,6 +577,13 @@ public class applicationGestionForm extends javax.swing.JFrame{
         lcf.setVisible(true);
     }//GEN-LAST:event_listClientItemActionPerformed
 
+    private void ajoutAdminItemMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajoutAdminItemMousePressed
+        // TODO add your handling code here:
+        AdminCreation ac = new AdminCreation(this,true);
+        ac.setVisible(true);
+        
+    }//GEN-LAST:event_ajoutAdminItemMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -599,8 +622,10 @@ public class applicationGestionForm extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ajoutAdminItem;
     private javax.swing.JMenuItem ajoutClientItem;
     private javax.swing.JMenuItem appGestionAPrevoirItem;
+    private javax.swing.JMenu appGestionAdminMenu;
     private javax.swing.JMenu appGestionAideMenu;
     private javax.swing.JLabel appGestionAtelierLabel;
     private javax.swing.JMenu appGestionAtelierMenu;
