@@ -541,16 +541,16 @@ public class applicationGestionForm extends javax.swing.JFrame{
                 System.out.println("C:\tFichier serialisation introuvable, creation d'un fichier vierge");
             }
             
-                FileOutputStream fis = new FileOutputStream(mainGarage.clientProperties.getProperty("dossier-save")+System.getProperty("file.separator")+mainGarage.clientProperties.getProperty("fichier-save"));
-                try {
-                    ObjectOutputStream in = new ObjectOutputStream(fis);
-                    in.writeObject(mainGarage.dE);
-                    in.close();
-                }
-                catch(EOFException ex) {
-                    System.out.println("C:\tFichier de serialisation vierge");
-                }
-                fis.close();
+            FileOutputStream fis = new FileOutputStream(mainGarage.clientProperties.getProperty("dossier-save")+System.getProperty("file.separator")+mainGarage.clientProperties.getProperty("fichier-save"));
+            try {
+                ObjectOutputStream in = new ObjectOutputStream(fis);
+                in.writeObject(mainGarage.dE);
+                in.close();
+            }
+            catch(EOFException ex) {
+                System.out.println("C:\tFichier de serialisation vierge");
+            }
+            fis.close();
             
             System.out.println("C:\tChargement serialisation reussi");
         }
