@@ -36,7 +36,7 @@ public class CentraleCommand implements Identifiable, Serializable{
     public static final int NONPRIORITAIRE = 1;
 
     public CentraleCommand() {
-        this.id = "C"+new Random().nextInt(100000000);
+        this.id = "C0"+new Random().nextInt(100000000);
         this.disponibilite = false;
     }
 
@@ -71,7 +71,8 @@ public class CentraleCommand implements Identifiable, Serializable{
             this.type = st.nextToken();
             this.quantite = Integer.parseInt(st.nextToken());
             this.urgence = Integer.parseInt(st.nextToken());
-            //this.dateEnvois.setTime(sdf.parse(st.nextToken()));
+            this.dateEnvois = Calendar.getInstance();
+            this.dateEnvois.setTime(sdf.parse(st.nextToken()));
             this.disponibilite = Boolean.parseBoolean(st.nextToken());
         } 
         catch (Exception e) 
@@ -141,12 +142,12 @@ public class CentraleCommand implements Identifiable, Serializable{
     @Override
     public String toString() {
         DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-        return "id=" + id + ", libelle=" + libelle + ", type=" + type + ", quantite=" + quantite + ", dateEnvois=" + /*df.format(dateEnvois) + */", disponibilie="+disponibilite;
+        return "id=" + id + ", libelle=" + libelle + ", type=" + type + ", quantite=" + quantite + ", dateEnvois=" + df.format(dateEnvois) + ", disponibilie="+disponibilite;
     }
     
     public String toStringForSend(){
         SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
-        String serializedObj = id+ "," +libelle+ "," + type + "," + quantite + "," /*+ sdf.format(dateEnvois) + "," */+disponibilite;
+        String serializedObj = id+ "," +libelle+ "," + type + "," + quantite + "," + sdf.format(dateEnvois) + "," +disponibilite;
         return serializedObj;
     }
     
