@@ -23,6 +23,10 @@ public abstract class Travail implements Identifiable, Serializable{
     protected String description;
     protected int etat;
 
+    public Travail() {
+    }
+
+    
 
     public Travail(String id, PersonnelGarage persogarage, Vehicule vehi, double prix, String description, int etat) {
         this.id = id;

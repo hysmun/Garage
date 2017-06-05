@@ -16,10 +16,12 @@ import vehicules.Vehicule;
  */
 public class Reparation extends Travail implements Serializable{
 
+    public Reparation()
+    {
+        super();
+    }
+    
     public Reparation(String id, PersonnelGarage persogarage, Vehicule vehi, double prix, String description, int etat) {
         super(id, persogarage, vehi, prix, description, etat);
     }
-
-
-    
 }

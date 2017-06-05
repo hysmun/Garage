@@ -5,20 +5,15 @@
  */
 package testPackages;
 
-import activite.Travail;
+import activite.*;
+
 import centraleObj.CentraleCommand;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import static mainPackages.mainGarage.clientProperties;
-import people.Client;
-import people.PersonnelGarage;
-import vehicules.Vehicule;
+import people.*;
+import vehicules.*;
 
 /**
  *
@@ -39,7 +34,10 @@ public class DataEncapsulate implements Serializable{
         vPersonnel = new Vector<PersonnelGarage>();
         llTravailPrevu = new LinkedList<Travail>();
         llTravailEnCours = new ArrayList<Travail>();
-        llTravailEnCours.ensureCapacity(5);
+        for(int i=0; i<4; i++)
+        {
+            llTravailEnCours.add(new Reparation());
+        }
         llTravailFini = new LinkedList<Travail>();
         vVehicule = new LinkedList<Vehicule>();
         vCommand = new LinkedList<CentraleCommand>();
