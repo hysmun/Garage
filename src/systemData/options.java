@@ -5,7 +5,7 @@
  */
 package systemData;
 
-import mainPackages.mainGarage;
+import java.text.SimpleDateFormat;
 import mainPackages.threadDate;
 
 /**
@@ -14,9 +14,7 @@ import mainPackages.threadDate;
  */
 public class options extends javax.swing.JDialog {
 
-    /**
-     * Creates new form options
-     */
+    public SimpleDateFormat formatDate;
     public options(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -144,7 +142,7 @@ public class options extends javax.swing.JDialog {
                         switch(timeFormatCB.getSelectedIndex())
                         {
                             case 0:
-                                //threadDate.
+                                formatDate = new 
                                 break;
                             case 1:
                                 break;
