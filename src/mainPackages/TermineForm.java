@@ -234,6 +234,7 @@ class MyTableModel extends AbstractTableModel {
             switch(rowIndex)
             {
                 case 0:
+                    
                     myObj = tTravailPont1;
                     break;
                 case 1:
