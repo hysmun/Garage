@@ -39,6 +39,7 @@ public class applicationGestionForm extends javax.swing.JFrame{
         Log = new FichierLog();
         Log.init();
         Log.write("Lancement application");
+        
         try
         {
            initComponents();

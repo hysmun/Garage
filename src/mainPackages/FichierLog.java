@@ -1,7 +1,6 @@
 package mainPackages;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
@@ -18,6 +17,7 @@ public class FichierLog implements Serializable {
     public FileWriter output = null;
     public File path;
     static public String sep = System.getProperty("file.separator");
+    static public String lf = System.getProperty("line.separator");
     public Date date;
     public DateFormat sfd = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     
@@ -48,7 +48,7 @@ public class FichierLog implements Serializable {
         if(output != null)
         {
             this.date = Calendar.getInstance().getTime();
-            String tmp = this.sfd.format(this.date) + " -- Fermeture application\n";
+            String tmp = this.sfd.format(this.date) + " -- Fermeture application"+lf;
             try 
             {
                 this.output.write(tmp);
@@ -85,7 +85,7 @@ public class FichierLog implements Serializable {
         if(this.output != null)
         {
             this.date = Calendar.getInstance().getTime();
-            String tmp = this.sfd.format(this.date) + " -- " + text + "\n";
+            String tmp = this.sfd.format(this.date) + " -- " + text + lf;
             try 
             {
                 this.output.write(tmp);
