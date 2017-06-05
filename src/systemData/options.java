@@ -5,6 +5,7 @@
  */
 package systemData;
 
+import mainPackages.mainGarage;
 import mainPackages.threadDate;
 
 /**
@@ -143,7 +144,7 @@ public class options extends javax.swing.JDialog {
                         switch(timeFormatCB.getSelectedIndex())
                         {
                             case 0:
-                                threadDate.formatDate = new SimpleFormatDate
+                                //threadDate.
                                 break;
                             case 1:
                                 break;
