@@ -7,7 +7,9 @@ package mainPackages;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 import static mainPackages.applicationGestionForm.appGestionDateLabel;
 
 /**
@@ -15,9 +17,12 @@ import static mainPackages.applicationGestionForm.appGestionDateLabel;
  * @author ante
  */
 public class threadDate extends Thread{
-    public DateFormat formatDate;
+    static public DateFormat formatDate;
+    static public TimeZone tz;
+    static public Date currentDate;
     threadDate() {
         formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        tz = TimeZone.getTimeZone("Europe/Brussels");   
     }
 
     @Override
@@ -27,7 +32,9 @@ public class threadDate extends Thread{
         {
             while(true)
             {
-                appGestionDateLabel.setText(formatDate.format(new Date()));
+                //appGestionDateLabel.setText(formatDate.format(new Date()));
+                currentDate = Calendar.getInstance(tz).getTime();
+                appGestionDateLabel.setText(formatDate.format(currentDate));
                 Thread.sleep(100);
             }
         }
@@ -44,6 +51,15 @@ public class threadDate extends Thread{
     public void setFormatDate(DateFormat formatDate) {
         this.formatDate = formatDate;
     }
+
+    public TimeZone getTz() {
+        return tz;
+    }
+
+    public void setTz(TimeZone tz) {
+        this.tz = tz;
+    }
+    
     
     
 }
