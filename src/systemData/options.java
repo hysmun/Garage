@@ -6,6 +6,7 @@
 package systemData;
 
 import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 import mainPackages.threadDate;
 
 /**
@@ -13,8 +14,7 @@ import mainPackages.threadDate;
  * @author Morghen
  */
 public class options extends javax.swing.JDialog {
-
-    public SimpleDateFormat formatDate;
+    
     public options(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -129,6 +129,7 @@ public class options extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void OKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKButtonActionPerformed
@@ -142,7 +143,8 @@ public class options extends javax.swing.JDialog {
                         switch(timeFormatCB.getSelectedIndex())
                         {
                             case 0:
-                                formatDate = new 
+                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
                                 break;
                             case 1:
                                 break;
