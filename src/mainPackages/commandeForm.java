@@ -243,7 +243,7 @@ public class commandeForm extends javax.swing.JDialog {
         }
         catch(Exception e)
         {
-            System.out.println("S:\t "+e.getMessage());
+            System.out.println("C: lors de l'envois\t "+e.getMessage());
         }
         this.dispose();
     }//GEN-LAST:event_envoyerButtonActionPerformed
