@@ -39,10 +39,14 @@ public class applicationGestionForm extends javax.swing.JFrame{
             serverPneu = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-pneu")));
             serverPiece = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-piece")));
             serverLubrifiant = new NetworkBasicClient(mainGarage.clientProperties.getProperty("ip-server"), Integer.parseInt(mainGarage.clientProperties.getProperty("port-lubrifiant")));
-            appGestionPresencePont1Label.setText(mainGarage.dE.llTravailEnCours.get(0).toString());
-            appGestionPresencePont2Label.setText(mainGarage.dE.llTravailEnCours.get(1).toString());
-            appGestionPresencePont3Label.setText(mainGarage.dE.llTravailEnCours.get(2).toString());
-            appGestionPresenceSolLabel.setText(mainGarage.dE.llTravailEnCours.get(3).toString());
+            if(mainGarage.dE.travailPont1 != null)
+                appGestionPresencePont1Label.setText(mainGarage.dE.travailPont1.toString());
+            if(mainGarage.dE.travailPont2 != null)
+                appGestionPresencePont2Label.setText(mainGarage.dE.travailPont2.toString());
+            if(mainGarage.dE.travailPont3 != null)
+                appGestionPresencePont3Label.setText(mainGarage.dE.travailPont3.toString());
+            if(mainGarage.dE.travailSol != null)
+                appGestionPresenceSolLabel.setText(mainGarage.dE.travailSol.toString());
         }
         catch(Exception e)
         {
