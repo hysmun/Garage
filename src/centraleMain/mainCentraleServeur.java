@@ -16,12 +16,24 @@ public class mainCentraleServeur {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        applicationCentraleForm appPneu = new applicationCentraleForm(applicationCentraleForm.PNEU);
+        applicationCentraleFormBean appPneu = new applicationCentraleFormBean(applicationCentraleForm.PNEU);
         appPneu.setVisible(true);
-        applicationCentraleForm appPiece = new applicationCentraleForm(applicationCentraleForm.PIECE);
+        applicationCentraleFormBean appPiece = new applicationCentraleFormBean(applicationCentraleForm.PIECE);
         appPiece.setVisible(true);
-        applicationCentraleForm appLubrifiant = new applicationCentraleForm(applicationCentraleForm.LUBRIFIANT);
+        applicationCentraleFormBean appLubrifiant = new applicationCentraleFormBean(applicationCentraleForm.LUBRIFIANT);
         appLubrifiant.setVisible(true);
+        
+        
+        /*          VERSION DE BASE SANS BEANS ET FONCTIONNEL
+        
+        applicationCentraleFormBean appPneu = new applicationCentraleFormBean(applicationCentraleForm.PNEU);
+        appPneu.setVisible(true);
+        applicationCentraleFormBean appPiece = new applicationCentraleFormBean(applicationCentraleForm.PIECE);
+        appPiece.setVisible(true);
+        applicationCentraleFormBean appLubrifiant = new applicationCentraleFormBean(applicationCentraleForm.LUBRIFIANT);
+        appLubrifiant.setVisible(true);
+        
+        */
         
     }
     
