@@ -353,8 +353,15 @@ public class applicationCentraleForm extends javax.swing.JFrame {
 
     private void reponseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reponseButtonActionPerformed
         // TODO add your handling code here:
-        netServer.sendMessage(commandeEnCours.toStringForSend());
-        commandeEnCours = null;
+        try
+        {
+            netServer.sendMessage(commandeEnCours.toStringForSend());
+            commandeEnCours = null;
+        }
+        catch(Exception e)
+        {
+            System.out.println("S:\t lors de renvois : " + e.getMessage());
+        }
     }//GEN-LAST:event_reponseButtonActionPerformed
 
     private void verifButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifButtonActionPerformed

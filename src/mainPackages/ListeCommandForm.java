@@ -193,7 +193,7 @@ public class ListeCommandForm extends javax.swing.JDialog {
                 case 4://urgent
                     return myObj.getUrgence();
                 case 5://date
-                    return myObj.getDateEnvois();
+                    return myObj.getDateEnvois().toString();
                 case 6://dispo
                     return myObj.isDisponibilite();
             }
