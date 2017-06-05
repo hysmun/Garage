@@ -551,8 +551,7 @@ public class applicationGestionForm extends javax.swing.JFrame{
                 System.out.println("C:\tFichier de serialisation vierge");
             }
             fis.close();
-            
-            System.out.println("C:\tChargement serialisation reussi");
+            System.out.println("C:\tSauvegarde effectuée");
         }
         catch(IOException i) {
             i.printStackTrace();
@@ -581,7 +580,36 @@ public class applicationGestionForm extends javax.swing.JFrame{
         // TODO add your handling code here:
         AdminCreation ac = new AdminCreation(this,true);
         ac.setVisible(true);
-        
+        try 
+        {
+            File dossierSave = new File(mainGarage.clientProperties.getProperty("dossier-save"));
+            if(!dossierSave.exists())
+            {
+                dossierSave.mkdir();
+            }
+            File saveSerial = new File(mainGarage.clientProperties.getProperty("dossier-save")+System.getProperty("file.separator")+mainGarage.clientProperties.getProperty("fichier-save"));
+            if(!saveSerial.exists())
+            {
+                FileOutputStream fos = new FileOutputStream(saveSerial);
+                fos.close();
+                System.out.println("C:\tFichier serialisation introuvable, creation d'un fichier vierge");
+            }
+            
+            FileOutputStream fis = new FileOutputStream(mainGarage.clientProperties.getProperty("dossier-save")+System.getProperty("file.separator")+mainGarage.clientProperties.getProperty("fichier-save"));
+            try {
+                ObjectOutputStream in = new ObjectOutputStream(fis);
+                in.writeObject(mainGarage.dE);
+                in.close();
+            }
+            catch(EOFException ex) {
+                System.out.println("C:\tFichier de serialisation vierge");
+            }
+            fis.close();
+            System.out.println("C:\tSauvegarde effectuée");
+        }
+        catch(IOException i) {
+            i.printStackTrace();
+        }
     }//GEN-LAST:event_ajoutAdminItemMousePressed
 
     /**
