@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
-import java.io.Writer;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -26,13 +25,18 @@ public class FichierLog implements Serializable {
     {
         
     }
+    
+    public void init()
+    {
+        this.path = getPath();
+        this.output = getOutput();
+    }
 
     public FileWriter getOutput() 
     {
-        path = getPath();
         try
         {
-            output = new FileWriter(path,true);
+            FileWriter outputtmp = new FileWriter(path,true);
         }
         catch(IOException ex)
         {
@@ -44,7 +48,9 @@ public class FichierLog implements Serializable {
     {
         if(output != null)
         {
-            try {
+            try 
+            {
+                output.write("Fermeture application");
                 output.close();
             } catch (IOException ex) {
                 Logger.getLogger(FichierLog.class.getName()).log(Level.SEVERE, null, ex);
@@ -84,7 +90,6 @@ public class FichierLog implements Serializable {
             try 
             {
                 output.write(tmp);
-                output.flush();
             } 
             catch (IOException ex) 
             {

@@ -43,6 +43,12 @@ public class mainGarage {
     public static File serialization;
     
     public static void main(String[] args) {
+        
+        FichierLog Log = new FichierLog();
+        Log.init();
+        Log.write("Lancement application");
+        Log.close();
+        
         try
         {
             // TODO code application logic here
