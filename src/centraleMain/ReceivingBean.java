@@ -22,14 +22,14 @@ public class ReceivingBean implements InStockListener{
     
     public ReceivingBean()
     {
-        commandeRecue = "";
+        commandeRecue = "INIT";
         pcl = new LinkedList<PropertyChangeListener>();
         enMarche = false;
     }
     
     public ReceivingBean(NetworkBasicServer pnbs)
     {
-        commandeRecue = "";
+        commandeRecue = "INIT";
         pcl = new LinkedList<PropertyChangeListener>();
         this.nbs = pnbs;
         enMarche = false;
@@ -39,12 +39,12 @@ public class ReceivingBean implements InStockListener{
         return commandeRecue;
     }
 
-    public void setCommandeRecue(String commandeRecue) {
+    public void setCommandeRecue(String pcommandeRecue) {
         for(int i=0; i<pcl.size(); i++)
         {
-            pcl.get(i).propertyChange(new PropertyChangeEvent(this, "commandeRecue", commandeRecue, this.commandeRecue));
+            pcl.get(i).propertyChange(new PropertyChangeEvent(this, "commandeRecue", this.commandeRecue, pcommandeRecue));
         }
-        this.commandeRecue = commandeRecue;
+        this.commandeRecue = pcommandeRecue;
     }
 
     public boolean isEnMarche() {
@@ -62,6 +62,7 @@ public class ReceivingBean implements InStockListener{
         {
             if((message = nbs.getMessage()) != "RIEN")
             {
+                System.out.println("S:\t run "+message);
                 setCommandeRecue(message);
                 setEnMarche(false);
             }
