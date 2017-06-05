@@ -11,4 +11,9 @@ package centraleMain;
  */
 public class InStockEvent {
     
+    public String message;
+    
+    public InStockEvent() {
+    }
+    
 }

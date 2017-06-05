@@ -10,5 +10,5 @@ package centraleMain;
  * @author ante
  */
 public interface InStockListener {
-    
+    void InStockFired(InStockEvent s);
 }

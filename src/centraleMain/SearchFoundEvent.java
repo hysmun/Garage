@@ -10,5 +10,10 @@ package centraleMain;
  * @author ante
  */
 public class SearchFoundEvent {
+
+    public String message;
+    
+    public SearchFoundEvent() {
+    }
     
 }

@@ -10,5 +10,5 @@ package centraleMain;
  * @author ante
  */
 public interface SearchFoundListener {
-    
+    void SearchFound(SearchFoundEvent s);
 }

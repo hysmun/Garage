@@ -5,10 +5,35 @@
  */
 package centraleMain;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author ante
  */
-public class PrepareOrderBean {
+public class PrepareOrderBean implements SearchFoundListener{
+    private LinkedList<InStockListener> isl;
+
+    public PrepareOrderBean() {
+        isl = new LinkedList<InStockListener>();
+    }
     
+    void AddInStockListener(InStockListener s)
+    {
+        isl.add(s);
+    }
+    
+    void RemoveInStockListener(InStockListener s)
+    {
+        isl.remove(s);
+    }
+
+    @Override
+    public void SearchFound(SearchFoundEvent s) {
+        //calcule date expedition (random) previen receiving bean
+        for(int i=0; i<isl.size(); i++)
+        {
+            isl.get(i).InStockFired(new InStockEvent());
+        }
+    }
 }
