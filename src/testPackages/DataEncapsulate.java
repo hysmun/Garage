@@ -23,7 +23,10 @@ public class DataEncapsulate implements Serializable{
     public Vector<Client> vClient;
     public Vector<PersonnelGarage> vPersonnel;
     public LinkedList<Travail> llTravailPrevu;
-    public ArrayList<Travail> llTravailEnCours;
+    public Travail travailPont1;
+    public Travail travailPont2;
+    public Travail travailPont3;
+    public Travail travailSol;
     public LinkedList<Travail> llTravailFini;
     public LinkedList<Vehicule> vVehicule;
     public LinkedList<CentraleCommand> vCommand;
@@ -33,11 +36,10 @@ public class DataEncapsulate implements Serializable{
         vClient = new Vector<Client>();
         vPersonnel = new Vector<PersonnelGarage>();
         llTravailPrevu = new LinkedList<Travail>();
-        llTravailEnCours = new ArrayList<Travail>();
-        for(int i=0; i<4; i++)
-        {
-            llTravailEnCours.add(new Reparation());
-        }
+        travailPont1 = null;
+        travailPont2 = null;
+        travailPont3 = null;
+        travailSol = null;
         llTravailFini = new LinkedList<Travail>();
         vVehicule = new LinkedList<Vehicule>();
         vCommand = new LinkedList<CentraleCommand>();

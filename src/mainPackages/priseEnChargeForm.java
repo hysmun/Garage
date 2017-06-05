@@ -184,9 +184,9 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             if(applicationGestionForm.appGestionPresencePont1Label.getText().equals(mainGarage.libreString))
                             {
                                 //libre
-                                mainGarage.dE.llTravailEnCours.add(0, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                                mainGarage.dE.travailPont1 = mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow());
                                 mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
-                                applicationGestionForm.appGestionPresencePont1Label.setText((mainGarage.dE.llTravailEnCours.get(0)).toString());
+                                applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.dE.travailPont1.toString());
                                 //model.removeRow(priseEnChargeTable.getSelectedRow());
                                 this.invalidate();
                             }
@@ -199,9 +199,9 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             if(applicationGestionForm.appGestionPresencePont2Label.getText().equals(mainGarage.libreString))
                             {
                                 //libre
-                                mainGarage.dE.llTravailEnCours.add(1, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                                mainGarage.dE.travailPont2 = mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow());
                                 mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
-                                applicationGestionForm.appGestionPresencePont2Label.setText((mainGarage.dE.llTravailEnCours.get(1)).toString());
+                                applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.dE.travailPont2.toString());
                                 //model.removeRow(priseEnChargeTable.getSelectedRow());
                                 this.invalidate();
 
@@ -215,9 +215,9 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                             if(applicationGestionForm.appGestionPresencePont3Label.getText().equals(mainGarage.libreString))
                             {
                                 //libre
-                                mainGarage.dE.llTravailEnCours.add(2, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                                mainGarage.dE.travailPont3 = mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow());
                                 mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
-                                applicationGestionForm.appGestionPresencePont3Label.setText((mainGarage.dE.llTravailEnCours.get(2)).toString());
+                                applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.dE.travailPont3.toString());
                                 //model.removeRow(priseEnChargeTable.getSelectedRow());
                                 this.invalidate();
                             }
@@ -236,9 +236,9 @@ public class priseEnChargeForm extends javax.swing.JFrame {
                     if(applicationGestionForm.appGestionPresenceSolLabel.getText().equals(mainGarage.libreString))
                     {
                         //libre
-                        mainGarage.dE.llTravailEnCours.add(3, mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow()));
+                        mainGarage.dE.travailSol = mainGarage.dE.llTravailPrevu.get(priseEnChargeTable.getSelectedRow());
                         mainGarage.dE.llTravailPrevu.remove(priseEnChargeTable.getSelectedRow());
-                        applicationGestionForm.appGestionPresenceSolLabel.setText((mainGarage.dE.llTravailEnCours.get(3)).toString());
+                        applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.dE.travailSol.toString());
                         //model.removeRow(priseEnChargeTable.getSelectedRow());
                         this.invalidate();
                     }

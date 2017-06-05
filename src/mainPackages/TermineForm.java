@@ -5,12 +5,16 @@
  */
 package mainPackages;
 
+import activite.Reparation;
 import activite.Travail;
 import centraleObj.CentraleCommand;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import javax.swing.ComboBoxModel;
 import javax.swing.event.ListDataListener;
+import javax.swing.table.AbstractTableModel;
+import testPackages.DataEncapsulate;
+import vehicules.Voiture;
 
 /**
  *
@@ -23,7 +27,7 @@ public class TermineForm extends javax.swing.JFrame {
      */
     public TermineForm() {
         initComponents();
-        TravailCB.setModel(new MyComboBoxModel(mainGarage.dE.llTravailEnCours));
+        travailTable.setModel(new MyTableModel(mainGarage.dE));
     }
 
     /**
@@ -38,7 +42,8 @@ public class TermineForm extends javax.swing.JFrame {
         TravailLabel = new javax.swing.JLabel();
         OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
-        TravailCB = new javax.swing.JComboBox<>();
+        travailPanel = new javax.swing.JScrollPane();
+        travailTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Garage HEPL - Terminer un travail");
@@ -60,6 +65,19 @@ public class TermineForm extends javax.swing.JFrame {
             }
         });
 
+        travailTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        travailPanel.setViewportView(travailTable);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -67,28 +85,33 @@ public class TermineForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(TravailLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
+                        .addComponent(travailPanel)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 150, Short.MAX_VALUE)
                         .addComponent(OKButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(CancelButton))
-                    .addComponent(TravailCB, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addGap(239, 239, 239)
+                        .addComponent(CancelButton)
+                        .addGap(163, 163, 163))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(TravailLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(travailPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TravailLabel)
-                    .addComponent(TravailCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(OKButton)
-                    .addComponent(CancelButton))
-                .addGap(60, 60, 60))
+                    .addComponent(CancelButton)
+                    .addComponent(OKButton))
+                .addGap(47, 47, 47))
         );
 
         pack();
@@ -100,29 +123,34 @@ public class TermineForm extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelButtonMouseClicked
 
     private void OKButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKButtonMouseClicked
-        if(TravailCB.getSelectedIndex() >= 0 && TravailCB.getSelectedIndex() < 4)
-        {
+        
             
-            switch(TravailCB.getSelectedIndex())
-            {
-                case 0:
-                    applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.libreString);
-                    break;
-                case 1:
-                    applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.libreString);
-                    break;
-                case 2:
-                    applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.libreString);
-                    break;
-                case 3:
-                    applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.libreString);
-                    break;
-            }
-            mainGarage.dE.llTravailFini.add(mainGarage.dE.llTravailEnCours.get(TravailCB.getSelectedIndex()));
-            mainGarage.dE.llTravailEnCours.remove(TravailCB.getSelectedIndex());
-            this.invalidate();
-            this.dispose();
+        switch(travailTable.getSelectedRow())
+        {
+            case 0:
+                applicationGestionForm.appGestionPresencePont1Label.setText(mainGarage.libreString);
+                mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont1);
+                mainGarage.dE.travailPont1 = null;
+                break;
+            case 1:
+                applicationGestionForm.appGestionPresencePont2Label.setText(mainGarage.libreString);
+                mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont2);
+                mainGarage.dE.travailPont2 = null;
+                break;
+            case 2:
+                applicationGestionForm.appGestionPresencePont3Label.setText(mainGarage.libreString);
+                mainGarage.dE.llTravailFini.add(mainGarage.dE.travailPont3);
+                mainGarage.dE.travailPont3 = null;
+                break;
+            case 3:
+                applicationGestionForm.appGestionPresenceSolLabel.setText(mainGarage.libreString);
+                mainGarage.dE.llTravailFini.add(mainGarage.dE.travailSol);
+                mainGarage.dE.travailSol = null;
+                break;
         }
+        this.invalidate();
+        this.dispose();
+        
         
     }//GEN-LAST:event_OKButtonMouseClicked
 
@@ -165,49 +193,74 @@ public class TermineForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelButton;
     private javax.swing.JButton OKButton;
-    private javax.swing.JComboBox<String> TravailCB;
     private javax.swing.JLabel TravailLabel;
+    private javax.swing.JScrollPane travailPanel;
+    private javax.swing.JTable travailTable;
     // End of variables declaration//GEN-END:variables
-class MyComboBoxModel implements ComboBoxModel {
+class MyTableModel extends AbstractTableModel {
 
-        private final ArrayList<Travail> contents;
-        private final LinkedList<ListDataListener> ldt;
+        private final Travail tTravailPont1;
+        private final Travail tTravailPont2;
+        private final Travail tTravailPont3;
+        private final Travail tTravailSol;
+        private final String[] tableHeaders = {"Type Travail", "Type Voiture", "Immatriculation", "Propriétaire","Remarque"};
         
-        public MyComboBoxModel(ArrayList<Travail> contents)
+        public MyTableModel(DataEncapsulate de)
         {
-            this.contents = contents;
-            ldt = new LinkedList<ListDataListener>();
+            tTravailPont1 = de.travailPont1;
+            tTravailPont2 = de.travailPont2;
+            tTravailPont3 = de.travailPont3;
+            tTravailSol = de.travailSol;
+        }
+
+        @Override
+        public String getColumnName(int columnIndex) {
+            return tableHeaders[columnIndex];
         }
         
         @Override
-        public CentraleCommand getSelectedItem()
-        {
-            return new CentraleCommand();
+        public int getRowCount() {
+            return 4;
         }
 
         @Override
-        public void setSelectedItem(Object anItem) {
-            contents.add((Travail) anItem);
+        public int getColumnCount() {
+            return 5;
         }
 
         @Override
-        public int getSize() {
-            return contents.size();
-        }
-
-        @Override
-        public Object getElementAt(int index) {
-            return contents.get(index);
-        }
-
-        @Override
-        public void addListDataListener(ListDataListener l) {
-            ldt.add(l);
-        }
-
-        @Override
-        public void removeListDataListener(ListDataListener l) {
-            ldt.remove(l);
+        public Object getValueAt(int rowIndex, int columnIndex) {
+            Travail myObj = tTravailPont1;
+            switch(rowIndex)
+            {
+                case 0:
+                    myObj = tTravailPont1;
+                    break;
+                case 1:
+                    myObj = tTravailPont2;
+                    break;
+                case 2:
+                    myObj = tTravailPont3;
+                    break;
+                case 3:
+                    myObj = tTravailSol;
+                    break;
+            }
+            
+            switch(columnIndex)
+            {
+                case 0://type travail
+                    return (myObj instanceof Reparation) ?  "Reparation" : "Entretien";
+                case 1://Type voiture
+                    return ( (Voiture) myObj.getVehi()).getTypeVoiture();
+                case 2://imma
+                    return ( (Voiture) myObj.getVehi()).getImmatriculation();
+                case 3://proprio
+                    return ""+( (Voiture) myObj.getVehi()).getClient().getNom() + " "+( (Voiture) myObj.getVehi()).getClient().getPrenom();
+                case 4://desc
+                    return myObj.getDescription();
+            }
+            return null;
         }
     }
 }

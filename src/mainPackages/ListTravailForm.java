@@ -5,11 +5,13 @@
  */
 package mainPackages;
 
+import activite.Reparation;
 import activite.Travail;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.ListModel;
 import javax.swing.event.ListDataListener;
+import testPackages.DataEncapsulate;
 
 /**
  *
@@ -24,7 +26,7 @@ public class ListTravailForm extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         travailPrevuList.setModel(new MyListModel(mainGarage.dE.llTravailPrevu));
-        travailEnCoursList.setModel(new MyListModel(mainGarage.dE.llTravailEnCours));
+        travailEnCoursList.setModel(new MyComboBoxModel(mainGarage.dE));
         travailFiniList.setModel(new MyListModel(mainGarage.dE.llTravailFini));
     }
 
@@ -207,4 +209,53 @@ public class ListTravailForm extends javax.swing.JDialog {
         }
         
     }
+    class MyComboBoxModel implements ListModel {
+
+        private final Travail tTravailPont1;
+        private final Travail tTravailPont2;
+        private final Travail tTravailPont3;
+        private final Travail tTravailSol;
+        private final LinkedList<ListDataListener> ldt;
+        
+        public MyComboBoxModel(DataEncapsulate de)
+        {
+            tTravailPont1 = de.travailPont1;
+            tTravailPont2 = de.travailPont2;
+            tTravailPont3 = de.travailPont3;
+            tTravailSol = de.travailSol;
+            ldt = new LinkedList<ListDataListener>();
+        }
+
+        @Override
+        public int getSize() {
+            return 4;
+        }
+
+        @Override
+        public Object getElementAt(int index) {
+            switch(index)
+            {
+                case 0:
+                    return tTravailPont1;
+                case 1:
+                    return tTravailPont2;
+                case 2:
+                    return tTravailPont3;
+                case 3:
+                    return tTravailSol;
+            }
+            return null;
+        }
+
+        @Override
+        public void addListDataListener(ListDataListener l) {
+            ldt.add(l);
+        }
+
+        @Override
+        public void removeListDataListener(ListDataListener l) {
+            ldt.remove(l);
+        }
+    }
 }
+
