@@ -34,6 +34,7 @@ public class threadDate extends Thread{
             {
                 //appGestionDateLabel.setText(formatDate.format(new Date()));
                 currentDate = Calendar.getInstance(tz).getTime();
+                formatDate.setTimeZone(tz);
                 appGestionDateLabel.setText(formatDate.format(currentDate));
                 Thread.sleep(100);
             }

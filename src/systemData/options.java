@@ -143,11 +143,11 @@ public class options extends javax.swing.JDialog {
                         switch(timeFormatCB.getSelectedIndex())
                         {
                             case 0:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("dd/MM/yy h:mm:ss a");
                                 break;
                             case 1:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
                                 break;
                         }
@@ -156,11 +156,11 @@ public class options extends javax.swing.JDialog {
                         switch(timeFormatCB.getSelectedIndex())
                         {
                             case 0:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("dd MMMM yy h:mm:ss a");
                                 break;
                             case 1:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("dd MMMM yy HH:mm:ss");
                                 break;
                         }
@@ -169,11 +169,11 @@ public class options extends javax.swing.JDialog {
                         switch(timeFormatCB.getSelectedIndex())
                         {
                             case 0:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
                                 break;
                             case 1:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                                 break;
                         }
@@ -182,11 +182,11 @@ public class options extends javax.swing.JDialog {
                         switch(timeFormatCB.getSelectedIndex())
                         {
                             case 0:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy h:mm:ss a");
                                 break;
                             case 1:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
                                 break;
                         }
@@ -195,11 +195,11 @@ public class options extends javax.swing.JDialog {
                         switch(timeFormatCB.getSelectedIndex())
                         {
                             case 0:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("MM/dd/yy h:mm:ss a");
                                 break;
                             case 1:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
                                 break;
                         }
@@ -208,11 +208,11 @@ public class options extends javax.swing.JDialog {
                         switch(timeFormatCB.getSelectedIndex())
                         {
                             case 0:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
                                 break;
                             case 1:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
                                 break;
                         }
@@ -221,11 +221,11 @@ public class options extends javax.swing.JDialog {
                         switch(timeFormatCB.getSelectedIndex())
                         {
                             case 0:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd h:mm:ss a");
                                 break;
                             case 1:
-                                threadDate.tz = TimeZone.getTimeZone("Europe/France");
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
                                 threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                                 break;
                         }
@@ -425,10 +425,292 @@ public class options extends javax.swing.JDialog {
                 }
                 break;
             case 3:
+                switch(dateFormatCB.getSelectedIndex())
+                {
+                    case 0:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;              
+                    case 3:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                                break;
+                        }
+                        break;
+                }
                 break;
             case 4:
+                switch(dateFormatCB.getSelectedIndex())
+                {
+                    case 0:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;              
+                    case 3:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                                break;
+                        }
+                        break;
+                }
                 break;
             case 5:
+                switch(dateFormatCB.getSelectedIndex())
+                {
+                    case 0:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;              
+                    case 3:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                                break;
+                        }
+                        break;
+                }
                 break;
         }
         this.dispose();
@@ -441,6 +723,585 @@ public class options extends javax.swing.JDialog {
 
     private void ApplyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApplyButtonActionPerformed
         // TODO add your handling code here:
+        switch(regionCB.getSelectedIndex())
+        {
+            case 0:
+                switch(dateFormatCB.getSelectedIndex())
+                {
+                    case 0:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;              
+                    case 3:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Paris");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                                break;
+                        }
+                        break;
+                }
+                break;
+            case 1:
+                switch(dateFormatCB.getSelectedIndex())
+                {
+                    case 0:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;              
+                    case 3:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/London");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                                break;
+                        }
+                        break;
+                }
+                break;
+            case 2:
+                switch(dateFormatCB.getSelectedIndex())
+                {
+                    case 0:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;              
+                    case 3:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Berlin");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                                break;
+                        }
+                        break;
+                }
+                break;
+            case 3:
+                switch(dateFormatCB.getSelectedIndex())
+                {
+                    case 0:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;              
+                    case 3:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("Europe/Rome");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                                break;
+                        }
+                        break;
+                }
+                break;
+            case 4:
+                switch(dateFormatCB.getSelectedIndex())
+                {
+                    case 0:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;              
+                    case 3:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("PST");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                                break;
+                        }
+                        break;
+                }
+                break;
+            case 5:
+                switch(dateFormatCB.getSelectedIndex())
+                {
+                    case 0:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;              
+                    case 3:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch(timeFormatCB.getSelectedIndex())
+                        {
+                            case 0:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd h:mm:ss a");
+                                break;
+                            case 1:
+                                threadDate.tz = TimeZone.getTimeZone("EST");
+                                threadDate.formatDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                                break;
+                        }
+                        break;
+                }
+                break;
+        }
     }//GEN-LAST:event_ApplyButtonActionPerformed
 
     /**
