@@ -23,6 +23,10 @@ dossier racine
 	|		|
 	|		\-->lubrifiant.properties
 	|
+	|-->logs
+	|		|
+	|		\-->loggedInfo.log
+	|
 	|-->general.properties
 	|
 	|-->pneu.png
