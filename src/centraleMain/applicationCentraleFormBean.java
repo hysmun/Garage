@@ -42,6 +42,10 @@ public class applicationCentraleFormBean extends javax.swing.JFrame {
     
     public CentraleCommand commandeEnCours;
     
+    public ReceivingBean beanReceveur;
+    public SearchBean beanChercheur;
+    public PrepareOrderBean beanPreparateur;
+    
     public applicationCentraleFormBean() {
         initComponents();
         typeApp = -1;
@@ -145,6 +149,15 @@ public class applicationCentraleFormBean extends javax.swing.JFrame {
             
             //network
             netServer = new NetworkBasicServer(Integer.parseInt(serveurProperties.getProperty("port")),messageEntrantCheckBox);
+            
+            beanReceveur = new ReceivingBean(netServer);
+            beanChercheur = new SearchBean();
+            beanPreparateur = new PrepareOrderBean();
+            
+            //connection
+            beanReceveur.AddPropertyChangeListener(beanChercheur);
+            beanChercheur.AddSearchFoundListener(beanPreparateur);
+            beanPreparateur.AddInStockListener(beanReceveur);
             
         }
         catch(IOException e)
@@ -342,29 +355,29 @@ public class applicationCentraleFormBean extends javax.swing.JFrame {
     private void disponibiliteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disponibiliteButtonActionPerformed
         // TODO add your handling code here:
         notDispoButton.setSelected(false);
-        commandeEnCours.setDisponibilite(true);
+        
     }//GEN-LAST:event_disponibiliteButtonActionPerformed
 
     private void notDispoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notDispoButtonActionPerformed
         // TODO add your handling code here:
         disponibiliteButton.setSelected(false);
-        commandeEnCours.setDisponibilite(false);
+        
     }//GEN-LAST:event_notDispoButtonActionPerformed
 
     private void reponseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reponseButtonActionPerformed
         // TODO add your handling code here:
-        netServer.sendMessage(commandeEnCours.toStringForSend());
-        commandeEnCours = null;
+        
     }//GEN-LAST:event_reponseButtonActionPerformed
 
     private void verifButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifButtonActionPerformed
         // TODO add your handling code here:
+        beanChercheur.setDisponibilite(disponibiliteButton.isSelected());
     }//GEN-LAST:event_verifButtonActionPerformed
 
     private void lireButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lireButtonActionPerformed
         // TODO add your handling code here:
-        commandeEnCours = new CentraleCommand(netServer.getMessage());
-        messageLabel.setText(commandeEnCours.toString());
+        beanReceveur.setEnMarche(true);
+        beanReceveur.run();
     }//GEN-LAST:event_lireButtonActionPerformed
 
     /**

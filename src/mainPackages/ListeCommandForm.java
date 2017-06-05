@@ -8,6 +8,7 @@
 package mainPackages;
 
 import centraleObj.CentraleCommand;
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
@@ -87,6 +88,7 @@ public class ListeCommandForm extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
@@ -193,7 +195,7 @@ public class ListeCommandForm extends javax.swing.JDialog {
                 case 4://urgent
                     return myObj.getUrgence();
                 case 5://date
-                    return myObj.getDateEnvois().toString();
+                    return ""+myObj.getDateEnvois().get(Calendar.YEAR)+"/"+ myObj.getDateEnvois().get(Calendar.MONTH)+"/"+myObj.getDateEnvois().get(Calendar.DAY_OF_MONTH);
                 case 6://dispo
                     return myObj.isDisponibilite();
             }

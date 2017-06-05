@@ -8,48 +8,79 @@ package centraleMain;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.LinkedList;
+import network.NetworkBasicServer;
 
 /**
  *
  * @author ante
  */
 public class ReceivingBean implements InStockListener{
-
+    private NetworkBasicServer nbs;
     private LinkedList<PropertyChangeListener> pcl;
     private String commandeRecue;
+    private boolean enMarche;
     
-    void ReceivingBean()
+    public ReceivingBean()
     {
-        commandeRecue = "";
+        commandeRecue = "INIT";
         pcl = new LinkedList<PropertyChangeListener>();
+        enMarche = false;
+    }
+    
+    public ReceivingBean(NetworkBasicServer pnbs)
+    {
+        commandeRecue = "INIT";
+        pcl = new LinkedList<PropertyChangeListener>();
+        this.nbs = pnbs;
+        enMarche = false;
     }
 
     public String getCommandeRecue() {
         return commandeRecue;
     }
 
-    public void setCommandeRecue(String commandeRecue) {
+    public void setCommandeRecue(String pcommandeRecue) {
         for(int i=0; i<pcl.size(); i++)
         {
-            pcl.get(i).propertyChange(new PropertyChangeEvent(this, "commandeRecue", commandeRecue, this.commandeRecue));
+            pcl.get(i).propertyChange(new PropertyChangeEvent(this, "commandeRecue", this.commandeRecue, pcommandeRecue));
         }
-        this.commandeRecue = commandeRecue;
+        this.commandeRecue = pcommandeRecue;
+    }
+
+    public boolean isEnMarche() {
+        return enMarche;
+    }
+
+    public void setEnMarche(boolean enMarche) {
+        this.enMarche = enMarche;
     }
     
+    public void run()
+    {
+        String message ="";
+        while(isEnMarche())
+        {
+            if((message = nbs.getMessage()) != "RIEN")
+            {
+                System.out.println("S:\t run "+message);
+                setCommandeRecue(message);
+                setEnMarche(false);
+            }
+        }
+    }
     
-    
-    void AddPropertyChangeListener(PropertyChangeListener s)
+    public void AddPropertyChangeListener(PropertyChangeListener s)
     {
         pcl.add(s);
     }
     
-    void RemovePropertyChangeListener(PropertyChangeListener s)
+    public void RemovePropertyChangeListener(PropertyChangeListener s)
     {
         pcl.remove(s);
     }
     
     @Override
     public void InStockFired(InStockEvent s) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        nbs.sendMessage(s.getCommande().toStringForSend());
     }
 }

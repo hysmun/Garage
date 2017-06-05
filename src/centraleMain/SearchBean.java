@@ -46,7 +46,8 @@ public class SearchBean implements PropertyChangeListener{
     
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        commande = new CentraleCommand((String)evt.getNewValue());
+        System.out.println("S:\t propertyChange :" + ((String) evt.getNewValue()));
+        commande = new CentraleCommand((String) evt.getNewValue());
     }
     
 }
