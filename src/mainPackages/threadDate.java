@@ -36,4 +36,14 @@ public class threadDate extends Thread{
             System.out.println("Error thread date !!!");
         }
     }
+
+    public DateFormat getFormatDate() {
+        return formatDate;
+    }
+
+    public void setFormatDate(DateFormat formatDate) {
+        this.formatDate = formatDate;
+    }
+    
+    
 }

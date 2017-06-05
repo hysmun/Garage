@@ -17,6 +17,7 @@ import network.NetworkBasicClient;
 import people.addClients;
 import propertiescreation.AdminCreation;
 import propertiescreation.PropertiesCreations;
+import systemData.options;
 import testPackages.DataEncapsulate;
 
 
@@ -325,6 +326,11 @@ public class applicationGestionForm extends javax.swing.JFrame{
         appGestionParamMenu.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
 
         appGestionInfoSysItem.setText("Infos système");
+        appGestionInfoSysItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                appGestionInfoSysItemActionPerformed(evt);
+            }
+        });
         appGestionParamMenu.add(appGestionInfoSysItem);
 
         appGestionMenuBar.add(Box.createHorizontalGlue());
@@ -611,6 +617,12 @@ public class applicationGestionForm extends javax.swing.JFrame{
             i.printStackTrace();
         }
     }//GEN-LAST:event_ajoutAdminItemMousePressed
+
+    private void appGestionInfoSysItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appGestionInfoSysItemActionPerformed
+        // TODO add your handling code here:
+        options opt = new options(this,true);
+        opt.setVisible(true);
+    }//GEN-LAST:event_appGestionInfoSysItemActionPerformed
 
     /**
      * @param args the command line arguments
